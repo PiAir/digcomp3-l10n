@@ -14,3 +14,9 @@ Components:
 - glossary
 - acronyms
 - texts (empty; use step3 to fill)
+
+Terminologie (EN -> NL)
+- “Competence area” → “Competentiegebied”
+- “Competence” → “Competentie”
+- “Proficiency levels” → “Beheersingsniveaus”
+- “Learning outcomes” → “Leerresultaten”
