@@ -1,0 +1,33 @@
+location,source,target,context
+digcomp.level.1.four_level_name,Basic,,Proficiency level 1 – 4-level name
+digcomp.level.1.four_level_description,"At basic level, individuals remember and implement simple tasks with guidance as needed.",,Proficiency level 1 – 4-level description
+digcomp.level.1.applies_to,"To support personal, learning and/or working goals and participate in society.",,Proficiency level 1 – applies to
+digcomp.level.1.eight_level_description,"At the bottom of the Basic level, individuals require guidance to recognise and implement many or most simple tasks.",,Proficiency level 1 – 8-level description
+digcomp.level.2.four_level_name,Basic,,Proficiency level 2 – 4-level name
+digcomp.level.2.four_level_description,"At basic level, individuals remember and implement simple tasks with guidance as needed.",,Proficiency level 2 – 4-level description
+digcomp.level.2.applies_to,"To support personal, learning and/or working goals and participate in society.",,Proficiency level 2 – applies to
+digcomp.level.2.eight_level_description,"At the top of the Basic level, individuals remember and implement simple tasks with little or no guidance.",,Proficiency level 2 – 8-level description
+digcomp.level.3.four_level_name,Intermediate,,Proficiency level 3 – 4-level name
+digcomp.level.3.four_level_description,"At intermediate level, individuals identify and implement well-defined tasks and solve well-defined problems autonomously.",,Proficiency level 3 – 4-level description
+digcomp.level.3.applies_to,"To support personal, learning and/or working goals and participate autonomously in society.",,Proficiency level 3 – applies to
+digcomp.level.3.eight_level_description,"At the bottom of the Intermediate level, individuals show some autonomy to identify and implement well-defined tasks and solve well-defined problems.",,Proficiency level 3 – 8-level description
+digcomp.level.4.four_level_name,Intermediate,,Proficiency level 4 – 4-level name
+digcomp.level.4.four_level_description,"At intermediate level, individuals identify and implement well-defined tasks and solve well-defined problems autonomously.",,Proficiency level 4 – 4-level description
+digcomp.level.4.applies_to,"To support personal, learning and/or working goals and participate autonomously in society.",,Proficiency level 4 – applies to
+digcomp.level.4.eight_level_description,"At the top of the Intermediate level, individuals confidently and autonomously identify and implement well-defined tasks and solve well-defined problems.",,Proficiency level 4 – 8-level description
+digcomp.level.5.four_level_name,Advanced,,Proficiency level 5 – 4-level name
+digcomp.level.5.four_level_description,"At advanced level, individuals assess and apply solutions to a variety of complex tasks autonomously and adapt to a variety of contexts to evaluate and execute tasks appropriately, guiding others if and as required.",,Proficiency level 5 – 4-level description
+digcomp.level.5.applies_to,"To support personal, learning and/or working goals, participate effectively in society, and manage or support others in achieving their goals.",,Proficiency level 5 – applies to
+digcomp.level.5.eight_level_description,"At the bottom of the Advanced level, individuals assess and apply solutions to a variety of well-defined tasks and engage with some complex tasks. They identify situations where approaches may need to be adapted, and guide others on well-defined tasks if and as required.",,Proficiency level 5 – 8-level description
+digcomp.level.6.four_level_name,Advanced,,Proficiency level 6 – 4-level name
+digcomp.level.6.four_level_description,"At advanced level, individuals assess and apply solutions to a variety of complex tasks autonomously and adapt to a variety of contexts to evaluate and execute tasks appropriately, guiding others if and as required.",,Proficiency level 6 – 4-level description
+digcomp.level.6.applies_to,"To support personal, learning and/or working goals, participate effectively in society, and manage or support others in achieving their goals.",,Proficiency level 6 – applies to
+digcomp.level.6.eight_level_description,"At the top of the Advanced level, individuals work confidently on a variety of complex tasks, respond effectively to challenges in changing contexts, and lead or manage complex projects, guiding others on complex tasks if and as required.",,Proficiency level 6 – 8-level description
+digcomp.level.7.four_level_name,Highly advanced,,Proficiency level 7 – 4-level name
+digcomp.level.7.four_level_description,"At highly advanced level, individuals assess, evaluate and resolve highly complex or specialised problems to create new solutions or adapt existing ones, leading and guiding others if and as required.",,Proficiency level 7 – 4-level description
+digcomp.level.7.applies_to,"To support personal, learning and/or working goals, help others to participate effectively in society, lead or support others to achieve complex goals, and/or lead or contribute to improvements in or new solutions for highly complex problems.",,Proficiency level 7 – applies to
+digcomp.level.7.eight_level_description,"At the bottom of the Highly Advanced level, individuals assess highly complex or specialised problems and may contribute to new solutions or adapt existing ones, leading and guiding others if and as required.",,Proficiency level 7 – 8-level description
+digcomp.level.8.four_level_name,Highly advanced,,Proficiency level 8 – 4-level name
+digcomp.level.8.four_level_description,"At highly advanced level, individuals assess, evaluate and resolve highly complex or specialised problems to create new solutions or adapt existing ones, leading and guiding others if and as required.",,Proficiency level 8 – 4-level description
+digcomp.level.8.applies_to,"To support personal, learning and/or working goals, help others to participate effectively in society, lead or support others to achieve complex goals, and/or lead or contribute to improvements in or new solutions for highly complex problems.",,Proficiency level 8 – applies to
+digcomp.level.8.eight_level_description,"At the top of the Highly Advanced level, individuals lead and guide others on the creation of solutions to highly complex or specialised problems.",,Proficiency level 8 – 8-level description

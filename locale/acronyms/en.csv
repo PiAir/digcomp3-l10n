@@ -1,31 +1,31 @@
-location,context,source,target
-digcomp.acronym.agri.expansion,digcomp.acronym.agri.expansion,Directorate-General for Agriculture and Rural Development,
-digcomp.acronym.itu.expansion,digcomp.acronym.itu.expansion,International Telecommunications Union,
-digcomp.acronym.ai.expansion,digcomp.acronym.ai.expansion,Artificial Intelligence,
-digcomp.acronym.jrc.expansion,digcomp.acronym.jrc.expansion,Joint Research Centre,
-digcomp.acronym.ar.expansion,digcomp.acronym.ar.expansion,Augmented Reality,
-digcomp.acronym.json.expansion,digcomp.acronym.json.expansion,JavaScript Object Notation,
-digcomp.acronym.cnect.expansion,digcomp.acronym.cnect.expansion,"Directorate-General for Communications Networks, Content and Technology",
-digcomp.acronym.mr.expansion,digcomp.acronym.mr.expansion,Mixed Reality,
-digcomp.acronym.nqf.expansion,digcomp.acronym.nqf.expansion,National Qualifications Framework,
-digcomp.acronym.digit.expansion,digcomp.acronym.digit.expansion,Directorate-General for Digital Services,
-digcomp.acronym.oecd.expansion,digcomp.acronym.oecd.expansion,Organisation for Economic Cooperation and Development,
-digcomp.acronym.eac.expansion,digcomp.acronym.eac.expansion,"Directorate-General for Education, Youth, Sport and Culture",
-digcomp.acronym.oer.expansion,digcomp.acronym.oer.expansion,Open Educational Resources,
-digcomp.acronym.ec.expansion,digcomp.acronym.ec.expansion,European Commission,
-digcomp.acronym.reform.expansion,digcomp.acronym.reform.expansion,Reform and Investment Task Force,
-digcomp.acronym.empl.expansion,digcomp.acronym.empl.expansion,"Directorate-General for Employment, Social Affairs and Inclusion",
-digcomp.acronym.sj.expansion,digcomp.acronym.sj.expansion,Le Service juridique (Legal service of the European Commission),
-digcomp.acronym.eqf.expansion,digcomp.acronym.eqf.expansion,European Qualifications Framework,
-digcomp.acronym.stem.expansion,digcomp.acronym.stem.expansion,"Science, Technology, Engineering and Mathematics",
-digcomp.acronym.estat.expansion,digcomp.acronym.estat.expansion,Eurostat,
-digcomp.acronym.un.expansion,digcomp.acronym.un.expansion,United Nations,
-digcomp.acronym.eu.expansion,digcomp.acronym.eu.expansion,European Union,
-digcomp.acronym.unesco.expansion,digcomp.acronym.unesco.expansion,"United Nations Educational, Scientific and Cultural Organisation",
-digcomp.acronym.euipo.expansion,digcomp.acronym.euipo.expansion,European Union Intellectual Property Office,
-digcomp.acronym.vet.expansion,digcomp.acronym.vet.expansion,Vocational Education and Training,
-digcomp.acronym.gdpr.expansion,digcomp.acronym.gdpr.expansion,General Data Protection Regulation,
-digcomp.acronym.vr.expansion,digcomp.acronym.vr.expansion,Virtual Reality,
-digcomp.acronym.icils.expansion,digcomp.acronym.icils.expansion,International Computer and Information Literacy Study,
-digcomp.acronym.xr.expansion,digcomp.acronym.xr.expansion,eXtended Reality,
-digcomp.acronym.ict.expansion,digcomp.acronym.ict.expansion,Information and Communications Technologies,
+"location","context","source","target"
+"digcomp.acronym.agri.expansion","digcomp.acronym.agri.expansion","Directorate-General for Agriculture and Rural Development",""
+"digcomp.acronym.itu.expansion","digcomp.acronym.itu.expansion","International Telecommunications Union",""
+"digcomp.acronym.ai.expansion","digcomp.acronym.ai.expansion","Artificial Intelligence",""
+"digcomp.acronym.jrc.expansion","digcomp.acronym.jrc.expansion","Joint Research Centre",""
+"digcomp.acronym.ar.expansion","digcomp.acronym.ar.expansion","Augmented Reality",""
+"digcomp.acronym.json.expansion","digcomp.acronym.json.expansion","JavaScript Object Notation",""
+"digcomp.acronym.cnect.expansion","digcomp.acronym.cnect.expansion","Directorate-General for Communications Networks, Content and Technology",""
+"digcomp.acronym.mr.expansion","digcomp.acronym.mr.expansion","Mixed Reality",""
+"digcomp.acronym.nqf.expansion","digcomp.acronym.nqf.expansion","National Qualifications Framework",""
+"digcomp.acronym.digit.expansion","digcomp.acronym.digit.expansion","Directorate-General for Digital Services",""
+"digcomp.acronym.oecd.expansion","digcomp.acronym.oecd.expansion","Organisation for Economic Cooperation and Development",""
+"digcomp.acronym.eac.expansion","digcomp.acronym.eac.expansion","Directorate-General for Education, Youth, Sport and Culture",""
+"digcomp.acronym.oer.expansion","digcomp.acronym.oer.expansion","Open Educational Resources",""
+"digcomp.acronym.ec.expansion","digcomp.acronym.ec.expansion","European Commission",""
+"digcomp.acronym.reform.expansion","digcomp.acronym.reform.expansion","Reform and Investment Task Force",""
+"digcomp.acronym.empl.expansion","digcomp.acronym.empl.expansion","Directorate-General for Employment, Social Affairs and Inclusion",""
+"digcomp.acronym.sj.expansion","digcomp.acronym.sj.expansion","Le Service juridique (Legal service of the European Commission)",""
+"digcomp.acronym.eqf.expansion","digcomp.acronym.eqf.expansion","European Qualifications Framework",""
+"digcomp.acronym.stem.expansion","digcomp.acronym.stem.expansion","Science, Technology, Engineering and Mathematics",""
+"digcomp.acronym.estat.expansion","digcomp.acronym.estat.expansion","Eurostat",""
+"digcomp.acronym.un.expansion","digcomp.acronym.un.expansion","United Nations",""
+"digcomp.acronym.eu.expansion","digcomp.acronym.eu.expansion","European Union",""
+"digcomp.acronym.unesco.expansion","digcomp.acronym.unesco.expansion","United Nations Educational, Scientific and Cultural Organisation",""
+"digcomp.acronym.euipo.expansion","digcomp.acronym.euipo.expansion","European Union Intellectual Property Office",""
+"digcomp.acronym.vet.expansion","digcomp.acronym.vet.expansion","Vocational Education and Training",""
+"digcomp.acronym.gdpr.expansion","digcomp.acronym.gdpr.expansion","General Data Protection Regulation",""
+"digcomp.acronym.vr.expansion","digcomp.acronym.vr.expansion","Virtual Reality",""
+"digcomp.acronym.icils.expansion","digcomp.acronym.icils.expansion","International Computer and Information Literacy Study",""
+"digcomp.acronym.xr.expansion","digcomp.acronym.xr.expansion","eXtended Reality",""
+"digcomp.acronym.ict.expansion","digcomp.acronym.ict.expansion","Information and Communications Technologies",""
