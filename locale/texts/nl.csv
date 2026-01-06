@@ -2503,10 +2503,11 @@ Aanbevolen literatuur:
 ̊ Internationale Testcommissie en Vereniging van Toetsuitgevers (2022) Richtlijnen voor technologie-gebaseerde beoordeling (versie 1.1) bieden richtlijnen en best practices voor het ontwerp, de uitvoering, de scorebepaling en het gebruik van digitale beoordelingen, met onderwerpen zoals validiteit, eerlijkheid, toegankelijkheid, beveiliging en Privacy. Het bevat een beschrijving van fundamentele meetconcepten; een reeks richtlijnverklaringen; en aanbevelingen voor verdere literatuur.
 
 Bron: eigen uitwerking JRC."
-"doc.annexes/a2-3-learning-outcomes.heading.h2.p1036.3fd9c61e4d","section=annexes/a2-3-learning-outcomes;kind=heading;level=2;p=1036;hash=3fd9c61e4d","A2.3 LEARNING OUTCOMES",""
+"doc.annexes/a2-3-learning-outcomes.heading.h2.p1036.3fd9c61e4d","section=annexes/a2-3-learning-outcomes;kind=heading;level=2;p=1036;hash=3fd9c61e4d","A2.3 LEARNING OUTCOMES","A2.3 LEERRESULTATEN"
 "doc.annexes/a2-3-learning-outcomes.para.p1037-p1037.f62b41bb63","section=annexes/a2-3-learning-outcomes;kind=paragraph_block;span=p1037-p1037;hash=f62b41bb63","Learning outcomes are also available in spreadsheet format and as a linked open dataset in JSON format on the JRC-DigComp web space.","Leerresultaten zijn ook beschikbaar in spreadsheetformaat en als een dataset met gekoppelde open data in JSON-formaat op de JRC-DigComp webruimte."
 "doc.annexes/a2-3-learning-outcomes.table.t033.r000.c000.90907817c6","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=33;r=0;c=0;part=1/1;hash=90907817c6","COMPETENCE AREA 1: INFORMATION SEARCH, EVALUATION AND MANAGEMENT - Competence 1.1 Browsing, searching and filtering information
-Back to Section 3",""
+Back to Section 3","Competentiegebied 1: Informatie zoeken, evalueren en beheren - Competentie 1.1 Bladeren, zoeken en filteren van informatie
+Terug naar Sectie 3"
 "doc.annexes/a2-3-learning-outcomes.table.t033.r000.c001.90907817c6","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=33;r=0;c=1;part=1/1;hash=90907817c6","COMPETENCE AREA 1: INFORMATION SEARCH, EVALUATION AND MANAGEMENT - Competence 1.1 Browsing, searching and filtering information
 Back to Section 3","COMPETENTIEGEBIED 1: INFORMATIEZOEKEN, EVALUATIE EN BEHEER - Competentie 1.1 Bladeren, zoeken en filteren van informatie
 Terug naar Sectie 3"
@@ -4482,31 +4483,65 @@ Advanced	Skill	AI-Implicit
 
 LO4.4.15	Help others to assess their use of digital technologies to identify ways in which to reduce environmental impact.	Advanced	Skill	AI-Implicit
 
-LO4.4.16	Stay informed about the environmental and sustainability implications of digital technologies across a range of sectors.","COMPETENCE AREA 4: VEILIGHEID, WELZIJN EN VERANTWOORD GEBRUIK - Competence 4.4 Milieueffecten van digitale technologieën
-Terug naar sectie 3
-Beheersingsniveau
+LO4.4.16	Stay informed about the environmental and sustainability implications of digital technologies across a range of sectors.","COMPETENTIEGEBIED 4: VEILIGHEID, WELZIJN EN VERANTWOORD GEBRUIK - Competentie 4.4 Milieu-impact van digitale technologieën
+
+Terug naar paragraaf 3
+
+Bekwaamheidsniveau
+
 Kennis, vaardigheid of houding
+
 AI-label
-LO4.4.01	Erken de rol die individuen kunnen spelen om de milieueffecten van digitale technologieën te verminderen.
-LO4.4.02	Erken dat sommige digitale technologieën en infrastructuren, zoals AI-systemen en datacentra, een grote impact hebben op het milieu.
-LO4.4.03	Erken dat de volledige milieueffecten van digitale technologieën niet onmiddellijk duidelijk zijn voor een individuele gebruiker.
-Basis	Houding	AI niet impliciet of expliciet
-Basis	Kennis	AI-expliciet
-Basis	Kennis	AI-impliciet
-LO4.4.04	Erken dat digitale technologieën kunnen bijdragen aan energiebesparing en duurzaamheid.	Basis	Kennis	AI-impliciet
-LO4.4.05	Identificeer eenvoudige strategieën om energie- en dataverbruik van digitale technologieën te verminderen, zoals het minimaliseren van het gebruik van energie-intensieve toepassingen en het niet gebruiken van digitale technologieën wanneer dit niet nodig is.
-LO4.4.06	Pas eenvoudige strategieën toe om het energie- en dataverbruik van digitale technologieën te verminderen, zoals het minimaliseren van het gebruik van energie-intensieve toepassingen en het niet gebruiken van digitale technologieën wanneer dit niet nodig is.	Basis	Kennis	AI-impliciet
-Basis	Vaardigheid	AI-impliciet
-LO4.4.07	Beoordeel voortdurend de milieueffecten van het eigen gebruik van digitale technologieën.	Intermediair	Houding	AI-impliciet
-LO4.4.08	Identificeer de milieueffecten van digitale technologieën die optreden tijdens productie, gebruik en verwijdering.	Intermediair	Kennis	AI-impliciet
-LO4.4.09	Beschrijf de milieueffecten van datacentra en E-commerce.	Intermediair	Kennis	AI-impliciet
-LO4.4.10	Beschrijf voorbeelden van hoe digitale hulpmiddelen een duurzame leefstijl kunnen ondersteunen.	Intermediair	Kennis	AI-impliciet
-LO4.4.11	Definieer de concepten van deeleconomie en circulaire economie, inclusief risico's, beperkingen en mogelijke milieuvoordelen. Pas een variëteit aan strategieën toe om de milieueffecten van het eigen gebruik van digitale technologieën te verminderen.	Intermediair	Kennis	AI niet impliciet of expliciet
-LO4.4.12	en digitale apparaten, zoals geïnformeerde aanschafbeslissingen voor digitale apparaten, apparaatrecycling en -reparatie, milieubewuste e-commercepraktijken en milieubewuste gebruikspatronen.	Intermediair	Vaardigheid	AI-impliciet
-LO4.4.13	Blijf op de hoogte van de milieueffecten van digitale technologieën en van manieren waarop digitale technologieën duurzaamheid kunnen ondersteunen.	Intermediair	Kennis	AI-impliciet
-LO4.4.14	Beoordeel de milieueffecten van digitale technologieën en infrastructuren ter ondersteuning van besluitvorming of belangenbehartiging.	Geavanceerd	Houding	AI-impliciet
-LO4.4.15	Help anderen bij het beoordelen van hun gebruik van digitale technologieën om manieren te identificeren om de milieubelasting te verminderen.	Geavanceerd	Vaardigheid	AI-impliciet
-LO4.4.16	Blijf op de hoogte van de milieu- en duurzaamheidimplicaties van digitale technologieën in verschillende sectoren.	Geavanceerd	Houding	AI-impliciet"
+
+LO4.4.01 Erkennen welke rol individuen kunnen spelen bij het verminderen van de milieu-impact van digitale technologieën.
+
+LO4.4.02 Erkennen dat sommige digitale technologieën en infrastructuren, zoals AI-systemen en datacenters, een grote impact hebben op het milieu.
+
+LO4.4.03 Erkennen dat de volledige milieu-impact van digitale technologieën niet direct duidelijk is voor een individuele gebruiker.
+
+Basishouding AI - Impliciet of Expliciet
+
+Basiskennis AI - Expliciet
+
+Basiskennis AI - Impliciet
+
+LO4.4.04 Erkennen dat digitale technologieën energie-efficiëntie en duurzaamheid kunnen ondersteunen. Basiskennis AI - Impliciet
+
+LO4.4.05 Identificeer eenvoudige strategieën om het energie- en dataverbruik van digitale technologieën te verminderen, zoals het minimaliseren van het gebruik van energie-intensieve applicaties en het niet gebruiken van digitale technologieën wanneer deze niet nodig zijn.
+
+LO4.4.06 Pas eenvoudige strategieën toe om het energie- en dataverbruik van digitale technologieën te verminderen, zoals het minimaliseren van het gebruik van energie-intensieve applicaties en het niet gebruiken van digitale technologieën wanneer deze niet nodig zijn.
+
+Basiskennis AI - Impliciet
+
+Basisvaardigheid AI - Impliciet
+
+LO4.4.07 Beoordeel voortdurend de milieueffecten van het gebruik van digitale technologieën. Gemiddelde houding AI - Impliciet LO4.4.08 Identificeer de milieueffecten van digitale technologieën die optreden tijdens de productie, het gebruik en de verwijdering. Gemiddelde kennis AI - Impliciet LO4.4.09 Beschrijf de milieueffecten van datacenters en e-commerce. Kennisniveau AI - Impliciet
+
+LO4.4.10 Beschrijf voorbeelden van hoe digitale tools duurzaam leven kunnen ondersteunen. Kennisniveau AI - Impliciet
+
+LO4.4.11 Definieer de concepten van de deeleconomie en de circulaire economie, inclusief risico's, beperkingen en potentiële milieuvoordelen.
+
+Pas verschillende strategieën toe om de milieubelasting van het gebruik van digitale technologieën te verminderen.
+
+Kennisniveau AI - Niet Impliciet of Expliciet
+
+LO4.4.12
+
+en digitale apparaten, zoals weloverwogen aankoopbeslissingen voor digitale apparaten, recycling en reparatie van apparaten, milieubewuste e-commercepraktijken en milieubewuste gebruikspatronen.
+
+Vaardigheidsniveau AI - Impliciet
+
+LO4.4.13 Blijf op de hoogte van de milieubelasting van digitale technologieën en manieren waarop digitale technologieën duurzaamheid kunnen ondersteunen.
+
+LO4.4.14 Evalueer de milieubelasting van digitale technologieën en infrastructuren ter ondersteuning van besluitvorming of belangenbehartiging.
+
+Geavanceerde houding AI-impliciet
+
+Geavanceerde vaardigheid AI-impliciet
+
+LO4.4.15 Anderen helpen hun gebruik van digitale technologieën te beoordelen om manieren te vinden om de milieu-impact te verminderen. Geavanceerde vaardigheid AI-impliciet
+
+LO4.4.16 Op de hoogte blijven van de milieu- en duurzaamheidsgevolgen van digitale technologieën in diverse sectoren."
 "doc.annexes/a2-3-learning-outcomes.para.p1306-p1306.10cb09d2b6","section=annexes/a2-3-learning-outcomes;kind=paragraph_block;span=p1306-p1306;hash=10cb09d2b6","Highly advanced	Attitude	AI-Implicit","Zeer gevorderd	Attitude	AI-impliciet"
 "doc.annexes/a2-3-learning-outcomes.table.t059.r000.c000.1f38077b36","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=59;r=0;c=0;part=1/1;hash=1f38077b36","LO4.4.17","LO4.4.17"
 "doc.annexes/a2-3-learning-outcomes.table.t059.r000.c001.5df12f28a4","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=59;r=0;c=1;part=1/1;hash=5df12f28a4","Promote and support actions for environmentally sustainable usage of digital technologies.","Bevorder en ondersteun acties voor milieuvriendelijk gebruik van digitale technologieën."
@@ -4867,12 +4902,12 @@ TERUG NAAR SECTIE 3"
 "doc.annexes/a2-3-learning-outcomes.table.t066.r007.c001.1821721e6a","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=7;c=1;part=1/1;hash=1821721e6a","Engage in ongoing self-development to meet complex or specialised digital competence needs.","Zich bezighouden met voortdurende zelfontwikkeling om te voldoen aan complexe of gespecialiseerde digitale competentiebehoeften."
 "doc.annexes/a2-3-learning-outcomes.table.t066.r007.c002.eccaac1259","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=7;c=2;part=1/1;hash=eccaac1259","Highly advanced","Zeer geavanceerd"
 "doc.annexes/a2-3-learning-outcomes.table.t066.r007.c003.b0d55262d2","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=7;c=3;part=1/1;hash=b0d55262d2","Attitude","Houding"
-"doc.annexes/a2-3-learning-outcomes.table.t066.r007.c004.1739f71d8f","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=7;c=4;part=1/1;hash=1739f71d8f","AI-Implicit",""
+"doc.annexes/a2-3-learning-outcomes.table.t066.r007.c004.1739f71d8f","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=7;c=4;part=1/1;hash=1739f71d8f","AI-Implicit","AI-Impliciet"
 "doc.annexes/a2-3-learning-outcomes.table.t066.r008.c000.55dbff775f","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=8;c=0;part=1/1;hash=55dbff775f","LO5.4.16","LO5.4.16"
 "doc.annexes/a2-3-learning-outcomes.table.t066.r008.c001.cfdb98e5a4","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=8;c=1;part=1/1;hash=cfdb98e5a4","Mentor others in identifying and addressing their digital competence needs.","Anderen mentoren bij het identificeren en aanpakken van hun digitale competentiebehoeften."
 "doc.annexes/a2-3-learning-outcomes.table.t066.r008.c002.eccaac1259","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=8;c=2;part=1/1;hash=eccaac1259","Highly advanced","Zeer geavanceerd"
 "doc.annexes/a2-3-learning-outcomes.table.t066.r008.c003.ec9f630c86","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=8;c=3;part=1/1;hash=ec9f630c86","Skill","Vaardigheid"
-"doc.annexes/a2-3-learning-outcomes.table.t066.r008.c004.1739f71d8f","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=8;c=4;part=1/1;hash=1739f71d8f","AI-Implicit",""
+"doc.annexes/a2-3-learning-outcomes.table.t066.r008.c004.1739f71d8f","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=8;c=4;part=1/1;hash=1739f71d8f","AI-Implicit","AI-Impliciet"
 "doc.annexes/a2-3-learning-outcomes.table.t066.r009.c000.d1f472ddef","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=9;c=0;part=1/1;hash=d1f472ddef","LO5.4.17","LO5.4.17"
 "doc.annexes/a2-3-learning-outcomes.table.t066.r009.c001.73e2483fad","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=9;c=1;part=1/1;hash=73e2483fad","Design learning material to help others to meet complex or specialised digital competence needs.","Leermateriaal ontwerpen om anderen te helpen voldoen aan complexe of gespecialiseerde digitale competentiebehoeften."
 "doc.annexes/a2-3-learning-outcomes.table.t066.r009.c002.eccaac1259","section=annexes/a2-3-learning-outcomes;kind=table_cell;t=66;r=9;c=2;part=1/1;hash=eccaac1259","Highly advanced","Zeer geavanceerd"
@@ -5010,7 +5045,7 @@ Consortium (2022)"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.table.t069.r003.c000.a3971c5dd6","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=table_cell;t=69;r=3;c=0;part=1/1;hash=a3971c5dd6","Sun et al. (2022)","Sun et al. (2022)"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.table.t069.r003.c001.f90d91a0bf","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=table_cell;t=69;r=3;c=1;part=1/1;hash=f90d91a0bf","Wellbeing and Resilience","Welzijn en veerkracht"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.table.t069.r003.c002.91d6d4a8c8","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=table_cell;t=69;r=3;c=2;part=1/1;hash=91d6d4a8c8","A scoping review of the concept of digital resilience, based on 22 articles, which identifies five dimensions of digital resilience (understanding online threats; knowing solutions; learning knowledge and skills; recovering from stress; and moving forward through self-efficacy).
-Considered in the gap analysis.",""
+Considered in the gap analysis.","Een verkennende review van het concept digitale veerkracht, gebaseerd op 22 artikelen, die vijf dimensies van digitale veerkracht identificeert (begrijpen van online dreigingen; kennen van oplossingen; leren van kennis en vaardigheden; herstellen van stress; en vooruitgaan door zelfeffectiviteit). Meegenomen in de gap-analyse."
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.table.t069.r004.c000.3ce6760c70","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=table_cell;t=69;r=4;c=0;part=1/1;hash=3ce6760c70","Borges et al. (2025)","Borges et al. (2025)"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.table.t069.r004.c001.f90d91a0bf","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=table_cell;t=69;r=4;c=1;part=1/1;hash=f90d91a0bf","Wellbeing and Resilience","Welzijn en veerkracht"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.table.t069.r004.c002.3c169180dd","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=table_cell;t=69;r=4;c=2;part=1/1;hash=3c169180dd","Rapid review of the latest available evidence on the impact of digital usage patterns and wellbeing in children and adolescents. Ten studies from diverse contexts showed an association between excessive screen time and risks of sedentary lifestyles, sleep disorders, anxiety, depression, attention difficulties, and low academic performance. Guided treatment of competence 4.3.","Snelonderzoek naar het meest recente bewijs over de impact van digitale gebruikspatronen en welzijn bij kinderen en adolescenten. Tien studies uit diverse contexten toonden een verband aan tussen overmatige schermtijd en risico's op een zittende levensstijl, slaapstoornissen, angst, depressie, aandachtsproblemen en lage academische prestaties. Stuurde de behandeling van competentie 4.3."
@@ -5021,9 +5056,9 @@ Considered in the gap analysis.",""
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.table.t069.r006.c001.fcc618053e","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=table_cell;t=69;r=6;c=1;part=1/1;hash=fcc618053e","Wellbeing and resilience","Welzijn en veerkracht"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.table.t069.r006.c002.b67b11555b","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=table_cell;t=69;r=6;c=2;part=1/1;hash=b67b11555b","Systematic review of screen time and health consequences in children and adolescents which included 43 articles. Excessive screen time was associated with increased risk for obesity and other cardiometabolic risk factors, mental health, unhealthy dietary habits and eating disorders, and problems in development and child–parent relationships. Sleep, physical activity, eyesight, headaches, and the musculoskeletal system were negatively affected as well. However, the effects vary by type of media used and the way types of media were used. Guided treatment of competence 4.3.","Systematische review van schermtijd en gezondheidsgevolgen bij kinderen en jongeren waarbij 43 artikelen werden betrokken. Overmatige schermtijd werd geassocieerd met een verhoogd risico op obesitas en andere cardiometabole risicofactoren, mentale gezondheidsproblemen, ongezonde eetgewoonten en eetstoornissen, en problemen in de ontwikkeling en de ouder-kindrelatie. Ook slaap, fysieke activiteit, gezichtsvermogen, hoofdpijn en het bewegingsapparaat werden negatief beïnvloed. De effecten variëren echter per type media en de manier waarop de media werden gebruikt. Stuurde de behandeling van competentie 4.3."
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d.para.p1371-p1371.f567774b3f","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-1-initial-scoping/phase-1-2-literature-and-policy-review-for-gap-analysis-of-d;kind=paragraph_block;span=p1371-p1371;hash=f567774b3f","Source: Compiled by JRC from existing sources.","Bron: Samengesteld door het JRC op basis van bestaande bronnen."
-"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts.heading.h3.p1374.4194140dc8","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts;kind=heading;level=3;p=1374;hash=4194140dc8","PHASE 2: WORK WITH EXPERTS",""
+"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts.heading.h3.p1374.4194140dc8","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts;kind=heading;level=3;p=1374;hash=4194140dc8","PHASE 2: WORK WITH EXPERTS","FASE 2: WERK MET DESKUNDIGEN"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts.para.p1375-p1375.0a59908cd8","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts;kind=paragraph_block;span=p1375-p1375;hash=0a59908cd8","The objective of Phase 2 (June 2024-June 2025) was to review the proposals emerging from Phase 1 with a diverse set of experts in order to establish materials for DigComp 3.0 for Phase 3 (stakeholder consultation) and Phase 4 (framework validation). Experts were identified such that the combined group represented geographic and stakeholder diversity (i.e. covering stakeholders across Europe from policy, academia, formal and informal education and training, employers, employment intermediaries and industry), as well as a balance by level (European, national, regional) and gender. The work with experts took place in two steps. In Step 1 (June-December 2024), ICF-Europe, supported by Stefano Kluzer, Lidija Kralj and Riina Vuorikari, coordinated two online expert meetings in June and October 2024. Including the aforementioned experts, 29 individuals from 12 EU countries and six European-level organisations and a diversity of sectors (formal education, vocational and adult education, higher education, employment and third sector) took part. In Step 2 (January-June 2025), the JRC worked directly with seven of the 30 experts who participated in Step 1, termed the ‘DigComp expert pool’.","Het doel van Fase 2 (juni 2024 - juni 2025) was om de voorstellen uit Fase 1 te beoordelen met een diverse groep experts om materialen voor DigComp 3.0 vast te stellen voor Fase 3 (stakeholderconsultatie) en Fase 4 (validatie van het raamwerk). Experts werden zodanig geselecteerd dat de gecombineerde groep een geografische en stakeholder-diversiteit vertegenwoordigde (d.w.z. stakeholders uit heel Europa uit beleid, de academische wereld, formeel en informeel onderwijs en training, werkgevers, arbeidsbemiddelaars en de industrie), evenals een balans in niveau (Europees, nationaal, regionaal) en gender. Het werk met de experts vond plaats in twee stappen. In Stap 1 (juni - december 2024) coördineerde ICF-Europe, ondersteund door Stefano Kluzer, Lidija Kralj en Riina Vuorikari, twee online expertbijeenkomsten in juni en oktober 2024. Inclusief de bovengenoemde experts namen 29 personen uit 12 EU-landen en zes organisaties op Europees niveau en een diversiteit aan sectoren (formeel onderwijs, beroeps- en volwasseneneducatie, hoger onderwijs, werkgelegenheid en de derde sector) deel. In Stap 2 (januari - juni 2025) werkte het JRC rechtstreeks met zeven van de 30 experts die aan Stap 1 hadden deelgenomen, de zogenaamde 'DigComp expert pool'."
-"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-1-step-1-june-december-2024.heading.h4.p1377.44c6a587c1","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-1-step-1-june-december-2024;kind=heading;level=4;p=1377;hash=44c6a587c1","PHASE 2.1: STEP 1 (JUNE-DECEMBER 2024)",""
+"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-1-step-1-june-december-2024.heading.h4.p1377.44c6a587c1","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-1-step-1-june-december-2024;kind=heading;level=4;p=1377;hash=44c6a587c1","PHASE 2.1: STEP 1 (JUNE-DECEMBER 2024)","FASE 2.1: STAP 1 (JUNI - DECEMBER 2024)"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-1-step-1-june-december-2024.para.p1379-p1387.4c28f22035","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-1-step-1-june-december-2024;kind=paragraph_block;span=p1379-p1387;hash=4c28f22035","During the first meeting (June 25, 2024), experts reviewed and discussed two internal thematic papers – one on DigComp learning outcomes (by the JRC), which described the development methodology and presented an initial draft of 565 learning outcomes; and the other on emerging trends and their implications for DigComp (by Lidija Kralj), which identified nine emerging trends and their implications for the DigComp competences. In these early discussions, participants strongly favoured the prioritisation of policy concerns such as cybersecurity risk, threats to wellbeing, and threat of misinformation to democratic processes; and noted that data protection concerns are now on a bigger scale. Discussions on the draft learning outcomes identified improvements to the wording, and varying views were expressed on the level of granularity and their distribution across proficiency levels. Experts recommended a stronger focus in the learning outcomes on ethical and human-centric aspects.
 
 Following this, the JRC compiled feedback from the experts to revise and improve the learning outcomes and to draft a set of proposed updates to the existing DigComp 2.2 framework. These proposals consisted of changing the wording of certain competence areas and competences; updating the proficiency levels and focusing on four rather than eight levels; systematically integrating AI; and a proposal for a new element, learning goals, which would sit mid-way between general proficiency level descriptions and learning outcomes.
@@ -5034,7 +5069,17 @@ In the final part of Step 1, ICF-Europe and Riina Vuorikari produced an internal
 
 Ensuring that all relevant digital technological developments and regulations are included.
 
-Clarifying the position and purpose of the ‘learning goals’ in the framework.",""
+Clarifying the position and purpose of the ‘learning goals’ in the framework.","Tijdens de eerste bijeenkomst (25 juni 2024) bespraken experts twee interne thematische documenten: een over de leerdoelen van DigComp (door het JRC), waarin de ontwikkelingsmethodologie werd beschreven en een eerste concept van 565 leerdoelen werd gepresenteerd; en een ander over opkomende trends en hun implicaties voor DigComp (door Lidija Kralj), waarin negen opkomende trends en hun implicaties voor de DigComp-competenties werden geïdentificeerd. In deze eerste discussies gaven de deelnemers sterk de voorkeur aan het prioriteren van beleidsvraagstukken zoals cyberbeveiligingsrisico's, bedreigingen voor het welzijn en de dreiging van desinformatie voor democratische processen; en merkten op dat zorgen over gegevensbescherming nu een grotere rol spelen. De discussies over het concept van de leerdoelen leidden tot verbeteringen in de formulering, en er werden uiteenlopende meningen geuit over de mate van detail en de verdeling ervan over de verschillende competentieniveaus. Experts adviseerden een sterkere focus in de leerdoelen op ethische en mensgerichte aspecten.
+
+Vervolgens verzamelde het JRC de feedback van de experts om de leerdoelen te herzien en te verbeteren en een aantal voorgestelde updates voor het bestaande DigComp 2.2-raamwerk op te stellen. Deze voorstellen bestonden uit het wijzigen van de formulering van bepaalde competentiegebieden en competenties; het actualiseren van de bekwaamheidsniveaus en het focussen op vier in plaats van acht niveaus; het systematisch integreren van AI; en een voorstel voor een nieuw element, leerdoelen, dat zich zou bevinden tussen algemene beschrijvingen van bekwaamheidsniveaus en leerresultaten.
+
+Tijdens de tweede bijeenkomst (2 oktober 2024) hebben experts een intern document van het JRC met voorstellen voor DigComp 3.0 en de herziene leerresultaten beoordeeld. Ze bevestigden de toegevoegde waarde van zowel de leerresultaten (die waren teruggebracht van 565 naar 537) als de leerdoelen, maar gaven aan dat de term 'leerdoelen' mogelijk te veel lijkt op 'leerresultaten'. Experts deden ook een aantal concrete suggesties voor de inhoud van het raamwerk en identificeerden een klein aantal lacunes (zoals de identificatie van bias in e-government- en AI-systemen). Het voorstel voor de bekwaamheidsniveaus werd gesteund, met enkele suggesties ter verbetering van de formulering. Experts adviseerden om recente en opkomende trends op een zodanige manier te integreren dat de implicaties ervan (bijvoorbeeld generatieve AI in contentcreatie) worden erkend, terwijl tegelijkertijd technologie-neutraal en voldoende generiek blijft voor de stabiliteit van het raamwerk. Ze deden ook enkele suggesties om het gebruik van het raamwerk te ondersteunen, met name voor beoordeling, en om gebruikers te helpen de nieuwe complexiteit van het raamwerk te begrijpen.
+
+In het laatste deel van Stap 1 stelden ICF-Europe en Riina Vuorikari een intern samenvattend rapport op met opties en aanbevelingen voor de volgende ontwikkelingsstappen. Aanbevelingen waren onder meer:
+
+Ervoor zorgen dat alle relevante digitale technologische ontwikkelingen en regelgeving worden opgenomen.
+
+De positie en het doel van de 'leerdoelen' in het raamwerk verduidelijken."
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-1-step-1-june-december-2024.para.p1388-p1393.383014b226","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-1-step-1-june-december-2024;kind=paragraph_block;span=p1388-p1393;hash=383014b226","Ensuring that the meaning of ‘Basic’ is aligned to the previous version of DigComp and further clarifying the distinction between the ‘Highly Advanced’ proficiency level and ICT specialists.
 
 Making further refinements to the wording of the competence areas and competences.
@@ -5045,14 +5090,28 @@ Using terminology that is consistent with previous versions.
 
 Providing stakeholders an opportunity to review all draft material.
 
-Developing support or guidance material for DigComp 3.0.",""
-"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-2-step-2-january-june-2025.heading.h4.p1395.c05605aa09","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-2-step-2-january-june-2025;kind=heading;level=4;p=1395;hash=c05605aa09","PHASE 2.2: STEP 2 (JANUARY-JUNE 2025)",""
+Developing support or guidance material for DigComp 3.0.","Ervoor zorgen dat de betekenis van ‘Basis’ overeenkomt met de vorige versie van DigComp en het onderscheid tussen het vaardigheidsniveau ‘Zeer Gevorderd’ en ICT-specialisten verder verduidelijken.
+
+De formulering van de competentiegebieden en competenties verder verfijnen.
+
+Ervoor zorgen dat AI volledig vertegenwoordigd is in het raamwerk (inclusief wat in DigComp 2.2 staat).
+
+Terminologie gebruiken die consistent is met eerdere versies.
+
+Belanghebbenden de mogelijkheid bieden om al het conceptmateriaal te beoordelen.
+
+Ondersteunend of begeleidend materiaal ontwikkelen voor DigComp 3.0."
+"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-2-step-2-january-june-2025.heading.h4.p1395.c05605aa09","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-2-step-2-january-june-2025;kind=heading;level=4;p=1395;hash=c05605aa09","PHASE 2.2: STEP 2 (JANUARY-JUNE 2025)","FASE 2.2: STAP 2 (JANUARI - JUNI 2025)"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-2-step-2-january-june-2025.para.p1396-p1399.a6e670e905","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-2-work-with-experts/phase-2-2-step-2-january-june-2025;kind=paragraph_block;span=p1396-p1399;hash=a6e670e905","In Step 2, the JRC worked with a subset of seven experts who had participated in Step 1 of Phase 2. This phase overlapped with Phases 3 and 4, since the experts were centrally involved in the stakeholder consultation and the validation workshop. One expert, Luis Pereira, was assigned the role of Chair of the DigComp expert pool and ensured that all expert observations and feedback were synthesised effectively. A second, Stefano Kluzer, had specific tasks in Phase 3 as Stakeholder Expert. The other five experts were Ulrike Domany-Funtan, Māra Jākobsone, Lidija Kralj, Attila Rausch and Roland Stürz.
 
 Step 2 was an intensive phase of the development of DigComp 3.0, and included seven meetings between the experts and the JRC. The first task of experts was to make an in-depth review of the draft DigComp 3.0 components, which had been revised by the JRC following the feedback and recommendations from
 
-Step 1 of Phase 2. At this stage, the ‘learning objectives’ of the draft framework were re-shaped to become competence statements at each proficiency level. The experts’ review of this enabled the JRC to prepare the materials for the DigComp 3.0 stakeholder consultation sessions in April 2025. Experts each attended one of the two stakeholder sessions and provided their observations to the Chair, who made a synthesis of them. The Stakeholder Expert collaborated with the JRC to design and co-ordinate the consultation sessions and worked with the JRC to produce an internal stakeholder consultation report that considered all stakeholder and experts’ feedback. Experts also supported the JRC’s preparations for the DigComp 3.0 validation workshop in June 2025 and supported the group discussions. A week after the validation workshop, the experts met with the JRC to discuss and agree, concretely, on how the validation workshop feedback would be reflected in the final version of the framework. During this phase, the draft AI Literacy Framework developed in an OECD-European Commission collaboration (OECD, 2025) was reviewed to ensure that the competences of AI literacy were adequately and appropriately present in DigComp 3.0. This was completed via an internal mapping exercise by Lidija Kralj in collaboration with the JRC, which confirmed that all AI Literacy framework competences were adequately and appropriately covered in the DigComp 3.0 draft material.",""
-"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation.heading.h3.p1401.71613032a2","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation;kind=heading;level=3;p=1401;hash=71613032a2","PHASE 3: STAKEHOLDER CONSULTATION",""
+Step 1 of Phase 2. At this stage, the ‘learning objectives’ of the draft framework were re-shaped to become competence statements at each proficiency level. The experts’ review of this enabled the JRC to prepare the materials for the DigComp 3.0 stakeholder consultation sessions in April 2025. Experts each attended one of the two stakeholder sessions and provided their observations to the Chair, who made a synthesis of them. The Stakeholder Expert collaborated with the JRC to design and co-ordinate the consultation sessions and worked with the JRC to produce an internal stakeholder consultation report that considered all stakeholder and experts’ feedback. Experts also supported the JRC’s preparations for the DigComp 3.0 validation workshop in June 2025 and supported the group discussions. A week after the validation workshop, the experts met with the JRC to discuss and agree, concretely, on how the validation workshop feedback would be reflected in the final version of the framework. During this phase, the draft AI Literacy Framework developed in an OECD-European Commission collaboration (OECD, 2025) was reviewed to ensure that the competences of AI literacy were adequately and appropriately present in DigComp 3.0. This was completed via an internal mapping exercise by Lidija Kralj in collaboration with the JRC, which confirmed that all AI Literacy framework competences were adequately and appropriately covered in the DigComp 3.0 draft material.","In stap 2 werkte het JRC samen met een subgroep van zeven experts die hadden deelgenomen aan stap 1 van fase 2. Deze fase overlapte met fase 3 en 4, aangezien de experts een centrale rol speelden in de raadpleging van belanghebbenden en de validatieworkshop. Eén expert, Luis Pereira, kreeg de rol van voorzitter van de DigComp-expertpool en zorgde ervoor dat alle observaties en feedback van de experts effectief werden verwerkt. Een tweede expert, Stefano Kluzer, had specifieke taken in fase 3 als expert voor belanghebbenden. De andere vijf experts waren Ulrike Domany-Funtan, Māra Jākobsone, Lidija Kralj, Attila Rausch en Roland Stürz.
+
+Stap 2 was een intensieve fase in de ontwikkeling van DigComp 3.0 en omvatte zeven bijeenkomsten tussen de experts en het JRC. De eerste taak van de experts was het grondig beoordelen van de conceptcomponenten van DigComp 3.0, die door het JRC waren herzien naar aanleiding van de feedback en aanbevelingen uit
+
+Stap 1 van Fase 2. In deze fase werden de 'leerdoelen' van het conceptkader omgevormd tot competentieverklaringen op elk vaardigheidsniveau. De beoordeling door de experts stelde het JRC in staat om het materiaal voor de DigComp 3.0-consultatiesessies met belanghebbenden in april 2025 voor te bereiden. Elke expert woonde een van de twee sessies bij en deelde zijn of haar bevindingen met de voorzitter, die deze samenvatte. De expert-belanghebbende werkte samen met het JRC aan het ontwerpen en coördineren van de consultatiesessies en aan het opstellen van een intern consultatierapport waarin alle feedback van belanghebbenden en experts was verwerkt. De experts ondersteunden het JRC ook bij de voorbereidingen voor de DigComp 3.0-validatieworkshop in juni 2025 en bij de groepsdiscussies. Een week na de validatieworkshop kwamen de experts bijeen met het JRC om concreet te bespreken en overeen te komen hoe de feedback van de validatieworkshop in de definitieve versie van het raamwerk zou worden verwerkt. Tijdens deze fase werd het concept AI Literacy Framework, ontwikkeld in een samenwerking tussen de OESO en de Europese Commissie (OESO, 2025), herzien om te garanderen dat de competenties op het gebied van AI-geletterdheid adequaat en op passende wijze in DigComp 3.0 waren opgenomen. Dit werd gedaan door middel van een interne inventarisatie door Lidija Kralj in samenwerking met het JRC, die bevestigde dat alle competenties van het AI Literacy Framework adequaat en op passende wijze in het conceptmateriaal van DigComp 3.0 waren opgenomen."
+"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation.heading.h3.p1401.71613032a2","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation;kind=heading;level=3;p=1401;hash=71613032a2","PHASE 3: STAKEHOLDER CONSULTATION","FASE 3: RAADPLEGING VAN BELANGHEBBENDEN"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation.para.p1402-p1409.43100b5e61","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation;kind=paragraph_block;span=p1402-p1409;hash=43100b5e61","The success of DigComp relies on meaningful engagement with a broad range of stakeholders, as well as ensuring that their perspectives and feedback are incorporated into the published version. Phase 3, which ran from March-May 2025, entailed a broad and structured consultation process. In addition to the stakeholder consultation described here, the JRC liaised with various European Commission Policy Directorates to ensure policy alignment of DigComp 3.0. The Policy Directorates involved are listed in the Acknowledgements.
 
 AIMS, FORMAT AND PARTICIPANTS
@@ -5065,7 +5124,19 @@ An optional online feedback survey structured on the same themes of the online c
 
 An optional in-depth review of the competence-specific proficiency levels, the proposed way of conveying AI for each competence, and the learning outcomes, again sent to all registered participants, and open until April 30.
 
-In total, 527 stakeholders registered to take part in the consultation. Of these, approximately 260 attended one of the online stakeholder consultation sessions in April. A total of 174 stakeholders submitted a response to the feedback survey, and 40 completed the in-depth review.",""
+In total, 527 stakeholders registered to take part in the consultation. Of these, approximately 260 attended one of the online stakeholder consultation sessions in April. A total of 174 stakeholders submitted a response to the feedback survey, and 40 completed the in-depth review.","Het succes van DigComp is afhankelijk van zinvolle betrokkenheid van een breed scala aan stakeholders, en van het waarborgen dat hun perspectieven en feedback worden verwerkt in de gepubliceerde versie. Fase 3, die liep van maart tot en met mei 2025, omvatte een breed en gestructureerd consultatieproces. Naast de hier beschreven raadpleging van stakeholders, heeft het JRC contact onderhouden met verschillende beleidsdirecties van de Europese Commissie om de beleidsafstemming van DigComp 3.0 te waarborgen. De betrokken beleidsdirecties worden vermeld in de dankbetuigingen.
+
+DOELSTELLINGEN, FORMAAT EN DEELNEMERS
+
+In april 2025 werd een extern consultatieproces met stakeholders uitgevoerd, gericht op het bereiken van een breed en evenwichtig scala aan stakeholders (per sector, land en DigComp-ervaring), en ontworpen om efficiënte en gedetailleerde feedback van stakeholders te verzamelen en te synthetiseren. Het consultatieproces was opgedeeld in drie onderdelen:
+
+Twee online consultatiesessies van 90 minuten, die plaatsvonden op 10 en 11 april. Een kort achtergronddocument met de voorgestelde wijzigingen voor DigComp 3.0 werd vooraf naar geregistreerde deelnemers verzonden. Elke online sessie had dezelfde opzet en behandelde de onderbouwing, prioriteiten en voorgestelde wijzigingen voor DigComp 3.0; en vroeg belanghebbenden om feedback te geven via open en gesloten pollvragen en de chatfunctie van de bijeenkomst. De leden van de DigComp-expertpool woonden elk een van de twee sessies bij en deelden hun bevindingen met de voorzitter, die een samenvatting aan het JRC verstrekte. De DigComp-expert voor belanghebbenden ontwierp en coördineerde de consultatie met de belanghebbenden in samenwerking met het JRC en modereerde de sessies.
+
+Een optionele online feedbackenquête, gestructureerd rond dezelfde thema's als de online consultatie, bestaande uit zowel open (tekst) als gesloten (numerieke) antwoorden. Een link naar deze enquête werd samen met het achtergronddocument naar alle geregistreerde deelnemers (inclusief degenen die de online sessies niet konden bijwonen) gestuurd en kon tot 30 april worden ingevuld.
+
+Een optionele, diepgaande beoordeling van de competentiespecifieke vaardigheidsniveaus, de voorgestelde manier om AI voor elke competentie over te brengen en de leerresultaten werd eveneens naar alle geregistreerde deelnemers gestuurd en kon tot 30 april worden ingevuld.
+
+In totaal hebben 527 belanghebbenden zich aangemeld voor de consultatie. Hiervan hebben ongeveer 260 een van de online consultatiesessies in april bijgewoond. In totaal hebben 174 belanghebbenden de feedbackenquête ingevuld en 40 hebben de diepgaande beoordeling voltooid."
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation.para.p1411-p1427.7ffbfe964b","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation;kind=paragraph_block;span=p1411-p1427;hash=7ffbfe964b","Participants from all Member States except for Luxembourg registered to participate, and stakeholder feedback was received by 24 of 27 Member States (i.e. except Cyprus, Luxembourg and Malta). One-seventh (14%) of registered stakeholders were from outside the EU (either from another European country, 6%, or a non-European one, 8%). Participation across countries was uneven: proportionally more stakeholders from Belgium, Italy and Spain registered to take part. However, stakeholders in Italy and Spain have already made extensive use of DigComp, so high participation was expected. Also, 63% of registered stakeholders in Belgium represented organisations at international or European levels.
 
 About two-fifths of stakeholders represented national perspectives (37%), while 44% were working at European (22%) or international (22%) levels. The remainder were working at regional (11%) or local levels (8%).
@@ -5080,7 +5151,21 @@ Below is a summary of the key findings from the stakeholder feedback analysis. T
 
 Overall, stakeholder feedback provided strong support for the identified priority themes, the approach to AI competence, the proficiency levels, and the JRC’s plans for publication. There was also strong support for the new learning outcomes – with 90% of stakeholders agreeing that they added value.
 
-Priority themes: Stakeholders expressed strong support for the five priority themes. Some other themes consistently emerged: (Below-) Basic skills, ethics, inclusion, and the action-oriented (as opposed to passive) wording. These other themes were further considered Phase 4.",""
+Priority themes: Stakeholders expressed strong support for the five priority themes. Some other themes consistently emerged: (Below-) Basic skills, ethics, inclusion, and the action-oriented (as opposed to passive) wording. These other themes were further considered Phase 4.","Deelnemers uit alle lidstaten, met uitzondering van Luxemburg, hebben zich aangemeld en er is feedback van belanghebbenden ontvangen uit 24 van de 27 lidstaten (dus met uitzondering van Cyprus, Luxemburg en Malta). Een zevende (14%) van de geregistreerde belanghebbenden kwam van buiten de EU (6% uit een ander Europees land en 8% uit een niet-Europees land). De deelname was ongelijk verdeeld over de landen: naar verhouding hadden meer belanghebbenden uit België, Italië en Spanje zich aangemeld. Belanghebbenden in Italië en Spanje hebben echter al veelvuldig gebruikgemaakt van DigComp, dus een hoge deelname werd verwacht. Bovendien vertegenwoordigde 63% van de geregistreerde belanghebbenden in België organisaties op internationaal of Europees niveau.
+
+Ongeveer twee vijfde van de belanghebbenden vertegenwoordigde een nationaal perspectief (37%), terwijl 44% op Europees (22%) of internationaal (22%) niveau werkte. De rest werkte op regionaal (11%) of lokaal niveau (8%).
+
+De vier meest voorkomende groepen belanghebbenden waren leiders in het hoger onderwijs, docenten en onderzoekers (25%); Overheidsinstanties (inclusief openbaar bestuur en publieke organisaties) (18%); organisaties uit de derde sector (12%) en leiders en docenten in het primair en voortgezet onderwijs (11%). Aanbieders van volwassenen- en levenslang leren (9%), organisaties uit het bedrijfsleven (9%) en leiders en docenten in het beroepsonderwijs (5%) vertegenwoordigden nog eens 23% van alle geregistreerde belanghebbenden. Publieke en private arbeidsbemiddelingsdiensten (2%) en aanbieders van vaardigheidscertificering (2,5%) kwamen minder vaak voor, en de resterende 7% van de respondenten classificeerde zichzelf als 'ander type belanghebbende'.
+
+De meeste belanghebbenden (70%) hadden DigComp al eerder gebruikt en 15% had deelgenomen aan de DigComp 2.2-update.
+
+FEEDBACK
+
+Hieronder vindt u een samenvatting van de belangrijkste bevindingen uit de analyse van de feedback van belanghebbenden. De gedetailleerde feedback, met name die uit de enquête en de diepgaande evaluatie, werd grondig geanalyseerd door de DigComp-expert en het JRC en verwerkt in de herzieningen van het raamwerk voor Fase 4.
+
+Over het algemeen gaf de feedback van de stakeholders sterke steun aan de geïdentificeerde prioriteitsthema's, de aanpak van AI-competentie, de competentieniveaus en de publicatieplannen van het JRC. Er was ook sterke steun voor de nieuwe leerresultaten – 90% van de stakeholders was het ermee eens dat deze waarde toevoegden.
+
+Prioriteitsthema's: Stakeholders gaven aan de vijf prioriteitsthema's sterk te steunen. Enkele andere thema's kwamen consistent naar voren: (Onder) basisvaardigheden, ethiek, inclusie en de actiegerichte (in plaats van passieve) formulering. Deze andere thema's werden verder meegenomen in Fase 4."
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation.para.p1429-p1437.bb1ca25a05","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-3-stakeholder-consultation;kind=paragraph_block;span=p1429-p1437;hash=bb1ca25a05","AI competence in DigComp 3.0: The integrated, transversal approach to AI competence was, in general, strongly supported. However, a minority suggested that AI competence should be considered as a separate area. Given the importance of maintaining continuity between DigComp 2.2 and DigComp 3.0, having a separate ‘module’ on AI competence was not seen as a practical option. Stakeholders suggested that the presentation and illustration of AI in DigComp
 
 3.0 needed to be refined. This issue was considered in detail in Phase 4.
@@ -5093,8 +5178,20 @@ There was low interest in a hardcopy version of the framework. Discussions at th
 
 Tailoring and adapting and maintaining relevance: External stakeholders’ commentary frequently touched on the need to tailor and adapt the framework. For example, there were requests for child-friendly and educator versions of the framework. While it would not be feasible for the JRC to make multiple versions of DigComp 3.0 tailored to specific groups, the availability of the framework in
 
-multiple formats enables its tailoring and adaptation to a wide variety of purposes.",""
-"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-4-framework-validation.heading.h3.p1439.8110d356b9","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-4-framework-validation;kind=heading;level=3;p=1439;hash=8110d356b9","PHASE 4: FRAMEWORK VALIDATION",""
+multiple formats enables its tailoring and adaptation to a wide variety of purposes.","AI-competentie in DigComp 3.0: De geïntegreerde, transversale aanpak van AI-competentie werd over het algemeen sterk ondersteund. Een minderheid opperde echter dat AI-competentie als een apart gebied moest worden beschouwd. Gezien het belang van het behoud van continuïteit tussen DigComp 2.2 en DigComp 3.0, werd een aparte module over AI-competentie niet als een praktische optie gezien. Stakeholders gaven aan dat de presentatie en illustratie van AI in DigComp
+
+3.0 verfijnd moest worden. Dit punt werd in fase 4 uitgebreid besproken.
+
+Bekwaamheidsniveaus: De voorgestelde nieuwe bekwaamheidsniveaus werden over het algemeen goed ondersteund. De voorgestelde verschuiving van 8 naar 4 niveaus zorgde echter voor problemen voor stakeholders die momenteel de 8-niveausbenadering hanteren. Daarnaast hanteerden sommige stakeholders een 6-niveausinterpretatie van de bekwaamheidsniveaus. Een voorstel voor een achterwaartse mapping van DigComp 3.0 naar de acht niveaus in eerdere iteraties van het raamwerk werd door het JRC opgesteld naar aanleiding van feedback van belanghebbenden en werd in fase 4 besproken.
+
+Ondersteuning bij de implementatie: Een grote meerderheid van de belanghebbenden beschouwde de volgende ondersteuning bij de implementatie als zeer nuttig of essentieel: een pdf-versie van het raamwerk; een verklarende woordenlijst met termen en definities; een machineleesbare aanvulling op de tabelinhoud; updates van de DigComp-webomgeving (momenteel beheerd door het JRC); toegankelijkheid van het raamwerk; en handleidingen.
+
+Er was weinig interesse in een gedrukte versie van het raamwerk. Discussies tijdens de validatieworkshop (fase 4) bevestigden deze mening.
+
+Aanpassing en relevantie behouden: Externe belanghebbenden gaven in hun commentaar vaak aan dat het raamwerk aangepast moest worden. Zo waren er bijvoorbeeld verzoeken om kindvriendelijke en educatieve versies van het raamwerk. Hoewel het voor het JRC niet haalbaar zou zijn om meerdere versies van DigComp 3.0 te maken die zijn afgestemd op specifieke groepen, maakt de beschikbaarheid van het raamwerk in
+
+meerdere formaten het mogelijk om het aan te passen aan een breed scala aan doeleinden."
+"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-4-framework-validation.heading.h3.p1439.8110d356b9","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-4-framework-validation;kind=heading;level=3;p=1439;hash=8110d356b9","PHASE 4: FRAMEWORK VALIDATION","FASE 4: VALIDATIE VAN HET KADER"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-4-framework-validation.para.p1440-p1451.93b946fe21","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/phase-4-framework-validation;kind=paragraph_block;span=p1440-p1451;hash=93b946fe21","Phase 4 ran from May – September 2025. The main activity of Phase 4 consisted of a face-to-face validation workshop in Seville, Spain on June 17 (afternoon) and June 18 (all day). The objectives of the workshop were to achieve broad consensus on the draft DigComp 3.0 framework, and to identify final steps that were needed prior to its publication.
 
 AIMS, FORMAT AND PARTICIPANTS
@@ -5109,10 +5206,24 @@ Session 1: Participants discussed the proficiency levels; validated the proposed
 
 Session 2: Participants discussed the proposed approach to the integration of AI and identified priorities for making the framework clear and usable. Regarding the integration of AI, this included a discussion of the proposal for distinguishing between AI-explicit [AI-E] and AI-implicit [AI-I] competence statements and learning outcomes, and the gathering of suggestions from participants on ways in which to make the published framework clear and easy to use, given the complexities introduced by the changes and the addition of the learning outcomes.
 
-In the afternoon of June 18, working groups reported in plenary on the discussions. Representatives from the Policy Directorates and the DigComp expert pool also provided comments in plenary.",""
-"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/post-validation-activities.heading.h3.p1453.fd9085dc50","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/post-validation-activities;kind=heading;level=3;p=1453;hash=fd9085dc50","POST-VALIDATION ACTIVITIES",""
+In the afternoon of June 18, working groups reported in plenary on the discussions. Representatives from the Policy Directorates and the DigComp expert pool also provided comments in plenary.","Fase 4 liep van mei tot en met september 2025. De belangrijkste activiteit van Fase 4 bestond uit een fysieke validatieworkshop in Sevilla, Spanje, op 17 juni (middag) en 18 juni (hele dag). De doelstellingen van de workshop waren het bereiken van brede consensus over het concept DigComp 3.0-raamwerk en het identificeren van de laatste stappen die nodig waren vóór publicatie.
+
+DOELSTELLINGEN, FORMAT EN DEELNEMERS
+
+De workshop werd bijgewoond door 34 externe deelnemers uit 18 landen (17 EU-landen en de VS) uit diverse sectoren (beleidsvorming, werkgeversvertegenwoordigers, volwassenenonderwijs en beroepsonderwijs, verplicht onderwijs en de academische wereld/onderzoek); en 12 interne deelnemers (Europese Commissie), van het JRC, DG EMPL, DG CNECT en SG REFORM. Net als de experts die betrokken waren bij Fase 1, werden de deelnemers aan de validatieworkshop geselecteerd op basis van geografische en stakeholderdiversiteit, evenals een evenwichtige vertegenwoordiging van mannen en vrouwen en Europese, nationale en regionale perspectieven. De deelnemers bestonden uit zowel experts die hadden deelgenomen aan Fase 2 als personen die niet bij het proces betrokken waren geweest en minder bekend waren met DigComp.
+
+Op de middag van 17 juni kregen de deelnemers een overzicht van de voorstellen voor de DigComp 3.0-update en een beschrijving van hoe de feedback van stakeholders was verwerkt.
+
+Op de ochtend van 18 juni verdeelden de deelnemers zich in vier werkgroepen en namen deel aan twee discussies van 90 minuten, als volgt:
+
+Sessie 1: De deelnemers bespraken de competentieniveaus; valideerden de voorgestelde updates van de competentiegebieden en competenties; en beoordeelden de voorgestelde leerresultaten voor vier van de 21 competenties (1.2, 2.3, 3.4 en 4.3). Deze vier competenties werden geselecteerd omdat ze vrij complex waren of aanzienlijk waren bijgewerkt ten opzichte van DigComp 2.2.
+
+Sessie 2: De deelnemers bespraken de voorgestelde aanpak voor de integratie van AI en identificeerden prioriteiten om het raamwerk duidelijk en bruikbaar te maken. Wat de integratie van AI betreft, werd onder andere het voorstel besproken om onderscheid te maken tussen AI-expliciete [AI-E] en AI-impliciete [AI-I] competentieverklaringen en leerresultaten. Ook werden suggesties van deelnemers verzameld over manieren om het gepubliceerde raamwerk duidelijk en gebruiksvriendelijk te maken, gezien de complexiteit die de wijzigingen en de toevoeging van de leerresultaten met zich meebrengen.
+
+Op de middag van 18 juni brachten de werkgroepen in de plenaire vergadering verslag uit over de besprekingen. Vertegenwoordigers van de beleidsdirecties en de DigComp-expertpool gaven eveneens commentaar in de plenaire vergadering."
+"doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/post-validation-activities.heading.h3.p1453.fd9085dc50","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/post-validation-activities;kind=heading;level=3;p=1453;hash=fd9085dc50","POST-VALIDATION ACTIVITIES","ACTIVITEITEN NA DE VALIDATIE"
 "doc.annexes/annex-3-phases-in-the-development-of-digcomp-3-0/post-validation-activities.para.p1455-p1455.3b15f9139a","section=annexes/annex-3-phases-in-the-development-of-digcomp-3-0/post-validation-activities;kind=paragraph_block;span=p1455-p1455;hash=3b15f9139a","A week after the validation workshop, the JRC team met with the DigComp expert pool to discuss observations from the DigComp 3.0 validation workshop and to agree on priorities for finalising the framework. Feedback and observations were provided by the DigComp expert pool following guidance provided by the JRC, and synthesised by the expert pool Chair. In the feedback, experts were positive about the diversity of perspectives brought by the participants and praised the level of engagement and quality and depth of discussion. Specific suggestions were systematically categorised by the main themes of competence areas and competences; proficiency levels; learning outcomes; integration of AI competence; and communication/dissemination aspects. Under each theme, specific actions to address the feedback were identified and implemented during the finalisation of DigComp 3.0.","Een week na de validatieworkshop kwam het JRC-team bijeen met de DigComp-expertpool om de observaties van de DigComp 3.0-validatieworkshop te bespreken en prioriteiten af te spreken voor de afronding van het raamwerk. Feedback en observaties werden door de DigComp-expertpool verstrekt volgens de richtlijnen van het JRC en samengevat door de voorzitter van de expertpool. In hun feedback waren de experts positief over de diversiteit aan perspectieven van de deelnemers en prezen ze de mate van betrokkenheid en de kwaliteit en diepgang van de discussies. Specifieke suggesties werden systematisch gecategoriseerd volgens de hoofdthema's: competentiegebieden en competenties; beheersingsniveaus; leerresultaten; integratie van AI-competentie; en communicatie-/verspreidingsaspecten. Onder elk thema werden specifieke acties ter behandeling van de feedback geïdentificeerd en uitgevoerd tijdens de afronding van DigComp 3.0."
-"doc.contact-the-eu.heading.h1.p1457.a98ee26da2","section=contact-the-eu;kind=heading;level=1;p=1457;hash=a98ee26da2","Contact the EU",""
+"doc.contact-the-eu.heading.h1.p1457.a98ee26da2","section=contact-the-eu;kind=heading;level=1;p=1457;hash=a98ee26da2","Contact the EU","Neem contact op met de EU"
 "doc.contact-the-eu.para.p1459-p1476.a03839a976","section=contact-the-eu;kind=paragraph_block;span=p1459-p1476;hash=a03839a976","Getting in touch with the EU
 
 In person
@@ -5145,4 +5256,36 @@ For access to legal information from the EU, including all EU law since 1951 in 
 
 EU open data
 
-The portal data.europa.eu provides access to open datasets from the EU institutions, bodies and agencies. These can be downloaded and reused for free, for both commercial and non-commercial purposes. The portal also provides access to a wealth of datasets from European countries.",""
+The portal data.europa.eu provides access to open datasets from the EU institutions, bodies and agencies. These can be downloaded and reused for free, for both commercial and non-commercial purposes. The portal also provides access to a wealth of datasets from European countries.","Contact opnemen met de EU
+
+Persoonlijk
+
+In de hele Europese Unie zijn honderden Europe Direct-centra. U kunt het adres van het dichtstbijzijnde centrum online vinden (european-union.europa.eu/contact-eu/meet-us_en).
+
+Telefonisch of schriftelijk
+
+Europe Direct is een service die uw vragen over de Europese Unie beantwoordt. U kunt contact opnemen met deze service:
+
+gratis: 00 800 6 7 8 9 10 11 (sommige providers kunnen kosten in rekening brengen voor deze gesprekken),
+
+op het volgende standaardnummer: +32 22999696,
+
+via het volgende formulier: european-union.europa.eu/contact-eu/write-us_en.
+
+Informatie over de EU vinden
+
+Online
+
+Informatie over de Europese Unie in alle officiële talen van de EU is beschikbaar op de website van Europe Direct (european-union.europa.eu).
+
+EU-publicaties
+
+U kunt EU-publicaties bekijken of bestellen op op.europa.eu/en/publications. Meerdere exemplaren van gratis publicaties kunt u verkrijgen door contact op te nemen met Europe Direct of uw lokale documentatiecentrum (european-union.europa.eu/contact-eu/meet-us_en).
+
+EU-wetgeving en aanverwante documenten
+
+Voor toegang tot juridische informatie van de EU, inclusief alle EU-wetgeving sinds 1951 in alle officiële taalversies, kunt u terecht op EUR-Lex (eur-lex.europa.eu).
+
+Open data van de EU
+
+Het portaal data.europa.eu biedt toegang tot open datasets van de EU-instellingen, -organen en -agentschappen. Deze kunnen gratis worden gedownload en hergebruikt, zowel voor commerciële als niet-commerciële doeleinden. Het portaal biedt ook toegang tot een schat aan datasets van Europese landen."
