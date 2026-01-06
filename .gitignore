@@ -1,2 +1,5 @@
 .DS_Store
 Thumbs.db
+locale.schoon
+locale.zip
+extract_texts_from_docx.py
