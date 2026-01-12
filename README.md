@@ -36,6 +36,8 @@ Components:
 - acronyms
 - texts (empty; use step3 to fill)
 
+# TODO: update process (20260112)
+
 ## Terminologie (EN -> NL)
 - “Competence area” → “Competentiegebied”
 - “Competence” → “Competentie”
