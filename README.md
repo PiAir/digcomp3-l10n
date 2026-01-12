@@ -3,7 +3,7 @@
 ## Setup first
 - ```python -m venv venv```
 - ```venv\Scripts\activate.bat```
-- ```pip install pandas openpyxl python-docx```
+- ```pip install pandas openpyxl python-docx pymupdf```
 
 ## Generate
 
