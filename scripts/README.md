@@ -1,3 +1,6 @@
+# TODO: update process (20260112)
+
+
 # 1) Nieuwe digcomp3-l10n repo aanmaken uit XLSX + JSON-LD + DOCX
 
 ## A. Basis repo + normatieve CSV’s (XLSX → locale/*)
