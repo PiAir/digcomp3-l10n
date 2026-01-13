@@ -50,3 +50,13 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
 - “Competence” → “Competentie”
 - “Proficiency levels” → “Beheersingsniveaus”
 - “Learning outcomes” → “Leerresultaten”
+
+## Disclaimer / Disclosure
+This repository contains scripts and files related to the creation of the Dutch translation of the DigComp 3.0 European Digital Competence Framework, Fith Edition.
+Original source: Cosgrove, J. and Cachia, R., DigComp 3.0: European Digital Competence Framework - Fifth Edition, Publications Office of the European Union, Luxembourg, 2025, [https://data.europa.eu/doi/10.2760/0001149](https://data.europa.eu/doi/10.2760/0001149), JRC144121.
+The European Commission is not responsible for the modified, adapted or translated versions available through this repository.
+The European Commission allows the translation of DigComp 3.0 into other languages, but not endorse the modified, adapted or translated version.
+The reuse policy of the European Commission documents is implemented by the Commission Decision 2011/833/EU of 12 December 2011 on the reuse of Commission documents (OJ L 330, 14.12.2011, p. 39). Unless otherwise noted, the reuse of this document is authorised under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence (https://creativecommons.org/licenses/by/4.0/). 
+This translation is done under the auspices of the [iXperium Centre of Expertise Teaching and Learning](https://ixperium.nl/)
+
+No changes have been made to the original competence areas, competences, proficiency levels, learning outcomes that are part of DigComp other than a translation from English to Dutch while keeping the intention and meaning of the wording as close as possible to the original.
