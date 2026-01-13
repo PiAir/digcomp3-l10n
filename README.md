@@ -3,7 +3,7 @@
 ## Setup first
 - ```python -m venv venv```
 - ```venv\Scripts\activate.bat```
-- ```pip install pandas openpyxl python-docx```
+- ```pip install pandas openpyxl python-docx pymupdf```
 
 ## Generate basic repository
 
@@ -44,6 +44,8 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
 - scripts
 - sources
 
+
+# TODO: update process (20260112)
 
 ## Terminologie (EN -> NL)
 - “Competence area” → “Competentiegebied”
