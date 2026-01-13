@@ -58,7 +58,8 @@ Original source: Cosgrove, J. and Cachia, R., DigComp 3.0: European Digital Comp
 
 The European Commission is not responsible for the modified, adapted or translated versions available through this repository.
 The European Commission allows the translation of DigComp 3.0 into other languages, but not endorse the modified, adapted or translated version.
-The reuse policy of the European Commission documents is implemented by the Commission Decision 2011/833/EU of 12 December 2011 on the reuse of Commission documents (OJ L 330, 14.12.2011, p. 39). Unless otherwise noted, the reuse of this document is authorised under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence (https://creativecommons.org/licenses/by/4.0/). 
-This translation is done under the auspices of the [iXperium Centre of Expertise Teaching and Learning](https://ixperium.nl/)
+The reuse policy of the European Commission documents is implemented by the Commission Decision 2011/833/EU of 12 December 2011 on the reuse of Commission documents (OJ L 330, 14.12.2011, p. 39). Unless otherwise noted, the reuse of the original DigComp document is authorised under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence (https://creativecommons.org/licenses/by/4.0/). 
+
+The translation into Dutch is done under the auspices of the [iXperium Centre of Expertise Teaching and Learning](https://ixperium.nl/)
 
 No changes have been made to the original competence areas, competences, proficiency levels, learning outcomes that are part of DigComp other than a translation from English to Dutch while keeping the intention and meaning of the wording as close as possible to the original.
