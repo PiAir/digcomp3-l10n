@@ -40,7 +40,7 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
 ## Repository downloaded:
 - images
 - locale
--- acronyms
+    - acronyms
     - core-frameowk
     - glossary
     - levels
