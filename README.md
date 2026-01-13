@@ -45,8 +45,6 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
 - sources
 
 
-# TODO: update process (20260112)
-
 ## Terminologie (EN -> NL)
 - “Competence area” → “Competentiegebied”
 - “Competence” → “Competentie”
