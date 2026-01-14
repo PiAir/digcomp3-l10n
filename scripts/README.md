@@ -32,6 +32,14 @@ For example:
 python .\scripts\build_digcomp_nl_artifacts_v3.py --repo-root . --out-dir .\nl --xlsx --jsonld
 ```
 
+## Extract hyperlinks and footers from source pdf
+Use: ```.\scripts\extract_footer_hyperlinks.py```
+
+For example:
+```
+python .\scripts\extract_footer_hyperlinks.py --input "JRC144121_01.pdf" --output ".\tables"
+```
+
 ## Create table documents
 Use: ```.\scripts\extract_tables.py```
 For example:
