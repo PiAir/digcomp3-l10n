@@ -49,3 +49,4 @@ python .\scripts\extract_tables.py acronyms --lang en --output acronyms_en.docx
 
 choices=['acronyms', 'glossary', 'digcomp3', 'table2', 'outcomes']
 ```
+Note: you need the translated JSON-LD for some of the conversions to work, so do that first.
