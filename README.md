@@ -55,8 +55,8 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
 ## Terminologie (EN -> NL)
 - “Competence area” → “Competentiegebied”
 - “Competence” → “Competentie”
-- “Proficiency levels” → “Beheersingsniveaus”
-- “Learning outcomes” → “Leerresultaten”
+- “Proficiency levels” → “Beheersingsniveaus” 
+- “Learning outcomes” → “Leerresultaten” (not Leeruitkomsten)
 
 ## Disclaimer / Disclosure
 This repository contains scripts and files related to the creation of the Dutch translation of the DigComp 3.0 European Digital Competence Framework, Fith Edition.
