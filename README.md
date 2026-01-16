@@ -55,6 +55,12 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
 - sources
 
 
+## Process of input / output
+The flowcharts give an overview of the process involved in translating the DigComp 3.0, split up in the input/ingest process:
+![input](https://github.com/PiAir/digcomp3-l10n/blob/main/images/input.png "Steps taken to ingest texts")
+and the output process for the converted/translated texts:
+![output](https://github.com/PiAir/digcomp3-l10n/blob/main/images/output.png "Steps taken to export translated texts")
+
 ## Terminologie (EN -> NL)
 - “Competence area” → “Competentiegebied”
 - “Competence” → “Competentie”
