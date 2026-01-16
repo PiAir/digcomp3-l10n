@@ -1,4 +1,7 @@
-# digcomp3-l10n (Weblate-ready)
+# Digcomp3-l10n Weblate repository
+This repository is used to host resources used to translate DigComp 3.0 from English to Dutch.
+Besides a number of Python scripts, vibecoded using Gemma 3, the webbase tool [Weblate](https://weblate.org/en/) is used to translate (in part using OpenAI and GPT5.2, the rest is plain old human check-check-double-check of the 36k+ words!) the texts.
+Re-use anything in this repository if you like, but remember that this currently (January 2026) is still an active translation, so thing may still change (a lot). The translation is expected to be finished March 2026, we'll then provide a stable version via the website and a release her on the repository.
 
 ## Setup first
 - ```python -m venv venv```
