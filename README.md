@@ -61,6 +61,9 @@ The flowcharts give an overview of the process involved in translating the DigCo
 and the output process for the converted/translated texts:
 ![output](https://github.com/PiAir/digcomp3-l10n/blob/main/images/output.png "Steps taken to export translated texts")
 
+## TODO
+- Add all the errata from [the JRC errata list](https://joint-research-centre.ec.europa.eu/projects-and-activities/education-and-training/digital-transformation-education/digital-competence-framework-digcomp/digcomp-30-resources/digcomp-30-errata_en) to the issues list for this repository (and fix them)
+ 
 ## Terminologie (EN -> NL)
 - “Competence area” → “Competentiegebied”
 - “Competence” → “Competentie”
