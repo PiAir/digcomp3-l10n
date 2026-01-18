@@ -55,14 +55,12 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
 - sources
 
 
-## Process of input / output
-The flowcharts give an overview of the process involved in translating the DigComp 3.0, split up in the input/ingest process:
-![input](https://github.com/PiAir/digcomp3-l10n/blob/main/images/input.png "Steps taken to ingest texts")
-and the output process for the converted/translated texts:
-![output](https://github.com/PiAir/digcomp3-l10n/blob/main/images/output.png "Steps taken to export translated texts")
+## Process of translation of DigComp 3.0
+The flowchart gives an overview of the process involved in translating the DigComp 3.0:
+![flowchart](https://github.com/PiAir/digcomp3-l10n/blob/main/images/Translation_process.png "Translation process visualised by Nano Banana")
 
-## TODO
-- Add all the errata from [the JRC errata list](https://joint-research-centre.ec.europa.eu/projects-and-activities/education-and-training/digital-transformation-education/digital-competence-framework-digcomp/digcomp-30-resources/digcomp-30-errata_en) to [the issues list](https://github.com/PiAir/digcomp3-l10n/issues) for this repository (and fix them)
+## Errata
+- All the errata from [the JRC errata list](https://joint-research-centre.ec.europa.eu/projects-and-activities/education-and-training/digital-transformation-education/digital-competence-framework-digcomp/digcomp-30-resources/digcomp-30-errata_en) have been added to [the issues list](https://github.com/PiAir/digcomp3-l10n/issues) for this repository (need to fix them)
  
 ## Terminologie (EN -> NL)
 - “Competence area” → “Competentiegebied”
