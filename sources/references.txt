@@ -1,0 +1,147 @@
+Abendroth-Dias, K., Arias-Cabarcos, P., Bacco, F.M., Bassani, E., Bertoletti, A., et al. (authors); Navajas-Cawood, E., Vespe, M., Kotzev, A. and Van Bavel, R. (editors) (2025). Generative AI Outlook Report - Exploring the Intersection of Technology, Society and Policy. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC142598
+
+Anderson, L. W., & Krathwohl, D. R., with Airasian, P. W., Cruikshank, K. A., Mayer, R. E., Pintrich, P. R., Raths, J., & Wittrock, M. C. (Eds.). (2001). A taxonomy for learning, teaching, and assessing: A revision of Bloom’s taxonomy of educational objectives. Abridged Version. London: Pearson. ISBN-13: 9780321084057.
+
+Boerkamp, L. G. P., van Deursen, A. J. A. M., Laar, E. van, van der Zeeuw, A., & van der Graaf, S. (2024). Exploring Barriers to and Outcomes of Internet Appropriation Among Households Living in Poverty: A Systematic Literature Review. Sage Open, 14(1). https://doi.org/10.1177/21582440241233047
+
+Brundle, C., Johansson, J. F., Best, K., Clegg, A., Forster, A., Atkinson, T., Foster, M., Humphrey, S., Iliff, A., Inglis, J., Walker, C., & Graham, L. (2025). Development of methods to identify digitally excluded older people, and tailoring of interventions to meet their digital needs: a protocol for a mixed-methods study (the INCLUDE study). BMJ open, 15(9), e102723. https://doi.org/10.1136/bmjopen-2025-102723
+
+Carretero Gomez, S., Vuorikari, R. and Punie, Y (2017). DigComp 2.1: The Digital Competence Framework for Citizens with eight proficiency levels and examples of use. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC106281
+
+Castañeda, L., Viñoles-Cosentino, V., Postigo-Fuentes, A.Y., Herrero, C., & Cachia, R. (2023). Strategic Approaches to Regional Transformation of Digital Education. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC134282
+
+Cedefop (2014). Terminology of European education and training policy: Second edition. Luxembourg: Publications Office of the European Union. https://www.cedefop.europa.eu/en/publications/4117
+
+Cedefop (2017). Defining, writing and applying learning outcomes: A European Handbook. Luxembourg: Publications Office of the European Union. https://www.cedefop.europa.eu/en/publications/4156
+
+Cedefop (2021). Review and renewal of qualifications: Towards methodologies for analysing and comparing learning outcomes. Luxembourg: Publications Office of the European Union. https://data.europa.eu/doi/10.2801/615021
+
+Cedefop (2022). Defining, writing and applying learning outcomes: A European Handbook – Second Edition. Luxembourg: Publications Office of the European Union. https://www.cedefop.europa.eu/en/publications/4209
+
+Cedefop (2024a). Learning outcomes going global: A multifaceted phenomenon. Luxembourg: Publications Office of the European Union. https://www.cedefop.europa.eu/en/publications/9193
+
+Cedefop (2024b). The shift to learning outcomes: Rhetoric or reality? Online workshop, May 23, 2024. https://www.cedefop.europa.eu/en/events/shift-learning-outcomes-rhetoric-or-reality
+
+Cedefop (2024c). Learning outcomes resources: Dataset. https://data.europa.eu/data/datasets/learning-outcomes-resources?locale=en
+
+Centeno, C., & Cosgrove, J. (2025). Ten Years of DigComp: A Framework more essential than ever. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC143430
+
+Centeno, C., Cosgrove, J., Cachia, R., Mora, T., Di Legge, A., Vivarelli, S., Bulian, G., Moyes-Prellezo, N., Piña de Santisteban, P, Schulz, C., Hüsing, T., Cuartas-Acosta, A., & Troia, S. (2024a). European Digital Skills Certificate (EDSC) Feasibility Study. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC138344
+
+Centeno, C., Cosgrove, J., Cachia, R., Mora, T., Di Legge, A., Vivarelli, S., Bulian, G., Moyes-Prellezo, N., Piña de Santisteban, P, Schulz, C., Hüsing, T., Cuartas-Acosta, A., & Troia, S. (2024b). European Digital Skills Certificate (EDSC) Feasibility Study: Annexes to the Repoort. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC138344
+
+Chen, O., Paas, F. & Sweller, J. (2023). A Cognitive Load Theory Approach to Defining and Measuring Task Complexity Through Element Interactivity. Educ Psychol Rev 35, 63. https://doi.org/10.1007/s10648-023-09782-w
+
+Clifford, I., Kluzer, S., Troia, S., Jakobsone, M. and Zandbergs, U. (authors); Vuorikari, R., Punie, Y., Castaño Muñoz, J., Centeno Mediavilla, I.C., O’Keeffe, W. and Cabrera Giraldez, M. (editors) (2020). DigCompSAT: A Self-reflection Tool for the European Digital Competence Framework for Citizens. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC123226
+
+Colantoni, A., Garmendia, A., Berardinelli, L., Wimer, M., & Bräuer, J. (2021). Leveraging Model-Driven Technologies for JSON Artefacts: The Shipyard Case Study. ACM/IEEE 24th International Conference on Model Driven Engineering Languages and Systems (MODELS), Fukuoka, Japan, pp. 250-260. doi: 10.1109/MODELS50736.2021.00033
+
+Council of the EU (2017). Outcome of proceedings: Council Recommendation on the European Qualifications Framework for lifelong learning and repealing the Recommendation of the European Parliament and of the Council of 23 April 2008 on the establishment of the European Qualifications Framework for lifelong learning. Brussels: Council of the EU. https://data.consilium.europa.eu/doc/document/ST-9620-2017-INIT/en/pdf
+
+Digital Austria (2024). Austrian Framework of Reference for Digital Competence: Visibility, comparability and guidance. Vienna: Federal Chancellery of Austria. https://www.digitalekompetenzen.gv.at/dam/jcr:af4d61bc-163e-4639-b2a7-91184abc5193/2024_Austrian_Framework_of_Reference_for_Digital_Competence.pdf
+
+Di Vinadio, T.B., van Noordt, C., Vargas Alvarez del Castillo, C., & Avila, R. (2022). Artificial intelligence and digital transformation: Competences for civil servants (Working Group report on AI capacity building). Paris: UNESCO. https://unesdoc.unesco.org/ark:/48223/pf0000383325
+
+Draghi, M. (2024). The Future of European Competitiveness: A Competitiveness Strategy for Europe. Brussels: European Commission. https://commission.europa.eu/document/97e481fd-2dc3-412d-be4c-f152a8232961_en
+
+Duckworth, D., & Fraillon, J. (2025). Computational thinking framework. In J. Fraillon & M. Rožman (editors), IEA International Computer and Information Literacy Study 2023: Assessment Framework (pp. 35-43). Amsterdam: IEA. https://link.springer.com/book/10.1007/978-3-031-61194-0
+
+EQF-Europass project group (2024). European guidelines for the development and writing of short, learning-outcomes-based descriptions of qualifications. Cedefop working paper series, 21. Luxembourg: Publications Office of the European Union. http://data.europa.eu/doi/10.2801/838553
+
+European Commission (2012). Charter of Fundamental Rights of the European Union. Brussels: European Commission. https://eur-lex.europa.eu/eli/treaty/char_2012/oj/eng
+
+European Commission (2018). Council Recommendation of 22 May 2018 on key competences for lifelong learning. Brussels: European Commission. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C_.2018.189.01.0001.01.ENG&toc=OJ:C:2018:189:TOC
+
+European Commission (2020). Communication on the Digital Education Action Plan 2021-2027: Resetting education and training for the digital age. Brussels: European Commission. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52020DC0624
+
+European Commission (2021). European Pillar of Social Rights Action Plan. Brussels: European Commission. https://op.europa.eu/webpub/empl/european-pillar-of-social-rights/en/
+
+European Commission (2022). Linking data: What does it mean? (web page). https://data.europa.eu/en/publications/datastories/linking-data-what-does-it-mean
+
+European Commission (2023a). European Declaration on Digital Rights and Principles for the Digital Decade. Brussels: European Commission. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOC_2023_023_R_0001
+
+European Commission (2023b). Commission Staff Working Document accompanying the documents Proposal for a Council Recommendation on the key enabling factors for successful digital education and training Proposal for a Council Recommendation on improving the provision of digital skills in education and training (SWD/2023/205 final). Brussels: European Commission. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023SC0205
+
+European Commission (2023c). Guide to EU citizenship. Luxembourg: Publications Office of the European Union. https://commission.europa.eu/publications/guide-eu-citizenship_en
+
+European Commission (2025a). State of the Digital Decade 2025: Keep building the EU’s sovereignty and digital future (main report). Brussels: European Commission. https://digital-strategy.ec.europa.eu/en/library/state-digital-decade-2025-report
+
+European Commission (2025b). Communication on the Union of Skills. Brussels: European Commission. https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52025DC0090
+
+European Commission (2025c). Communication on the Action Plan on Basic Skills. Brussels: European Commission. https://education.ec.europa.eu/sites/default/files/2025-03/Graphic%20version%20Action%20Plan%20on%20Basic%20Skills.pdf
+
+European Commission (2025d). Communication on a STEM education strategic plan: Skills for competitiveness and innovation. Brussels: European Commission. https://education.ec.europa.eu/sites/default/files/2025-03/STEM_Education_Strategic_Plan_COM_2025_89_1_EN_0.pdf
+
+European Commission (2025e). Monitoring of the European Declaration on Digital Rights and Principles. Brussels: European Commission. https://digital-strategy.ec.europa.eu/en/library/digital-decade-2025-declaration-digital-rights-and-principles-monitoring-report-2025
+
+European Commission (2025f). Communication: Guidelines on the definition of an artificial intelligence system established by Regulation (EU) 2024/1689 (AI Act). Brussels: European Commission. https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application
+
+European Parliament (2024). Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013, (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU) 2020/1828 (Artificial Intelligence Act). Brussels: Official Journal of the European Union. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689
+
+Eurostat (2025). Statistics explained: ICT specialists in employment. (web page). https://ec.europa.eu/eurostat/statistics-explained/index.php?oldid=675865
+
+Farias-Gaytan, S., Aguaded, I., & Ramirez-Montoya, M. (2023). Digital transformation and digital literacy in the context of complexity within higher education institutions: a systematic literature review. Humanities and Social Sciences Communications, 10(1). https://doi.org/10.1057/s41599-023-01875-9
+
+Ferrari, A., with Punie, Y. and Brecko, B., editors (2013). DIGCOMP: A Framework for Developing and Understanding Digital Competence in Europe. EUR 26035, Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC83167
+
+González-Mujico, F. (2024). Measuring student and educator digital competence beyond self-assessment: Developing and validating two rubric-based frameworks. Educ Inf Technol 29, 13299–13324. https://doi.org/10.1007/s10639-023-12363-7
+
+Gonzalez-Vazquez, I., Fernandez-Macias, E., Wright, S., & Villani, D. (2025). Digital Monitoring, Algorithmic Management and the Platformisation of Work in Europe. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC143072
+
+Helm, P., Bella, G., Koch, G., & Giunchiglia, F. (2024). Diversity and language technology: How language modelling bias causes epistemic injustice. Ethics and Information Technology, 26(8). https://doi.org/10.1007/s10676-023-09742-6
+
+Kluzer, S., Centeno, C. and O’Keeffe, W. (2020). DigComp at Work. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC120376
+
+International Test Commission and Association of Test Publishers (2022). Guidelines for technology-based assessment (version 1.1). Hempstead: International Test Commission and Pennsylvania: Association of Test Publishers. https://www.testpublishers.org/assets/Guidelines_for_Technology_Based_Assessment_v2022.11.08.pdf
+
+Irvine, J. (2021). Taxonomies in Education: Overview, Comparison, and Future Directions. Journal of Education and Development, 5(2). https://doi.org/10.20849/jed.v5i2.898
+
+ITU (2022). Achieving universal and meaningful connectivity: Setting a baseline and targets for 2030. Geneva: ITU. https://www.itu.int/itu-d/meetings/statistics/wp-content/uploads/sites/8/2022/04/UniversalMeaningfulDigitalConnectivityTargets2030_BackgroundPaper.pdf
+
+Lewandowsky, S., Smillie, L., Garcia, D., Hertwig, R., Weatherall, J., Egidy, S., Robertson, R.E., O’Connor, C., Kozyreva, A., Lorenz-Spreen, P., Blaschke, Y., & Leiser, M. (2020). Technology and democracy: Understanding the influence of online technologies on political behaviour and decision-making. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC122023
+
+Li, F., Wang, X., He, X., Cheng, L., & Wang, Y. (2022). The effectiveness of unplugged activities and programming exercises in computational thinking education: A Meta-analysis. Education and Information Technologies, 27(6), 7993–8013. https://doi.org/10.1007/s10639-022-10915-x
+
+Long, D., & Magerko, B. (2020). What is AI literacy? Competences and design considerations. In CHI 2020 - Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems Article 3376727. Association for Computing Machinery. https://doi.org/10.1145/3313831.3376727
+
+Miao, F., Shiohira, K., & Lao, N. (2024). AI competency framework for students. Paris: UNESCO. https://unesdoc.unesco.org/ark:/48223/pf0000391105
+
+Mills, K., Ruiz, P., Lee, K., Coenraad, M., Fusco, J., Roschelle, J. & Weisgrau, J. (2024). AI Literacy: A Framework to Understand, Evaluate, and Use Emerging Technology. Washington: Digital Promise. https://digitalpromise.dspacedirect.org/items/6d15adcd-5a84-47fa-b6d0-1310154eee02
+
+Morris, T. H. (2023). Four Dimensions of Self-Directed Learning: A Fundamental Meta-Competence in a Changing World. Adult Education Quarterly, 74(3), 236-254. https://doi.org/10.1177/07417136231217453
+
+Morte-Nadal, T., Esteban-Navarro, M.Á. (2025). Recommendations for digital inclusion in the use of European digital public services. Humanit Soc Sci Commun, 12, 273. https://doi.org/10.1057/s41599-025-04576-7
+
+Nárosy, T., Schmölz, A., Proinger, J., & Domany-Funtan, U. (2022): Digitales Kompetenzmodell für Österreich. DigComp 2.3 AT. Medienimpulse, 60(4). https://doi.org/10.21243/mi-04-22-23 (EN: https://f4i.hbox.at/index.php/s/4gN4p3j3Bb33GyH)
+
+Ng, D.T., Leung, J.K., Chu, S.K., & Qiao, M.S. (2021). Conceptualizing AI literacy: An exploratory review. Computers and Education: Artificial Intelligence, 2. https://www.sciencedirect.com/science/article/pii/S2666920X21000357
+
+OECD (2025). Empowering learners for the age of AI: An AI literacy framework for primary and secondary education (review draft). Paris: OECD Publishing. https://ailiteracyframework.org/wp-content/uploads/2025/05/AILitFramework_ReviewDraft.pdf
+
+Onesi-Ozigagun, N. O., Ololade, N. Y. J., Eyo-Udo, N. N. L., & Ogundipe, N. D. O. (2024). Revolutionizing education through AI: A comprehensive review of enhancing learning experiences. International Journal of Applied Research in Social Sciences, 6(4), 589–607. https://doi.org/10.51594/ijarss.v6i4.1011
+
+Pakhnenko, O., Yarovenko, H., Semenog, A., Mordan, Y., & Tarasenko, O. (2025). Uncovering patterns of digital transformation of European economies using self-organising maps. Problems and Perspectives in Management, 23(3), 581-596. http://dx.doi.org/10.21511/ppm.23(3).2025.42
+
+Pouliakas, K., Santangelo, G. & Dupire, P. (2025). Are artificial intelligence skills a reward or a gamble? Deconstructing the AI wage premium in Europe. Eurasian Bus Rev. https://doi.org/10.1007/s40821-025-00302-0
+
+Rehm, G., & Way, A. (2023). European language equality: A strategic agenda for digital language equality. Springer International Publishing. https://library.oapen.org/handle/20.500.12657/63568
+
+Stalmach, A., D’Elia, P., Di Sano, S., & Casale, G. (2023). Digital Learning and Self-Regulation in Students with Special Educational Needs: A Systematic Review of Current Research and Future Directions. Education Sciences, 13(10), 1051. https://doi.org/10.3390/educsci13101051
+
+Țarcă, V., Luca, F.-A., & Țarcă, E. (2024). The Digital Edge: Skills That Matter in the European Labour Market after COVID-19. Economies, 12(10), 273. https://doi.org/10.3390/economies12100273
+
+Touretzky, D., Gardner-McCune, C., Martin, F., & Seehorn, D. (2019). Envisioning AI for K-12: What Should Every Child Know about AI? Proceedings of the AAAI Conference on Artificial Intelligence, 33(01), 9795-9799. https://doi.org/10.1609/aaai.v33i01.33019795
+
+Touretzky, D., Gardner-McCune, C. & Seehorn, D. (2023). Machine Learning and the Five Big Ideas. In AI. Int J Artif Intell Educ 33, 233–266. https://doi.org/10.1007/s40593-022-00314-1
+
+Tzafilkou, K., Perifanou, M. & Economides, A.A. (2022). Development and validation of students’ digital competence scale (SDiCoS). Int J Educ Technol High Educ 19, 30. https://doi.org/10.1186/s41239-022-00330-0
+
+UN (2024). Communication on the Global Digital Compact (GDC). Geneva: UN. https://www.un.org/global-digital-compact/sites/default/files/2024-09/Global_Digital_Compact_English.pdf
+
+UNESCO (2022). K-12 AI curricula: A mapping of government-endorsed AI curricula. Paris: UNESCO. https://unesdoc.unesco.org/ark:/48223/pf0000380602
+
+Vuorikari, R., Punie, Y., Carretero Gomez, S. and Van Den Brande, G. (2016). DigComp 2.0: The Digital Competence Framework for Citizens. Update Phase 1: the Conceptual Reference Model. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC101254
+
+Vuorikari, R., Kluzer, S. and Punie, Y., (2022a). DigComp 2.2: The Digital Competence Framework for Citizens - With new examples of knowledge, skills and attitudes. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC128415
+
+Vuorikari, R., Jerzak, N., Karpinski, Z., Pokropek, A. and Tudek, J. (2022b). Measuring Digital Skills across the EU: Digital Skills Indicator 2.0. Luxembourg: Publications Office of the European Union. https://publications.jrc.ec.europa.eu/repository/handle/JRC130341
