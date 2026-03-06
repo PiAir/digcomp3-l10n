@@ -1,0 +1,122 @@
+---
+title: "DigComp 3.0 Nederlands"
+author: "Pierre Gorissen, Manon van Zanten"
+date: "2026-03-06"
+lang: nl
+crossref:
+  tbl-title: "Tabel"
+  tbl-prefix: "Tabel"
+  fig-title: "Figuur"
+  fig-prefix: "Figuur"
+format:
+  docx:
+    reference-doc: custom-reference.docx
+    toc: true
+    number-sections: true
+bibliography: references.bib
+csl: apa.csl
+---
+
+## Colofon {.unnumbered}
+
+**Originele bron:** Cosgrove, J. and Cachia, R., DigComp 3.0: European Digital Competence Framework - Fifth Edition, Publications Office of the European Union, Luxembourg, 2025, https://data.europa.eu/doi/10.2760/0001149, JRC144121.
+
+De Europese Commissie is niet verantwoordelijk voor deze vertaalde versie en de bijbehorende databestanden die in het Nederlands beschikbaar zijn. De Europese Commissie staat de vertaling van DigComp 3.0 in andere talen toe, maar onderschrijft de gewijzigde, aangepaste of vertaalde versies niet.
+
+Het hergebruikbeleid van de documenten van de Europese Commissie wordt beschreven in Besluit 2011/833/EU. Tenzij anders vermeld, is hergebruik van het originele DigComp-document toegestaan onder de CC BY 4.0 licentie.
+
+De vertaling naar het Nederlands is uitgevoerd onder auspiciën van het iXperium Centre of Expertise Teaching and Learning. Er zijn geen wijzigingen aangebracht in de originele competentiegebieden, behalve een vertaling waarbij de intentie zo dicht mogelijk bij het origineel is gebleven.
+
+Maak bij gebruik van deze vertaling vermelding van de volgende referentie: Gorissen, P. & van Zanten, M. (2026). *DigComp 3.3: Europees kader voor digitale competenties*. iXperium Centre of Expertise Leren met ict.
+
+**`[standaard CC-BY logo iXperium invoegen]`**
+
+## Over deze vertaling {.unnumbered}
+
+Deze Nederlandse vertaling beperkt zich tot de belangrijkste onderdelen van de DigComp 3.0. De vertaling bevat een Inleiding op basis van de Engelse tekst, het DigComp 3.0 raamwerk, de competentiegebieden en competenties, beheersingsniveaus en leeruitkomsten.
+
+## Inleiding
+
+### Over DigComp 3.0
+
+DigComp 3.0 is de vijfde editie van het Europese Digitale competentie-raamwerk. Het beschrijft kennis, vaardigheden en houdingen die nodig zijn om digitaal bekwaam te zijn voor het dagelijks leven, deelname aan de samenleving, werken en leren. Het raamwerk is technologie-neutraal en ontworpen om op maat gemaakt te worden voor onderwijs- en arbeidscontexten.
+
+Het ondersteunt EU-beleidslijnen zoals de Unie van Vaardigheden en het Beleidsprogramma Digitale Decennium. DigComp 3.0 bevat ontwikkelingen die sinds 2022 hebben plaatsgevonden, inclusief de integratie van AI-competenties.
+
+### Het belang van Digitale Competentie
+
+Digitale omgevingen zijn verweven met het dagelijks leven, wat zowel voordelen als risico’s met zich meebrengt. Het is essentieel om tekorten in vaardigheden te overbruggen.
+
+Digitale competenties bieden individuen voordelen zoals het gebruik van publieke platforms, privacybeheer en welzijn [@MorteNadal2025; @Pouliakas2025; @Stalmach2023; @Tarca2024], en vormen een middel om sociale uitsluiting aan te pakken [@Boerkamp2024; @Brundle2025] en de concurrentiekracht te versterken [@Draghi2024; @Pakhnenko2025].
+
+In beleid en initiatieven worden 'digitale vaardigheden' en 'digitale competentie' vaak door elkaar gebruikt. In DigComp 3.0 wordt de term 'digitale competentie' gebruikt om kennis, vaardigheden en houdingen te omvatten.
+
+### Digitale feiten en cijfers
+
+| Kinderen en jongeren | Volwassenen in het algemeen | Werkenden |
+|:-----------------------|:-----------------------|:-----------------------|
+| 43% van de leerlingen bereikte in 2023 geen basisniveau [@Duckworth2025]. | 56% van de volwassenen beschikte in 2023 over digitale basisvaardigheden [@Commission2025b]. | 92% van de werknemers gebruikte in 2024-2025 digitale apparaten [@Eurostat2025]. |
+| 96% van de 15-jarigen gebruikte in 2022 dagelijks sociale media [@Commission2025a]. | 70% van de volwassenen had in 2024 digitale interactie met de overheid [@Commission2025b]. | 30% van de werknemers gebruikte AI-systemen op het werk in 2024-2025 [@Pouliakas2025]. |
+| 14%-16% was slachtoffer van cyberpesten in 2022 [@Commission2025a]. | 49% meldde in 2023 onjuiste inhoud op sociale media [@Commission2025b]. | 35% moest in 2020-2021 nieuwe technologie leren voor werk [@Commission2023b]. |
+| 9-12% rapporteerde problematisch gebruik van sociale media [@Commission2025a]. | 58% zocht in 2022 naar gezondheidsinformatie [@Commission2025b]. | 42% rapporteerde in 2024 een kloof in AI-vaardigheden [@Pouliakas2025]. |
+
+: Digitale competentie – een selectie van feiten en cijfers. {#tbl-stats}
+
+@tbl-stats illustreert enkele implicaties van digitale technologie voor digitale competentie bij kinderen en jongeren, volwassenen in het algemeen en werknemers, aan de hand van een selectie van statistisch bewijs uit recente enquêtes.
+
+### Adoptie en gebruik van DigComp
+
+Een belangrijk kenmerk van DigComp is de mate waarin experts en belanghebbenden uit Europa en daarbuiten bijdragen aan de ontwikkeling ervan. Dit helpt de kwaliteit en relevantie te waarborgen en ondersteunt de adoptie ervan. DigComp wordt veelvuldig gebruikt in Europa en daarbuiten in contexten van werkgelegenheid, onderwijs en opleiding [@Centeno2024b; @Centeno2025; @Kluzer2020], en vormt de conceptuele basis van de Digital Skills Indicator (DSI) [@Vuorikari2022b], die wordt gebruikt om het niveau van digitale basisvaardigheden in Europa te monitoren via het beleidsprogramma voor het digitale decennium. Naast het bieden van een gemeenschappelijk begrip van digitale competentie, wordt DigComp onder andere gebruikt om Europees, nationaal en regionaal beleid te sturen; beoordelingen te ontwikkelen; de transparantie of vergelijkbaarheid van onderwijs- en opleidingscursussen te verbeteren; leerprestaties te erkennen of te valideren (bijvoorbeeld door certificering van digitale vaardigheden); en profielen van digitale competentie in specifieke banen of rollen te definiëren.
+
+### Waarden en principes die richting geven aan DigComp 3.0
+
+De visie voor DigComp 3.0 is dat het een verenigend, coherent, helder, relevant en actueel beeld geeft van digitale competentie dat voortbouwt op eerdere versies, en dat kan worden gebruikt door een verscheidenheid aan belanghebbenden die het gemeenschappelijke doel delen om behoeften op het gebied van digitale competentie te begrijpen en te herkennen en de ontwikkeling ervan te ondersteunen.
+
+DigComp 3.0, de vijfde editie van het kader, blijft het belangrijkste referentiekader voor digitale competentie in de EU. Digitale competentie is een van de acht sleutelcompetenties van de aanbeveling van de Raad inzake sleutelcompetenties voor een leven lang leren [@Commission2018].
+
+*Kerncompetenties zijn de kennis, vaardigheden en houdingen die iedereen nodig heeft voor persoonlijke ontplooiing en ontwikkeling, inzetbaarheid op de arbeidsmarkt, sociale inclusie en actief burgerschap.*
+
+DigComp 3.0 belichaamt de waarden van de Europese verklaring over digitale rechten en beginselen voor het digitale decennium [@Commission2023a], die een mensgerichte visie op de digitale transformatie bevordert. Het is georganiseerd in zes thema's (zie figuur 2). De verklaring bouwt voort op het EU-Handvest van de grondrechten [@Commission2012].
+
+De zes thema's van de Europese verklaring over digitale rechten en beginselen [@Commission2023a].
+
+-   **Mensen centraal:** Digitale technologie moeten de rechten van mensen beschermen, de democratie ondersteunen en ervoor zorgen dat alle digitale actoren verantwoordelijk en veilig handelen. De EU promoot deze waarden over de hele wereld.
+
+-   **Solidariteit en inclusie:** Technologie moet mensen verenigen, niet verdelen. Iedereen moet toegang hebben tot internet, tot digitale vaardigheden, tot digitale overheidsdiensten en tot eerlijke arbeidsomstandigheden.
+
+-   **Vrijheid van keuze:** Mensen moeten kunnen profiteren van een eerlijke online omgeving, veilig zijn voor illegale en schadelijke inhoud, en in hun kracht worden gezet wanneer ze interageren met nieuwe en evoluerende technologie zoals kunstmatige intelligentie.
+
+-   **Participatie:** Burgers moeten kunnen deelnemen aan het democratische proces op alle niveaus en controle hebben over hun eigen gegevens.
+
+-   **Veiligheid en beveiliging:** De digitale omgeving moet veilig en betrouwbaar zijn. Alle gebruikers, van kind tot op hoge leeftijd, moeten worden gesterkt en beschermd.
+
+-   **Duurzaamheid:** Digitale apparaten moeten duurzaamheid en de groene transitie ondersteunen. Mensen moeten weten wat de milieu-impact en het energieverbruik van hun apparaten zijn.
+
+*Bron: Gebaseerd op https://digital-strategy.ec.europa.eu/en/fact- pages/digital-rights-and-principles*
+
+### Wat is er nieuw in DigComp 3.0?
+
+Verschillende belangrijke thema's met betrekking tot de inhoud (d.w.z. waaruit digitale competentie bestaat) en toepassing (d.w.z. hoe het raamwerk wordt aangepast en gebruikt en de rol ervan in onderwijs, opleiding en werkgelegenheidssystemen) gaven richting aan de ontwikkeling van DigComp 3.0 (@tbl-themas). Deze werden geïdentificeerd op basis van beleids- en academische literatuur en overleg met experts en belanghebbenden en zijn holistisch ingebed in de inhoud en het ontwerp van het raamwerk.
+
+| **Inhoudsthema's** |
+|:-----------------------------------------------------------------------|
+| Kunstmatige intelligentie (inclusief generatieve AI) competentie |
+| Cyberbeveiliging competentie |
+| Digitale rechten, keuze en verantwoordelijkheden |
+| Welzijn in digitale omgevingen |
+| Competentie om misinformatie en desinformatie aan te pakken |
+|  |
+| **Toepassingsthema's** |
+| Digitale competentie als essentieel onderdeel van een leven lang leren |
+| Erkenning van randvoorwaarden voor het verwerven van digitale competentie op basisniveau |
+| Erkenning van verschillen in behoeften aan digitale competentie tussen personen en door de tijd heen |
+| Behoefte aan flexibele, wendbare toepassingen van het kader |
+
+: Inhouds- en toepassings- thema's die richting geven aan DigComp 3.0 ontwikkeling. {#tbl-themas}
+
+*Bron: Eigen bewerking door JRC.*
+
+## Literatuur {.unnumbered}
+
+::: {#refs}
+:::
