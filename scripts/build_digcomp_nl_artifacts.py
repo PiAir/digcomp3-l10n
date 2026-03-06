@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
+# versie 4 - 20260306
 """
-build_digcomp_nl_artifacts_v3.py
+build_digcomp_nl_artifacts.py
 
 Build Dutch deliverables from the translated CSVs in ./digcomp3-l10n/locale:
 
@@ -14,15 +15,15 @@ Key improvements vs v2
 - DOCX: include richer, complete tables for framework, levels, statements, and learning outcomes (using original XLSX rows)
 - Conservative fallbacks: if a Dutch translation is missing, fall back to English source (no data loss)
 
-Usage examples:
-  python build_digcomp_nl_artifacts_v3.py --build xlsx --src-xlsx "DigComp 3.0 Data Supplement 24 Nov 2025.xlsx"
-  python build_digcomp_nl_artifacts_v3.py --build jsonld --src-jsonld "DigComp 3.0 Data Supplement 24 Nov 2025.jsonld"
-  python build_digcomp_nl_artifacts_v3.py --build docx --src-xlsx "DigComp 3.0 Data Supplement 24 Nov 2025.xlsx"
+Usage examples (from within digcomp3-l10n folder):
+  python scripts/build_digcomp_nl_artifacts.py --build xlsx --src-xlsx "sources/DigComp 3.0 Data Supplement 24 Nov 2025.xlsx" --out-dir output
+  python scripts/build_digcomp_nl_artifacts.py --build jsonld --src-jsonld "sources/DigComp 3.0 Data Supplement 24 Nov 2025.jsonld" --out-dir output
+  python scripts/build_digcomp_nl_artifacts.py --build docx --src-xlsx "sources/DigComp 3.0 Data Supplement 24 Nov 2025.xlsx" --out-dir output
 
 Assumptions
-- Run this script from the *working folder* where your original sources are.
+- Default repo-root is set to ".." to operate correctly from within the digcomp3-l10n folder.
 - Translation repository lives in ./digcomp3-l10n/ and contains ./locale/<component>/{en.csv,nl.csv}
-- Output files are written to ./nl/ by default.
+- Output files are written to ./nl/ by default (or ./output/ if specified).
 
 CSV format
 - Expected columns: location, source, target, context
@@ -637,7 +638,7 @@ def build_docx(out_docx: Path, repo_root: Path, src_xlsx: Path, tx: Dict[str, Di
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo-root", default=".", help="Folder containing digcomp3-l10n/ and manifest.json")
+    ap.add_argument("--repo-root", default="..", help="Folder containing digcomp3-l10n/ and manifest.json")
     ap.add_argument("--out-dir", default="nl", help="Output folder (default: ./nl)")
     ap.add_argument("--build", choices=["xlsx", "jsonld", "docx"], required=True)
     ap.add_argument("--src-xlsx", default="DigComp 3.0 Data Supplement 24 Nov 2025.xlsx")
@@ -645,7 +646,11 @@ def main() -> None:
     args = ap.parse_args()
 
     repo_root = Path(args.repo_root).resolve()
-    out_dir = (repo_root / args.out_dir).resolve()
+    # out_dir logic: if relative, make relative to repo_root
+    out_dir = Path(args.out_dir)
+    if not out_dir.is_absolute():
+         out_dir = (Path.cwd() / out_dir).resolve()
+    
     tx = load_translations(repo_root)
 
     if args.build == "xlsx":
