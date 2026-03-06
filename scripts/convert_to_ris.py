@@ -119,14 +119,18 @@ def convert_text_to_ris(input_file, output_file):
             res.append(f"AU  - {au}")
         
         # Split year and optional suffix (e.g., 2024a -> 2024, a)
+        # Use YYYY/// format which is more robust for some RIS importers
+        note = ""
         year_match = re.match(r'^(\d{4})([a-z])?$', year)
         if year_match:
             base_year, suffix = year_match.groups()
-            res.append(f"PY  - {base_year}")
+            res.append(f"PY  - {base_year}///")
+            res.append(f"Y1  - {base_year}///")
             if suffix:
-                res.append(f"N1  - Year Suffix: {suffix}")
+                note = f"Year Suffix: {suffix}"
         else:
-            res.append(f"PY  - {year}")
+            res.append(f"PY  - {year}///")
+            res.append(f"Y1  - {year}///")
 
         res.append(f"TI  - {title.strip('.')}")
         if secondary_title:
@@ -148,6 +152,10 @@ def convert_text_to_ris(input_file, output_file):
                 doi = link.split("doi.org/")[-1]
                 res.append(f"DO  - {doi}")
             res.append(f"UR  - {link}")
+        
+        if note:
+            res.append(f"N1  - {note}")
+            
         res.append("ER  - ")
         ris_entries.append("\n".join(res))
         
