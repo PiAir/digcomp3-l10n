@@ -5,6 +5,9 @@ from pathlib import Path
 def parse_authors(author_str):
     # Strip unnecessary tags
     author_str = re.sub(r'\(Eds\.?\)|\(editors\)|\(authors\)|with |editors|authors|Ed\.', '', author_str, flags=re.IGNORECASE)
+    
+    # Heuristic for RIS AU tag: Lastname, Firstname
+    # Split by common separators
     parts = re.split(r' \& | and |; ', author_str)
     
     final_authors = []
@@ -13,28 +16,37 @@ def parse_authors(author_str):
         if not part or part.lower() in ["et al.", "et al"]:
             continue
             
-        # Standardize "Lastname, F." separation for RIS
-        sub_parts = re.split(r'(?<=\w\.)\s*,\s*', part)
-        if len(sub_parts) > 1:
+        # Try to detect if it's "Lastname, F." or "Firstname Lastname"
+        # If it has a comma, it's probably already swapped
+        # But handle multiple authors grouped by comma incorrectly: "A, B, C, D"
+        
+        # Split by comma followed by space and another word starting with capital or initial
+        # This is tricky. Let's use a simpler heuristic:
+        # If there are many commas, and it's not "Lastname, F. I.," format
+        commas = part.count(',')
+        if commas > 1 and not re.search(r'[A-Z]\.\s*,', part):
+            # Probably "Author 1, Author 2, Author 3" (unswapped)
+            sub_parts = [s.strip() for s in part.split(',')]
             for sp in sub_parts:
-                if sp.strip():
-                    final_authors.append(sp.strip().rstrip(','))
+                if sp: final_authors.append(sp)
         else:
-            # Check for multiple commas: "Lastname, F., Lastname2, F."
-            sub_parts = re.split(r'(?<=,\s[A-Z]\.)\s*,|(?<=,\s[A-Z])\s*,', part)
+            # Check for missing periods in "Lastname, F"
+            # "Piña de Santisteban, P, Schulz, C."
+            # Split manually if we see a space or comma after an initial without period
+            sub_parts = re.split(r'(?<=,\s[A-ZA-Z]\b)\s*,\s*|(?<=,\s[A-ZA-Z]\.)\s*,\s*', part)
             if len(sub_parts) > 1:
                 for sp in sub_parts:
-                    if sp.strip():
-                        final_authors.append(sp.strip().rstrip(','))
+                    if sp: final_authors.append(sp.strip().rstrip(','))
             else:
-                final_authors.append(part.rstrip(','))
+                 final_authors.append(part.rstrip(','))
                 
     return [a.strip() for a in final_authors if len(a) > 1]
 
 def convert_text_to_ris(input_file, output_file):
     raw_text = Path(input_file).read_text(encoding='utf-8')
-    lines = [line.strip() for line in raw_text.splitlines()]
     
+    # Pre-clean
+    lines = [line.strip() for line in raw_text.splitlines()]
     entries_blocks = []
     current_block = []
     for line in lines:
@@ -48,11 +60,9 @@ def convert_text_to_ris(input_file, output_file):
         entries_blocks.append(" ".join(current_block))
     
     ris_entries = []
-    
     for content in entries_blocks:
         match = re.match(r'^(.*?)\s+\((\d{4}[a-z]?)\)\.?\s+(.*?)$', content)
-        if not match:
-            continue
+        if not match: continue
             
         authors_raw, year_raw, rest = match.groups()
         authors = parse_authors(authors_raw)
@@ -70,6 +80,7 @@ def convert_text_to_ris(input_file, output_file):
         publisher = ""
         city = ""
         
+        # Journal detection
         journal_match = re.search(r'^(.*?)\.\s+([A-Z][A-Za-z\s]+),\s*(\d+)\s*(\(\d+\))?,\s*([\d\-\u2013]+)$', text_before_link)
         if journal_match:
             entry_type = "JOUR"
@@ -83,23 +94,24 @@ def convert_text_to_ris(input_file, output_file):
                 parts = text_before_link.rsplit('. ', 1)
                 if len(parts) > 1:
                     title, publisher = parts
-        
-        res = []
-        res.append(f"TY  - {entry_type}")
-        for au in authors:
-            res.append(f"AU  - {au}")
-            
-        # Simplified Year for Mendeley
+
+        # Simplified Year
         year_match = re.search(r'(\d{4})', year_raw)
         year = year_match.group(1) if year_match else year_raw
-        res.append(f"PY  - {year}")
         
-        res.append(f"TI  - {title.strip('.')}")
-        if journal: res.append(f"T2  - {journal.strip()}")
+        # Build RIS with Optimized Tag Order (PY near top)
+        res = []
+        res.append(f"TY  - {entry_type}")
+        res.append(f"PY  - {year}")
+        res.append(f"T1  - {title.strip('.')}")
+        for au in authors:
+            res.append(f"AU  - {au.strip('.')}")
+        
+        if journal: res.append(f"JF  - {journal.strip()}") # JF is often better than T2 for Mendeley
         if volume: res.append(f"VL  - {volume}")
         if issue: res.append(f"IS  - {issue}")
         if pages: res.append(f"SP  - {pages}")
-        if publisher: res.append(f"PB  - {publisher.strip()}")
+        if publisher: res.append(f"PB  - {publisher.strip('.')}")
         if city: res.append(f"CY  - {city.strip()}")
         
         if link:
@@ -108,12 +120,14 @@ def convert_text_to_ris(input_file, output_file):
                 res.append(f"DO  - {doi}")
             res.append(f"UR  - {link}")
             
-        # Mendeley sometimes prefers the suffix in notes or specific custom fields
-        # But for now, let's keep it clean
         res.append("ER  - ")
         ris_entries.append("\n".join(res))
-        
-    Path(output_file).write_text("\n\n".join(ris_entries), encoding='utf-8')
+    
+    # Use Windows Line Endings and UTF-8 with BOM
+    output_path = Path(output_file)
+    content = "\r\n".join(ris_entries) + "\r\n"
+    # Write with UTF-8-SIG (BOM)
+    output_path.write_text(content, encoding='utf-8-sig')
     return len(ris_entries)
 
 if __name__ == "__main__":
