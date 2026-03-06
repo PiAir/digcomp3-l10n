@@ -125,7 +125,8 @@ ER  -
 
 TY  - RPRT
 AU  - Cedefop
-PY  - 2024a
+PY  - 2024
+N1  - Year Suffix: a
 TI  - Learning outcomes going global: A multifaceted phenomenon
 PB  - Publications Office of the European Union.
 CY  - Luxembourg
@@ -134,14 +135,16 @@ ER  -
 
 TY  - RPRT
 AU  - Cedefop
-PY  - 2024b
+PY  - 2024
+N1  - Year Suffix: b
 TI  - The shift to learning outcomes: Rhetoric or reality? Online workshop, May 23, 2024
 UR  - https://www.cedefop.europa.eu/en/events/shift-learning-outcomes-rhetoric-or-reality
 ER  - 
 
 TY  - RPRT
 AU  - Cedefop
-PY  - 2024c
+PY  - 2024
+N1  - Year Suffix: c
 TI  - Learning outcomes resources: Dataset
 UR  - https://data.europa.eu/data/datasets/learning-outcomes-resources?locale=en
 ER  - 
@@ -169,7 +172,8 @@ AU  - Piña de Santisteban, P, Schulz, C.
 AU  - Hüsing, T.
 AU  - Cuartas-Acosta, A.
 AU  - Troia, S.
-PY  - 2024a
+PY  - 2024
+N1  - Year Suffix: a
 TI  - European Digital Skills Certificate (EDSC) Feasibility Study
 PB  - Publications Office of the European Union.
 CY  - Luxembourg
@@ -189,7 +193,8 @@ AU  - Piña de Santisteban, P, Schulz, C.
 AU  - Hüsing, T.
 AU  - Cuartas-Acosta, A.
 AU  - Troia, S.
-PY  - 2024b
+PY  - 2024
+N1  - Year Suffix: b
 TI  - European Digital Skills Certificate (EDSC) Feasibility Study: Annexes to the Repoort
 PB  - Publications Office of the European Union.
 CY  - Luxembourg
@@ -341,7 +346,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2023a
+PY  - 2023
+N1  - Year Suffix: a
 TI  - European Declaration on Digital Rights and Principles for the Digital Decade
 PB  - European Commission.
 CY  - Brussels
@@ -350,7 +356,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2023b
+PY  - 2023
+N1  - Year Suffix: b
 TI  - Commission Staff Working Document accompanying the documents Proposal for a Council Recommendation on the key enabling factors for successful digital education and training Proposal for a Council Recommendation on improving the provision of digital skills in education and training (SWD/2023/205 final)
 PB  - European Commission.
 CY  - Brussels
@@ -359,7 +366,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2023c
+PY  - 2023
+N1  - Year Suffix: c
 TI  - Guide to EU citizenship
 PB  - Publications Office of the European Union.
 CY  - Luxembourg
@@ -368,7 +376,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2025a
+PY  - 2025
+N1  - Year Suffix: a
 TI  - State of the Digital Decade 2025: Keep building the EU’s sovereignty and digital future (main report)
 PB  - European Commission.
 CY  - Brussels
@@ -377,7 +386,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2025b
+PY  - 2025
+N1  - Year Suffix: b
 TI  - Communication on the Union of Skills
 PB  - European Commission.
 CY  - Brussels
@@ -386,7 +396,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2025c
+PY  - 2025
+N1  - Year Suffix: c
 TI  - Communication on the Action Plan on Basic Skills
 PB  - European Commission.
 CY  - Brussels
@@ -395,7 +406,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2025d
+PY  - 2025
+N1  - Year Suffix: d
 TI  - Communication on a STEM education strategic plan: Skills for competitiveness and innovation
 PB  - European Commission.
 CY  - Brussels
@@ -404,7 +416,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2025e
+PY  - 2025
+N1  - Year Suffix: e
 TI  - Monitoring of the European Declaration on Digital Rights and Principles
 PB  - European Commission.
 CY  - Brussels
@@ -413,7 +426,8 @@ ER  -
 
 TY  - RPRT
 AU  - European Commission
-PY  - 2025f
+PY  - 2025
+N1  - Year Suffix: f
 TI  - Communication: Guidelines on the definition of an artificial intelligence system established by Regulation (EU) 2024/1689 (AI Act)
 PB  - European Commission.
 CY  - Brussels
@@ -795,7 +809,8 @@ TY  - RPRT
 AU  - Vuorikari, R.
 AU  - Kluzer, S.
 AU  - Punie, Y.
-PY  - 2022a
+PY  - 2022
+N1  - Year Suffix: a
 TI  - DigComp 2.2: The Digital Competence Framework for Citizens - With new examples of knowledge, skills and attitudes
 PB  - Publications Office of the European Union.
 CY  - Luxembourg
@@ -808,7 +823,8 @@ AU  - Jerzak, N.
 AU  - Karpinski, Z.
 AU  - Pokropek, A.
 AU  - Tudek, J.
-PY  - 2022b
+PY  - 2022
+N1  - Year Suffix: b
 TI  - Measuring Digital Skills across the EU: Digital Skills Indicator 2.0
 PB  - Publications Office of the European Union.
 CY  - Luxembourg

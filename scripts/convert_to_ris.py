@@ -117,7 +117,17 @@ def convert_text_to_ris(input_file, output_file):
         res.append(f"TY  - {entry_type}")
         for au in authors:
             res.append(f"AU  - {au}")
-        res.append(f"PY  - {year}")
+        
+        # Split year and optional suffix (e.g., 2024a -> 2024, a)
+        year_match = re.match(r'^(\d{4})([a-z])?$', year)
+        if year_match:
+            base_year, suffix = year_match.groups()
+            res.append(f"PY  - {base_year}")
+            if suffix:
+                res.append(f"N1  - Year Suffix: {suffix}")
+        else:
+            res.append(f"PY  - {year}")
+
         res.append(f"TI  - {title.strip('.')}")
         if secondary_title:
             res.append(f"T2  - {secondary_title.strip()}")
