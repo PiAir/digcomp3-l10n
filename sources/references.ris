@@ -30,19 +30,13 @@ PB  - Pearson. ISBN-13: 9780321084057.
 CY  - Abridged Version. London
 ER  - 
 TY  - RPRT
-T1  - Austrian Framework of Reference for Digital Competence: Visibility, comparability and guidance
-A1  - Austria, Digital
-Y1  - 2024///
-PB  - Federal Chancellery of Austria.
-CY  - Vienna
-UR  - https://www.digitalekompetenzen.gv.at/dam/jcr:af4d61bc-163e-4639-b2a7-91184abc5193/2024_Austrian_Framework_of_Reference_for_Digital_Competence.pdf
-ER  - 
-TY  - RPRT
 T1  - Exploring Barriers to and Outcomes of Internet Appropriation Among Households Living in Poverty: A Systematic Literature Review
-A1  - Boerkamp  van Deursen, A. J. A. M., Laar, E. van, van der Zeeuw, A, L G P
+A1  - Boerkamp, L G P
+A1  - van Deursen, A J A M
+A1  - Laar  van der Zeeuw, A., E van
 A1  - van der Graaf, S
 Y1  - 2024///
-PB  - Sage Open, 14(1)
+PB  - Sage Open, 14(1).
 DO  - 10.1177/21582440241233047
 UR  - https://doi.org/10.1177/21582440241233047
 ER  - 
@@ -88,18 +82,20 @@ CY  - Luxembourg
 UR  - https://publications.jrc.ec.europa.eu/repository/handle/JRC134282
 ER  - 
 TY  - RPRT
-T1  - Learning outcomes going global: A multifaceted phenomenon
+T1  - Terminology of European education and training policy: Second edition
 A1  - Cedefop
-Y1  - 2024///
+Y1  - 2014///
 PB  - Publications Office of the European Union.
 CY  - Luxembourg
-UR  - https://www.cedefop.europa.eu/en/publications/9193
+UR  - https://www.cedefop.europa.eu/en/publications/4117
 ER  - 
 TY  - RPRT
-T1  - Learning outcomes resources: Dataset
+T1  - Defining, writing and applying learning outcomes: A European Handbook – Second Edition
 A1  - Cedefop
-Y1  - 2024///
-UR  - https://data.europa.eu/data/datasets/learning-outcomes-resources?locale=en
+Y1  - 2022///
+PB  - Publications Office of the European Union.
+CY  - Luxembourg
+UR  - https://www.cedefop.europa.eu/en/publications/4209
 ER  - 
 TY  - RPRT
 T1  - The shift to learning outcomes: Rhetoric or reality? Online workshop, May 23, 2024
@@ -108,12 +104,18 @@ Y1  - 2024///
 UR  - https://www.cedefop.europa.eu/en/events/shift-learning-outcomes-rhetoric-or-reality
 ER  - 
 TY  - RPRT
-T1  - Terminology of European education and training policy: Second edition
+T1  - Learning outcomes resources: Dataset
 A1  - Cedefop
-Y1  - 2014///
+Y1  - 2024///
+UR  - https://data.europa.eu/data/datasets/learning-outcomes-resources?locale=en
+ER  - 
+TY  - RPRT
+T1  - Learning outcomes going global: A multifaceted phenomenon
+A1  - Cedefop
+Y1  - 2024///
 PB  - Publications Office of the European Union.
 CY  - Luxembourg
-UR  - https://www.cedefop.europa.eu/en/publications/4117
+UR  - https://www.cedefop.europa.eu/en/publications/9193
 ER  - 
 TY  - RPRT
 T1  - Defining, writing and applying learning outcomes: A European Handbook
@@ -130,14 +132,6 @@ Y1  - 2021///
 PB  - Publications Office of the European Union.
 CY  - Luxembourg
 UR  - https://data.europa.eu/doi/10.2801/615021
-ER  - 
-TY  - RPRT
-T1  - Defining, writing and applying learning outcomes: A European Handbook – Second Edition
-A1  - Cedefop
-Y1  - 2022///
-PB  - Publications Office of the European Union.
-CY  - Luxembourg
-UR  - https://www.cedefop.europa.eu/en/publications/4209
 ER  - 
 TY  - RPRT
 T1  - Ten Years of DigComp: A Framework more essential than ever
@@ -214,146 +208,43 @@ PB  - Publications Office of the European Union.
 CY  - Luxembourg
 UR  - https://publications.jrc.ec.europa.eu/repository/handle/JRC123226
 ER  - 
-TY  - RPRT
-T1  - Leveraging Model-Driven Technologies for JSON Artefacts: The Shipyard Case Study. ACM/IEEE 24th International Conference on Model Driven Engineering Languages and Systems (MODELS), Fukuoka, Japan, pp
+TY  - CONF
+T1  - Leveraging Model-Driven Technologies for {JSON} Artefacts: The Shipyard Case Study
 A1  - Colantoni, A
 A1  - Garmendia, A
 A1  - Berardinelli, L
 A1  - Wimer, M
 A1  - Bräuer, J
 Y1  - 2021///
-PB  - 250-260.
-UR  - doi: 10.1109/MODELS50736.2021.00033
+JF  - {ACM/IEEE} 24th International Conference on Model Driven Engineering Languages and Systems ({MODELS})
+SP  - 250
+EP  - 260
+CY  - Fukuoka, Japan
+DO  - 10.1109/MODELS50736.2021.00033
 ER  - 
 TY  - RPRT
-T1  - Communication on the Union of Skills
-A1  - Commission, European
-Y1  - 2025///
-PB  - European Commission.
+T1  - Outcome of proceedings: Council Recommendation on the European Qualifications Framework for lifelong learning...
+A1  - Council of the EU
+Y1  - 2017///
 CY  - Brussels
-UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52025DC0090
+UR  - https://data.consilium.europa.eu/doc/document/ST-9620-2017-INIT/en/pdf
 ER  - 
 TY  - RPRT
-T1  - Monitoring of the European Declaration on Digital Rights and Principles
-A1  - Commission, European
-Y1  - 2025///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://digital-strategy.ec.europa.eu/en/library/digital-decade-2025-declaration-digital-rights-and-principles-monitoring-report-2025
-ER  - 
-TY  - RPRT
-T1  - State of the Digital Decade 2025: Keep building the EU’s sovereignty and digital future (main report)
-A1  - Commission, European
-Y1  - 2025///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://digital-strategy.ec.europa.eu/en/library/state-digital-decade-2025-report
-ER  - 
-TY  - RPRT
-T1  - Communication on the Action Plan on Basic Skills
-A1  - Commission, European
-Y1  - 2025///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://education.ec.europa.eu/sites/default/files/2025-03/Graphic version Action Plan on Basic Skills.pdf
-ER  - 
-TY  - RPRT
-T1  - European Declaration on Digital Rights and Principles for the Digital Decade
-A1  - Commission, European
-Y1  - 2023///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOC_2023_023_R_0001
-ER  - 
-TY  - RPRT
-T1  - Communication on a STEM education strategic plan: Skills for competitiveness and innovation
-A1  - Commission, European
-Y1  - 2025///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://education.ec.europa.eu/sites/default/files/2025-03/STEM_Education_Strategic_Plan_COM_2025_89_1_EN_0.pdf
-ER  - 
-TY  - RPRT
-T1  - Communication: Guidelines on the definition of an artificial intelligence system established by Regulation (EU) 2024/1689 (AI Act)
-A1  - Commission, European
-Y1  - 2025///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application
-ER  - 
-TY  - RPRT
-T1  - Charter of Fundamental Rights of the European Union
-A1  - Commission, European
-Y1  - 2012///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://eur-lex.europa.eu/eli/treaty/char_2012/oj/eng
-ER  - 
-TY  - RPRT
-T1  - Council Recommendation of 22 May 2018 on key competences for lifelong learning
-A1  - Commission, European
-Y1  - 2018///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C_.2018.189.01.0001.01.ENG&toc=OJ:C:2018:189:TOC
-ER  - 
-TY  - RPRT
-T1  - Communication on the Digital Education Action Plan 2021-2027: Resetting education and training for the digital age
-A1  - Commission, European
-Y1  - 2020///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52020DC0624
-ER  - 
-TY  - RPRT
-T1  - European Pillar of Social Rights Action Plan
-A1  - Commission, European
-Y1  - 2021///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://op.europa.eu/webpub/empl/european-pillar-of-social-rights/en/
-ER  - 
-TY  - RPRT
-T1  - Linking data: What does it mean? (web page)
-A1  - Commission, European
-Y1  - 2022///
-UR  - https://data.europa.eu/en/publications/datastories/linking-data-what-does-it-mean
-ER  - 
-TY  - RPRT
-T1  - Guide to EU citizenship
-A1  - Commission, European
-Y1  - 2023///
-PB  - Publications Office of the European Union.
-CY  - Luxembourg
-UR  - https://commission.europa.eu/publications/guide-eu-citizenship_en
-ER  - 
-TY  - RPRT
-T1  - Commission Staff Working Document accompanying the documents Proposal for a Council Recommendation on the key enabling factors for successful digital education and training Proposal for a Council Recommendation on improving the provision of digital skills in education and training (SWD/2023/205 final)
-A1  - Commission, European
-Y1  - 2023///
-PB  - European Commission.
-CY  - Brussels
-UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023SC0205
-N1  - Year Suffix: b
-ER  - 
-TY  - RPRT
-T1  - Guidelines for technology-based assessment (version 1.1)
-A1  - Commission, International Test
-A1  - Publishers, Association of Test
-Y1  - 2022///
-PB  - International Test Commission and Pennsylvania: Association of Test Publishers.
-CY  - Hempstead
-UR  - https://www.testpublishers.org/assets/Guidelines_for_Technology_Based_Assessment_v2022.11.08.pdf
-ER  - 
-TY  - RPRT
-T1  - Artificial intelligence and digital transformation: Competences for civil servants (Working Group report on AI capacity building)
-A1  - Di Vinadio  van Noordt, C, T B
-A1  - Vargas Alvarez del Castillo, C
+T1  - Artificial intelligence and digital transformation: Competences for civil servants
+A1  - Di Vinadio, T B
+A1  - van Noordt, C
+A1  - del Castillo, C
 A1  - Avila, R
 Y1  - 2022///
-PB  - UNESCO
 CY  - Paris
 UR  - https://unesdoc.unesco.org/ark:/48223/pf0000383325
+ER  - 
+TY  - RPRT
+T1  - Austrian Framework of Reference for Digital Competence: Visibility, comparability and guidance
+A1  - Digital Austria
+Y1  - 2024///
+CY  - Vienna
+UR  - https://www.digitalekompetenzen.gv.at/dam/jcr:af4d61bc-163e-4639-b2a7-91184abc5193/2024_Austrian_Framework_of_Reference_for_Digital_Competence.pdf
 ER  - 
 TY  - RPRT
 T1  - The Future of European Competitiveness: A Competitiveness Strategy for Europe
@@ -373,12 +264,117 @@ CY  - In J. Fraillon & M. Rožman (editors), IEA International Computer and Info
 UR  - https://link.springer.com/book/10.1007/978-3-031-61194-0
 ER  - 
 TY  - RPRT
-T1  - Outcome of proceedings: Council Recommendation on the European Qualifications Framework for lifelong learning and repealing the Recommendation of the European Parliament and of the Council of 23 April 2008 on the establishment of the European Qualificatio
-A1  - EU, Council of the
-Y1  - 2017///
-PB  - Council of the EU.
+T1  - European guidelines for the development and writing of short, learning-outcomes-based descriptions of qualifications
+A1  - EQF-Europass project group
+Y1  - 2024///
+T3  - Cedefop working paper series
+IS  - 21
+CY  - Luxembourg
+DO  - 10.2801/838553
+ER  - 
+TY  - RPRT
+T1  - Charter of Fundamental Rights of the European Union
+A1  - European Commission
+Y1  - 2012///
 CY  - Brussels
-UR  - https://data.consilium.europa.eu/doc/document/ST-9620-2017-INIT/en/pdf
+UR  - https://eur-lex.europa.eu/eli/treaty/char_2012/oj/eng
+ER  - 
+TY  - RPRT
+T1  - Council Recommendation of 22 May 2018 on key competences for lifelong learning
+A1  - European Commission
+Y1  - 2018///
+CY  - Brussels
+UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C_.2018.189.01.0001.01.ENG
+ER  - 
+TY  - RPRT
+T1  - Communication on the Digital Education Action Plan 2021-2027: Resetting education and training for the digital age
+A1  - European Commission
+Y1  - 2020///
+CY  - Brussels
+UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52020DC0624
+ER  - 
+TY  - RPRT
+T1  - European Pillar of Social Rights Action Plan
+A1  - European Commission
+Y1  - 2021///
+CY  - Brussels
+UR  - https://op.europa.eu/webpub/empl/european-pillar-of-social-rights/en/
+ER  - 
+TY  - GEN
+T1  - Linking data: What does it mean? (web page)
+A1  - European Commission
+Y1  - 2022///
+UR  - https://data.europa.eu/en/publications/datastories/linking-data-what-does-it-mean
+ER  - 
+TY  - RPRT
+T1  - European Declaration on Digital Rights and Principles for the Digital Decade
+A1  - European Commission
+Y1  - 2023///
+CY  - Brussels
+UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOC_2023_023_R_0001
+ER  - 
+TY  - RPRT
+T1  - Commission Staff Working Document... Proposal for a Council Recommendation on improving the provision of digital skills in education and training
+A1  - European Commission
+Y1  - 2023///
+CY  - Brussels
+UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023SC0205
+ER  - 
+TY  - RPRT
+T1  - Guide to {EU} citizenship
+A1  - European Commission
+Y1  - 2023///
+CY  - Luxembourg
+UR  - https://commission.europa.eu/publications/guide-eu-citizenship_en
+ER  - 
+TY  - RPRT
+T1  - State of the Digital Decade 2025: Keep building the {EU’s} sovereignty and digital future
+A1  - European Commission
+Y1  - 2025///
+CY  - Brussels
+UR  - https://digital-strategy.ec.europa.eu/en/library/state-digital-decade-2025-report
+ER  - 
+TY  - RPRT
+T1  - Communication on the Union of Skills
+A1  - European Commission
+Y1  - 2025///
+CY  - Brussels
+UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52025DC0090
+ER  - 
+TY  - RPRT
+T1  - Communication on the Action Plan on Basic Skills
+A1  - European Commission
+Y1  - 2025///
+CY  - Brussels
+UR  - https://education.ec.europa.eu/sites/default/files/2025-03/Graphic version Action Plan on Basic Skills.pdf
+ER  - 
+TY  - RPRT
+T1  - Communication on a {STEM} education strategic plan: Skills for competitiveness and innovation
+A1  - European Commission
+Y1  - 2025///
+CY  - Brussels
+UR  - https://education.ec.europa.eu/sites/default/files/2025-03/STEM_Education_Strategic_Plan_COM_2025_89_1_EN_0.pdf
+ER  - 
+TY  - RPRT
+T1  - Monitoring of the European Declaration on Digital Rights and Principles
+A1  - European Commission
+Y1  - 2025///
+CY  - Brussels
+UR  - https://digital-strategy.ec.europa.eu/en/library/digital-decade-2025-declaration-digital-rights-and-principles-monitoring-report-2025
+ER  - 
+TY  - RPRT
+T1  - Communication: Guidelines on the definition of an artificial intelligence system established by {Regulation (EU) 2024/1689 (AI Act)}
+A1  - European Commission
+Y1  - 2025///
+CY  - Brussels
+UR  - https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application
+ER  - 
+TY  - GEN
+T1  - Regulation ({EU}) 2024/1689... laying down harmonised rules on artificial intelligence ({Artificial Intelligence Act})
+A1  - European Parliament
+Y1  - 2024///
+CY  - Brussels
+UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689
 ER  - 
 TY  - RPRT
 T1  - Statistics explained: ICT specialists in employment
@@ -427,14 +423,6 @@ CY  - Luxembourg
 UR  - https://publications.jrc.ec.europa.eu/repository/handle/JRC143072
 ER  - 
 TY  - RPRT
-T1  - European guidelines for the development and writing of short, learning-outcomes-based descriptions of qualifications
-A1  - group, EQF-Europass project
-Y1  - 2024///
-PB  - Publications Office of the European Union.
-CY  - Cedefop working paper series, 21. Luxembourg
-UR  - http://data.europa.eu/doi/10.2801/838553
-ER  - 
-TY  - RPRT
 T1  - Diversity and language technology: How language modelling bias causes epistemic injustice
 A1  - Helm, P
 A1  - Bella, G
@@ -444,6 +432,13 @@ Y1  - 2024///
 PB  - Ethics and Information Technology, 26(8).
 DO  - 10.1007/s10676-023-09742-6
 UR  - https://doi.org/10.1007/s10676-023-09742-6
+ER  - 
+TY  - RPRT
+T1  - Guidelines for technology-based assessment (version 1.1)
+A1  - International Test Commission and Association of Test Publishers
+Y1  - 2022///
+CY  - Hempstead
+UR  - https://www.testpublishers.org/assets/Guidelines_for_Technology_Based_Assessment_v2022.11.08.pdf
 ER  - 
 TY  - RPRT
 T1  - Taxonomies in Education: Overview, Comparison, and Future Directions
@@ -506,14 +501,14 @@ EP  - 8013
 DO  - 10.1007/s10639-022-10915-x
 UR  - https://doi.org/10.1007/s10639-022-10915-x
 ER  - 
-TY  - RPRT
-T1  - What is AI literacy? Competences and design considerations. In CHI 2020 - Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems Article 3376727
+TY  - CONF
+T1  - What is {AI} literacy? Competences and design considerations
 A1  - Long, D
 A1  - Magerko, B
 Y1  - 2020///
-PB  - Association for Computing Machinery.
+PB  - Association for Computing Machinery
+JF  - Proceedings of the 2020 {CHI} Conference on Human Factors in Computing Systems
 DO  - 10.1145/3313831.3376727
-UR  - https://doi.org/10.1145/3313831.3376727
 ER  - 
 TY  - RPRT
 T1  - AI competency framework for students
@@ -563,12 +558,26 @@ EP  - 273
 DO  - 10.1057/s41599-025-04576-7
 UR  - https://doi.org/10.1057/s41599-025-04576-7
 ER  - 
+TY  - JOUR
+T1  - Digitales Kompetenzmodell für Österreich. {DigComp 2.3 AT}
+A1  - Nárosy, T
+A1  - Schmölz, A
+A1  - Proinger, J
+A1  - Domany-Funtan, U
+Y1  - 2022///
+JF  - Medienimpulse
+VL  - 60
+IS  - 4
+DO  - 10.21243/mi-04-22-23
+ER  - 
 TY  - RPRT
 T1  - Conceptualizing AI literacy: An exploratory review
-A1  - Ng  Leung, J.K., Chu, S.K, D T
+A1  - Ng, D T
+A1  - Leung, J K
+A1  - Chu, S K
 A1  - Qiao, M S
 Y1  - 2021///
-PB  - Artificial Intelligence, 2
+PB  - Artificial Intelligence, 2.
 CY  - Computers and Education
 UR  - https://www.sciencedirect.com/science/article/pii/S2666920X21000357
 ER  - 
@@ -580,12 +589,18 @@ PB  - OECD Publishing.
 CY  - Paris
 UR  - https://ailiteracyframework.org/wp-content/uploads/2025/05/AILitFramework_ReviewDraft.pdf
 ER  - 
-TY  - RPRT
+TY  - JOUR
 T1  - Revolutionizing education through AI: A comprehensive review of enhancing learning experiences
-A1  - Onesi-Ozigagun  Ololade, N. Y. J., Eyo-Udo, N. N. L, N O
+A1  - Onesi-Ozigagun, N O
+A1  - Ololade, N Y J
+A1  - Eyo-Udo, N N L
 A1  - Ogundipe, N D O
 Y1  - 2024///
-PB  - International Journal of Applied Research in Social Sciences, 6(4), 589–607
+JF  - International Journal of Applied Research in Social Sciences
+VL  - 6
+IS  - 4
+SP  - 589
+EP  - 607
 DO  - 10.51594/ijarss.v6i4.1011
 UR  - https://doi.org/10.51594/ijarss.v6i4.1011
 ER  - 
@@ -604,14 +619,6 @@ SP  - 581
 EP  - 596
 DO  - 10.21511/ppm.23(3).2025.42
 UR  - http://dx.doi.org/10.21511/ppm.23(3).2025.42
-ER  - 
-TY  - RPRT
-T1  - Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013, (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU) 2020/1828 (Artificial Intelligence Act)
-A1  - Parliament, European
-Y1  - 2024///
-PB  - Official Journal of the European Union.
-CY  - Brussels
-UR  - https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689
 ER  - 
 TY  - RPRT
 T1  - Are artificial intelligence skills a reward or a gamble? Deconstructing the AI wage premium in Europe
@@ -660,15 +667,19 @@ EP  - 273
 DO  - 10.3390/economies12100273
 UR  - https://doi.org/10.3390/economies12100273
 ER  - 
-TY  - RPRT
-T1  - Envisioning AI for K-12: What Should Every Child Know about AI? Proceedings of the AAAI Conference on Artificial Intelligence, 33(01), 9795-9799
+TY  - CONF
+T1  - Envisioning {AI} for {K-12}: What Should Every Child Know about {AI}?
 A1  - Touretzky, D
 A1  - Gardner-McCune, C
 A1  - Martin, F
 A1  - Seehorn, D
 Y1  - 2019///
+JF  - Proceedings of the {AAAI} Conference on Artificial Intelligence
+VL  - 33
+IS  - 01
+SP  - 9795
+EP  - 9799
 DO  - 10.1609/aaai.v33i01.33019795
-UR  - https://doi.org/10.1609/aaai.v33i01.33019795
 ER  - 
 TY  - RPRT
 T1  - Machine Learning and the Five Big Ideas. In AI
@@ -719,14 +730,13 @@ CY  - Luxembourg
 UR  - https://publications.jrc.ec.europa.eu/repository/handle/JRC130341
 ER  - 
 TY  - RPRT
-T1  - DigComp 2.0: The Digital Competence Framework for Citizens
+T1  - DigComp 2.0: The Digital Competence Framework for Citizens. Update Phase 1: the Conceptual Reference Model
 A1  - Vuorikari, R
 A1  - Punie, Y
 A1  - Carretero Gomez, S
 A1  - Van Den Brande, G
 Y1  - 2016///
-PB  - the Conceptual Reference Model. Luxembourg: Publications Office of the European Union.
-CY  - Update Phase 1
+CY  - Luxembourg
 UR  - https://publications.jrc.ec.europa.eu/repository/handle/JRC101254
 ER  - 
 TY  - RPRT
