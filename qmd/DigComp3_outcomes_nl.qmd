@@ -1,0 +1,1007 @@
+### 1.1 Browsen, zoeken en filteren van informatie
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO1.1.01", "Leerresultaat": "De voordelen inzien van het gebruik van verschillende digitale zoekhulpmiddelen en -methoden, afhankelijk van het doel.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.1.02", "Leerresultaat": "Herkennen dat de resultaten of outputs van een zoekopdracht afhankelijk zijn van het gebruikte digitale zoekhulpmiddel en de manier waarop een individu de zoekopdracht specificeert.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.1.03", "Leerresultaat": "Herkennen dat zoekresultaten of outputs informatie kunnen bevatten die mogelijk niet relevant is.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.1.04", "Leerresultaat": "De belangrijkste kenmerken identificeren van veelgebruikte AI-gestuurde en traditionele digitale zoekhulpmiddelen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.1.05", "Leerresultaat": "Digitale zoekhulpmiddelen gebruiken om eenvoudige informatiezoekopdrachten uit te voeren.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.06", "Leerresultaat": "Digitale zoekhulpmiddelen gebruiken om bestaande resultaten of outputs te verfijnen of bij te werken.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.07", "Leerresultaat": "Doelgericht nieuwe digitale zoekhulpmiddelen en zoekfunctionaliteiten verkennen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.1.08", "Leerresultaat": "Strategieën identificeren die relevantere digitale zoekresultaten of outputs opleveren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.1.09", "Leerresultaat": "Onderscheid maken tussen meer en minder relevante digitale zoekresultaten of outputs.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.1.10", "Leerresultaat": "Passende digitale zoekhulpmiddelen selecteren op basis van informatiebehoeften.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.11", "Leerresultaat": "Informatiebehoeften vertalen naar effectieve digitale zoekopdrachten, commando's of verklaringen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.12", "Leerresultaat": "Passende strategieën toepassen om bestaande digitale resultaten of outputs te verfijnen of te filteren.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.13", "Leerresultaat": "Voortdurend functies en kenmerken van bekende en nieuwe digitale zoekhulpmiddelen verkennen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.1.14", "Leerresultaat": "Prioriteit geven aan het verdiepen van de eigen bestaande zoekvaardigheden.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.1.15", "Leerresultaat": "Een verscheidenheid aan digitale zoekhulpmiddelen en strategieën combineren om aan complexe informatiebehoeften te voldoen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.16", "Leerresultaat": "Anderen helpen bij het ontwikkelen van hun digitale zoekvaardigheden.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.17", "Leerresultaat": "Op de hoogte blijven van ontwikkelingen in digitale zoektechnologieën.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.1.18", "Leerresultaat": "Ontwikkelingen in digitale zoektechnologieën in een gegeven context beoordelen en evalueren ter ondersteuning van besluitvorming.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.19", "Leerresultaat": "Een verscheidenheid aan digitale zoekhulpmiddelen en strategieën combineren om aan zeer complexe of gespecialiseerde informatiebehoeften te voldoen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.20", "Leerresultaat": "Anderen helpen bij het uitvoeren en verfijnen van complexe of gespecialiseerde zoekopdrachten in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.1.21", "Leerresultaat": "Bijdragen aan verbeteringen in of nieuwe oplossingen voor complexe of gespecialiseerde zoekopdrachten in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#FFC000", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 1.2 Informatie evalueren
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO1.2.01", "Leerresultaat": "De voordelen inzien van een voorzichtige aanpak bij het interpreteren van informatie en inhoud in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO1.2.02", "Leerresultaat": "Onderscheid maken tussen de bron van digitale inhoud en de digitale inhoud zelf.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.03", "Leerresultaat": "Herkennen dat sommige digitale informatiebronnen en systemen mogelijk niet betrouwbaar zijn.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.04", "Leerresultaat": "Herkennen dat het moeilijk kan zijn om onderscheid te maken tussen informatie en inhoud gegenereerd door mensen en door AI-systemen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.2.05", "Leerresultaat": "Voorbeelden herkennen van misinformatie, desinformatie en bronnen van vooringenomenheid (bias).", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.06", "Leerresultaat": "Voorbeelden herkennen van beïnvloeding via sociale media en filterbubbels.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.07", "Leerresultaat": "Een basisbeoordeling maken van de betrouwbaarheid en geloofwaardigheid van digitale informatiebronnen en inhoud.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.2.08", "Leerresultaat": "Het nut onderkennen van het kritisch beoordelen van de geloofwaardigheid en betrouwbaarheid van informatie, inhoud en hun bronnen in digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.2.09", "Leerresultaat": "Mogelijke gevolgen herkennen van misinformatie en desinformatie in digitale omgevingen voor zichzelf en anderen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.10", "Leerresultaat": "Methoden beschrijven om de bron van online gevonden informatie te identificeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.11", "Leerresultaat": "De doelen van factcheck-diensten definiëren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.12", "Leerresultaat": "De concepten en doelen van pre-bunking en de-bunking herkennen in digitale contexten.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.13", "Leerresultaat": "Herkenen dat de data die ingezet wordt voor het trainen van AI-systemen en de wijze waarop zij getraind worden van invloed zijn op de betrouwbaarheid van de informatie die zij leveren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.2.14", "Leerresultaat": "Herkennen dat sommige digitale technologieën, zoals AI-systemen, kunnen functioneren als een 'black box', waardoor het moeilijk is om uit te leggen waarom of hoe een output is geproduceerd.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.2.15", "Leerresultaat": "Voorbeelden identificeren van menselijke (cognitieve, affectieve) bias en AI-systeem (data, training) bias in relatie tot het genereren en interpreteren van informatie.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.2.16", "Leerresultaat": "Herkennen dat AI-systemen output kunnen produceren die onnauwkeurig is, zelfs als deze aannemelijk lijkt.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.2.17", "Leerresultaat": "Herkennen dat de mensen die een AI-systeem gebruiken verantwoordelijk zijn voor het controleren van de kwaliteit en geldigheid van de gegenereerde informatie en inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.2.18", "Leerresultaat": "De aanwezigheid herkennen van gebruikerssturende strategieën in digitale omgevingen, zoals clickbait, nudging en gamificatie.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.19", "Leerresultaat": "Pre-bunking en de-bunking strategieën toepassen om onbetrouwbare bronnen en inhoud in digitale omgevingen te verwerpen of in diskrediet te brengen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.2.20", "Leerresultaat": "Effectief reageren op gebruikerssturende strategieën in digitale omgevingen, zoals clickbait, nudging en gamificatie.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.2.21", "Leerresultaat": "Kritisch de betrouwbaarheid beoordelen van bronnen, informatie en inhoud in digitale omgevingen, rekening houdend met de rol van AI-systemen, personalisatie-effecten en commerciële of andere belangen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO1.2.22", "Leerresultaat": "Voortdurend onderzoeken hoe AI-systemen, vooroordelen en verschillende belangen de generatie, presentatie en interpretatie van informatie en inhoud in digitale omgevingen vormgeven.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Expliciet"}, {"ID": "LO1.2.23", "Leerresultaat": "Persoonlijke, sociale en politieke gevolgen beschrijven van misinformatie, desinformatie, bronnen van bias, beïnvloeding via sociale media en filterbubbels.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.2.24", "Leerresultaat": "Kenmerken van betrouwbare digitale technologieën, zoals AI-systemen, beschrijven.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.2.25", "Leerresultaat": "Methoden beschrijven die gebruikt kunnen worden om deepfakes te identificeren.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO1.2.26", "Leerresultaat": "Grondig de betrouwbaarheid en nauwkeurigheid beoordelen van een diversiteit aan bronnen, informatie en inhoud in digitale omgevingen, rekening houdend met een reeks mogelijke beïnvloedende factoren.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.2.27", "Leerresultaat": "Anderen ondersteunen bij het ontwikkelen van hun vaardigheden om de betrouwbaarheid van bronnen, informatie en inhoud in digitale omgevingen te beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.2.28", "Leerresultaat": "Het ontwikkelen van veerkracht tegen misinformatie en desinformatie in digitale omgevingen onder individuen en/of groepen bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.2.29", "Leerresultaat": "Systematisch bronnen, informatie en inhoud in digitale omgevingen beoordelen en evalueren ter ondersteuning van complexe besluitvorming.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.2.30", "Leerresultaat": "Anderen helpen bij het ontwikkelen van vaardigheden om informatie en inhoud in digitale omgevingen kritisch te evalueren.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.2.31", "Leerresultaat": "Leiding geven aan of bijdragen aan initiatieven die een nauwkeurige interpretatie van data, informatie en inhoud in digitale omgevingen ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#FFC000", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 1.3 Informatie beheren
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO1.3.01", "Leerresultaat": "De voordelen inzien van het beheren en organiseren van informatie in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO1.3.02", "Leerresultaat": "Functies van dataverwijdering, -herstel en -back-up herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO1.3.03", "Leerresultaat": "De belangrijkste eigenschappen van digitale bestanden en mappen identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO1.3.04", "Leerresultaat": "In algemene termen het concept van data herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO1.3.05", "Leerresultaat": "Digitale bestanden downloaden, opslaan, ophalen, verplaatsen en verwijderen.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO1.3.06", "Leerresultaat": "Eenvoudige data organiseren en formatteren in een gestructureerde digitale omgeving, zoals in spreadsheets.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO1.3.07", "Leerresultaat": "Eigen contacten bijwerken, bijvoorbeeld op de telefoon, in e-mail of op sociale media.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO1.3.08", "Leerresultaat": "Het belang inzien van zorgvuldig en ethisch beheer van data en informatie in digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.3.09", "Leerresultaat": "Herkennen dat digitale bestanden en mappen kunnen worden (her)noemd en georganiseerd op een door de gebruiker gewenste manier.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO1.3.10", "Leerresultaat": "Herkennen dat digitale bestanden op verschillende locaties kunnen worden opgeslagen (apparaten, externe opslag en clouddiensten) en van de ene naar de andere locatie kunnen worden overgezet.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO1.3.11", "Leerresultaat": "Veelvoorkomende hulpmiddelen voor gegevensverzameling en hun belangrijkste functies identificeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.3.12", "Leerresultaat": "Verantwoordelijkheden definiëren die verbonden zijn aan het gebruik van hulpmiddelen voor gegevensverzameling.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO1.3.13", "Leerresultaat": "Veelvoorkomende soorten data en hun formaten identificeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO1.3.14", "Leerresultaat": "Naamgevingsconventies toepassen op digitale bestanden en hiërarchieën op digitale mappen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO1.3.15", "Leerresultaat": "Bestanden beheren, opslaan en verwijderen op digitale apparaten, externe opslag en clouddiensten.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO1.3.16", "Leerresultaat": "Informatie beheren in de eigen digitale accounts, zoals e-mail.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO1.3.17", "Leerresultaat": "Hulpmiddelen voor gegevensverzameling gebruiken voor eenvoudige verwerking van data en informatie, zoals quizzen, peilingen of enquêtes.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.3.18", "Leerresultaat": "Data organiseren en formatteren in een gestructureerde digitale omgeving, zoals in spreadsheets.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO1.3.19", "Leerresultaat": "Eenvoudige formules toepassen op data in een gestructureerde digitale omgeving, zoals in spreadsheets.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO1.3.20", "Leerresultaat": "Prioriteit geven aan ethisch en transparant beheer en verwerking van data en informatie in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.3.21", "Leerresultaat": "Rekening houden met mogelijke bronnen van fouten of onnauwkeurigheden bij het beheer en de verwerking van data en informatie in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.3.22", "Leerresultaat": "Mogelijke bronnen van fouten of onnauwkeurigheden in informatie of data in digitale omgevingen identificeren.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.3.23", "Leerresultaat": "De belangrijkste stappen beschrijven bij het beheren, verwerken en analyseren van informatie en data in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.3.24", "Leerresultaat": "Kenmerken van open data beschrijven (voorbeelden, toepassingen, voordelen en beperkingen).", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.3.25", "Leerresultaat": "Kenmerken van big data beschrijven (voorbeelden, toepassingen, voordelen en beperkingen).", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO1.3.26", "Leerresultaat": "Verschillende functies toepassen om data en informatie in digitale omgevingen over te dragen en te beheren.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.3.27", "Leerresultaat": "Een reeks digitale hulpmiddelen en methoden gebruiken om een verscheidenheid aan data en informatie te verzamelen en te verwerken.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.3.28", "Leerresultaat": "Passende analyses van informatie en data in digitale omgevingen toepassen om bij te dragen aan complexe besluitvorming.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.3.29", "Leerresultaat": "Anderen helpen met het beheer, de verwerking en de analyse van data en informatie in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.3.30", "Leerresultaat": "Het belang inzien van het structureren en documenteren van data en informatie in digitale omgevingen ten behoeve van anderen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO1.3.31", "Leerresultaat": "Op de hoogte blijven van technologische ontwikkelingen op het gebied van data- en informatiebeheer en -analyse.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO1.3.32", "Leerresultaat": "Strategieën ontwikkelen en implementeren voor complex of gespecialiseerd beheer, verwerking en analyse van data en informatie in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.3.33", "Leerresultaat": "Verschillende hulpmiddelen en methoden zoals big data-technieken of simulaties gebruiken om complexe data of grote hoeveelheden informatie te verwerken, te beheren of te analyseren.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.3.34", "Leerresultaat": "Leiding geven aan of bijdragen aan initiatieven die anderen ondersteunen bij geavanceerd informatie- en databeheer, -verwerking en -analyse in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO1.3.35", "Leerresultaat": "Bijdragen aan verbeteringen in of nieuwe oplossingen voor complex databeheer, -verwerking of -analyse in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#FFC000", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 2.1 Interacteren via en met digitale technologieën
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO2.1.01", "Leerresultaat": "Het belang inzien van het rekening houden met de voorkeuren van anderen in digitale communicatie.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.1.02", "Leerresultaat": "Onderscheid maken tussen synchrone en asynchrone vormen van digitale communicatie.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.1.03", "Leerresultaat": "Verschillen identificeren tussen digitale en niet-digitale interacties.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.04", "Leerresultaat": "Onderscheid maken tussen fysieke en virtuele realiteiten.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.05", "Leerresultaat": "Basiskenmerken en -functies van digitale communicatiehulpmiddelen identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.06", "Leerresultaat": "Basiskenmerken identificeren van virtuele assistenten (chatbots) en AI-systemen die worden gebruikt in communicatiecontexten.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.1.07", "Leerresultaat": "Belangrijke verschillen herkennen tussen mens-machine interacties en mens-tot-mens interacties.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.08", "Leerresultaat": "In algemene termen herkennen wat een robot is, inclusief de niet-menselijke aard ervan.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.1.09", "Leerresultaat": "Herkennen dat mensen interageren met robots om taken uit te voeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.1.10", "Leerresultaat": "Basiskenmerken van digitale communicatiehulpmiddelen gebruiken om te interageren met individuen en groepen.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.11", "Leerresultaat": "Het belang inzien van het afstemmen van de eigen digitale communicatie op specifieke contexten.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.1.12", "Leerresultaat": "Herkennen dat er een realiteit-virtualiteit-continuüm bestaat in digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.13", "Leerresultaat": "De belangrijkste kenmerken en functies beschrijven van een reeks digitale communicatiehulpmiddelen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.14", "Leerresultaat": "Voordelen en beperkingen beschrijven van virtuele assistenten (chatbots) en AI-systemen in digitale communicatiecontexten.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.1.15", "Leerresultaat": "Contexten identificeren waarin asynchrone of synchrone digitale communicatie, of niet-digitale communicatie, het beste werkt.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.1.16", "Leerresultaat": "Belangrijke kenmerken van robots identificeren (zoals sensoren, software, bewegingsregelaars en menselijke interface).", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.17", "Leerresultaat": "Voorbeelden definiëren van hoe mensen met robots kunnen interageren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.18", "Leerresultaat": "Herkennen dat robots kunnen werken met verschillende mate van autonomie.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.1.19", "Leerresultaat": "Geschikte communicatiemiddelen en -hulpmiddelen selecteren, rekening houdend met digitale en niet-digitale opties, voor een gegeven context of doel.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.20", "Leerresultaat": "Vragen, commando's of verklaringen (prompts) ontwikkelen en verfijnen voor virtuele assistenten (chatbots) en AI-systemen ter ondersteuning van niet-complexe digitale interacties.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO2.1.21", "Leerresultaat": "Meerdere kenmerken van verschillende digitale communicatiehulpmiddelen gebruiken om te interageren met en het beheren van individuen, groepen en kanalen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.22", "Leerresultaat": "Communicatie in digitale omgevingen voortdurend aanpassen als reactie op een verscheidenheid aan contexten.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.1.23", "Leerresultaat": "Digitale communicatiehulpmiddelen en -methoden combineren voor complexe communicatietaken.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.24", "Leerresultaat": "Systematisch vragen, commando's of verklaringen (prompts) voor AI-systemen ontwikkelen en geleidelijk verfijnen om complexe digitale interacties af te handelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO2.1.25", "Leerresultaat": "Voordelen en nadelen van robottoepassingen in een specifieke context beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.26", "Leerresultaat": "Anderen helpen bij het beoordelen en selecteren van geschikte digitale communicatiehulpmiddelen voor een bepaald doel.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.27", "Leerresultaat": "Organiseren en/of modereren van complexe digitale evenementen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.28", "Leerresultaat": "Op de hoogte blijven van ontwikkelingen in hulpmiddelen en methoden voor digitale communicatie en interactie.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.1.29", "Leerresultaat": "Digitale communicatie- en interactiehulpmiddelen beoordelen en combineren voor zeer complexe of nieuwe taken.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.30", "Leerresultaat": "Begeleiding, ondersteuning of leiderschap bieden bij het geavanceerde gebruik van digitale communicatie- en interactiehulpmiddelen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.1.31", "Leerresultaat": "Leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor digitale communicatie of mens-machine interactie.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#2F5597", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 2.2 Delen via digitale technologieën
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO2.2.01", "Leerresultaat": "Het belang inzien van ethisch en verantwoord delen van informatie en inhoud in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.2.02", "Leerresultaat": "Voordelen en risico's herkennen van het delen van informatie en inhoud in de digitale omgeving.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.2.03", "Leerresultaat": "Functies en toepassingen van sociale media identificeren, evenals voorbeelden van veelvoorkomende sociale mediaplatforms.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.2.04", "Leerresultaat": "Herkennen dat individuen kunnen kiezen hoe en wat ze willen delen via digitale technologieën.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.2.05", "Leerresultaat": "Herkennen dat informatie en inhoud - waarvan niet alles waar of nauwkeurig is - op verschillende manieren kan worden gedeeld door zowel AI-systemen als mensen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.2.06", "Leerresultaat": "Doel en doelgroep identificeren van informatie en inhoud die gedeeld gaat worden in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.2.07", "Leerresultaat": "Eenvoudige processen gebruiken om informatie en inhoud op een passende manier en in overeenstemming met de doelen te delen in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO2.2.08", "Leerresultaat": "Het belang inzien van het beoordelen van de waarde en nauwkeurigheid van informatie en inhoud voordat deze in digitale omgevingen wordt gedeeld.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.2.09", "Leerresultaat": "Verantwoordelijkheden definiëren die verbonden zijn aan het delen van informatie en inhoud in digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.2.10", "Leerresultaat": "Effectieve en ethische manieren beschrijven om informatie en inhoud te delen in verschillende digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.2.11", "Leerresultaat": "Mogelijke risico's, voordelen en ethische overwegingen beoordelen van het delen van informatie en inhoud in verschillende digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.2.12", "Leerresultaat": "Informatie en inhoud op een effectieve en ethische manier delen in verschillende digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.2.13", "Leerresultaat": "Misinformatie en desinformatie die gedeeld is in digitale omgevingen rapporteren of markeren.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.2.14", "Leerresultaat": "De waarde inzien van het delen van digitale informatie en inhoud om anderen te helpen, bijvoorbeeld via Open Educational Resources (OER).", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.2.15", "Leerresultaat": "Informatie en inhoud op een effectieve en ethische manier delen in digitale omgevingen ter ondersteuning van persoonlijke, leer- of professionele doelen van zichzelf en anderen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.2.16", "Leerresultaat": "Anderen adviseren over effectieve en ethische manieren om informatie en inhoud te delen in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.2.17", "Leerresultaat": "Nieuwe en alternatieve middelen verkennen voor het complex delen van informatie en inhoud in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.2.18", "Leerresultaat": "Complex delen van informatie en inhoud over verschillende digitale technologieën heen faciliteren.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.2.19", "Leerresultaat": "Bijdragen aan complexe of gespecialiseerde initiatieven voor het delen van informatie en inhoud in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.2.20", "Leerresultaat": "Leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor het delen van complexe informatie en inhoud in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#2F5597", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 2.3 Betrokkenheid bij burgerschap via digitale technologieën
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO2.3.01", "Leerresultaat": "De potentiële voordelen inzien van digitale technologieën voor de eigen empowerment en participatie en die van anderen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.3.02", "Leerresultaat": "Digitaal burgerschap herkennen als het vermogen om actief en verantwoordelijk deel te nemen aan gemeenschappen door betrokkenheid bij digitale technologieën.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.3.03", "Leerresultaat": "Voorbeelden identificeren van maatschappelijke participatie in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.3.04", "Leerresultaat": "Herkennen dat digitale technologieën - inclusief moeilijkheden bij de toegang ertoe - bepaalde groepen of individuen kunnen uitsluiten.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.3.05", "Leerresultaat": "Herkennen dat er wetten en regels zijn om de rechten van gebruikers van digitale platforms en diensten te beschermen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.3.06", "Leerresultaat": "De belangrijkste doelen en functies identificeren van (persoonlijk relevante) digitale platforms en diensten.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.3.07", "Leerresultaat": "Herkennen dat individuen een actieve rol kunnen spelen bij het beoordelen of verbeteren van online producten en diensten.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.3.08", "Leerresultaat": "Digitale hulpmiddelen gebruiken om te zoeken naar en het vinden van gemeenschappen voor maatschappelijke participatie over onderwerpen van belang.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.09", "Leerresultaat": "(Persoonlijk relevante) digitale platforms en diensten gebruiken, indien nodig hulp zoekend.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.10", "Leerresultaat": "Prioriteit geven aan het verkennen van manieren waarop digitale technologieën de eigen maatschappelijke participatie kunnen versterken.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.3.11", "Leerresultaat": "Het belang inzien van het identificeren van uitgesloten of gemarginaliseerde mensen en groepen in digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.3.12", "Leerresultaat": "Deelnemen aan discussies over onderwerpen die te maken hebben met digitaal burgerschap.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.3.13", "Leerresultaat": "Herkennen dat digitale participatie de actieve betrokkenheid bij de samenleving is door het gebruik van digitale technologieën.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.3.14", "Leerresultaat": "Herkennen dat maatschappelijke participatie plaatsvindt op een continuüm.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.3.15", "Leerresultaat": "Belangrijke vrijheden, rechten en verantwoordelijkheden van individuen herkennen onder relevante digitale wetten en regels.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.3.16", "Leerresultaat": "Definiëren hoe belangrijke rechten uit te oefenen in digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.3.17", "Leerresultaat": "Het concept van de platformeconomie beschrijven, inclusief kansen, risico's, sociale en ethische implicaties.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.3.18", "Leerresultaat": "Het concept en de functies van maatschappelijke monitoring beschrijven.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.3.19", "Leerresultaat": "Het concept en de functies van e-overheid beschrijven.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.3.20", "Leerresultaat": "Beschrijven hoe digitale technologieën zoals sociale mediaplatforms bepaalde aspecten van de basisdemocratie kunnen beïnvloeden (bijvoorbeeld door beïnvloeding van het verkiezingsproces).", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.3.21", "Leerresultaat": "Autonoom en effectief interageren met digitale platforms en diensten.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.22", "Leerresultaat": "Kansen, risico's, sociale en ethische implicaties van de platformeconomie beoordelen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.23", "Leerresultaat": "Prioriteit geven aan het voortdurend verkennen van manieren waarop digitale technologieën empowerment of maatschappelijke participatie kunnen ondersteunen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.3.24", "Leerresultaat": "Deelnemen aan discussies over de ethische, politieke en sociale implicaties van digitale technologieën.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.3.25", "Leerresultaat": "Onderscheid maken tussen hoogrisico en verboden AI-systemen (volgens wetgeving).", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.3.26", "Leerresultaat": "Mogelijke maatschappelijke, politieke of economische effecten van verboden en hoogrisico AI-systemen beschrijven.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.3.27", "Leerresultaat": "Het potentieel van digitale technologieën voor inclusie, uitsluiting en maatschappelijke interventie in een gegeven context beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.28", "Leerresultaat": "Een reeks manieren beoordelen waarop digitale technologieën zoals sociale mediaplatforms democratische processen kunnen beïnvloeden.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.29", "Leerresultaat": "Anderen helpen bij het identificeren van kansen en het participeren in digitale omgevingen voor empowerment en participatie (van zichzelf of de gemeenschap).", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO2.3.30", "Leerresultaat": "Anderen ondersteunen bij het zich informeren over en het uitoefenen van hun rechten onder digitale wetgeving.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.31", "Leerresultaat": "Op de hoogte blijven van vrijheden, rechten en verantwoordelijkheden van individuen bij evoluerende digitale technologieën en wetsontwikkelingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.3.32", "Leerresultaat": "Meerdere effecten van digitale technologieën op de samenleving, politieke processen of de economie evalueren vanuit verschillende perspectieven.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.33", "Leerresultaat": "Anderen helpen de belangrijkste bepalingen van digitale wetgeving te begrijpen, gegeven een specifieke context.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.3.34", "Leerresultaat": "Leiding geven aan of ontwerpen van digitale burgerschapsinitiatieven, bijvoorbeeld om participatie, inclusie of empowerment te bevorderen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#2F5597", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 2.4 Samenwerken via digitale technologieën
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO2.4.01", "Leerresultaat": "Het belang inzien van effectieve communicatieve vaardigheden voor succesvolle samenwerking in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.4.02", "Leerresultaat": "Belangrijkste voordelen en beperkingen herkennen van digitale samenwerkingshulpmiddelen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.4.03", "Leerresultaat": "De aanwezigheid van AI-systemen in digitale samenwerkingshulpmiddelen herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.4.04", "Leerresultaat": "Deelnemen aan samenwerkingsgroepen via digitale samenwerkingshulpmiddelen.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.05", "Leerresultaat": "Rekening houden met verschillende perspectieven om te helpen een gemeenschappelijk doel te bereiken in digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.4.06", "Leerresultaat": "Belangrijkste kenmerken en functies van verschillende digitale samenwerkingshulpmiddelen identificeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.4.07", "Leerresultaat": "De functies, voordelen en beperkingen herkennen van AI-systeemfunctionaliteiten in sommige digitale samenwerkingshulpmiddelen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.4.08", "Leerresultaat": "Voorbeelden identificeren van ethische, verantwoordelijke en effectieve samenwerking tussen mens en AI.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.4.09", "Leerresultaat": "Digitale samenwerkingshulpmiddelen selecteren die passen bij de samenwerkingsdoelen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.10", "Leerresultaat": "Eenvoudige samenwerkingstaken creëren en beheren met behulp van digitale samenwerkingshulpmiddelen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.11", "Leerresultaat": "Effectief bijdragen aan eenvoudige samenwerkingstaken in digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.12", "Leerresultaat": "Prioriteit geven aan een goede afstemming tussen het gebruik van digitale samenwerkingshulpmiddelen en de voorkeuren van de betrokken individuen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.4.13", "Leerresultaat": "Zorgen voor passend en ethisch gebruik van Digitale technologieën, waaronder AI-systemen voor samenwerkingsactiviteiten.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Expliciet"}, {"ID": "LO2.4.14", "Leerresultaat": "Verschillende digitale samenwerkingshulpmiddelen gebruiken en combineren die voldoen aan de behoeften van projecten, taken en groepen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.15", "Leerresultaat": "Anderen helpen bij het ontwikkelen van hun vaardigheden om samen te werken in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.16", "Leerresultaat": "Ethische en praktische aspecten van mens-AI-samenwerkingstechnieken voor een bepaald doel beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO2.4.17", "Leerresultaat": "Leiding geven aan samenwerking in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.18", "Leerresultaat": "Op de hoogte blijven van ontwikkelingen in samenwerkingspraktijken in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.4.19", "Leerresultaat": "Proportioneel, ethisch en effectief gebruik van digitale technologieën, inclusief AI-systemen, in samenwerkingen bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Expliciet"}, {"ID": "LO2.4.20", "Leerresultaat": "Complexe of gespecialiseerde strategieën voor samenwerking in digitale omgevingen ontwerpen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.21", "Leerresultaat": "Anderen helpen bij het ontwikkelen van vaardigheden om leiding te geven aan samenwerking in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.4.22", "Leerresultaat": "Leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor mens-AI-samenwerking.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#2F5597", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 2.5 Digitaal gedrag
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO2.5.01", "Leerresultaat": "Het belang inzien van het geven van ruimte aan de meningen van anderen in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.5.02", "Leerresultaat": "Verschillen identificeren in verbaal en non-verbaal gedrag in digitale en niet-digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.5.03", "Leerresultaat": "Herkennen dat er culturele en contextuele verschillen zijn in verbale en non-verbale communicatie in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.5.04", "Leerresultaat": "Herkennen dat bepaald gedrag in digitale omgevingen mogelijk niet acceptabel is voor anderen en/of juridische gevolgen kan hebben.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.5.05", "Leerresultaat": "Passende toon en visuele expressie zoals emoji gebruiken in formele en informele digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO2.5.06", "Leerresultaat": "Prioriteit geven aan digitaal gedrag dat inclusie en een positieve digitale reputatie van zichzelf en anderen ondersteunt.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.5.07", "Leerresultaat": "De belangrijkste rechten en verantwoordelijkheden van kinderen en volwassenen met betrekking tot digitaal gedrag identificeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.5.08", "Leerresultaat": "De relatie tussen digitaal gedrag en digitale reputatie beschrijven.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.5.09", "Leerresultaat": "De belangrijkste rechten en verantwoordelijkheden van kinderen en volwassenen met betrekking tot digitaal gedrag identificeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.5.10", "Leerresultaat": "Een respectvolle en inclusieve toon en visuele expressie zoals emoji gebruiken in formele en informele digitale omgevingen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO2.5.11", "Leerresultaat": "Inclusief en respectvol gedrag in digitale omgevingen bevorderen en ondersteunen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.5.12", "Leerresultaat": "Onderscheid maken tussen ethisch, legaal en illegaal gedrag in digitale omgevingen, erkennend dat deze onderscheiden complex kunnen zijn.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.5.13", "Leerresultaat": "Soorten misbruik identificeren die in digitale omgevingen kunnen voorkomen, inclusief getroffen groepen en mogelijke effecten.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.5.14", "Leerresultaat": "Manieren beschrijven waarop misbruik in digitale omgevingen kan worden gemeld en aangepakt.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.5.15", "Leerresultaat": "Met effectieve en respectvolle communicatie en gedrag reageren op moeilijke of complexe situaties in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO2.5.16", "Leerresultaat": "Ethische en legale/illegale aspecten van gedrag in digitale omgevingen in een specifieke context beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.5.17", "Leerresultaat": "Patronen en mogelijke effecten van misbruik van specifieke groepen in digitale omgevingen analyseren.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.5.18", "Leerresultaat": "Anderen ondersteunen bij het ontwikkelen van hun vaardigheden voor inclusief en respectvol gedrag in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO2.5.19", "Leerresultaat": "Op de hoogte blijven van ontwikkelingen in beleid en wetgeving met betrekking tot gedrag in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.5.20", "Leerresultaat": "Anderen helpen belangrijke rechten en verantwoordelijkheden te begrijpen onder beleid en wetgeving met betrekking tot digitaal gedrag in een gegeven context.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.5.21", "Leerresultaat": "Leiden van of bijdragen aan beleid of initiatieven op het gebied van digitaal gedrag.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#2F5597", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 2.6 Digitale identiteit beheren
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO2.6.01", "Leerresultaat": "De voordelen inzien van het implementeren van maatregelen om de eigen digitale identiteit te helpen beheren.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO2.6.02", "Leerresultaat": "Kenmerken van fysieke en digitale identiteiten herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.6.03", "Leerresultaat": "Aspecten van fysieke identiteit identificeren die gekoppeld kunnen worden aan digitale identiteit.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.6.04", "Leerresultaat": "Digitale identiteit herkennen als zowel een methode om een individu te authenticeren (verifiëren) als de data gegenereerd door de online activiteiten van een individu.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.05", "Leerresultaat": "Veelvoorkomende vormen en toepassingen van digitale identiteit identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.06", "Leerresultaat": "Herkennen dat informatie op het internet in de loop van de tijd kan blijven bestaan.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.07", "Leerresultaat": "Het concept en de componenten van een digitale voetafdruk herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.08", "Leerresultaat": "Herkennen dat wetten voor de bescherming van digitale identiteit de data en privacy van individuen beschermen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.09", "Leerresultaat": "Breng eenvoudige maatregelen in kaart, zoals het beperken van tracking en het verwijderen van de browsergeschiedenis, om de digitale identiteit te beheren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO2.6.10", "Leerresultaat": "Neem eenvoudige maatregelen, zoals het beperken van tracking en het verwijderen van de browsergeschiedenis, om de digitale identiteit te beheren.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO2.6.11", "Leerresultaat": "Het belang inzien van de eigen rol en rechten bij het beheer van de digitale identiteit.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.6.12", "Leerresultaat": "De relaties beschrijven tussen digitale voetafdruk, digitale reputatie en digitale identiteit.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.13", "Leerresultaat": "Voorbeelden identificeren van actief en passief gegenereerde informatie in relatie tot digitale identiteit.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.14", "Leerresultaat": "Manieren beschrijven waarop de reikwijdte van de eigen digitale identiteit kan worden geanalyseerd.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.15", "Leerresultaat": "Kenmerken en functies identificeren die worden gebruikt om de digitale identiteit te beheren, zoals instellingen op apparaten en apps, online accounts, activiteitstracking en sociale mediaplatforms.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.16", "Leerresultaat": "Informatie over de reikwijdte van de eigen digitale identiteit gebruiken om acties op het gebied van identiteitsbeheer te sturen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.6.17", "Leerresultaat": "Instellingen aanpassen op apparaten en apps, online accounts en activiteitstracking om de eigen digitale identiteit te helpen beheren.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.6.18", "Leerresultaat": "Een of meer digitale identiteiten cureren en beheren met behulp van verschillende kenmerken en functionaliteiten op digitale platform(s) of diensten.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.6.19", "Leerresultaat": "Prioriteit geven aan de doorlopende beoordeling van de eigen digitale identiteit.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.6.20", "Leerresultaat": "De relatie herkennen tussen digitale technologische ontwikkelingen en het beheer van de digitale identiteit.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.21", "Leerresultaat": "Manieren beschrijven om rechten uit te oefenen op het gebied van digitale identiteit.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO2.6.22", "Leerresultaat": "Manieren beschrijven waarop AI-systemen worden gebruikt bij het beheer van digitale identiteit.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO2.6.23", "Leerresultaat": "Verschillende processen implementeren om de digitale identiteit over een reeks digitale omgevingen te beheren.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.6.24", "Leerresultaat": "Voordelen, sociale en ethische implicaties van het gebruik van AI-systemen bij het beheer van digitale identiteit beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO2.6.25", "Leerresultaat": "Digitale identiteiten cureren en beheren voor persoonlijke, professionele en/of organisatorische doeleinden over verschillende platforms en diensten.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.6.26", "Leerresultaat": "Anderen helpen bij het basisbeheer van hun digitale identiteit.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.6.27", "Leerresultaat": "Op de hoogte blijven van ontwikkelingen in digitale technologieën in relatie tot het beheer van de digitale identiteit.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO2.6.28", "Leerresultaat": "Anderen ondersteunen bij het verdiepen van hun vaardigheden in het beheer en de curatie van digitale identiteiten.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO2.6.29", "Leerresultaat": "Anderen adviseren over complexe aspecten van het beheer van digitale identiteit en bijbehorende rechten.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#2F5597", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 3.1 Digitale inhoud ontwikkelen
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO3.1.01", "Leerresultaat": "De voordelen inzien van het verkennen van verschillende hulpmiddelen voor het creëren van digitale inhoud ter ondersteuning van contentcreatiedoelen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.1.02", "Leerresultaat": "Het belang inzien van digitale inhoud die toegankelijk en inclusief is.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO3.1.03", "Leerresultaat": "Veelvoorkomende soorten digitale inhoud en hun bijbehorende bestandsformaten identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.1.04", "Leerresultaat": "Veelvoorkomende operationele functies identificeren binnen hulpmiddelen voor het creëren van digitale inhoud.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.1.05", "Leerresultaat": "Onderscheid maken tussen toegankelijke digitale inhoud en inclusieve digitale inhoud.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.1.06", "Leerresultaat": "Herkennen dat AI-systemen weliswaar digitale inhoud kunnen genereren en integreren, maar dat mensen essentieel zijn om ethische, verantwoordelijke en context-passende outputs te waarborgen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.1.07", "Leerresultaat": "Herkennen dat generatieve AI een specifiek type AI is en een van de verschillende digitale technologieën die gebruikt kunnen worden om contentcreatie te ondersteunen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.1.08", "Leerresultaat": "Basiskenmerken van hulpmiddelen voor het creëren van digitale inhoud gebruiken om digitale inhoud te creëren en te bewerken (tekst, afbeelding, video en/of audio).", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.09", "Leerresultaat": "Doelgericht kenmerken en functies van hulpmiddelen voor het creëren van digitale inhoud verkennen om contentcreatievaardigheden te verdiepen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.1.10", "Leerresultaat": "Voordelen, beperkingen en ethische overwegingen beschrijven bij het gebruik van digitale technologieën zoals AI-systemen voor contentcreatie.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.1.11", "Leerresultaat": "Bepaal strategieën zoals sjablonen of een passende volgorde van stappen die zorgen voor een efficiënte creatie van digitale inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.1.12", "Leerresultaat": "Verschillende hulpmiddelen voor het creëren van digitale inhoud gebruiken om digitale inhoud te creëren en te bewerken (tekst, afbeelding, video en/of audio).", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.13", "Leerresultaat": "De behoeften op het gebied van inclusiviteit en/of toegankelijkheid beoordelen van het publiek waarvoor digitale inhoud wordt gecreëerd.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO3.1.14", "Leerresultaat": "Digitale inhoud bewerken om de toegankelijkheid te verbeteren en te voldoen aan de behoeften van het publiek.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.15", "Leerresultaat": "Pas strategieën toe, zoals sjablonen of een juiste volgorde van stappen die de efficiënte creatie van digitale inhoud mogelijk maken.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.16", "Leerresultaat": "Doelgericht, selectief en ethisch interageren met AI-systemen ter ondersteuning van de creatie van digitale inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO3.1.17", "Leerresultaat": "Het belang inzien van het beoordelen van mogelijkheden, beperkingen en ethische aspecten van hulpmiddelen voor het creëren van digitale inhoud om een passende selectie en gebruik te waarborgen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.1.18", "Leerresultaat": "Hulpmiddelen en methoden voor het creëren van digitale inhoud selecteren en combineren om te voldoen aan complexe contentcreatietaken en publiekseisen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.19", "Leerresultaat": "Een verscheidenheid aan complexe of gespecialiseerde digitale inhoud creëren en bewerken, passend afgestemd op doelen en publiek.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.20", "Leerresultaat": "Anderen ondersteunen bij het ontwikkelen van hun vaardigheden in de creatie van digitale inhoud door middel van ethische en verantwoordelijke benaderingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.21", "Leerresultaat": "Toegankelijkheid en inclusiviteit in initiatieven voor de creatie van digitale inhoud bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.1.22", "Leerresultaat": "Het selectieve en ethische gebruik van AI-systemen bij contentcreatie bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Expliciet"}, {"ID": "LO3.1.23", "Leerresultaat": "Anderen helpen bij het ontwikkelen van geavanceerde vaardigheden in de creatie van digitale inhoud.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.24", "Leerresultaat": "Leiding geven aan of bijdragen aan complexe of gespecialiseerde initiatieven voor de creatie van digitale inhoud.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.1.25", "Leerresultaat": "Leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor complexe of gespecialiseerde digitale inhoud.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#ED7D31", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 3.2 Integreren en herwerken van digitale inhoud
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO3.2.01", "Leerresultaat": "Het belang inzien van ethische en transparante praktijken bij het hergebruiken of uitwerken van bestaande digitale inhoud.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.2.02", "Leerresultaat": "De voordelen inzien van het verkennen van hulpmiddelen en technieken voor de integratie en uitwerking van digitale inhoud.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.2.03", "Leerresultaat": "Het concept van bronvermelding herkennen bij het hergebruiken van bestaande digitale inhoud.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.2.04", "Leerresultaat": "Het concept van transparant gebruik van AI-systemen (met name generatieve AI) herkennen bij de integratie en herbewerking van digitale inhoud.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.2.05", "Leerresultaat": "Onderscheid maken tussen bewerkbare en niet-bewerkbare digitale inhoud.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.2.06", "Leerresultaat": "Belangrijkste functies van hulpmiddelen voor contentcreatie identificeren voor het bewerken en integreren van digitale inhoud (tekst, afbeelding, audio, video).", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.2.07", "Leerresultaat": "Wijzigingen aanbrengen in bestaande digitale inhoud met behulp van basisbewerkings-, formatterings- en integratiefuncties.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.08", "Leerresultaat": "Doelgericht verschillende manieren verkennen om digitale inhoud te integreren en te herbewerken om vaardigheden op dit gebied te verdiepen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.2.09", "Leerresultaat": "Structuur-, formaat- en publiekseisen identificeren van een taak voor integratie of herbewerking van digitale inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.2.10", "Leerresultaat": "Manieren beschrijven waarop bronvermelding kan worden toegepast voor digitale inhoud die wordt hergebruikt.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.2.11", "Leerresultaat": "Ethische en transparante praktijken beschrijven bij het gebruik van AI-systemen (met name generatieve AI) bij de integratie en uitwerking van digitale inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.2.12", "Leerresultaat": "Digitale inhoud aanpassen of integreren om te voldoen aan formaat-, structuur- en publiekseisen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.13", "Leerresultaat": "Digitale tekstuele, numerieke of visuele representaties wijzigen of transformeren om de betekenis van data en informatie effectief en nauwkeurig over te brengen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.14", "Leerresultaat": "Digitale technologieën op een selectieve, ethische en transparante manier gebruiken om verbeteringen of integraties aan te brengen in bestaande digitale inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.15", "Leerresultaat": "Prioriteit geven aan transparante en ethische praktijken bij taken voor integratie en herbewerking van digitale inhoud.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.2.16", "Leerresultaat": "Een reeks methoden beschrijven voor complexe integratie en herbewerking van digitale inhoud.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.2.17", "Leerresultaat": "Passend en onpassend gebruik van AI-systemen beschrijven om de integratie of herbewerking van digitale inhoud bij complexe taken te verbeteren.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.2.18", "Leerresultaat": "Verschillende soorten digitale inhoud aanpassen of integreren om te voldoen aan complexe formaat-, structuur- en publiekseisen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.19", "Leerresultaat": "Digitale technologieën op een selectieve, ethische en transparante manier inzetten voor complexe integratie of herbewerking van digitale inhoud.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.20", "Leerresultaat": "Anderen ondersteunen bij het ontwikkelen van hun vaardigheden in de integratie en herbewerking van digitale inhoud.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.21", "Leerresultaat": "Ethische en transparante praktijken bij de integratie en herbewerking van digitale inhoud bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.2.22", "Leerresultaat": "Op de hoogte blijven van technologische ontwikkelingen op het gebied van integratie en herbewerking van digitale inhoud, inclusief hun technische en ethische implicaties.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.2.23", "Leerresultaat": "Geavanceerde ontwerp- en datavisualisatietechnieken evalueren en toepassen op complexe of gespecialiseerde integratie en herbewerking van digitale inhoud.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.24", "Leerresultaat": "Anderen helpen bij complexe taken voor integratie en herbewerking van digitale inhoud.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.25", "Leerresultaat": "Leiding geven aan of bijdragen aan complexe initiatieven voor integratie of herbewerking van digitale inhoud.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.2.26", "Leerresultaat": "Leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor complexe integratie of herbewerking van digitale inhoud.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#ED7D31", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 3.3 Auteursrecht en licenties
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO3.3.01", "Leerresultaat": "Herkennen dat het internet geen volledig vrije ruimte is: de data van individuen kan te gelde worden gemaakt en individuen hebben mogelijk toestemming nodig om gevonden inhoud te gebruiken.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.3.02", "Leerresultaat": "In algemene termen de concepten van auteursrecht en licenties herkennen in digitale contexten.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.3.03", "Leerresultaat": "Herkennen dat op de originele digitale inhoud van een individu automatisch auteursrecht rust.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.3.04", "Leerresultaat": "Herkennen dat er verschillende soorten auteursrechten en licenties van toepassing zijn op digitale inhoud, inclusief door AI gegenereerde inhoud, en dat deze bepalen hoe inhoud kan worden gebruikt en gedeeld.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.3.05", "Leerresultaat": "Herkennen dat door AI gegenereerde inhoud als zodanig moet worden gelabeld om anderen te helpen de oorsprong en mogelijkheden voor verder gebruik te begrijpen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.3.06", "Leerresultaat": "Digitale inhoud identificeren die gratis kan worden gebruikt.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.3.07", "Leerresultaat": "Digitale inhoud gebruiken en delen in overeenstemming met de basisregels van juridische en ethische richtlijnen.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.3.08", "Leerresultaat": "Prioriteit geven aan een voorzichtige benadering van digitale inhoud (controleren voor gebruik of delen).", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.3.09", "Leerresultaat": "De complexe aard van auteursrecht en licenties van digitale inhoud inzien.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.3.10", "Leerresultaat": "Het concept van intellectueel eigendom definiëren, met voorbeelden uit digitale contexten.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.3.11", "Leerresultaat": "Onderscheid maken, met voorbeelden uit digitale contexten, tussen auteursrecht, handelsmerk, modelrecht en octrooi.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.3.12", "Leerresultaat": "Veelvoorkomende soorten en doelen van licenties in digitale contexten identificeren, inclusief Creative Commons.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.3.13", "Leerresultaat": "Voorbeelden van piraterij en plagiaat in digitale contexten identificeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.3.14", "Leerresultaat": "Voorbeelden identificeren van waar auteursrecht wel en niet van toepassing is in digitale contexten.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.3.15", "Leerresultaat": "Juridische, ethische en commerciële gevolgen beschrijven van inbreuken op intellectueel eigendom in digitale contexten, inclusief piraterij en plagiaat.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.3.16", "Leerresultaat": "Voorbeelden identificeren van juridische en ethische uitdagingen met betrekking tot auteursrecht bij het trainen van AI-modellen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.3.17", "Leerresultaat": "Juridische en ethische richtlijnen op een passende manier toepassen bij het gebruiken en delen van digitale inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.3.18", "Leerresultaat": "Prioriteit geven aan het meewegen van ethische en juridische aspecten, zoals transparantie en auteursrecht, bij het gebruiken en delen van digitale inhoud.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.3.19", "Leerresultaat": "Belangrijkste kenmerken van de huidige wetgeving met betrekking tot digitaal auteursrecht en licenties beschrijven.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.3.20", "Leerresultaat": "Voorbeelden beschrijven van waar auteursrecht wel en niet van toepassing is in digitale contexten.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.3.21", "Leerresultaat": "Verschillen identificeren in hoe ethische en auteursrechtelijke kwesties van toepassing zijn op trainingsdata voor AI-systemen en door AI gegenereerde inhoud (output).", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.3.22", "Leerresultaat": "Juridische en ethische richtlijnen voor het gebruiken en delen van digitale inhoud in complexe contexten beoordelen en correct toepassen, inclusief verschillende softwarelicentiemodellen en de vernieuwingsvereisten van licenties.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.3.23", "Leerresultaat": "Anderen helpen bij het gebruiken en delen van digitale inhoud in overeenstemming met de juridische en ethische richtlijnen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.3.24", "Leerresultaat": "Op de hoogte blijven van ontwikkelingen in auteursrecht- en licentieregelgeving in digitale contexten.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.3.25", "Leerresultaat": "Bewustzijn en begrip van juridische en ethische auteursrecht- en licentiepraktijken in digitale contexten bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.3.26", "Leerresultaat": "Geavanceerde kennis van intellectuele eigendomsrechten, auteursrecht en licentieconcepten in digitale contexten toepassen ter ondersteuning van besluitvorming.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.3.27", "Leerresultaat": "Leiding geven aan of bijdragen aan beleid of richtlijnen over auteursrecht en licenties in digitale contexten.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#ED7D31", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 3.4 Computational thinking en programmeren
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO3.4.01", "Leerresultaat": "De essentiële rol van mensen inzien bij het bepalen hoe computerprogramma's en AI-systemen worden gebruikt.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "AI-Expliciet"}, {"ID": "LO3.4.02", "Leerresultaat": "Veelvoorkomende toepassingen van computerprogramma's en applicaties identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.4.03", "Leerresultaat": "Computational thinking herkennen als een menselijke activiteit die het identificeren van stappen omvat die door een computer kunnen worden uitgevoerd om een probleem of taak op te lossen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.4.04", "Leerresultaat": "In algemene termen herkennen wat AI is.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.05", "Leerresultaat": "Op een algemene manier identificeren wat wel en wat niet een AI-systeem is.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.06", "Leerresultaat": "Veelvoorkomende voorbeelden van toepassingen van AI-systemen identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.07", "Leerresultaat": "Basisinstructies aan een computer geven om eenvoudige taken uit te voeren.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.4.08", "Leerresultaat": "Eenvoudige reeksen symbolisch weergeven en eenvoudige symbolische reeksen interpreteren.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO3.4.09", "Leerresultaat": "De relevantie inzien van computational thinking, algoritmische weergave en programmeren in alledaagse contexten.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.4.10", "Leerresultaat": "Het belang inzien van ethiek en toegankelijkheid in programmeercontexten.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO3.4.11", "Leerresultaat": "Onderscheid maken tussen een computationeel model van de werkelijkheid en de werkelijkheid zelf.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.4.12", "Leerresultaat": "Het concept van een algoritme herkennen, met voorbeelden uit computational thinking of programmeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.4.13", "Leerresultaat": "Verschillen definiëren tussen een berekenbaar probleem en een niet-berekenbaar probleem.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.4.14", "Leerresultaat": "Algemene stappen in computational thinking definiëren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.4.15", "Leerresultaat": "Herkennen dat er een verscheidenheid aan programmeertalen is, elk met een reeks mogelijke toepassingen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.4.16", "Leerresultaat": "Fundamentele programmeerconcepten en algemene stappen bij het programmeren definiëren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.4.17", "Leerresultaat": "De rol van programmeren in robotica herkennen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.4.18", "Leerresultaat": "Herkennen dat machine learning een tak van AI is die algoritmen in staat stelt om van data te leren en voorspellingen te doen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.19", "Leerresultaat": "Herkennen dat er stappen gevolgd moeten worden om een computerprogramma of een AI-systeem te ontwikkelen, te valideren en te implementeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.20", "Leerresultaat": "Voorbeelden van toepassingen van machine learning beschrijven.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.21", "Leerresultaat": "Voorbeelden van AI-systeemtoepassingen uit verschillende sectoren van de samenleving beschrijven.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.22", "Leerresultaat": "Basisinformatie vertalen naar logische bewerkingen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.4.23", "Leerresultaat": "Eenvoudige programma's met controlestructuren ontwikkelen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.4.24", "Leerresultaat": "Visuele representaties zoals stroomdiagrammen creëren om basisalgoritmen te illustreren.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO3.4.25", "Leerresultaat": "Het belang inzien van menselijk toezicht en mensgerichte benaderingen bij de ontwikkeling en implementatie van computerprogramma's en AI-systemen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Expliciet"}, {"ID": "LO3.4.26", "Leerresultaat": "De concepten en rol van mensgerichte benaderingen en menselijk toezicht definiëren in de context van programmeren en AI-systemen.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.27", "Leerresultaat": "De belangrijkste stappen beschrijven bij het ontwikkelen, valideren en implementeren van een computerprogramma of een AI-systeem.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.28", "Leerresultaat": "Onderscheid maken tussen de belangrijkste soorten machine learning.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.29", "Leerresultaat": "De belangrijkste kenmerken en doelen van veelgebruikte machine learning-algoritmen identificeren.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.30", "Leerresultaat": "De rol van gebruikerservaring (UX) en klantervaring (CX) bij programmeren beschrijven.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO3.4.31", "Leerresultaat": "Voorbeelden beschrijven van de toepassing van computational thinking en programmeren in de robotica.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO3.4.32", "Leerresultaat": "Routinetaken identificeren die (gedeeltelijk of volledig) geautomatiseerd kunnen worden via programmeertools of AI-systemen.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO3.4.33", "Leerresultaat": "Ethische en praktische aspecten van de ontwikkeling en implementatie van computerprogramma's en AI-systemen beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO3.4.34", "Leerresultaat": "Computational thinking, kennis van programmeren en/of AI-systemen toepassen om routinetaken (gedeeltelijk of volledig) te automatiseren.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO3.4.35", "Leerresultaat": "Programmeerhulpmiddelen of AI-systemen toepassen op complexe taken op het gebied van computational thinking.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO3.4.36", "Leerresultaat": "Ethische programmeer- en/of AI-systeemontwikkelingspraktijken bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Expliciet"}, {"ID": "LO3.4.37", "Leerresultaat": "Op de hoogte blijven van de huidige ontwikkelingen in programmeertechnieken en gerelateerde toepassingen van AI-systemen, zoals robotica.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Expliciet"}, {"ID": "LO3.4.38", "Leerresultaat": "Leiding geven aan of bijdragen aan complexe projecten gericht op toepassingen van computational thinking, programmeren of AI-systemen, inclusief het ontwikkelen, valideren en implementeren van computerprogramma's of AI-systemen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}, {"ID": "LO3.4.39", "Leerresultaat": "Anderen helpen bij het ontwikkelen van basisprogrammeervaardigheden en/of vaardigheden in het toepassen van AI-systemen bij taken op het gebied van computational thinking.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Expliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#ED7D31", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 4.1 Apparaten beschermen
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO4.1.01", "Leerresultaat": "Het belang inzien van de eigen individuele rol bij het beschermen van digitale apparaten en hun inhoud.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.1.02", "Leerresultaat": "De concepten van cybersecurity, cyberdreiging en cyberaanval herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.1.03", "Leerresultaat": "Herkennen dat de acties van individuen en cybersecurityhulpmiddelen samenwerken om apparaten en hun inhoud veilig te houden.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.1.04", "Leerresultaat": "Herkennen dat er cybersecuritywetgeving bestaat die helpt de veiligheid van producten en diensten te waarborgen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.1.05", "Leerresultaat": "Basisbeschermingsmaatregelen en -praktijken voor apparaten identificeren, zoals antivirussoftware, schermvergrendeling, sterke wachtwoorden en multifactorauthenticatie.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.1.06", "Leerresultaat": "Basisbeschermingsmaatregelen en -praktijken voor apparaten toepassen, zoals antivirussoftware, schermvergrendeling, sterke wachtwoorden en multifactorauthenticatie.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.1.07", "Leerresultaat": "Het belang inzien van waakzaam blijven en op de hoogte blijven van cybersecuritypraktijken.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.1.08", "Leerresultaat": "Belangrijkste kenmerken van malware beschrijven.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.1.09", "Leerresultaat": "Herkennen dat AI-systemen kunnen worden gebruikt voor zowel cyberaanvallen als cybersecurity.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO4.1.10", "Leerresultaat": "Verschillende technieken en praktijken voor malwarepreventie toepassen om apparaten en hun inhoud te beschermen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.1.11", "Leerresultaat": "Prioriteit geven aan het regelmatig controleren en bijwerken van cybersecuritymaatregelen op de eigen apparaten.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.1.12", "Leerresultaat": "Belangrijke rechten van individuen onder de huidige cybersecuritywetgeving beschrijven.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.1.13", "Leerresultaat": "Voorbeelden identificeren van hoe recente en opkomende technologieën zoals AI-systemen worden gebruikt bij cyberaanvallen en cybersecurity.", "Niveau": "Geavanceerd", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO4.1.14", "Leerresultaat": "Cybersecuritymaatregelen bijwerken om apparaten en hun inhoud te beschermen als reactie op evoluerende digitale dreigingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.1.15", "Leerresultaat": "Anderen helpen bij het implementeren van basisbeschermingsmaatregelen voor apparaten, zoals antivirussoftware, schermvergrendeling, sterke wachtwoorden en multifactorauthenticatie.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.1.16", "Leerresultaat": "Op de hoogte blijven van technologische en wettelijke ontwikkelingen op het gebied van cybersecurity.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.1.17", "Leerresultaat": "Rechten van individuen beoordelen onder relevante bepalingen van de huidige cybersecuritywetgeving.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.1.18", "Leerresultaat": "Leiding geven aan of bijdragen aan op de burger gerichte cybersecurity-initiatieven.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.1.19", "Leerresultaat": "Anderen ondersteunen bij het opbouwen van hun vaardigheden om hun apparaten en hun inhoud te beschermen tegen digitale dreigingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#70AD47", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 4.2 Persoonsgegevens en privacy beschermen
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO4.2.01", "Leerresultaat": "Het belang inzien van een voorzichtige aanpak bij het delen van persoonlijke data in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.2.02", "Leerresultaat": "Herkennen dat persoonlijke data wordt verzameld en gegenereerd via een grote verscheidenheid aan digitale bronnen en processen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.2.03", "Leerresultaat": "Risico's identificeren van het delen van persoonlijke data in digitale omgevingen, inclusief specifieke risico's in relatie tot AI-systemen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO4.2.04", "Leerresultaat": "Herkennen dat individuen recht hebben op privacy en dat hun persoonlijke data beschermd is onder de wetgeving.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.2.05", "Leerresultaat": "Herkennen dat manipulatieve methoden kunnen worden gebruikt om individuen te misleiden om toegang te verlenen tot persoonlijke data, accounts of andere gevoelige informatie.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.2.06", "Leerresultaat": "Tekenen van identiteitsfraude herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.2.07", "Leerresultaat": "Herkennen dat gebruikers van platforms en diensten kunnen verzoeken om informatie die ongepast online is gedeeld te blokkeren of te markeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.2.08", "Leerresultaat": "Basisbeveiligingsmaatregelen implementeren voor online betalingen en transacties.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.2.09", "Leerresultaat": "Passend reageren op tekenen van identiteitsfraude.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.2.10", "Leerresultaat": "Persoonlijke informatie blokkeren of markeren die op ongepaste wijze online is gedeeld.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.2.11", "Leerresultaat": "Het belang inzien van zorgvuldige omgang met persoonlijke data van zichzelf en anderen, vooral van kwetsbare individuen en kinderen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.2.12", "Leerresultaat": "Belangrijke concepten van gegevensbescherming en privacywetgeving herkennen, waaronder privacy, anonimisering, pseudonimisering en het recht op gegevensverwijdering.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.2.13", "Leerresultaat": "Het doel van privacyverklaringen identificeren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.2.14", "Leerresultaat": "Belangrijke concepten uit privacyverklaringen definiëren, zoals betrokkene, bewaartermijn, gegevensoverdracht en geautomatiseerd besluitvormingssysteem.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.2.15", "Leerresultaat": "Technieken gerelateerd aan social engineering in digitale omgevingen beschrijven, zoals phishing of baiting.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.2.16", "Leerresultaat": "Een inbreuk in verband met persoonsgegevens (datalek) definiëren onder de huidige gegevensbescherming- en privacywetgeving.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.2.17", "Leerresultaat": "Herkennen dat de regulering van het eigendom van persoonlijke data in AI-systemen complex is.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO4.2.18", "Leerresultaat": "Privacy-implicaties beschrijven die verbonden zijn aan het gebruik van online gedeelde inhoud, bijvoorbeeld om AI-systemen te trainen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO4.2.19", "Leerresultaat": "Belangrijkste kenmerken en functies van privacyhulpmiddelen definiëren.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.2.20", "Leerresultaat": "Persoonlijke data en privacy beheren in verschillende digitale omgevingen, inclusief het gebruik van privacyhulpmiddelen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.2.21", "Leerresultaat": "Voortdurend kwesties rondom data-eigendom en privacy verkennen in relatie tot digitale technologische ontwikkelingen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.2.22", "Leerresultaat": "Anderen ondersteunen bij het begrijpen van hun rechten onder de huidige gegevensbescherming- en privacywetgeving.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.2.23", "Leerresultaat": "Anderen helpen bij het implementeren van basisstrategieën om persoonlijke data te beschermen en privacy in digitale omgevingen te beheren.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.2.24", "Leerresultaat": "Op de hoogte blijven van technologische en wettelijke ontwikkelingen op het gebied van persoonlijke data, data-eigendom en privacy.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.2.25", "Leerresultaat": "Adviseren over beleidsmatige of regelgevende aspecten van gegevensbescherming en privacy in digitale contexten.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.2.26", "Leerresultaat": "Leiding geven aan of bijdragen aan het ontwerp van strategieën voor de bescherming van persoonlijke data in digitale contexten.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#70AD47", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 4.3 Welzijn ondersteunen
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO4.3.01", "Leerresultaat": "De voordelen inzien van een balans tussen online en offline activiteiten.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.3.02", "Leerresultaat": "Het belang inzien van dagelijkse routines die digitale stress minimaliseren en sociale verbondenheid bevorderen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.3.03", "Leerresultaat": "Belangrijkste risico's en voordelen voor het fysieke, mentale en sociale welzijn in digitale omgevingen identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.04", "Leerresultaat": "Herkennen dat er een verscheidenheid aan informatie, groepen en gemeenschappen in digitale omgevingen is die het eigen fysieke, mentale en/of sociale welzijn kunnen ondersteunen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.05", "Leerresultaat": "Risico's en voordelen herkennen voor het eigen fysieke, mentale en sociale welzijn in digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.06", "Leerresultaat": "Kenmerken identificeren van digitale platforms of diensten, zoals sociale media, die ontworpen zijn om de aandacht van individuen te trekken en vast te houden.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.07", "Leerresultaat": "Beperkingen en risico's identificeren van het gebruik van virtuele assistenten en AI-systemen om menselijk welzijn te ondersteunen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO4.3.08", "Leerresultaat": "Strategieën identificeren om fysiek, mentaal en sociaal welzijn in digitale omgevingen te ondersteunen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.3.09", "Leerresultaat": "Tekenen en mogelijke effecten van problematisch gebruik van digitale technologieën herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.3.10", "Leerresultaat": "Herkennen dat er wetten en regels zijn die helpen het welzijn van individuen in digitale omgevingen te beschermen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.11", "Leerresultaat": "Een basisbeoordeling maken van de eigen digitale gewoonten in relatie tot het eigen fysieke, mentale en sociale welzijn.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.3.12", "Leerresultaat": "Gepersonaliseerde strategieën toepassen om fysiek, mentaal en sociaal welzijn in digitale omgevingen te ondersteunen.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.3.13", "Leerresultaat": "Het belang inzien van het recht van zichzelf en anderen om offline te zijn (onbereikbaar te zijn).", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.3.14", "Leerresultaat": "De fysieke, mentale en sociale voordelen inzien van het analyseren van de eigen digitale gebruikspatronen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.3.15", "Leerresultaat": "Betrouwbare informatiebronnen en inclusieve groepen en gemeenschappen in digitale omgevingen identificeren die het eigen fysieke, mentale en/of sociale welzijn kunnen ondersteunen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.16", "Leerresultaat": "Voorbeelden beschrijven van schadelijke inhoud en gedrag in digitale omgevingen en de mogelijke effecten daarvan op zichzelf en anderen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.17", "Leerresultaat": "Manieren beschrijven waarop sommige toepassingen van digitale technologieën, zoals sociale media, bias, stereotypering en uitsluiting versterken en in stand houden.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.18", "Leerresultaat": "Strategieën beschrijven om te helpen beschermen tegen en effectief te reageren op schadelijk gedrag en inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.19", "Leerresultaat": "Mogelijke manieren identificeren om schadelijk gedrag of inhoud te melden of in te grijpen als dit in digitale omgevingen wordt aangetroffen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.20", "Leerresultaat": "De effecten van schadelijk gedrag, inhoud en misleidend ontwerp (deceptive design) in digitale omgevingen op zichzelf en anderen beschrijven.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.3.21", "Leerresultaat": "De eigen digitale gebruikspatronen analyseren en aanpassen ter ondersteuning van het fysieke, mentale en sociale welzijn.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.3.22", "Leerresultaat": "Strategieën implementeren om zichzelf te helpen beschermen tegen en effectief te reageren op schadelijk gedrag en inhoud.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.3.23", "Leerresultaat": "Aanpassen aan veranderende digitale technologische ontwikkelingen en behoeften om het fysieke, mentale en sociale welzijn van zichzelf en anderen te ondersteunen en te behouden.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.3.24", "Leerresultaat": "Voortdurend de rol van digitale technologieën zoals sociale media onderzoeken bij het versterken en in stand houden van bias, stereotypering en uitsluiting.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.3.25", "Leerresultaat": "Anderen helpen hun gebruik van digitale technologieën te herzien en aan te passen ter ondersteuning en behoud van hun fysieke, mentale en sociale welzijn.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO4.3.26", "Leerresultaat": "Effectief melden van of ingrijpen bij gevallen van schadelijk gedrag of inhoud in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.3.27", "Leerresultaat": "Anderen helpen vaardigheden op te bouwen om de rol van digitale technologieën zoals sociale media bij het versterken en in stand houden van bias, stereotypering en uitsluiting tegen te gaan.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.3.28", "Leerresultaat": "Anderen helpen hun rechten te begrijpen met betrekking tot welzijn en/of inclusie in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.3.29", "Leerresultaat": "Anderen helpen bewustzijn te ontwikkelen over schadelijk gedrag, inhoud en misleidend ontwerp in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.3.30", "Leerresultaat": "Acties bevorderen en ondersteunen die welzijn en inclusie in digitale omgevingen bevorderen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.3.31", "Leerresultaat": "Bewijs over welzijn en/of inclusie in digitale omgevingen beoordelen en evalueren om besluitvorming te sturen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.3.32", "Leerresultaat": "Leiding geven aan of bijdragen aan initiatieven die welzijn en/of inclusie in digitale omgevingen ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.3.33", "Leerresultaat": "Bijdragen aan juridische en regelgevende besluitvorming met betrekking tot het welzijn en/of de inclusie van individuen in digitale omgevingen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#70AD47", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 4.4 Milieueffecten van digitale technologieën
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO4.4.01", "Leerresultaat": "De rol inzien die individuen kunnen spelen om de milieu-impact van digitale technologieën te helpen verminderen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO4.4.02", "Leerresultaat": "Herkennen dat sommige digitale technologieën en infrastructuren, zoals AI-systemen en datacenters, grote effecten hebben op het milieu.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO4.4.03", "Leerresultaat": "Herkennen dat de volledige milieu-impact van digitale technologieën niet onmiddellijk zichtbaar is voor een individuele gebruiker.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.4.04", "Leerresultaat": "Herkennen dat digitale technologieën energie-efficiëntie en duurzaamheid kunnen ondersteunen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.4.05", "Leerresultaat": "Eenvoudige strategieën identificeren om het energie- en datagebruik van digitale technologieën te verminderen, zoals het minimaliseren van het gebruik van energie-intensieve applicaties en het niet gebruiken van digitale technologieën wanneer deze niet nodig zijn.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.4.06", "Leerresultaat": "Eenvoudige strategieën toepassen om het energie- en datagebruik van digitale technologieën te verminderen, zoals het minimaliseren van het gebruik van energie-intensieve applicaties en het niet gebruiken van digitale technologieën wanneer deze niet nodig zijn.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.4.07", "Leerresultaat": "Voortdurend de milieu-impact van het eigen gebruik van digitale technologieën beoordelen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.4.08", "Leerresultaat": "Milieu-impact van digitale technologieën identificeren die optreedt tijdens productie, gebruik en afvalverwerking.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.4.09", "Leerresultaat": "De milieu-impact van datacenters en e-commerce beschrijven.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.4.10", "Leerresultaat": "Voorbeelden beschrijven van hoe digitale hulpmiddelen een duurzame levensstijl kunnen ondersteunen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO4.4.11", "Leerresultaat": "De concepten van de deeleconomie en de circulaire economie definiëren, inclusief risico's, beperkingen en potentiële milieuvoordelen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO4.4.12", "Leerresultaat": "Verschillende strategieën toepassen om de milieu-impact van het eigen gebruik van digitale technologieën en digitale apparaten te verminderen, zoals geïnformeerde beslissingen bij de aankoop van digitale apparaten, recycling en reparatie van apparaten, milieubewuste e-commercepraktijken en milieubewuste gebruikspatronen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.4.13", "Leerresultaat": "Op de hoogte blijven van de milieu-impact van digitale technologieën en de manieren waarop digitale technologieën duurzaamheid kunnen ondersteunen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.4.14", "Leerresultaat": "De milieu-impact van digitale technologieën en infrastructuren evalueren ter ondersteuning van besluitvorming of belangenbehartiging.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.4.15", "Leerresultaat": "Anderen helpen hun gebruik van digitale technologieën te beoordelen om manieren te identificeren waarop de milieu-impact kan worden verminderd.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.4.16", "Leerresultaat": "Op de hoogte blijven van de implicaties voor milieu en duurzaamheid van digitale technologieën in verschillende sectoren.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.4.17", "Leerresultaat": "Acties voor milieuvriendelijk duurzaam gebruik van digitale technologieën bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO4.4.18", "Leerresultaat": "Leiding geven aan of bijdragen aan initiatieven voor digitale duurzaamheid.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO4.4.19", "Leerresultaat": "Bijdragen aan verbeteringen in of oplossingen voor digitale duurzaamheid.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#70AD47", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 5.1 Technische problemen identificeren en oplossen
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO5.1.01", "Leerresultaat": "Inzien dat technische problemen in digitale omgevingen veel voorkomen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO5.1.02", "Leerresultaat": "De voordelen inzien van het zoeken naar hulp bij het oplossen van technische problemen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO5.1.03", "Leerresultaat": "Onderscheid maken tussen besturingssystemen en software.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO5.1.04", "Leerresultaat": "Belangrijkste kenmerken van hardware, software, connectiviteit en veelvoorkomende randapparatuur identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO5.1.05", "Leerresultaat": "Tekenen van veelvoorkomende technische problemen herkennen, zoals gebrek aan connectiviteit, vergeten wachtwoord, vergeten bestandslocatie, niet-opgeslagen document of fout in e-mail- of webadres.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO5.1.06", "Leerresultaat": "Instructies volgen om veelvoorkomende technische problemen op te lossen, zoals gebrek aan connectiviteit, vergeten wachtwoord, vergeten bestandslocatie, niet-opgeslagen document of fout in e-mail- of webadres.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO5.1.07", "Leerresultaat": "Indien nodig software en applicaties installeren en bijwerken.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO5.1.08", "Leerresultaat": "De voordelen inzien van het opbouwen van vaardigheden en autonomie bij het aanpakken van technische problemen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO5.1.09", "Leerresultaat": "Technische problemen in digitale omgevingen oplossen met behulp van verschillende zoek- en probleemoplossingsstrategieën (met menselijke hulp of met hulp van digitale technologie).", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.1.10", "Leerresultaat": "Instellingen op hoofd- en randapparatuur bijwerken en aanpassen om goede prestaties te behouden.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO5.1.11", "Leerresultaat": "Prioriteit geven aan de ontwikkeling van het eigen vermogen om technische problemen in digitale omgevingen te diagnosticeren en op te lossen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO5.1.12", "Leerresultaat": "Anderen helpen bij het diagnosticeren en oplossen van technische problemen in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "-"}, {"ID": "LO5.1.13", "Leerresultaat": "Verschillende strategieën voor het vinden van oplossingen gebruiken voor het verhelpen van complexe technische problemen in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.1.14", "Leerresultaat": "Anderen helpen bij het ontwikkelen van vertrouwen en autonomie om technische problemen in digitale omgevingen op te lossen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO5.1.15", "Leerresultaat": "Training ontwerpen of geven ter ondersteuning van het gebruik van digitale apparaten of systemen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#E26B67", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 5.2 Behoeften en digitale technologische antwoorden identificeren
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO5.2.01", "Leerresultaat": "Het belang inzien van individuele keuzes bij de configuratie van digitale omgevingen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO5.2.02", "Leerresultaat": "Veelvoorkomende manieren herkennen waarop kenmerken van digitale omgevingen kunnen worden aangepast aan de behoeften en voorkeuren van gebruikers.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "-"}, {"ID": "LO5.2.03", "Leerresultaat": "Het concept en het doel van een digitaal assistentiehulpmiddel herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.2.04", "Leerresultaat": "De aanwezigheid van AI-systemen in digitale assistentiehulpmiddelen herkennen.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO5.2.05", "Leerresultaat": "Veelvoorkomende ondersteunende technologieën en hun doelen identificeren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.2.06", "Leerresultaat": "Ondersteunende technologieën gebruiken indien en voor zover nodig.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.2.07", "Leerresultaat": "Digitale assistentiehulpmiddelen gebruiken om eenvoudige taken te ondersteunen, met bewustzijn van hun voordelen en beperkingen.", "Niveau": "Basis", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.2.08", "Leerresultaat": "De voordelen inzien van het verkennen van aanpassingen aan configuraties van digitale omgevingen en kenmerken van digitale assistentiehulpmiddelen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.2.09", "Leerresultaat": "Kenmerken van de eigen digitale omgeving aanpassen aan de behoeften en voorkeuren van zichzelf en anderen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.2.10", "Leerresultaat": "Geïnformeerd gebruik maken van digitale assistentiehulpmiddelen om aan de eigen behoeften en die van anderen te voldoen, met bewustzijn van hun voordelen en beperkingen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.2.11", "Leerresultaat": "Prioriteit geven aan een voortdurende beoordeling van hoe configuraties van de digitale omgeving, digitale assistentiehulpmiddelen en/of ondersteunende technologieën kunnen voldoen aan de behoeften van zichzelf en anderen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.2.12", "Leerresultaat": "Kenmerken van de eigen digitale omgeving aanpassen aan de behoeften en voorkeuren van zichzelf en anderen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.2.13", "Leerresultaat": "De toegankelijkheid, inclusiviteit, eerlijkheid en/of rechtgevoeligheid van digitale technologieën in een gegeven context beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.2.14", "Leerresultaat": "Anderen ondersteunen bij het maken van geïnformeerd gebruik van digitale assistentiehulpmiddelen en aanpassingen aan configuraties van de digitale omgeving om aan hun eigen behoeften en die van anderen te voldoen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.2.15", "Leerresultaat": "Het gebruik van inclusieve en toegankelijke digitale technologieën bevorderen en ondersteunen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.2.16", "Leerresultaat": "Complexe behoeften van individuen beoordelen om op maat gemaakte digitale oplossingen te identificeren en/of te ontwerpen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.2.17", "Leerresultaat": "Bijdragen aan verbeteringen in digitale assistentiehulpmiddelen, toegankelijke configuraties van de digitale omgeving en/of ondersteunende technologieën.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#E26B67", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 5.3 Creatieve oplossingen identificeren met behulp van digitale technologieën
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO5.3.01", "Leerresultaat": "Inzien dat digitale technologieën de menselijke creativiteit kunnen ondersteunen, maar niet vervangen.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.3.02", "Leerresultaat": "Voorbeelden identificeren van hoe digitale technologieën worden gebruikt om real-world problemen op te lossen en verbeteringen aan te brengen in of nieuwe oplossingen te creëren voor producten en diensten.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.3.03", "Leerresultaat": "Voorbeelden identificeren van waar digitale technologieën menselijke creativiteit kunnen ondersteunen of versterken.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.3.04", "Leerresultaat": "Het belang inzien van het centraal stellen van mensenrechten, waarden, behoeften en ervaringen bij het ontwerp en gebruik van digitale technologieën.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.3.05", "Leerresultaat": "Het concept van mensgerichtheid definiëren en de rol ervan bij de ontwikkeling en het gebruik van digitale technologieën.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.3.06", "Leerresultaat": "Voorbeelden identificeren van de wisselwerking tussen mensen en digitale technologieën bij creativiteit en probleemoplossing.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.3.07", "Leerresultaat": "Sterktes, zwaktes en ethische overwegingen van digitale technologieën, inclusief AI-systemen, beschrijven in relatie tot menselijke creativiteit en probleemoplossing.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Expliciet"}, {"ID": "LO5.3.08", "Leerresultaat": "Analyseer de sterktes en zwaktes van beschikbare digitale technologieën met betrekking tot een specifieke probleemoplossende taak.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.3.09", "Leerresultaat": "Op een verantwoorde en ethische manier gebruikmaken van verschillende digitale technologieën om probleemoplossing als individu of in een groep te ondersteunen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.3.10", "Leerresultaat": "Prioriteit geven aan mensgerichte benaderingen bij het eigen gebruik van digitale technologieën voor probleemoplossing.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.3.11", "Leerresultaat": "Verschillende digitale technologieën efficiënt, verantwoord en ethisch gebruiken om complexe problemen te helpen oplossen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.3.12", "Leerresultaat": "Bijdragen aan initiatieven gericht op de toepassing van digitale technologieën om complexe probleemoplossende taken te helpen uitvoeren.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.3.13", "Leerresultaat": "Anderen ondersteunen bij het ontwikkelen van hun vertrouwen en vaardigheden in het gebruik van digitale technologieën om praktijkproblemen te helpen oplossen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.3.14", "Leerresultaat": "Leiding geven aan of bijdragen aan initiatieven gericht op de toepassing van digitale technologieën voor zeer complexe of gespecialiseerde probleemoplossing.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.3.15", "Leerresultaat": "Leiding geven aan of bijdragen aan initiatieven die digitale technologieën gebruiken om verbeteringen aan te brengen in of nieuwe oplossingen te vinden voor praktijkproblemen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.3.16", "Leerresultaat": "Anderen ondersteunen bij het ontwikkelen van hun vaardigheden om digitale technologieën te gebruiken voor complexe of gespecialiseerde probleemoplossende taken.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#E26B67", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+
+
+### 5.4 Behoeften aan digitale competenties identificeren en aanpakken
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ID": "LO5.4.01", "Leerresultaat": "De waarde inzien van het leren over digitale technologieën in relatie tot de eigen interesses en behoeften.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.4.02", "Leerresultaat": "De voordelen en de normaliteit inzien van het zoeken naar ondersteuning bij het aanpakken van behoeften op het gebied van digitale competenties.", "Niveau": "Basis", "K/V/H": "Houding", "AI": "-"}, {"ID": "LO5.4.03", "Leerresultaat": "Herkennen dat digitale competentie veel breder is dan alleen technische vaardigheden.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.4.04", "Leerresultaat": "Herkennen dat digitale competentie regelmatige bijscholing vereist voor het dagelijks leven, werk en leren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.4.05", "Leerresultaat": "Mogelijkheden identificeren om de eigen digitale competenties te verbeteren.", "Niveau": "Basis", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.4.06", "Leerresultaat": "De voordelen inzien van het op de hoogte blijven van ontwikkelingen in digitale technologieën.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.4.07", "Leerresultaat": "Prioriteit geven aan het identificeren van mogelijkheden om te leren over digitale technologieën.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.4.08", "Leerresultaat": "Relevante leermogelijkheden identificeren om aan de eigen digitale competentiebehoeften te voldoen.", "Niveau": "Gemiddeld", "K/V/H": "Kennis", "AI": "AI-Impliciet"}, {"ID": "LO5.4.09", "Leerresultaat": "Nauwkeurig de eigen digitale competenties en de eigen behoeften op dat gebied beoordelen.", "Niveau": "Gemiddeld", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.4.10", "Leerresultaat": "Actief deelnemen aan leeractiviteiten om aan de eigen digitale competentiebehoeften te voldoen.", "Niveau": "Gemiddeld", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.4.11", "Leerresultaat": "Voortdurend digitale technologische ontwikkelingen en de implicaties daarvan voor de eigen competentiebehoeften en die van anderen beoordelen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.4.12", "Leerresultaat": "Zich bezighouden met voortdurende zelfontwikkeling om aan digitale competentiebehoeften te voldoen.", "Niveau": "Geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.4.13", "Leerresultaat": "Anderen ondersteunen bij het ontwikkelen van zelfvertrouwen en autonomie in digitale omgevingen.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.4.14", "Leerresultaat": "Beschikbare leermogelijkheden voor digitale competenties verzamelen voor een specifiek doel.", "Niveau": "Geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.4.15", "Leerresultaat": "Zich bezighouden met voortdurende zelfontwikkeling om aan complexe of gespecialiseerde digitale competentiebehoeften te voldoen.", "Niveau": "Zeer geavanceerd", "K/V/H": "Houding", "AI": "AI-Impliciet"}, {"ID": "LO5.4.16", "Leerresultaat": "Anderen mentoren bij het identificeren en aanpakken van hun digitale competentiebehoeften.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}, {"ID": "LO5.4.17", "Leerresultaat": "Leermateriaal ontwerpen om anderen te helpen voldoen aan complexe of gespecialiseerde digitale competentiebehoeften.", "Niveau": "Zeer geavanceerd", "K/V/H": "Vaardigheid", "AI": "AI-Impliciet"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#E26B67", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 0.6)
+ft <- width(ft, j = 2, width = 3.0)
+ft <- width(ft, j = 3, width = 1.0)
+ft <- width(ft, j = 4, width = 0.8)
+ft <- width(ft, j = 5, width = 0.8)
+ft
+```
+

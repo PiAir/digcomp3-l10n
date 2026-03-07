@@ -1,0 +1,1028 @@
+## 1.1 Browsen, zoeken en filteren van informatie
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_1p1.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**1. INFORMATIE ZOEKEN, EVALUEREN EN BEHEREN**\n\n**1.1 Browsen, zoeken en filteren van informatie**\n\nHet formuleren van informatiebehoeften, weten hoe en waar te zoeken naar informatie en inhoud in digitale omgevingen, en hiertoe toegang verkrijgen en ertussen navigeren. Geschikte digitale middelen selecteren om zoekopdrachten in digitale omgevingen te creëren, uit te voeren en bij te werken, en in staat zijn om onderscheid te maken tussen relevante en irrelevante informatie en inhoud.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS1.1.01**: De voordelen inzien van het gebruik van verschillende digitale zoekhulpmiddelen en -methoden, afhankelijk van het doel. [AI-Impliciet]\n**CS1.1.02**: De belangrijkste kenmerken identificeren van veelgebruikte AI-gestuurde en traditionele zoekhulpmiddelen. [AI-Expliciet]\n**CS1.1.03**: Herkennen dat digitale zoekresultaten of outputs informatie kunnen bevatten die mogelijk niet relevant is, en dat deze afhankelijk zijn van het gebruikte zoekhulpmiddel en de wijze waarop de zoekopdracht is gespecificeerd. [AI-Impliciet]\n**CS1.1.04**: Digitale zoekhulpmiddelen gebruiken om eenvoudige informatiezoekopdrachten uit te voeren, te verfijnen en bij te werken. [AI-Impliciet]", "BgColor2": "FFF2CC", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS1.1.05**: Doelgericht nieuwe digitale zoekhulpmiddelen en strategieën verkennen. [AI-Impliciet]\n**CS1.1.06**: Passende digitale zoekhulpmiddelen selecteren op basis van informatiebehoeften. [AI-Impliciet]\n**CS1.1.07**: Onderscheid maken tussen meer en minder relevante digitale zoekresultaten of outputs. [AI-Impliciet]\n**CS1.1.08**: Informatiebehoeften vertalen naar effectieve digitale zoekopdrachten, commando's of verklaringen, en passende strategieën toepassen om resultaten te verfijnen of te filteren. [AI-Impliciet]", "BgColor2": "FFE699", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS1.1.09**: Voortdurend functies en kenmerken van bekende en nieuwe digitale zoekhulpmiddelen verkennen om vaardigheden te verdiepen. [AI-Impliciet]\n**CS1.1.10**: Een verscheidenheid aan digitale zoekhulpmiddelen en strategieën combineren om aan complexe informatiebehoeften te voldoen. [AI-Impliciet]\n**CS1.1.11**: Anderen helpen bij het ontwikkelen van hun digitale zoekvaardigheden. [AI-Impliciet]", "BgColor2": "FFD966", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS1.1.12**: Op de hoogte blijven van ontwikkelingen in digitale zoektechnologieën. [AI-Impliciet]\n**CS1.1.13**: Een verscheidenheid aan digitale zoekhulpmiddelen en strategieën combineren om aan zeer complexe of gespecialiseerde informatiebehoeften te voldoen. [AI-Impliciet]\n**CS1.1.14**: Anderen helpen bij het uitvoeren en verfijnen van complexe of gespecialiseerde zoekopdrachten in digitale omgevingen. [AI-Impliciet]\n**CS1.1.15**: Bijdragen aan verbeteringen in of nieuwe oplossingen voor complexe of gespecialiseerde zoekopdrachten in digitale omgevingen. [AI-Impliciet]", "BgColor2": "FFC000", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 1.2 Informatie evalueren
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_1p2.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**1. INFORMATIE ZOEKEN, EVALUEREN EN BEHEREN**\n\n**1.2 Informatie evalueren**\n\nDe geloofwaardigheid en betrouwbaarheid van informatiebronnen en inhoud in digitale omgevingen beoordelen en vergelijken. Informatie en inhoud in digitale omgevingen, en de processen die worden gebruikt om deze te genereren, interpreteren en kritisch evalueren.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS1.2.01**: De voordelen inzien van een voorzichtige aanpak bij het interpreteren van informatie en inhoud in digitale omgevingen. [AI-Impliciet]\n**CS1.2.02**: Herkennen dat sommige digitale informatiebronnen en systemen mogelijk niet betrouwbaar zijn. [AI-Impliciet]\n**CS1.2.03**: Herkennen dat het moeilijk kan zijn om onderscheid te maken tussen informatie en inhoud gegenereerd door mensen en door AI-systemen. [AI-Expliciet]\n**CS1.2.04**: Voorbeelden herkennen van misinformatie, desinformatie en bronnen van vooringenomenheid (bias). [AI-Impliciet]\n**CS1.2.05**: Voorbeelden herkennen van beïnvloeding via sociale media en filterbubbels. [AI-Impliciet]\n**CS1.2.06**: Een basisbeoordeling maken van de betrouwbaarheid en geloofwaardigheid van digitale informatiebronnen en inhoud. [AI-Impliciet]", "BgColor2": "FFF2CC", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS1.2.07**: De bron van online informatie en de doelen van factcheck-diensten identificeren om pre-bunking- en de-bunkingvaardigheden te ontwikkelen. [AI-Impliciet]\n**CS1.2.08**: Besef dat de data die gebruikt wordt bij het trainen van AI-systemen en de manier waarop ze getraind worden van invloed zijn op de betrouwbaarheid van de informatie die zij leveren. [AI-Expliciet]\n**CS1.2.09**: Herkennen dat sommige digitale technologieën, zoals AI-systemen, kunnen functioneren als een 'black box', waardoor het moeilijk is om uit te leggen waarom of hoe een output is geproduceerd. [AI-Expliciet]\n**CS1.2.10**: Herkennen dat AI-systemen output kunnen produceren die onnauwkeurig is, zelfs als deze aannemelijk lijkt, en dat de mens die het AI-systeem gebruikt verantwoordelijk is voor het controleren van de kwaliteit en geldigheid van de gegenereerde informatie. [AI-Expliciet]\n**CS1.2.11**: Herkennen dat individuele (cognitieve en affectieve) vooroordelen en AI-systeemvooroordelen een rol spelen bij het genereren en interpreteren van informatie. [AI-Expliciet]\n**CS1.2.12**: Gebruikerssturende strategieën in digitale omgevingen, zoals clickbait, nudging en gamificatie, herkennen en er effectief op reageren. [AI-Impliciet]\n**CS1.2.13**: Kritisch de betrouwbaarheid beoordelen van bronnen, informatie en inhoud in digitale omgevingen, rekening houdend met de rol van AI-systemen, personalisatie-effecten en commerciële of andere belangen. [AI-Expliciet]", "BgColor2": "FFE699", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS1.2.14**: Voortdurend onderzoeken hoe AI-systemen, vooroordelen en verschillende belangen de generatie, presentatie en interpretatie van informatie in digitale omgevingen vormgeven. [AI-Expliciet]\n**CS1.2.15**: Kenmerken van betrouwbare digitale technologieën, zoals AI-systemen, beschrijven. [AI-Expliciet]\n**CS1.2.16**: Persoonlijke, sociale en politieke gevolgen beschrijven van misinformatie, desinformatie, bronnen van bias, beïnvloeding via sociale media en filterbubbels. [AI-Impliciet]\n**CS1.2.17**: Grondig de betrouwbaarheid en nauwkeurigheid beoordelen van een diversiteit aan digitale bronnen, informatie en inhoud, rekening houdend met een reeks mogelijke beïnvloedende factoren. [AI-Impliciet]\n**CS1.2.18**: Anderen ondersteunen bij het ontwikkelen van vaardigheden om de geloofwaardigheid en betrouwbaarheid van digitale bronnen, informatie en inhoud te beoordelen. [AI-Impliciet]", "BgColor2": "FFD966", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS1.2.19**: Systematisch digitale bronnen, informatie en inhoud beoordelen en evalueren ter ondersteuning van complexe besluitvorming. [AI-Impliciet]\n**CS1.2.20**: Anderen helpen bij het ontwikkelen van vaardigheden om informatie en inhoud kritisch te evalueren, en veerkracht op te bouwen tegen misinformatie en desinformatie in digitale omgevingen. [AI-Impliciet]\n**CS1.2.21**: Leiding geven aan of bijdragen aan initiatieven die een nauwkeurige interpretatie van informatie in digitale omgevingen ondersteunen. [AI-Impliciet]", "BgColor2": "FFC000", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 1.3 Informatie beheren
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_1p3.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**1. INFORMATIE ZOEKEN, EVALUEREN EN BEHEREN**\n\n**1.3 Informatie beheren**\n\nHet organiseren, opslaan en ophalen van informatie en gegevens in digitale omgevingen. Het verzamelen, verwerken en analyseren van informatie en gegevens in gestructureerde digitale omgevingen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS1.3.01**: De voordelen inzien van het beheren en organiseren van informatie in digitale omgevingen. [-]\n**CS1.3.02**: Functies van dataverwijdering, -herstel en -back-up herkennen, evenals de belangrijkste eigenschappen van digitale bestanden en mappen. [-]\n**CS1.3.03**: Digitale bestanden downloaden, opslaan, ophalen, verplaatsen en verwijderen. [-]\n**CS1.3.04**: Eenvoudige data organiseren en formatteren in een gestructureerde digitale omgeving, zoals in spreadsheets. [-]\n**CS1.3.05**: Eigen contacten bijwerken, bijvoorbeeld op de telefoon, in e-mail of op sociale media. [-]", "BgColor2": "FFF2CC", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS1.3.06**: Het belang inzien van zorgvuldig en ethisch beheer van data en informatie in digitale omgevingen. [AI-Impliciet]\n**CS1.3.07**: Naamgevingsconventies toepassen op digitale bestanden en hiërarchieën op digitale mappen. [-]\n**CS1.3.08**: Mappen organiseren, en bestanden beheren, opslaan en verwijderen op digitale apparaten, externe opslag en clouddiensten. [-]\n**CS1.3.09**: Veelvoorkomende soorten data en hun formaten identificeren, en hulpmiddelen voor gegevensverzameling gebruiken voor eenvoudige gegevensverwerking. [AI-Impliciet]\n**CS1.3.10**: Informatie beheren in de eigen digitale accounts, zoals e-mail. [AI-Impliciet]\n**CS1.3.11**: Data organiseren en formatteren en eenvoudige formules toepassen in een gestructureerde digitale omgeving, zoals in spreadsheets. [-]", "BgColor2": "FFE699", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS1.3.12**: Prioriteit geven aan ethisch en transparant beheer en verwerking van data en informatie in digitale omgevingen. [AI-Impliciet]\n**CS1.3.13**: Verschillende functies toepassen om data en informatie in digitale omgevingen over te dragen en te beheren. [AI-Impliciet]\n**CS1.3.14**: Voorbeelden, toepassingen en beperkingen van open data en big data beschrijven. [AI-Impliciet]\n**CS1.3.15**: Een reeks digitale hulpmiddelen en methoden gebruiken om een verscheidenheid aan data en informatie te verzamelen en te verwerken. [AI-Impliciet]\n**CS1.3.16**: Passende analyses toepassen op informatie en data in digitale omgevingen om bij te dragen aan complexe besluitvorming. [AI-Impliciet]\n**CS1.3.17**: Anderen helpen met het beheer, de verwerking en de analyse van data en informatie in digitale omgevingen. [AI-Impliciet]", "BgColor2": "FFD966", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS1.3.18**: Het belang inzien van het structureren en documenteren van data en informatie in digitale omgevingen ten behoeve van anderen. [-]\n**CS1.3.19**: Strategieën ontwikkelen en implementeren voor complex of gespecialiseerd beheer, verwerking en analyse van data en informatie in digitale omgevingen. [AI-Impliciet]\n**CS1.3.20**: Verschillende digitale hulpmiddelen en methoden gebruiken om complexe data of grote hoeveelheden informatie te verwerken, te beheren of te analyseren. [AI-Impliciet]\n**CS1.3.21**: Leiding geven aan of bijdragen aan initiatieven die anderen ondersteunen bij geavanceerd informatie- en databeheer, -verwerking en -analyse in digitale omgevingen. [AI-Impliciet]\n**CS1.3.22**: Bijdragen aan verbeteringen in of nieuwe oplossingen voor databeheer, -verwerking of -analyse in digitale omgevingen. [AI-Impliciet]", "BgColor2": "FFC000", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 2.1 Interacteren via en met digitale technologieën
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_2p1.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**2. COMMUNICATIE EN SAMENWERKING**\n\n**2.1 Interacteren via en met digitale technologieën**\n\nInteracteren via en met een verscheidenheid aan digitale technologieën, en passende digitale communicatie gebruiken voor een gegeven context.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS2.1.01**: Basiskenmerken van digitale communicatiehulpmiddelen identificeren en gebruiken om te interageren met individuen en groepen. [AI-Impliciet]\n**CS2.1.02**: Het belang inzien van het rekening houden met de voorkeuren van anderen in digitale communicatie. [-]\n**CS2.1.03**: Verschillen herkennen tussen digitale en niet-digitale interacties, en tussen fysieke en virtuele realiteiten. [AI-Impliciet]\n**CS2.1.04**: Basiskenmerken identificeren van virtuele assistenten (chatbots) en belangrijke verschillen herkennen tussen mens-machine interacties en mens-tot-mens interacties. [AI-Impliciet]\n**CS2.1.05**: In algemene termen herkennen wat een robot is, de niet-menselijke aard ervan, en dat mensen interageren met robots om taken uit te voeren. [AI-Impliciet]", "BgColor2": "D9E1F2", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS2.1.06**: Het belang inzien van het afstemmen van de eigen digitale communicatie op specifieke contexten. [-]\n**CS2.1.07**: Herkennen dat er een realiteit-virtualiteit-continuüm bestaat in digitale omgevingen. [AI-Impliciet]\n**CS2.1.08**: Een geschikt communicatiemiddel identificeren voor een gegeven context of doel. [AI-Impliciet]\n**CS2.1.09**: Meerdere kenmerken van verschillende digitale communicatiehulpmiddelen gebruiken om te interageren met en het beheren van individuen, groepen en kanalen. [AI-Impliciet]\n**CS2.1.10**: Vragen, commando's of verklaringen (prompts) ontwikkelen en verfijnen voor virtuele assistenten (chatbots) en AI-systemen om niet-complexe interacties af te handelen. [AI-Expliciet]\n**CS2.1.11**: Definiëren hoe mensen kunnen interageren met robots, hun belangrijkste kenmerken identificeren (zoals sensoren, software, bewegingsregelaars en menselijke interface), en herkennen dat ze kunnen werken met verschillende mate van autonomie. [AI-Impliciet]", "BgColor2": "B4C6E7", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.1.12**: Communicatie in digitale omgevingen voortdurend aanpassen als reactie op een verscheidenheid aan contexten. [-]\n**CS2.1.13**: Digitale communicatiehulpmiddelen en -methoden combineren voor complexe communicatie- en interactietaken. [AI-Impliciet]\n**CS2.1.14**: Systematisch vragen, commando's of verklaringen (prompts) voor AI-systemen ontwikkelen en geleidelijk verfijnen om complexe interacties af te handelen. [AI-Expliciet]\n**CS2.1.15**: Anderen helpen bij het beoordelen en selecteren van geschikte digitale communicatiehulpmiddelen voor een bepaald doel. [AI-Impliciet]\n**CS2.1.16**: Organiseren en/of modereren van complexe digitale evenementen. [AI-Impliciet]\n**CS2.1.17**: Voordelen en nadelen van robottoepassingen in een specifieke context beoordelen. [AI-Impliciet]", "BgColor2": "8EA9DB", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.1.18**: Op de hoogte blijven van ontwikkelingen in hulpmiddelen en methoden voor digitale communicatie en interactie. [AI-Impliciet]\n**CS2.1.19**: Digitale communicatie- en interactiehulpmiddelen beoordelen en combineren voor zeer complexe of nieuwe taken. [AI-Impliciet]\n**CS2.1.20**: Begeleiding, ondersteuning of leiderschap bieden bij het geavanceerde gebruik van communicatie- en interactiehulpmiddelen. [AI-Impliciet]\n**CS2.1.21**: Leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor digitale communicatie of mens-machine interactie. [AI-Impliciet]", "BgColor2": "2F5597", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 2.2 Delen via digitale technologieën
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_2p2.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**2. COMMUNICATIE EN SAMENWERKING**\n\n**2.2 Delen via digitale technologieën**\n\nInformatie en inhoud op een ethische en verantwoorde manier delen met anderen via passende digitale technologieën.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS2.2.01**: Het belang inzien van ethisch en verantwoord delen van informatie en inhoud. [AI-Impliciet]\n**CS2.2.02**: Functies en toepassingen van sociale media identificeren, evenals voorbeelden van veelvoorkomende sociale mediaplatforms. [AI-Impliciet]\n**CS2.2.03**: Voordelen en risico's herkennen van het delen van informatie en inhoud in digitale omgevingen, en dat individuen kunnen kiezen hoe en wat ze delen. [AI-Impliciet]\n**CS2.2.04**: Herkennen dat inhoud op verschillende manieren kan worden gedeeld door zowel AI-systemen als mensen. [AI-Expliciet]\n**CS2.2.05**: Doel en doelgroep identificeren van informatie en inhoud die gedeeld gaat worden in digitale omgevingen. [-]\n**CS2.2.06**: Eenvoudige processen gebruiken om informatie en inhoud op een passende manier en in overeenstemming met de doelen te delen in digitale omgevingen. [-]", "BgColor2": "D9E1F2", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS2.2.07**: Het belang inzien van het beoordelen van de waarde en nauwkeurigheid van informatie en inhoud voordat deze in digitale omgevingen wordt gedeeld. [-]\n**CS2.2.08**: Verantwoordelijkheden definiëren die verbonden zijn aan het delen van informatie en inhoud in digitale omgevingen. [AI-Impliciet]\n**CS2.2.09**: Effectieve en ethische manieren beschrijven en implementeren om informatie en inhoud te delen in verschillende digitale omgevingen. [AI-Impliciet]\n**CS2.2.10**: Misinformatie en desinformatie die gedeeld is in digitale omgevingen rapporteren of markeren. [AI-Impliciet]", "BgColor2": "B4C6E7", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.2.11**: De waarde inzien van het delen van informatie en inhoud in digitale omgevingen om anderen te helpen. [-]\n**CS2.2.12**: Informatie en inhoud delen in digitale omgevingen ter ondersteuning van persoonlijke, leer- of professionele doelen van zichzelf en anderen. [AI-Impliciet]\n**CS2.2.13**: Anderen adviseren over effectieve en ethische manieren om informatie en inhoud te delen in digitale omgevingen. [AI-Impliciet]", "BgColor2": "8EA9DB", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.2.14**: Complex delen van informatie over verschillende digitale technologieën heen faciliteren, indien nodig nieuwe en alternatieve middelen verkennend. [AI-Impliciet]\n**CS2.2.15**: Bijdragen aan complexe of gespecialiseerde initiatieven voor het delen van informatie en inhoud in digitale omgevingen. [AI-Impliciet]\n**CS2.2.16**: Leiding geven aan of bijdragen aan verbeteringen in of nieuwe oplossingen voor het delen van informatie en inhoud in digitale omgevingen. [AI-Impliciet]", "BgColor2": "2F5597", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 2.3 Betrokkenheid bij burgerschap via digitale technologieën
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_2p3.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**2. COMMUNICATIE EN SAMENWERKING**\n\n**2.3 Betrokkenheid bij burgerschap via digitale technologieën**\n\nDeelnemen aan de samenleving door het ethisch en verantwoord gebruik van digitale platforms en diensten. Mogelijkheden zoeken voor zelfontplooiing en participatie via passende digitale technologieën. Je bewust zijn van je rechten en deze opeisen, en keuzes maken in digitale omgevingen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS2.3.01**: De belangrijkste doelen en functies van digitale platforms en diensten identificeren, deze gebruiken met hulp indien nodig. [AI-Impliciet]\n**CS2.3.02**: Het potentieel van digitale technologieën herkennen voor participatie en empowerment – en uitsluiting – van zichzelf en specifieke groepen en gemeenschappen. [AI-Impliciet]\n**CS2.3.03**: Herkennen dat er wetten en regels zijn om de rechten van gebruikers van digitale platforms en diensten te beschermen. [AI-Impliciet]\n**CS2.3.04**: Digitale hulpmiddelen gebruiken om te zoeken naar en het vinden van gemeenschappen voor maatschappelijke participatie over onderwerpen van belang. [AI-Impliciet]", "BgColor2": "D9E1F2", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS2.3.05**: Deelnemen aan discussies over onderwerpen die te maken hebben met digitaal burgerschap. [AI-Impliciet]\n**CS2.3.06**: Prioriteit geven aan het verkennen van manieren waarop digitale technologieën de eigen maatschappelijke participatie kunnen versterken. [AI-Impliciet]\n**CS2.3.07**: De potentiële voordelen beschrijven van veelvoorkomende vormen van digitale participatie, erkennend dat maatschappelijke participatie plaatsvindt op een continuüm. [-]\n**CS2.3.08**: Belangrijke rechten onder relevante digitale wetten en regels herkennen, en definiëren hoe deze uit te oefenen. [AI-Impliciet]\n**CS2.3.09**: Beschrijven hoe digitale technologieën zoals sociale mediaplatforms bepaalde aspecten van de basisdemocratie kunnen beïnvloeden (bijvoorbeeld door beïnvloeding van het verkiezingsproces). [AI-Impliciet]\n**CS2.3.10**: Het concept van de platformeconomie beschrijven, inclusief kansen, risico's, sociale en ethische implicaties. [AI-Impliciet]\n**CS2.3.11**: Het concept en de functies van maatschappelijke monitoring en e-overheid beschrijven. [-]\n**CS2.3.12**: Autonoom en effectief interageren met digitale platforms en diensten. [AI-Impliciet]", "BgColor2": "B4C6E7", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.3.13**: Deelnemen aan discussies over de ethische, politieke en sociale implicaties van digitale technologieën, met prioriteit voor het voortdurend verkennen van manieren waarop digitale technologieën empowerment en maatschappelijke participatie kunnen ondersteunen. [AI-Impliciet]\n**CS2.3.14**: Het potentieel van digitale technologieën voor inclusie, uitsluiting en maatschappelijke interventie beoordelen. [AI-Impliciet]\n**CS2.3.15**: Verschillende implicaties van digitale technologieën zoals sociale mediaplatforms in democratische processen beoordelen. [AI-Impliciet]\n**CS2.3.16**: Onderscheid maken tussen hoogrisico en verboden AI-systemen (volgens wetgeving) en hun potentiële maatschappelijke, politieke of economische effecten. [AI-Expliciet]\n**CS2.3.17**: Anderen helpen bij het identificeren van kansen en het participeren in digitale omgevingen voor empowerment en maatschappelijke participatie (van zichzelf of de gemeenschap). [-]\n**CS2.3.18**: Anderen ondersteunen bij het zich informeren over en het uitoefenen van hun rechten onder digitale wetgeving. [AI-Impliciet]", "BgColor2": "8EA9DB", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.3.19**: Actuele kennis van digitale technologieën en wetsontwikkelingen gebruiken om de effecten van digitale technologieën op de samenleving, politieke processen of de economie te evalueren, vanuit verschillende perspectieven. [AI-Impliciet]\n**CS2.3.20**: Anderen helpen de belangrijkste bepalingen van digitale wetgeving te begrijpen, gegeven een specifieke context. [AI-Impliciet]\n**CS2.3.21**: Leiding geven aan of ontwerpen van digitale burgerschapsinitiatieven, bijvoorbeeld om maatschappelijke participatie, inclusie of empowerment te bevorderen. [AI-Impliciet]", "BgColor2": "2F5597", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 2.4 Samenwerken via digitale technologieën
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_2p4.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**2. COMMUNICATIE EN SAMENWERKING**\n\n**2.4 Samenwerken via digitale technologieën**\n\nDigitale technologieën ethisch en verantwoord gebruiken voor samenwerking, en voor de gezamenlijke opbouw en creatie van informatie, bronnen en kennis.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS2.4.01**: Deelnemen aan samenwerkingsgroepen via digitale samenwerkingshulpmiddelen, hun voordelen en beperkingen herkennend. [AI-Impliciet]\n**CS2.4.02**: De aanwezigheid van AI-systemen in digitale samenwerkingshulpmiddelen herkennen. [AI-Expliciet]\n**CS2.4.03**: Het belang inzien van effectieve communicatieve vaardigheden voor succesvolle samenwerking in digitale omgevingen. [-]", "BgColor2": "D9E1F2", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS2.4.04**: Eenvoudige samenwerkingstaken in digitale omgevingen creëren, beheren en er effectief aan bijdragen. [AI-Impliciet]\n**CS2.4.05**: Belangrijkste kenmerken en functies van verschillende samenwerkingshulpmiddelen herkennen, en deze selecteren om samenwerkingsdoelen te bereiken. [AI-Impliciet]\n**CS2.4.06**: Voorbeelden identificeren van ethische, verantwoordelijke en effectieve samenwerking tussen mens en AI. [AI-Expliciet]\n**CS2.4.07**: Rekening houden met verschillende perspectieven om te helpen een gemeenschappelijk doel te bereiken in digitale omgevingen. [-]", "BgColor2": "B4C6E7", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.4.08**: Verschillende digitale samenwerkingshulpmiddelen gebruiken en combineren, en daarbij zorgen voor proportioneel en ethisch gebruik van digitale technologieën en mens-AI-samenwerkingsprocessen die voldoen aan de behoeften van projecten, taken en groepen. [AI-Expliciet]\n**CS2.4.09**: Leiding geven aan samenwerking in digitale omgevingen. [AI-Impliciet]\n**CS2.4.10**: Anderen helpen bij het ontwikkelen van hun vaardigheden om samen te werken in digitale omgevingen. [AI-Impliciet]", "BgColor2": "8EA9DB", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.4.11**: Proportioneel, ethisch en effectief gebruik van digitale technologieën inclusief AI-systemen in samenwerkingen bevorderen en ondersteunen. [AI-Expliciet]\n**CS2.4.12**: Complexe of gespecialiseerde samenwerkingsstrategieën of -systemen voor digitale omgevingen ontwerpen. [AI-Impliciet]\n**CS2.4.13**: Anderen helpen bij het ontwikkelen van vaardigheden om leiding te geven aan samenwerking in digitale omgevingen. [AI-Impliciet]\n**CS2.4.14**: Leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor mens-AI-samenwerking. [AI-Expliciet]", "BgColor2": "2F5597", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 2.5 Digitaal gedrag
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_2p5.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**2. COMMUNICATIE EN SAMENWERKING**\n\n**2.5 Digitaal gedrag**\n\nJe bewust zijn van gedragsnormen en weten hoe je je respectvol moet gedragen bij het gebruik van digitale technologieën en interactie in digitale omgevingen. Communicatie aanpassen aan specifieke contexten en aandacht hebben voor culturele, generationele en andere diversiteit in digitale omgevingen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS2.5.01**: Verschillen herkennen in verbaal en non-verbaal gedrag in digitale en niet-digitale omgevingen, en dat er culturele en contextuele verschillen zijn in verbale en non-verbale digitale communicatie. [-]\n**CS2.5.02**: Het belang inzien van het geven van ruimte aan de meningen van anderen in digitale omgevingen. [-]\n**CS2.5.03**: Herkennen dat bepaald gedrag in digitale omgevingen mogelijk niet acceptabel is voor anderen en/of juridische gevolgen kan hebben. [AI-Impliciet]\n**CS2.5.04**: Passende toon en visuele expressie zoals emoji gebruiken in formele en informele digitale omgevingen. [-]", "BgColor2": "D9E1F2", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS2.5.05**: De relatie tussen digitaal gedrag en digitale reputatie beschrijven. [-]\n**CS2.5.06**: Prioriteit geven aan gedrag dat inclusie en een positieve digitale reputatie van zichzelf en anderen ondersteunt. [-]\n**CS2.5.07**: Belangrijke rechten en verantwoordelijkheden van kinderen en volwassenen in relatie tot digitaal gedrag identificeren. [AI-Impliciet]", "BgColor2": "B4C6E7", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.5.08**: Met effectieve en respectvolle communicatie en gedrag reageren op moeilijke of complexe situaties in digitale omgevingen. [-]\n**CS2.5.09**: Onderscheid maken tussen ethisch, legaal en illegaal gedrag in digitale omgevingen, erkennend dat deze onderscheiden complex kunnen zijn. [AI-Impliciet]\n**CS2.5.10**: Patronen van misbruik van specifieke groepen in digitale omgevingen en hun potentiële effecten analyseren, en manieren beschrijven waarop deze kunnen worden gemeld en aangepakt. [AI-Impliciet]\n**CS2.5.11**: Inclusief en respectvol gedrag in digitale omgevingen bevorderen en ondersteunen. [-]\n**CS2.5.12**: Anderen ondersteunen bij het ontwikkelen van hun vaardigheden voor inclusief en respectvol gedrag in digitale omgevingen. [-]", "BgColor2": "8EA9DB", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.5.13**: Op de hoogte blijven van ontwikkelingen in beleid en wetgeving met betrekking tot gedrag in digitale omgevingen. [AI-Impliciet]\n**CS2.5.14**: Anderen helpen belangrijke rechten en verantwoordelijkheden te begrijpen onder beleid of wetgeving met betrekking tot digitaal gedrag in een gegeven context. [AI-Impliciet]\n**CS2.5.15**: Leiding geven aan of bijdragen aan beleid of initiatieven op het gebied van digitaal gedrag. [AI-Impliciet]", "BgColor2": "2F5597", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 2.6 Digitale identiteit beheren
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_2p6.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**2. COMMUNICATIE EN SAMENWERKING**\n\n**2.6 Digitale identiteit beheren**\n\nHet beheren van één of meerdere digitale identiteiten. Acties ondernemen om je digitale reputatie te beschermen (hoe je wordt waargenomen op basis van online aanwezigheid) en je digitale voetafdruk beheren (de gegevens die worden geproduceerd door het gebruik van digitale platforms en diensten).", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS2.6.01**: De voordelen inzien van het implementeren van maatregelen om de eigen digitale identiteit te helpen beheren. [-]\n**CS2.6.02**: Kenmerken van fysieke en digitale identiteiten herkennen, en aspecten van fysieke identiteit identificeren die gekoppeld kunnen worden aan digitale identiteit. [-]\n**CS2.6.03**: Digitale identiteit herkennen als zowel een middel om een individu te authenticeren (valideren) als de data gegenereerd door de online activiteiten van een individu, en veelvoorkomende vormen en toepassingen van digitale identiteit identificeren. [AI-Impliciet]\n**CS2.6.04**: Het concept en de componenten van een digitale voetafdruk herkennen. [AI-Impliciet]\n**CS2.6.05**: Herkennen dat wetten voor de bescherming van digitale identiteit de data en privacy van individuen beschermen. [AI-Impliciet]\n**CS2.6.06**: Eenvoudige maatregelen identificeren en implementeren, zoals het beperken van tracking en het verwijderen van de browsegeschiedenis, om de digitale identiteit te beheren. [-]", "BgColor2": "D9E1F2", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS2.6.07**: Het belang inzien van de eigen rol en rechten bij het beheer van de digitale identiteit. [AI-Impliciet]\n**CS2.6.08**: Voorbeelden identificeren van actief en passief gegenereerde informatie in relatie tot digitale identiteit. [AI-Impliciet]\n**CS2.6.09**: De reikwijdte van de eigen digitale identiteit analyseren om beschermingsmaatregelen te implementeren. [AI-Impliciet]\n**CS2.6.10**: Instellingen aanpassen op apparaten en apps, online accounts en activiteitstracking om de eigen digitale identiteit te helpen beheren. [AI-Impliciet]\n**CS2.6.11**: Een of meer digitale identiteiten cureren en beheren met behulp van verschillende kenmerken en functionaliteiten op digitale platforms of diensten. [AI-Impliciet]", "BgColor2": "B4C6E7", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.6.12**: Manieren beschrijven om wettelijke rechten uit te oefenen in kwesties die verband houden met digitale identiteit. [AI-Impliciet]\n**CS2.6.13**: De eigen digitale identiteit voortdurend beoordelen, en verschillende processen gebruiken om de digitale identiteit te beheren. [AI-Impliciet]\n**CS2.6.14**: Voordelen, sociale en ethische implicaties van het gebruik van AI-systemen bij het beheer van digitale identiteit beoordelen. [AI-Expliciet]\n**CS2.6.15**: Digitale identiteiten cureren en beheren voor persoonlijke, professionele en/of organisatorische doeleinden over verschillende platforms en diensten. [AI-Impliciet]\n**CS2.6.16**: Anderen helpen bij het basisbeheer van hun digitale identiteit. [AI-Impliciet]", "BgColor2": "8EA9DB", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS2.6.17**: Op de hoogte blijven van ontwikkelingen in digitale technologieën in relatie tot het beheer en de bescherming van de digitale identiteit. [AI-Impliciet]\n**CS2.6.18**: Anderen ondersteunen bij het verdiepen van hun vaardigheden in het beheer en de curatie van digitale identiteiten. [AI-Impliciet]\n**CS2.6.19**: Anderen adviseren over complexe aspecten van het beheer van digitale identiteit en bijbehorende rechten. [AI-Impliciet]", "BgColor2": "2F5597", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 3.1 Digitale inhoud ontwikkelen
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_3p1.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**3. CONTENTCREATIE**\n\n**3.1 Digitale inhoud ontwikkelen**\n\nDigitale technologieën op een ethische en verantwoorde manier gebruiken om uiteenlopende inhoud te creëren en te bewerken. Jezelf uitdrukken via digitale middelen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS3.1.01**: De voordelen inzien van het verkennen van verschillende hulpmiddelen voor het creëren van digitale inhoud ter ondersteuning van contentcreatiedoelen. [AI-Impliciet]\n**CS3.1.02**: Het belang inzien van toegankelijke en inclusieve digitale inhoud. [-]\n**CS3.1.03**: Veelvoorkomende soorten digitale inhoud en bestandsformaten identificeren, evenals veelvoorkomende operationele functies binnen hulpmiddelen voor het creëren van digitale inhoud. [AI-Impliciet]\n**CS3.1.04**: Herkennen dat AI-systemen weliswaar inhoud kunnen genereren, maar dat mensen essentieel zijn om ethische, verantwoordelijke en context-passende outputs te waarborgen. [AI-Expliciet]\n**CS3.1.05**: Herkennen dat generatieve AI een specifiek type AI is en een van de verschillende digitale technologieën die gebruikt kunnen worden om contentcreatie te ondersteunen. [AI-Expliciet]\n**CS3.1.06**: Basiskenmerken van hulpmiddelen voor contentcreatie gebruiken om digitale inhoud te creëren en te bewerken. [AI-Impliciet]", "BgColor2": "FBE5D6", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS3.1.07**: Doelgericht kenmerken en functies van hulpmiddelen voor het creëren van digitale inhoud verkennen om vaardigheden te verdiepen. [AI-Impliciet]\n**CS3.1.08**: Voordelen en beperkingen beschrijven bij het gebruik van digitale technologieën zoals AI-systemen voor contentcreatie, en deze selectief en ethisch gebruiken. [AI-Expliciet]\n**CS3.1.09**: Verschillende hulpmiddelen voor contentcreatie gebruiken om digitale inhoud te creëren en te bewerken. [AI-Impliciet]\n**CS3.1.10**: Strategieën toepassen die efficiënte creatie van digitale inhoud mogelijk maken. [AI-Impliciet]\n**CS3.1.11**: De toegankelijkheids- en inclusiviteitsbehoeften van het publiek beoordelen, en digitale inhoud dienovereenkomstig creëren en bewerken. [AI-Impliciet]", "BgColor2": "F8CBAD", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS3.1.12**: Het belang inzien van het beoordelen van mogelijkheden, beperkingen en ethische aspecten van hulpmiddelen voor het creëren van digitale inhoud. [AI-Impliciet]\n**CS3.1.13**: Hulpmiddelen en methoden voor het creëren van digitale inhoud selecteren en combineren om te voldoen aan complexe contentcreatietaken en publiekseisen. [AI-Impliciet]\n**CS3.1.14**: Complexe of gespecialiseerde digitale inhoud creëren en bewerken, passend afgestemd op doelen en publiek. [AI-Impliciet]\n**CS3.1.15**: Anderen ondersteunen bij het ontwikkelen van hun vaardigheden in de creatie van digitale inhoud door middel van ethische en verantwoordelijke benaderingen. [AI-Impliciet]", "BgColor2": "F4B084", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS3.1.16**: Toegankelijkheid en inclusiviteit, en het selectieve en ethische gebruik van AI-systemen bij de creatie van digitale inhoud bevorderen en ondersteunen. [AI-Expliciet]\n**CS3.1.17**: Anderen helpen bij het ontwikkelen van geavanceerde vaardigheden in de creatie van digitale inhoud. [AI-Impliciet]\n**CS3.1.18**: Leiding geven aan of bijdragen aan complexe of gespecialiseerde initiatieven voor de creatie van digitale inhoud. [AI-Impliciet]\n**CS3.1.19**: Leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor complexe of gespecialiseerde digitale inhoud. [AI-Impliciet]", "BgColor2": "ED7D31", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 3.2 Integreren en herwerken van digitale inhoud
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_3p2.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**3. CONTENTCREATIE**\n\n**3.2 Integreren en herwerken van digitale inhoud**\n\nNieuwe informatie en inhoud aanpassen, verfijnen en integreren in bestaande kennis en bronnen om nieuwe en originele inhoud en kennis te creëren.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS3.2.01**: Het belang inzien van ethische en transparante praktijken bij het hergebruiken of uitwerken van bestaande digitale inhoud. [AI-Impliciet]\n**CS3.2.02**: De voordelen inzien van het verkennen van hulpmiddelen en technieken voor de integratie en uitwerking van digitale inhoud. [AI-Impliciet]\n**CS3.2.03**: Onderscheid maken tussen bewerkbare en niet-bewerkbare digitale inhoud. [-]\n**CS3.2.04**: Wijzigingen aanbrengen in digitale inhoud met behulp van basisbewerkings-, formatterings- en integratiefuncties. [AI-Impliciet]", "BgColor2": "FBE5D6", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS3.2.05**: Doelgericht verschillende manieren verkennen om digitale inhoud te integreren en te herbewerken. [AI-Impliciet]\n**CS3.2.06**: Digitale inhoud aanpassen of integreren om te voldoen aan formaat-, structuur- en publiekseisen. [AI-Impliciet]\n**CS3.2.07**: Digitale tekstuele, numerieke of visuele representaties wijzigen of transformeren om de betekenis van data en informatie effectief en nauwkeurig over te brengen. [AI-Impliciet]\n**CS3.2.08**: Digitale technologieën op een selectieve, ethische, transparante en verantwoordelijke manier gebruiken om verbeteringen of integraties aan te brengen in bestaande digitale inhoud. [AI-Impliciet]", "BgColor2": "F8CBAD", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS3.2.09**: Verschillende soorten digitale inhoud aanpassen of integreren om te voldoen aan complexe formaat-, structuur- en publiekseisen. [AI-Impliciet]\n**CS3.2.10**: Digitale technologieën op een selectieve, ethische en transparante manier inzetten om verbeteringen of integraties aan te brengen in complexe digitale inhoud. [AI-Impliciet]\n**CS3.2.11**: Anderen ondersteunen bij het ontwikkelen van hun vaardigheden in het verbeteren van digitale inhoud. [AI-Impliciet]", "BgColor2": "F4B084", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS3.2.12**: Ethische en transparante praktijken bij de integratie en herbewerking van digitale inhoud bevorderen en ondersteunen, geïnformeerd door actuele technologische ontwikkelingen. [AI-Impliciet]\n**CS3.2.13**: Geavanceerde ontwerp- en datavisualisatietechnieken evalueren en toepassen op complexe of gespecialiseerde integratie en herbewerking van digitale inhoud. [AI-Impliciet]\n**CS3.2.14**: Anderen helpen bij complexe taken voor integratie en herbewerking van digitale inhoud. [AI-Impliciet]\n**CS3.2.15**: Leiding geven aan of bijdragen aan complexe initiatieven voor de integratie of herbewerking van digitale inhoud, of aan verbeteringen in of nieuwe oplossingen daarvoor. [AI-Impliciet]", "BgColor2": "ED7D31", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 3.3 Auteursrecht en licenties
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_3p3.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**3. CONTENTCREATIE**\n\n**3.3 Auteursrecht en licenties**\n\nBegrijpen hoe auteursrecht en licenties, evenals de bijbehorende juridische en ethische kwesties, van toepassing zijn op digitale inhoud, en hoe deze correct moeten worden toegepast.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS3.3.01**: De algemene concepten van auteursrecht en licenties herkennen in digitale contexten, en dat op de originele digitale inhoud van een individu automatisch auteursrecht rust. [-]\n**CS3.3.02**: Herkennen dat auteursrecht en licenties van toepassing kunnen zijn op digitale inhoud, inclusief door AI gegenereerde inhoud, en dat deze bepalen hoe inhoud kan worden gebruikt en gedeeld. [AI-Expliciet]\n**CS3.3.03**: Herkennen dat door AI gegenereerde inhoud als zodanig moet worden gelabeld om anderen te helpen de oorsprong en mogelijkheden voor verder gebruik te begrijpen. [AI-Expliciet]\n**CS3.3.04**: Digitale inhoud gebruiken en delen in overeenstemming met de basisregels van juridische en ethische richtlijnen, en digitale inhoud identificeren die gratis kan worden gebruikt. [AI-Impliciet]", "BgColor2": "FBE5D6", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS3.3.05**: De complexiteit van auteursrecht en licenties in digitale contexten inzien, met prioriteit voor een voorzichtige aanpak. [AI-Impliciet]\n**CS3.3.06**: Het concept van intellectueel eigendom definiëren, en onderscheid maken tussen auteursrecht, handelsmerk, modelrecht en octrooi. [AI-Impliciet]\n**CS3.3.07**: Veelvoorkomende soorten en doelen van licenties in digitale contexten identificeren, inclusief Creative Commons. [-]\n**CS3.3.08**: Ethische, juridische en commerciële gevolgen van inbreuken op het auteursrecht in digitale contexten beschrijven. [AI-Impliciet]\n**CS3.3.09**: Voorbeelden identificeren van juridische en ethische uitdagingen met betrekking tot auteursrecht bij het trainen van AI-modellen. [AI-Expliciet]\n**CS3.3.10**: Juridische en ethische richtlijnen op een passende manier toepassen bij het gebruiken en delen van digitale inhoud. [AI-Impliciet]", "BgColor2": "F8CBAD", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS3.3.11**: Belangrijkste kenmerken van de huidige wetgeving met betrekking tot digitaal auteursrecht en licenties beschrijven. [AI-Impliciet]\n**CS3.3.12**: Voorbeelden beschrijven van waar auteursrecht wel en niet van toepassing is in digitale contexten, waarbij onderscheid wordt gemaakt tussen trainingsdata voor AI-systemen en door AI gegenereerde inhoud. [AI-Expliciet]\n**CS3.3.13**: Juridische en ethische richtlijnen voor het gebruiken en delen van digitale inhoud in complexe contexten beoordelen en correct toepassen (bijvoorbeeld in relatie tot AI-systemen). [AI-Expliciet]\n**CS3.3.14**: Anderen helpen bij het gebruiken en delen van digitale inhoud in overeenstemming met de juridische en ethische richtlijnen. [AI-Impliciet]", "BgColor2": "F4B084", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS3.3.15**: Bewustzijn en begrip van juridische en ethische auteursrecht- en licentiepraktijken in digitale contexten bevorderen en ondersteunen. [AI-Impliciet]\n**CS3.3.16**: Geavanceerde kennis van intellectuele eigendomsrechten, auteursrecht en licentieconcepten in digitale contexten toepassen ter ondersteuning van besluitvorming. [AI-Impliciet]\n**CS3.3.17**: Leiding geven aan of bijdragen aan beleid of richtlijnen over auteursrecht en licenties in digitale contexten. [AI-Impliciet]", "BgColor2": "ED7D31", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 3.4 Computational thinking en programmeren
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_3p4.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**3. CONTENTCREATIE**\n\n**3.4 Computational thinking en programmeren**\n\nStappen begrijpen en uitvoeren om een probleem te analyseren, deelproblemen te herkennen en een reeks instructies te plannen en te ontwikkelen voor een computersysteem om een bepaald probleem op te lossen of een specifieke taak uit te voeren.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS3.4.01**: De rol van programmeren in de samenleving en het veelvoorkomende gebruik van computerprogramma's en applicaties herkennen. [-]\n**CS3.4.02**: Computationeel denken herkennen als een menselijke activiteit die het identificeren van stappen omvat die door een computer kunnen worden uitgevoerd om een probleem of taak op te lossen. [-]\n**CS3.4.03**: In algemene termen herkennen wat AI is, een basisonderscheid makend tussen wat wel en niet een AI-systeem is. [AI-Expliciet]\n**CS3.4.04**: Eenvoudige reeksen symbolisch weergeven, eenvoudige symbolische reeksen interpreteren, en basisinstructies aan een computer geven om eenvoudige taken uit te voeren. [AI-Impliciet]", "BgColor2": "FBE5D6", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS3.4.05**: De relevantie inzien van computational thinking, algoritmische weergave en programmeren voor alledaagse contexten. [AI-Impliciet]\n**CS3.4.06**: Onderscheid maken tussen een computationeel model van de werkelijkheid en de werkelijkheid zelf. [AI-Impliciet]\n**CS3.4.07**: Verschillen definiëren tussen een berekenbaar probleem en een niet-berekenbaar probleem, en de algemene stappen in computational thinking. [-]\n**CS3.4.08**: Fundamentele programmeerconcepten definiëren en herkennen dat er verschillende programmeertalen bestaan, elk met een reeks mogelijke toepassingen. [AI-Impliciet]\n**CS3.4.09**: Herkennen dat machine learning een vorm van programmeren is die bij AI wordt gebruikt en die algoritmen in staat stelt om van data te leren en voorspellingen te doen. [AI-Expliciet]\n**CS3.4.10**: Herkennen dat er stappen gevolgd moeten worden om een computerprogramma of een AI-systeem te ontwikkelen, te valideren en te implementeren. [AI-Expliciet]\n**CS3.4.11**: Basisinformatie vertalen naar logische bewerkingen, eenvoudige programma's met controlestructuren ontwikkelen, en visuele representaties maken om basisalgoritmen te illustreren. [AI-Impliciet]", "BgColor2": "F8CBAD", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS3.4.12**: Het belang inzien van menselijk toezicht en mensgerichte benaderingen bij de ontwikkeling en implementatie van computerprogramma's en AI-systemen. [AI-Expliciet]\n**CS3.4.13**: De belangrijkste stappen beschrijven bij het ontwikkelen, valideren en implementeren van een computerprogramma of een AI-systeem. [AI-Expliciet]\n**CS3.4.14**: Voorbeelden beschrijven van de toepassing van computational thinking en programmeren in de robotica. [AI-Impliciet]\n**CS3.4.15**: Onderscheid maken tussen de belangrijkste soorten machine learning. [AI-Expliciet]\n**CS3.4.16**: Ethische en praktische aspecten van de ontwikkeling en implementatie van computerprogramma's en AI-systemen beoordelen. [AI-Expliciet]\n**CS3.4.17**: Routinetaken identificeren en (gedeeltelijk of volledig) automatiseren met programmeertools of AI-systemen. [AI-Expliciet]\n**CS3.4.18**: Programmeerhulpmiddelen of AI-systemen toepassen op complexe taken op het gebied van computational thinking. [AI-Expliciet]", "BgColor2": "F4B084", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS3.4.19**: Ethische programmeer- en/of AI-systeemontwikkelingspraktijken bevorderen en ondersteunen. [AI-Expliciet]\n**CS3.4.20**: Op de hoogte blijven van de huidige ontwikkelingen in programmeertechnieken en gerelateerde toepassingen van AI-systemen, zoals robotica. [AI-Expliciet]\n**CS3.4.21**: Leiding geven aan of bijdragen aan complexe projecten gericht op toepassingen van computational thinking, programmeren of AI-systemen, inclusief het ontwikkelen, valideren en implementeren van computerprogramma's of AI-systemen. [AI-Expliciet]\n**CS3.4.22**: Anderen helpen bij het ontwikkelen van basisprogrammeervaardigheden en/of vaardigheden in het toepassen van AI-systemen bij taken op het gebied van computational thinking. [AI-Expliciet]", "BgColor2": "ED7D31", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 4.1 Apparaten beschermen
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_4p1.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**4. VEILIGHEID, WELZIJN EN VERANTWOORD GEBRUIK**\n\n**4.1 Apparaten beschermen**\n\nVeiligheids- en cybersecuritymaatregelen toepassen om digitale apparaten en inhoud te beschermen. Je bewust zijn van de veranderende aard van risico's en bedreigingen in digitale omgevingen, en gepaste aandacht hebben voor de beveiliging van digitale apparaten en hun inhoud.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS4.1.01**: Het belang inzien van de eigen individuele rol bij het beschermen van digitale apparaten en hun inhoud. [-]\n**CS4.1.02**: Herkennen dat individuele acties en cybersecurityhulpmiddelen samenwerken om apparaten en hun inhoud veilig te houden. [-]\n**CS4.1.03**: Herkennen dat er cybersecuritywetgeving bestaat die helpt de veiligheid van producten en diensten te waarborgen. [-]\n**CS4.1.04**: Basisbeschermingsmaatregelen voor apparaten identificeren en toepassen, zoals antivirussoftware, schermvergrendeling, sterke wachtwoorden en multifactorauthenticatie. [-]", "BgColor2": "E2EFDA", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS4.1.05**: Het belang inzien van waakzaam blijven en op de hoogte blijven van cybersecuritypraktijken. [AI-Impliciet]\n**CS4.1.06**: De belangrijkste kenmerken van malware beschrijven en verschillende technieken voor malwarepreventie toepassen om apparaten en hun inhoud te beschermen. [AI-Impliciet]\n**CS4.1.07**: Herkennen dat recente en opkomende digitale technologieën zoals AI-systemen kunnen worden gebruikt voor zowel cyberaanvallen als cybersecurity. [AI-Expliciet]", "BgColor2": "C6E0B4", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS4.1.08**: Prioriteit geven aan het regelmatig controleren en bijwerken van cybersecuritymaatregelen om apparaten en hun inhoud te beschermen als reactie op evoluerende digitale dreigingen. [AI-Impliciet]\n**CS4.1.09**: Belangrijke rechten van individuen onder de huidige cybersecuritywetgeving beschrijven. [AI-Impliciet]\n**CS4.1.10**: Voorbeelden identificeren van hoe recente en opkomende technologieën zoals AI-systemen worden gebruikt bij cyberaanvallen en cybersecurity. [AI-Expliciet]\n**CS4.1.11**: Anderen helpen bij het implementeren van basisbeschermingsmaatregelen voor cybersecurity, zoals antivirussoftware, schermvergrendeling, sterke wachtwoorden en multifactorauthenticatie. [-]", "BgColor2": "A9D08E", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS4.1.12**: Op de hoogte blijven van technologische en wettelijke ontwikkelingen op het gebied van cybersecurity. [AI-Impliciet]\n**CS4.1.13**: Rechten van individuen beoordelen onder relevante bepalingen van de huidige cybersecuritywetgeving. [AI-Impliciet]\n**CS4.1.14**: Leiding geven aan of bijdragen aan op de burger gerichte cybersecurity-initiatieven. [AI-Impliciet]\n**CS4.1.15**: Anderen ondersteunen bij het opbouwen van hun vaardigheden om apparaten en hun inhoud te beschermen tegen digitale dreigingen. [AI-Impliciet]", "BgColor2": "70AD47", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 4.2 Persoonsgegevens en privacy beschermen
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_4p2.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**4. VEILIGHEID, WELZIJN EN VERANTWOORD GEBRUIK**\n\n**4.2 Persoonsgegevens en privacy beschermen**\n\nJe bewust zijn van je rechten met betrekking tot persoonsgegevens en privacy in digitale omgevingen en deze uitoefenen. Privacyrisico's evalueren en beheren en persoonsgegevens en privacy in digitale omgevingen beschermen. Je eigen persoonsgegevens en die van anderen op een veilige, ethische en verantwoorde manier gebruiken en delen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS4.2.01**: Het belang inzien van een voorzichtige aanpak bij het delen van persoonlijke data in digitale omgevingen. [-]\n**CS4.2.02**: Herkennen dat persoonlijke data wordt verzameld en gegenereerd via een grote verscheidenheid aan bronnen en processen. [AI-Impliciet]\n**CS4.2.03**: Herkennen dat manipulatieve methoden in digitale omgevingen kunnen worden gebruikt om individuen te misleiden om toegang te verlenen tot persoonlijke data, accounts of andere gevoelige informatie. [-]\n**CS4.2.04**: Risico's identificeren van het delen van persoonlijke data in digitale omgevingen, inclusief specifieke risico's in relatie tot AI-systemen. [AI-Expliciet]\n**CS4.2.05**: Herkennen dat individuen recht hebben op privacy en dat hun persoonlijke data beschermd is onder de wetgeving. [AI-Impliciet]\n**CS4.2.06**: Basisbeveiligingsmaatregelen implementeren voor online betalingen en transacties. [-]\n**CS4.2.07**: Persoonlijke informatie blokkeren of markeren die op ongepaste wijze online is gedeeld. [-]\n**CS4.2.08**: Tekenen van identiteitsfraude herkennen en er passend op reageren. [-]", "BgColor2": "E2EFDA", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS4.2.09**: Het belang inzien van zorgvuldige omgang met persoonlijke data van zichzelf en anderen, vooral van kwetsbare individuen en kinderen. [-]\n**CS4.2.10**: Belangrijke concepten herkennen die verband houden met gegevensbescherming en privacywetgeving. [AI-Impliciet]\n**CS4.2.11**: Het doel van online privacyverklaringen en de belangrijkste concepten van privacybeleid definiëren. [-]\n**CS4.2.12**: Een inbreuk in verband met persoonsgegevens (datalek) definiëren onder de huidige gegevensbescherming- en privacywetgeving. [-]\n**CS4.2.13**: Privacy-implicaties beschrijven die verbonden zijn aan het gebruik van gedeelde online inhoud, zoals om AI-systemen te trainen, erkennend dat de regulering van eigendom van persoonlijke data van online gedeelde inhoud complex is. [AI-Expliciet]\n**CS4.2.14**: Technieken gerelateerd aan social engineering in digitale omgevingen beschrijven, zoals phishing of baiting, deze herkennen en er passend op reageren. [-]\n**CS4.2.15**: Persoonlijke data en privacy veilig beheren in verschillende digitale omgevingen, inclusief het gebruik van privacyhulpmiddelen. [AI-Impliciet]", "BgColor2": "C6E0B4", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS4.2.16**: Voortdurend kwesties rondom data-eigendom en privacy verkennen in relatie tot digitale technologische ontwikkelingen. [AI-Impliciet]\n**CS4.2.17**: Anderen ondersteunen bij het begrijpen van hun rechten onder de huidige gegevensbescherming- en privacywetgeving. [AI-Impliciet]\n**CS4.2.18**: Anderen helpen bij het implementeren van basisstrategieën om persoonlijke data te beschermen en privacy in digitale omgevingen te beheren. [AI-Impliciet]", "BgColor2": "A9D08E", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS4.2.19**: Op de hoogte blijven van technologische en wettelijke ontwikkelingen op het gebied van persoonlijke data, data-eigendom en privacy. [AI-Impliciet]\n**CS4.2.20**: Adviseren over beleidsmatige of regelgevende aspecten van gegevensbescherming en privacy in digitale contexten. [AI-Impliciet]\n**CS4.2.21**: Leiding geven aan of bijdragen aan het ontwerp van strategieën voor de bescherming van persoonlijke data in digitale contexten. [AI-Impliciet]", "BgColor2": "70AD47", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 4.3 Welzijn ondersteunen
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_4p3.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**4. VEILIGHEID, WELZIJN EN VERANTWOORD GEBRUIK**\n\n**4.3 Welzijn ondersteunen**\n\nDigitale technologieën gebruiken op manieren die welzijn en inclusie ondersteunen. Risico's en bedreigingen voor het fysieke, mentale en sociale welzijn van jezelf en anderen minimaliseren bij het gebruik van digitale technologieën. Het gebruik van digitale technologieën in evenwicht brengen met offline activiteiten om welzijn te ondersteunen. Actie ondernemen om jezelf en anderen te beschermen tegen mogelijke gevaren in digitale omgevingen (bijv. cyberpesten, schadelijke inhoud), en weten hoe op dergelijke gevaren te reageren.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS4.3.01**: De voordelen inzien van een balans tussen online en offline activiteiten, en de voordelen en risico's voor het eigen fysieke, mentale en sociale welzijn bij het gebruik van digitale technologieën. [AI-Impliciet]\n**CS4.3.02**: De wisselwerking inzien tussen de eigen digitale gewoonten en kenmerken van digitale platforms of diensten die zijn ontworpen om de aandacht van gebruikers te trekken en vast te houden. [AI-Impliciet]\n**CS4.3.03**: Herkennen dat er een verscheidenheid aan informatie, groepen en gemeenschappen in digitale omgevingen is die het eigen fysieke, mentale en/of sociale welzijn kunnen ondersteunen. [AI-Impliciet]\n**CS4.3.04**: Beperkingen en risico's identificeren van het gebruik van virtuele assistenten en AI-systemen om menselijk welzijn te ondersteunen. [AI-Expliciet]\n**CS4.3.05**: Herkennen dat er wetten en regels zijn die helpen het welzijn van individuen in digitale omgevingen te beschermen. [AI-Impliciet]\n**CS4.3.06**: Een basisbeoordeling maken van de eigen digitale gewoonten in relatie tot het eigen fysieke, mentale en sociale welzijn, met bewustzijn van tekenen van problematisch gebruik, en strategieën identificeren en implementeren om het eigen welzijn te ondersteunen. [-]", "BgColor2": "E2EFDA", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS4.3.07**: Het belang inzien van het recht van zichzelf en anderen om offline te zijn en de voordelen van het regelmatig herzien van de eigen digitale gebruikspatronen. [-]\n**CS4.3.08**: De effecten van schadelijk gedrag, inhoud en misleidend ontwerp (deceptive design) in digitale omgevingen op zichzelf en anderen beschrijven. [AI-Impliciet]\n**CS4.3.09**: Betrouwbare informatiebronnen en inclusieve groepen en gemeenschappen in digitale omgevingen identificeren die het eigen fysieke, mentale en/of sociale welzijn kunnen ondersteunen. [AI-Impliciet]\n**CS4.3.10**: Mogelijke manieren identificeren om schadelijk gedrag of inhoud te melden of in te grijpen als dit in digitale omgevingen wordt aangetroffen. [AI-Impliciet]\n**CS4.3.11**: Manieren beschrijven waarop sommige digitale technologieën, zoals sociale media, bias, stereotypering en uitsluiting versterken en in stand houden. [AI-Impliciet]\n**CS4.3.12**: Strategieën implementeren om te beschermen tegen en effectief te reageren op schadelijk gedrag, inhoud en misleidend ontwerp in digitale omgevingen, en om het welzijn van zichzelf en anderen te ondersteunen en te behouden. [-]\n**CS4.3.13**: Aanpassen aan veranderende digitale technologische ontwikkelingen en behoeften om fysiek, mentaal en sociaal welzijn te ondersteunen en te behouden. [AI-Impliciet]", "BgColor2": "C6E0B4", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS4.3.14**: Voortdurend de rol van digitale technologieën zoals sociale media onderzoeken bij het versterken en in stand houden van bias, stereotypering en uitsluiting. [AI-Impliciet]\n**CS4.3.15**: Effectief melden van of ingrijpen bij gevallen van schadelijk gedrag of inhoud in digitale omgevingen. [AI-Impliciet]\n**CS4.3.16**: Anderen helpen hun gebruik van digitale technologieën te herzien en aan te passen, en bewustzijn te ontwikkelen over schadelijk gedrag, inhoud en misleidend ontwerp in digitale omgevingen. [AI-Impliciet]\n**CS4.3.17**: Anderen helpen vaardigheden op te bouwen om de rol van digitale technologieën zoals sociale media bij het versterken en in stand houden van bias, stereotypering en uitsluiting tegen te gaan. [AI-Impliciet]\n**CS4.3.18**: Anderen helpen hun rechten te begrijpen met betrekking tot welzijn en/of inclusie in digitale omgevingen. [AI-Impliciet]", "BgColor2": "A9D08E", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS4.3.19**: Acties bevorderen en ondersteunen die welzijn en inclusie in digitale omgevingen bevorderen. [AI-Impliciet]\n**CS4.3.20**: Bewijs over welzijn en/of inclusie in digitale omgevingen beoordelen en evalueren om besluitvorming te sturen. [AI-Impliciet]\n**CS4.3.21**: Leiding geven aan of bijdragen aan initiatieven die welzijn en/of inclusie in digitale omgevingen ondersteunen. [AI-Impliciet]\n**CS4.3.22**: Bijdragen aan juridische en regelgevende besluitvorming met betrekking tot het welzijn en/of de inclusie van individuen in digitale omgevingen. [AI-Impliciet]", "BgColor2": "70AD47", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 4.4 Milieueffecten van digitale technologieën
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_4p4.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**4. VEILIGHEID, WELZIJN EN VERANTWOORD GEBRUIK**\n\n**4.4 Milieueffecten van digitale technologieën**\n\nJe bewust zijn van de milieueffecten van digitale technologieën, waaronder de productie van apparaten, het gebruik, de reparatie, recycling, verwijdering, infrastructuur voor gegevensopslag, energieverbruik en het gebruik van middelen en applicaties. Actie ondernemen om deze impact te beperken en digitale technologieën gebruiken om duurzaamheid te ondersteunen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS4.4.01**: De rol inzien die individuen kunnen spelen om de milieu-impact van digitale technologieën te helpen verminderen. [-]\n**CS4.4.02**: Herkennen dat sommige digitale technologieën en infrastructuren, zoals AI-systemen en datacenters, grote effecten hebben op het milieu. [AI-Expliciet]\n**CS4.4.03**: Herkennen dat de volledige milieu-impact van digitale technologieën niet onmiddellijk zichtbaar is voor een individuele gebruiker. [AI-Impliciet]\n**CS4.4.04**: De rol van digitale technologieën bij het ondersteunen van energie-efficiëntie en duurzaamheid herkennen. [AI-Impliciet]\n**CS4.4.05**: Eenvoudige strategieën identificeren en toepassen om het energie- en datagebruik te verminderen bij het gebruik van digitale technologieën. [AI-Impliciet]", "BgColor2": "E2EFDA", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS4.4.06**: Voortdurend de milieu-impact van het eigen gebruik van digitale technologieën beoordelen. [AI-Impliciet]\n**CS4.4.07**: Milieu-impact van digitale technologieën identificeren die optreedt tijdens productie, gebruik en afvalverwerking, evenals die van datacenters en e-commerce. [AI-Impliciet]\n**CS4.4.08**: Beschrijven hoe sommige digitale technologieën een duurzame levensstijl kunnen ondersteunen. [AI-Impliciet]\n**CS4.4.09**: Potentiële milieuvoordelen beschrijven van de modellen van de digitale deel- en circulaire economie. [-]\n**CS4.4.10**: Verschillende strategieën beoordelen en toepassen om de milieu-impact van het eigen gebruik van digitale technologieën en digitale apparaten te verminderen. [AI-Impliciet]", "BgColor2": "C6E0B4", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS4.4.11**: Op de hoogte blijven van de milieu-impact van digitale technologieën en de manieren waarop digitale technologieën duurzaamheid kunnen ondersteunen. [AI-Impliciet]\n**CS4.4.12**: De milieu-impact van digitale technologieën en infrastructuren evalueren ter ondersteuning van besluitvorming of belangenbehartiging. [AI-Impliciet]\n**CS4.4.13**: Anderen helpen hun gebruik van digitale technologieën te beoordelen om manieren te identificeren waarop de milieu-impact kan worden verminderd. [AI-Impliciet]", "BgColor2": "A9D08E", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS4.4.14**: Op de hoogte blijven van de implicaties voor milieu en duurzaamheid van digitale technologieën in verschillende sectoren. [AI-Impliciet]\n**CS4.4.15**: Acties voor milieuvriendelijk duurzaam gebruik van digitale technologieën bevorderen en ondersteunen. [AI-Impliciet]\n**CS4.4.16**: Leiding geven aan of bijdragen aan initiatieven voor digitale duurzaamheid. [AI-Impliciet]\n**CS4.4.17**: Bijdragen aan verbeteringen in of oplossingen voor digitale duurzaamheid. [AI-Impliciet]", "BgColor2": "70AD47", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 5.1 Technische problemen identificeren en oplossen
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_5p1.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**5. PROBLEEMIDENTIFICATIE EN -OPLOSSING**\n\n**5.1 Technische problemen identificeren en oplossen**\n\nTechnische problemen identificeren bij het bedienen van digitale apparaten en in digitale omgevingen, en deze op verschillende manieren oplossen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS5.1.01**: Inzien dat technische problemen in digitale omgevingen veel voorkomen en dat het zoeken naar hulp bij het oplossen ervan voordelen biedt. [-]\n**CS5.1.02**: Onderscheid maken tussen besturingssystemen en software en de belangrijkste kenmerken van hardware, software, connectiviteit en veelvoorkomende randapparatuur identificeren. [-]\n**CS5.1.03**: Veelvoorkomende technische problemen identificeren en instructies volgen om ze te helpen oplossen. [-]\n**CS5.1.04**: Indien nodig software en applicaties installeren en bijwerken. [-]", "BgColor2": "FCE4D6", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS5.1.05**: De voordelen inzien van het opbouwen van vaardigheden en autonomie bij het aanpakken van veelvoorkomende technische problemen. [-]\n**CS5.1.06**: Technische problemen in digitale omgevingen oplossen met behulp van verschillende zoek- en probleemoplossingsstrategieën (met menselijke hulp of met hulp van digitale technologie). [AI-Impliciet]\n**CS5.1.07**: Instellingen op hoofd- en randapparatuur bijwerken en aanpassen om goede prestaties te behouden. [-]", "BgColor2": "F9CB9C", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS5.1.08**: Prioriteit geven aan de ontwikkeling van het eigen vermogen om technische problemen in digitale omgevingen te diagnosticeren en op te lossen. [AI-Impliciet]\n**CS5.1.09**: Anderen helpen bij het diagnosticeren en oplossen van technische problemen in digitale omgevingen. [-]\n**CS5.1.10**: Verschillende strategieën voor het vinden van oplossingen gebruiken voor het verhelpen van complexe technische problemen in digitale omgevingen. [AI-Impliciet]", "BgColor2": "F4B084", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS5.1.11**: Anderen helpen bij het ontwikkelen van vertrouwen en autonomie om technische problemen in digitale omgevingen op te lossen. [-]\n**CS5.1.12**: Training ontwerpen of geven ter ondersteuning van het gebruik van digitale apparaten of systemen. [AI-Impliciet]", "BgColor2": "E26B67", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 5.2 Behoeften en digitale technologische antwoorden identificeren
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_5p2.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**5. PROBLEEMIDENTIFICATIE EN -OPLOSSING**\n\n**5.2 Behoeften en digitale technologische antwoorden identificeren**\n\nBehoeften van jezelf en anderen beoordelen en digitale technologieën evalueren, selecteren, gebruiken en aanpassen om aan deze behoeften te voldoen. Digitale omgevingen aanpassen en personaliseren aan de context, doelen en behoeften (bijv. toegankelijkheid) van jezelf en anderen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS5.2.01**: Het belang inzien van individuele keuzes bij de configuratie van digitale omgevingen. [-]\n**CS5.2.02**: Het concept en het doel van een digitaal assistentiehulpmiddel en de aanwezigheid van AI-systemen daarin herkennen. [AI-Expliciet]\n**CS5.2.03**: Het doel van technologische toegankelijkheid en voorbeelden van veelvoorkomende ondersteunende technologieën identificeren. [AI-Impliciet]", "BgColor2": "FCE4D6", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS5.2.04**: De voordelen inzien van het verkennen van aanpassingen aan configuraties van digitale omgevingen en kenmerken van digitale assistentiehulpmiddelen. [AI-Impliciet]\n**CS5.2.05**: Geïnformeerd gebruik maken van digitale assistentiehulpmiddelen om aan de eigen behoeften en die van anderen te voldoen, met bewustzijn van hun voordelen en beperkingen. [AI-Impliciet]\n**CS5.2.06**: Kenmerken van de eigen digitale omgeving aanpassen aan de eigen behoeften en voorkeuren en die van anderen. [AI-Impliciet]", "BgColor2": "F9CB9C", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS5.2.07**: Prioriteit geven aan een voortdurende beoordeling van hoe configuraties van de digitale omgeving, digitale assistentiehulpmiddelen en/of ondersteunende technologieën kunnen voldoen aan de behoeften van zichzelf en anderen. [AI-Impliciet]\n**CS5.2.08**: Kenmerken van digitale omgevingen aanpassen, en digitale assistentiehulpmiddelen en ondersteunende technologieën gebruiken om aan de eigen behoeften en die van anderen te voldoen. [AI-Impliciet]\n**CS5.2.09**: De toegankelijkheid, inclusiviteit, eerlijkheid en/of rechtgevoeligheid van digitale technologieën in een gegeven context beoordelen. [AI-Impliciet]\n**CS5.2.10**: Anderen ondersteunen bij het maken van geïnformeerd gebruik van digitale assistentiehulpmiddelen en aanpassingen aan configuraties van de digitale omgeving. [AI-Impliciet]", "BgColor2": "F4B084", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS5.2.11**: Het gebruik van inclusieve en toegankelijke digitale technologieën bevorderen en ondersteunen. [AI-Impliciet]\n**CS5.2.12**: Complexe behoeften van individuen beoordelen om op maat gemaakte digitale oplossingen te identificeren en/of te ontwerpen. [AI-Impliciet]\n**CS5.2.13**: Bijdragen aan verbeteringen in of oplossingen voor digitale assistentiehulpmiddelen, toegankelijke configuraties van de digitale omgeving en/of ondersteunende technologieën. [AI-Impliciet]", "BgColor2": "E26B67", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 5.3 Creatieve oplossingen identificeren met behulp van digitale technologieën
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_5p3.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**5. PROBLEEMIDENTIFICATIE EN -OPLOSSING**\n\n**5.3 Creatieve oplossingen identificeren met behulp van digitale technologieën**\n\nDigitale technologieën gebruiken om verbeteringen aan te brengen in of nieuwe oplossingen te vinden voor processen en producten, vanuit een mensgerichte benadering. Individueel en collectief deelnemen aan kritische denkprocessen en het creatief en doelgericht gebruik van digitale technologieën, om conceptuele problemen en probleemsituaties te begrijpen en op te lossen.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS5.3.01**: Inzien dat digitale technologieën de menselijke creativiteit kunnen ondersteunen, maar niet vervangen. [AI-Impliciet]\n**CS5.3.02**: Voorbeelden identificeren van hoe digitale technologieën worden gebruikt om praktijkproblemen op te lossen en verbeteringen aan te brengen in of nieuwe oplossingen, producten of diensten te creëren. [AI-Impliciet]\n**CS5.3.03**: Voorbeelden identificeren van waar digitale technologieën menselijke creativiteit kunnen ondersteunen of versterken. [AI-Impliciet]", "BgColor2": "FCE4D6", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS5.3.04**: Het concept van mensgerichtheid definiëren en de rol ervan bij de ontwikkeling en het gebruik van digitale technologieën. [AI-Impliciet]\n**CS5.3.05**: Sterktes, zwaktes en ethische overwegingen van digitale technologieën, inclusief AI-systemen, beschrijven in relatie tot menselijke creativiteit en probleemoplossing. [AI-Expliciet]\n**CS5.3.06**: Verschillende digitale technologieën op een verantwoorde en ethische manier gebruiken om probleemoplossing als individu of in een groep te ondersteunen. [AI-Impliciet]", "BgColor2": "F9CB9C", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS5.3.07**: Verschillende digitale technologieën efficiënt, verantwoord en ethisch gebruiken, met prioriteit voor mensgerichte benaderingen, om complexe problemen te helpen oplossen. [AI-Impliciet]\n**CS5.3.08**: Anderen ondersteunen bij het ontwikkelen van hun vertrouwen en vaardigheden in het gebruik van digitale technologieën om praktijkproblemen te helpen oplossen. [AI-Impliciet]\n**CS5.3.09**: Bijdragen aan de (co-)creatie of (co-)constructie van complexe kennis over of oplossingen voor praktijkproblemen in digitale omgevingen. [AI-Impliciet]", "BgColor2": "F4B084", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS5.3.10**: Leiding geven aan of bijdragen aan initiatieven gericht op de toepassing van digitale technologieën voor zeer complexe of gespecialiseerde probleemoplossing. [AI-Impliciet]\n**CS5.3.11**: Leiding geven aan of bijdragen aan initiatieven die digitale technologieën gebruiken om verbeteringen aan te brengen in of nieuwe oplossingen te vinden voor praktijkproblemen. [AI-Impliciet]\n**CS5.3.12**: Anderen ondersteunen bij het ontwikkelen van hun vaardigheden om digitale technologieën te gebruiken voor complexe of gespecialiseerde probleemoplossende taken. [AI-Impliciet]", "BgColor2": "E26B67", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+
+
+## 5.4 Behoeften aan digitale competenties identificeren en aanpakken
+
+![](D:/Temp/Python/weblate/digcomp3-l10n/images/DC3_5p4.png){width=3.0cm}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"Info": "**5. PROBLEEMIDENTIFICATIE EN -OPLOSSING**\n\n**5.4 Behoeften aan digitale competenties identificeren en aanpakken**\n\nHerkennen waar de eigen digitale competentie verbeterd of geactualiseerd moet worden. Behoeften aan digitale competenties aanpakken binnen een breder proces van een leven lang leren, en bekwaamheid en autonomie opbouwen. Anderen ondersteunen bij de ontwikkeling van hun digitale competenties. Op de hoogte blijven van digitale technologische ontwikkelingen en de persoonlijke, professionele en maatschappelijke gevolgen daarvan.", "Niveau": "*Op basis niveau kunnen individuen*", "Beschrijving": "**CS5.4.01**: De waarde inzien van de ontwikkeling van de eigen digitale competentie, en de voordelen van het zoeken naar ondersteuning bij het aanpakken van competentiebehoeften. [AI-Impliciet]\n**CS5.4.02**: Herkennen dat digitale competentie veel breder is dan alleen technische vaardigheden, en regelmatige bijscholing vereist voor het dagelijks leven, werk en leren. [AI-Impliciet]\n**CS5.4.03**: Mogelijkheden identificeren om de eigen digitale competenties te verbeteren. [AI-Impliciet]", "BgColor2": "FCE4D6", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op gemiddeld niveau kunnen individuen*", "Beschrijving": "**CS5.4.04**: De voordelen inzien van het op de hoogte blijven van ontwikkelingen in digitale technologieën om leereisen te helpen identificeren. [AI-Impliciet]\n**CS5.4.05**: Nauwkeurig de eigen digitale competenties en de eigen behoeften op dat gebied beoordelen. [AI-Impliciet]\n**CS5.4.06**: Actief deelnemen aan leeractiviteiten om aan de eigen digitale competentiebehoeften te voldoen. [AI-Impliciet]", "BgColor2": "F9CB9C", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS5.4.07**: Voortdurend digitale technologische ontwikkelingen en de implicaties daarvan voor de eigen competentiebehoeften en die van anderen beoordelen. [AI-Impliciet]\n**CS5.4.08**: Zich bezighouden met voortdurende zelfontwikkeling om aan digitale competentiebehoeften te voldoen. [AI-Impliciet]\n**CS5.4.09**: Anderen ondersteunen bij het ontwikkelen van vertrouwen, autonomie en probleemoplossend vermogen in digitale omgevingen. [AI-Impliciet]\n**CS5.4.10**: Beschikbare leermogelijkheden voor digitale competenties verzamelen voor een specifiek doel. [AI-Impliciet]", "BgColor2": "F4B084", "TextColor1": "000000"}, {"Info": "", "Niveau": "*Op zeer geavanceerd niveau kunnen individuen*", "Beschrijving": "**CS5.4.11**: Zich bezighouden met voortdurende zelfontwikkeling om aan complexe of gespecialiseerde digitale competentiebehoeften te voldoen. [AI-Impliciet]\n**CS5.4.12**: Anderen mentoren bij het identificeren en aanpakken van hun digitale competentiebehoeften. [AI-Impliciet]\n**CS5.4.13**: Leermateriaal ontwerpen om anderen te helpen voldoen aan complexe of gespecialiseerde digitale competentiebehoeften. [AI-Impliciet]", "BgColor2": "E26B67", "TextColor1": "000000"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "white", part = "header")
+ft <- color(ft, color = "black", part = "header")
+ft <- bold(ft, part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 2.0)
+ft <- width(ft, j = 2, width = 1.4)
+ft <- width(ft, j = 3, width = 3.2)
+ft
+```
+

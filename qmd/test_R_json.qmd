@@ -1,0 +1,22 @@
+---
+title: "Test R JSON"
+format: docx
+---
+
+```{r}
+#| echo: false
+#| warning: false
+if (!requireNamespace("jsonlite", quietly = TRUE)) install.packages("jsonlite", repos="http://cran.us.r-project.org")
+library(jsonlite)
+library(flextable)
+
+json_data <- r"([
+  {"Name": "Test's Name", "Value": "100"},
+  {"Name": "Another \"Test\"", "Value": "200"}
+])"
+
+df <- jsonlite::fromJSON(json_data)
+ft <- flextable(df)
+ft <- bg(ft, bg = "#FFD966", part = "header")
+ft
+```

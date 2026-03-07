@@ -1,0 +1,43 @@
+# ACRONYMEN
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(jsonlite)
+library(flextable)
+library(dplyr)
+library(ftExtra)
+json_data <- r"----[
+[{"ACRONIEM": "AGRI", "BETEKENIS": "Directorate-General for Agriculture and Rural Development"}, {"ACRONIEM": "AI", "BETEKENIS": "Kunstmatige intelligentie"}, {"ACRONIEM": "AR", "BETEKENIS": "Augmented Reality"}, {"ACRONIEM": "CNECT", "BETEKENIS": "Directorate-General for Communications Networks, Content and Technology"}, {"ACRONIEM": "DIGIT", "BETEKENIS": "Directorate-General for Digital Services"}, {"ACRONIEM": "EAC", "BETEKENIS": "Directorate-General for Education, Youth, Sport and Culture"}, {"ACRONIEM": "EC", "BETEKENIS": "Europese Commissie"}, {"ACRONIEM": "EMPL", "BETEKENIS": "Directorate-General for Employment, Social Affairs and Inclusion"}, {"ACRONIEM": "EQF", "BETEKENIS": "Europees kwalificatieraamwerk"}, {"ACRONIEM": "ESTAT", "BETEKENIS": "Eurostat"}, {"ACRONIEM": "EU", "BETEKENIS": "Europese Unie"}, {"ACRONIEM": "EUIPO", "BETEKENIS": "European Union Intellectual Property Office"}, {"ACRONIEM": "GDPR", "BETEKENIS": "Algemene Verordening Gegevensbescherming"}, {"ACRONIEM": "ICILS", "BETEKENIS": "International Computer and Information Literacy Study"}, {"ACRONIEM": "ICT", "BETEKENIS": "Informatie- en communicatietechnologie"}, {"ACRONIEM": "ITU", "BETEKENIS": "International Telecommunications Union"}, {"ACRONIEM": "JRC", "BETEKENIS": "Joint Research Centre"}, {"ACRONIEM": "JSON", "BETEKENIS": "JavaScript Object Notation"}, {"ACRONIEM": "MR", "BETEKENIS": "Mixed Reality"}, {"ACRONIEM": "NQF", "BETEKENIS": "Nationaal kwalificatieraamwerk"}, {"ACRONIEM": "OECD", "BETEKENIS": "Organisatie voor Economische Samenwerking en Ontwikkeling"}, {"ACRONIEM": "OER", "BETEKENIS": "Open leermaterialen (OER)"}, {"ACRONIEM": "REFORM", "BETEKENIS": "Reform and Investment Task Force"}, {"ACRONIEM": "SJ", "BETEKENIS": "Le Service juridique (juridische dienst van de Europese Commissie)"}, {"ACRONIEM": "STEM", "BETEKENIS": "Science, Technology, Engineering and Mathematics"}, {"ACRONIEM": "UN", "BETEKENIS": "Verenigde Naties"}, {"ACRONIEM": "UNESCO", "BETEKENIS": "Organisatie der Verenigde Naties voor Onderwijs, Wetenschap en Cultuur"}, {"ACRONIEM": "VET", "BETEKENIS": "Middelbaar beroepsonderwijs (mbo)"}, {"ACRONIEM": "VR", "BETEKENIS": "Virtual Reality"}, {"ACRONIEM": "XR", "BETEKENIS": "Extended Reality"}]
+]----"
+df <- jsonlite::fromJSON(json_data)
+disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]
+ft <- flextable(df[, disp_cols, drop=FALSE])
+ft <- colformat_md(ft, j = disp_cols)
+ft <- theme_box(ft)
+ft <- align(ft, align = "left", part = "all")
+ft <- valign(ft, valign = "top", part = "body")
+ft <- bg(ft, bg = "#1F4E78", part = "header")
+ft <- color(ft, color = "white", part = "header")
+for (i in seq_len(nrow(df))) {
+  if ('BgColorRow' %in% names(df) && !is.na(df$BgColorRow[i]) && df$BgColorRow[i] != '') {
+    ft <- bg(ft, i = i, bg = paste0('#', df$BgColorRow[i]), part = 'body')
+  }
+  if ('BgColor1' %in% names(df) && !is.na(df$BgColor1[i]) && df$BgColor1[i] != '') {
+    ft <- bg(ft, i = i, j = 1, bg = paste0('#', df$BgColor1[i]), part = 'body')
+  }
+  if ('BgColor2' %in% names(df) && !is.na(df$BgColor2[i]) && df$BgColor2[i] != '') {
+    ft <- bg(ft, i = i, j = 2, bg = paste0('#', df$BgColor2[i]), part = 'body')
+  }
+  if ('TextColor1' %in% names(df) && !is.na(df$TextColor1[i]) && df$TextColor1[i] != '') {
+    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')
+  }
+}
+if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)
+if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)
+ft <- width(ft, j = 1, width = 1.5)
+ft <- width(ft, j = 2, width = 4.5)
+ft
+```
