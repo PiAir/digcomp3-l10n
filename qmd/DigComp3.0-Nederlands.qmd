@@ -1,7 +1,7 @@
 ---
 title: "DigComp 3.0 Nederlands"
 author: "Pierre Gorissen, Manon van Zanten"
-date: "2026-03-06"
+date: "2026-03-09"
 lang: nl
 crossref:
   tbl-title: "Tabel"
@@ -212,8 +212,6 @@ Competentiegebieden en competenties van DigComp 3.0
 
 ## Beheersingsniveaus {#sec-beheersingsniveaus}
 
-### Beschrijvingen van beheersingsniveaus {.unnumbered}
-
 In DigComp 3.0 beschrijven de beheersingsniveaus het niveau van verwerving van digitale competentie van een individu op basis van een combinatie van cognitieve inspanning, taakcomplexiteit en mate van autonomie. DigComp 3.0 maakt onderscheid tussen vier beheersingsniveaus (Basis, Gemiddeld, Geavanceerd en Zeer Geavanceerd). @tbl-beheersingsniveaus geeft een korte beschrijving van wat een individu geacht wordt te weten en te kunnen op elk van de vier niveaus en de doelen die elk van de vier niveaus dient.
 
 ::: {#tbl-beheersingsniveaus tbl-colwidths="[20,40,40]"}
@@ -245,7 +243,7 @@ De term 'leerresultaten' in DigComp 3.0 verwijst naar beoogde, niet naar behaald
 :::
 
 Voor de ontwikkeling van DigComp 3.0 heeft het JRC, met input van experts en belanghebbenden, zorgvuldig de balans tussen specificiteit en algemeenheid afgewogen om ervoor te zorgen dat de formulering van de leerdoelen voldoende algemeen is om in verschillende contexten te kunnen worden toegepast, en tegelijkertijd voldoende precies is om duidelijk en ondubbelzinnig te zijn.
-De kenmerken van de DigComp 3.0-leerresultaten, praktische overwegingen voor het gebruik ervan en de volledige set DigComp 3.0-leerresultaten zelf zijn te vinden in @sec-leerresultaten. Daar zijn de leerresultaten gegroepeerd per competentie, beheersingsniveau en kennis, vaardigheid of houding. In totaal zijn er 523 leerresultaten: 29% (151) bevindt zich op het Basisniveau, 32% (170) Gemiddeld, 23% (119) Geavanceerd en 16% (83) Zeer Geavanceerd. Bovendien hebben 42% (217) van de leerresultaten betrekking op kennis, 38% (199) op vaardigheden en 20% (107) op houdingen. @sec-raamwerk bevat de competentiebeschrijvingen voor elke competentie en elk beheersingsniveau. De competentiebeschrijvingen bevatten de inhoud van de leerresultaten in [bijlage 2]{.mark}, met veel overeenkomsten in bewoording, maar maken geen onderscheid tussen kennis, vaardigheden of houdingen.
+De kenmerken van de DigComp 3.0-leerresultaten, praktische overwegingen voor het gebruik ervan en de volledige set DigComp 3.0-leerresultaten zelf zijn te vinden in @sec-leerresultaten. Daar zijn de leerresultaten gegroepeerd per competentie, beheersingsniveau en kennis, vaardigheid of houding. In totaal zijn er 523 leerresultaten: 29% (151) bevindt zich op het Basisniveau, 32% (170) Gemiddeld, 23% (119) Geavanceerd en 16% (83) Zeer Geavanceerd. Bovendien hebben 42% (217) van de leerresultaten betrekking op kennis, 38% (199) op vaardigheden en 20% (107) op houdingen. @sec-raamwerk bevat de competentiebeschrijvingen voor elke competentie en elk beheersingsniveau. De competentiebeschrijvingen bevatten de inhoud van de leerresultaten in @sec-leerresultaten, met veel overeenkomsten in bewoording, maar maken geen onderscheid tussen kennis, vaardigheden of houdingen.
 
 Leerresultaten zijn een belangrijk beleidsinstrument en een praktisch hulpmiddel. Indien goed gebruikt, fungeren ze als de 'lijm' die onderwijs en opleiding verbindt met de arbeidsmarktcontext [@Cedefop2024a]. Ze beïnvloeden beleid, onderwijs, opleiding, beoordeling en de arbeidsmarkt op verschillende manieren – om de ontwikkeling, implementatie en herziening van het curriculum of de cursusinhoud te sturen; als referentiepunt voor de erkenning en validatie van formeel, niet-formeel en informeel leren; om kwalificatiekaders en standaarden te definiëren en te informeren; om summatieve en formatieve beoordeling te ondersteunen; om belangrijke arbeidsvaardigheden aan te geven in beroepsprofilering; en om bij te dragen aan sectorale behoefteanalyse [@Cedefop2017, @Cedefop2022, @Cedefop2024a].
 
@@ -295,6 +293,7 @@ Competentiebeschrijvingen die expliciet AI-systemen noemen, zijn gelabeld als �
 
 [tabel digcomp3 is ook als los .docx-bestand beschikbaar: DigComp3_digcomp3_nl.docx]{.mark}
 
+{{< pagebreak >}}
 
 # DigComp 3.0 leerresultaten {#sec-bijlage-leerresultaten}
 
