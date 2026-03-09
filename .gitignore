@@ -3,3 +3,9 @@ Thumbs.db
 locale.schoon
 locale.zip
 extract_texts_from_docx.py
+qmd/_archief/
+qmd/.quarto/
+venv/
+.quarto/
+*.docx
+!qmd/custom-reference.docx

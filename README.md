@@ -54,6 +54,7 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
     - outcompes
     - statements
 - output
+- qmd
 - scripts
 - sources
 

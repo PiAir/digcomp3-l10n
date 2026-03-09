@@ -26,7 +26,7 @@ def format_ai_label(label_raw, lang):
 
 # --- QMD HELPERS ---
 
-def make_flextable_chunk(df_json_str, col_widths=None, header_bg=None, header_text_color="black"):
+def make_flextable_chunk(df_json_str, col_widths=None, header_bg=None, header_text_color="black", super_header=None, super_header_color=None, prevent_row_split=False, custom_r_code=None, md_cols=None):
     """Genereert een R chunk met Flextable om een Docx tabel te maken."""
     chunk = [
         "```{r}",
@@ -36,17 +36,33 @@ def make_flextable_chunk(df_json_str, col_widths=None, header_bg=None, header_te
         "library(jsonlite)",
         "library(flextable)",
         "library(dplyr)",
+        "library(officer)",
         "library(ftExtra)",
         f'json_data <- r"----[\n{df_json_str}\n]----"',
         "df <- jsonlite::fromJSON(json_data)",
         # We filteren de meta-kolommen eruit
-        "disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath')]",
+        "disp_cols <- names(df)[!names(df) %in% c('BgColorRow', 'BgColor1', 'BgColor2', 'TextColor1', 'TextColor2', 'ImagePath', 'AreaTitle', 'AreaColor', 'AreaDesc')]",
         "ft <- flextable(df[, disp_cols, drop=FALSE])",
-        "ft <- colformat_md(ft, j = disp_cols)",
+        # Alleen markdown toepassen op geselecteerde kolommen (voorkomt corruptie bij handmatige compositie)
+    ]
+    
+    if md_cols is not None:
+        cols_r = "c(" + ", ".join([f'"{c}"' for c in md_cols]) + ")"
+    else:
+        cols_r = "disp_cols"
+    
+    chunk.append(f"md_targets <- {cols_r}")
+    
+    chunk.extend([
+        "ft <- colformat_md(ft, j = md_targets)",
         "ft <- theme_box(ft)",
         'ft <- align(ft, align = "left", part = "all")',
-        'ft <- valign(ft, valign = "top", part = "body")'
+        'ft <- valign(ft, valign = "top", part = "body")',
+        '# Robustness settings for Quarto/DOCX',
+        'set_flextable_defaults(ft.shadow = FALSE)',
+        'ft <- set_table_properties(ft, layout = "fixed")'
     ]
+)
     
     # Header styling
     if header_bg:
@@ -57,6 +73,15 @@ def make_flextable_chunk(df_json_str, col_widths=None, header_bg=None, header_te
         chunk.append('ft <- bg(ft, bg = "white", part = "header")')
         chunk.append('ft <- color(ft, color = "black", part = "header")')
         chunk.append('ft <- bold(ft, part = "header")')
+        
+    if super_header:
+        super_header_esc = super_header.replace('"', '\\"')
+        chunk.append(f'ft <- add_header_row(ft, top = TRUE, values = c("{super_header_esc}"), colwidths = c(length(disp_cols)))')
+        chunk.append('ft <- bg(ft, i = 1, bg = "white", part = "header")')
+        if super_header_color:
+            chunk.append(f'ft <- color(ft, i = 1, color = "#{super_header_color}", part = "header")')
+        chunk.append('ft <- align(ft, i = 1, align = "left", part = "header")')
+        chunk.append('ft <- bold(ft, i = 1, part = "header")')
     
     chunk.extend([
         "for (i in seq_len(nrow(df))) {",
@@ -76,9 +101,13 @@ def make_flextable_chunk(df_json_str, col_widths=None, header_bg=None, header_te
         "    ft <- color(ft, i = i, j = 1, color = paste0('#', df$TextColor1[i]), part = 'body')",
         "  }",
         "}",
-        "if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)",
-        "if ('GEBIED' %in% names(df)) ft <- merge_v(ft, j = 1)",
-        "if ('AREA' %in% names(df)) ft <- merge_v(ft, j = 1)"
+    ])
+
+    if custom_r_code:
+        chunk.extend(custom_r_code)
+
+    chunk.extend([
+        "if ('Info' %in% names(df)) ft <- merge_v(ft, j = 1)"
     ])
 
     if col_widths:
@@ -86,6 +115,10 @@ def make_flextable_chunk(df_json_str, col_widths=None, header_bg=None, header_te
             chunk.append(f"ft <- width(ft, j = {j+1}, width = {w})")
     else:
         chunk.append("ft <- autofit(ft)")
+
+    if prevent_row_split:
+        chunk.append("ft <- paginate(ft, init = TRUE, hdr_ftr = TRUE)")
+        chunk.append("ft <- set_table_properties(ft, opts_word = list(split = FALSE))")
         
     chunk.append("ft")
     chunk.append("```")
@@ -93,7 +126,7 @@ def make_flextable_chunk(df_json_str, col_widths=None, header_bg=None, header_te
 
 # --- GENERATIE FUNCTIES ---
 
-def generate_digcomp3(json_path, lang, output_path, images_path):
+def generate_digcomp3(json_path, lang, output_path, images_path, no_images=False):
     """Genereert de gedetailleerde 3.2 competentiepagina's als QMD."""
     with open(json_path, 'r', encoding='utf-8') as f:
         graph = json.load(f)["@graph"]
@@ -120,10 +153,11 @@ def generate_digcomp3(json_path, lang, output_path, images_path):
             
             qmd_output.append(f"## {comp_id_short} {comp_name}\n")
             
-            img_filename = f"DC3_{comp_id_short.replace('.', 'p')}.png"
-            abs_img_path = os.path.abspath(os.path.join(images_path, img_filename)).replace("\\", "/")
-            if os.path.exists(os.path.join(images_path, img_filename)):
-                qmd_output.append(f"![]({abs_img_path}){{width=3.0cm}}\n")
+            if images_path and not no_images:
+                img_filename = f"DC3_{comp_id_short.replace('.', 'p')}.png"
+                abs_img_path = os.path.abspath(os.path.join(images_path, img_filename)).replace("\\", "/")
+                if os.path.exists(os.path.join(images_path, img_filename)):
+                    qmd_output.append(f"![]({abs_img_path}){{width=3.0cm}}\n")
             
             rows = []
             info_text = f"**{area_num}. {area_name.upper()}**\n\n**{comp_id_short} {comp_name}**\n\n{comp_desc}"
@@ -156,7 +190,7 @@ def generate_digcomp3(json_path, lang, output_path, images_path):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("\n".join(qmd_output))
 
-def generate_table2(json_path, lang, output_path, images_path):
+def generate_table2(json_path, lang, output_path, images_path, no_images=False):
     """Genereert Tabel 2: Overzicht van gebieden en competenties."""
     with open(json_path, 'r', encoding='utf-8') as f:
         graph = json.load(f)["@graph"]
@@ -164,10 +198,9 @@ def generate_table2(json_path, lang, output_path, images_path):
     competences = [i for i in graph if i["@type"] == "Competence"]
     suffix = "_nl" if lang == "nl" else ""
     
-    qmd_output = [f"# {'Tabel 2' if lang == 'nl' else 'Table 2'}\n"]
+    qmd_output = []
     headers = ["GEBIED", "TITEL", "BESCHRIJVING"] if lang == "nl" else ["AREA", "TITLE", "DESCRIPTOR"]
     
-    rows = []
     for area in areas:
         area_id = area["@id"]
         area_num = area_id.split("/")[-1]
@@ -175,29 +208,41 @@ def generate_table2(json_path, lang, output_path, images_path):
         area_desc = area.get(f"description{suffix}", area.get("description", ""))
         area_comps = sorted([c for c in competences if c["competence_area_id"] == area_id], key=lambda x: x["@id"])
         
-        # Referentie: GEBIED kolom heeft een achtergrondkleur, TITEL/BESCHR wit.
         color_hex = AREA_COLORS.get(area_id, "1F4E78")
         
-        img_filename = f"DC3_small_c{area_num}.png"
-        abs_img_path = os.path.abspath(os.path.join(images_path, img_filename)).replace("\\", "/")
-        img_md = f"![]({abs_img_path}){{width=1.5cm}}" if os.path.exists(os.path.join(images_path, img_filename)) else ""
+        # 1. Output Area Header with Image (OUTSIDE the table)
+        qmd_output.append(f"## {area_num}. {area_name}\n")
         
-        info_text = f"{img_md}\n\n**{area_num}. {area_name}**\n\n{area_desc}"
+        if images_path and not no_images:
+            img_filename = f"DC3_small_c{area_num}.png"
+            abs_img_path = os.path.abspath(os.path.join(images_path, img_filename)).replace("\\", "/")
+            if os.path.exists(os.path.join(images_path, img_filename)):
+                qmd_output.append(f"![]({abs_img_path}){{width=3.0cm}}\n")
         
-        for i, comp in enumerate(area_comps):
+        qmd_output.append(f"\n{area_desc}\n")
+        
+        # 2. Output Table for this Area specifically
+        table_rows = []
+        for comp in area_comps:
             comp_name = comp.get(f"name{suffix}", comp.get("name", ""))
             comp_desc = comp.get(f"description{suffix}", comp.get("description", ""))
-            rows.append({
-                headers[0]: info_text if i == 0 else "",
+            table_rows.append({
                 headers[1]: f"**{comp['@id'].split('/')[-1]} {comp_name}**",
                 headers[2]: comp_desc,
-                "BgColor1": color_hex if i == 0 else "", # Alleen de Info-kolom heeft de kleur
-                "TextColor1": "FFFFFF" if i == 0 else "000000"
+                "BgColor1": color_hex # Optional: give first column a slight accent? No, keep it clean.
             })
             
-    df_json_str = json.dumps(rows, ensure_ascii=False)
-    # Referentie: Witte header met zwarte tekst.
-    qmd_output.append(make_flextable_chunk(df_json_str, col_widths=[1.8, 1.4, 3.2]))
+        df_json_str = json.dumps(table_rows, ensure_ascii=False)
+        
+        # Header van de deeltabel
+        qmd_output.append(make_flextable_chunk(
+            df_json_str, 
+            col_widths=[1.8, 3.8], 
+            header_bg=color_hex, 
+            header_text_color="white",
+            md_cols=[headers[1], headers[2]]
+        ))
+        qmd_output.append("\n")
     
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("\n".join(qmd_output))
@@ -234,13 +279,15 @@ def generate_csv_output(csv_path, type_name, lang, output_path):
                 elif field == 'definition': grouped[id_str]['def'] = val
                 elif field == 'source': grouped[id_str]['src'] = val
         data = sorted(grouped.values(), key=lambda x: str(x['term']).lower())
-        headers = ["TERM", "DEFINITIE", "BRON"] if lang == "nl" else ["TERM", "DEFINITION", "SOURCE"]
-        rows = [{headers[0]: i['term'], headers[1]: i['def'], headers[2]: i['src']} for i in data]
-        widths = [1.5, 3.5, 1.0]
+        headers = ["TERM", "DEFINITIE"] if lang == "nl" else ["TERM", "DEFINITION"]
+        rows = [{headers[0]: i['term'], headers[1]: i['def']} for i in data]
+        widths = [1.5, 4.5]
 
     df_json_str = json.dumps(rows, ensure_ascii=False)
-    title = "ACRONYMEN" if type_name == "acronyms" else "GLOSSARIUM"
-    qmd_output = [f"# {title}\n"]
+    qmd_output = []
+    if type_name == "acronyms":
+        title = "ACRONYMEN"
+        qmd_output.append(f"# {title}\n")
     # Schone header met blauwe achtergrond voor deze lijsten (zoals in referentie)
     qmd_output.append(make_flextable_chunk(df_json_str, col_widths=widths, header_bg="1F4E78", header_text_color="white"))
     
@@ -261,13 +308,14 @@ def generate_outcomes(json_path, lang, output_path):
     
     for area in areas:
         area_id = area["@id"]
+        area_num = area_id.split("/")[-1]
+        area_name = area.get(f"name{suffix}", area.get("name", "Unknown Area"))
         color_hex = AREA_COLORS.get(area_id, "1F4E78")
+        
         for comp in sorted([c for c in competences if c["competence_area_id"] == area_id], key=lambda x: x["@id"]):
             comp_id = comp["@id"]
             comp_num = comp_id.split("/")[-1]
             comp_name = comp.get(f"name{suffix}", comp.get("name", ""))
-            
-            qmd_output.append(f"### {comp_num} {comp_name}\n")
             
             headers = ["ID", "Leerresultaat", "Niveau", "K/V/H", "AI"] if lang == "nl" else ["ID", "Outcome", "Level", "K/S/A", "AI"]
             rows = []
@@ -285,7 +333,19 @@ def generate_outcomes(json_path, lang, output_path):
                 })
             
             df_json_str = json.dumps(rows, ensure_ascii=False)
-            qmd_output.append(make_flextable_chunk(df_json_str, col_widths=[0.6, 3.0, 1.0, 0.8, 0.8], header_bg=color_hex, header_text_color="white"))
+            
+            area_label = "Competentiegebied" if lang == "nl" else "Competence area"
+            comp_label = "Competentie" if lang == "nl" else "Competence"
+            super_header_text = f"{area_label} {area_num}: {area_name} - {comp_label} {comp_num} {comp_name}"
+            
+            qmd_output.append(make_flextable_chunk(
+                df_json_str, 
+                col_widths=[0.6, 3.0, 1.0, 0.8, 0.8], 
+                header_bg=color_hex, 
+                header_text_color="white",
+                super_header=super_header_text,
+                super_header_color=color_hex
+            ))
             qmd_output.append("\n")
 
     with open(output_path, 'w', encoding='utf-8') as f:
@@ -306,6 +366,7 @@ def main():
     parser.add_argument('--json', default=default_json)
     parser.add_argument('--images', default=default_images)
     parser.add_argument('--output', help='Output filename')
+    parser.add_argument('--no-images', action='store_true', help='Disable image embedding (for debugging)')
     args = parser.parse_args()
 
     out = args.output if args.output else f"DigComp3_{args.type}_{args.lang}.qmd"
@@ -313,9 +374,9 @@ def main():
     if args.type == 'outcomes': 
         generate_outcomes(args.json, args.lang, out)
     elif args.type == 'digcomp3': 
-        generate_digcomp3(args.json, args.lang, out, args.images)
+        generate_digcomp3(args.json, args.lang, out, args.images, args.no_images)
     elif args.type == 'table2': 
-        generate_table2(args.json, args.lang, out, args.images)
+        generate_table2(args.json, args.lang, out, args.images, args.no_images)
     else:
         csv_path = os.path.join(args.path, args.type, f"{args.lang}.csv")
         generate_csv_output(csv_path, args.type, args.lang, out)

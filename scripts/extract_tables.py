@@ -103,13 +103,15 @@ def generate_csv_output(csv_path, type_name, lang, output_path):
     data = sorted(grouped.values(), key=lambda x: x['c1'].lower())
     doc = Document()
     titles = {"acronyms": ("LIST OF ACRONYMS", "LIJST VAN ACRONYMEN"), "glossary": ("GLOSSARY OF TERMS AND DEFINITIONS", "GLOSSARIUM VAN TERMEN EN DEFINITIES")}
-    style_text(doc.add_heading('', level=1), titles[type_name][0] if lang == "en" else titles[type_name][1], size=18, color=COLOR_MAP["Standard"])
+    if not (type_name == 'glossary' and lang == 'nl'):
+        style_text(doc.add_heading('', level=1), titles[type_name][0] if lang == "en" else titles[type_name][1], size=18, color=COLOR_MAP["Standard"])
     
-    table = doc.add_table(rows=0, cols=4 if type_name == "acronyms" else 3)
+    num_cols = 4 if type_name == "acronyms" else (2 if type_name == "glossary" and lang == "nl" else 3)
+    table = doc.add_table(rows=0, cols=num_cols)
     set_table_width_100(table); apply_pdf_borders(table)
     
     headers = (["ACRONYM", "DESCRIPTION", "ACRONYM", "DESCRIPTION"] if type_name == "acronyms" else ["TERM", "EXPLANATION", "SOURCE"]) if lang == "en" else \
-              (["ACRONIEM", "BETEKENIS", "ACRONIEM", "BETEKENIS"] if type_name == "acronyms" else ["TERM", "UITLEG", "BRON"])
+              (["ACRONIEM", "BETEKENIS", "ACRONIEM", "BETEKENIS"] if type_name == "acronyms" else (["TERM", "UITLEG"] if type_name == "glossary" and lang == "nl" else ["TERM", "UITLEG", "BRON"]))
     
     h_row = table.add_row().cells
     for i, h in enumerate(headers):
@@ -128,7 +130,9 @@ def generate_csv_output(csv_path, type_name, lang, output_path):
     else:
         for item in data:
             r = table.add_row().cells
-            style_text(r[0].paragraphs[0], item['c1'], bold=True); style_text(r[1].paragraphs[0], item['c2']); style_text(r[2].paragraphs[0], item['c3'])
+            style_text(r[0].paragraphs[0], item['c1'], bold=True); style_text(r[1].paragraphs[0], item['c2'])
+            if len(r) > 2:
+                style_text(r[2].paragraphs[0], item['c3'])
     doc.save(output_path)
 
 def generate_digcomp3(json_path, lang, output_path, images_path):
