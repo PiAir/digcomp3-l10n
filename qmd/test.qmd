@@ -1,0 +1,36 @@
+---
+title: "Dit is een test"
+author: "Pierre Gorissen"
+date: "2026-03-06"
+lang: nl
+crossref:
+  tbl-title: "Tabel"
+  tbl-prefix: "Tabel"
+  fig-title: "Figuur"
+  fig-prefix: "Figuur"
+format:
+  docx:
+    reference-doc: custom-reference.docx
+    tables: true
+    fig-align: left
+    toc: true
+    number-sections: false
+bibliography: references.bib
+csl: apa.csl
+---
+
+# Dit is een kop
+asdasdasd
+afafafafa
+asfasfasfasf
+asfasfasfasf
+asfasfasfas
+
+::: {.callout-important}
+Dit is een belangrijke opmerking.
+:::
+
+
+[This text is highlighted]{.mark}
+
+
