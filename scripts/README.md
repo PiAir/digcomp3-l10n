@@ -36,8 +36,18 @@ Use: `.\scripts\build_digcomp_nl_artifacts.py`
 
 For example:
 ```bash
-python .\scripts\build_digcomp_nl_artifacts.py --repo-root . --out-dir .\nl --xlsx --jsonld
+python scripts/build_digcomp_nl_artifacts.py --build xlsx --src-xlsx "sources/DigComp 3.0 Data Supplement 24 Nov 2025.xlsx" --out-dir output
+
+python scripts/build_digcomp_nl_artifacts.py --build jsonld --src-jsonld "sources/DigComp 3.0 Data Supplement 24 Nov 2025.jsonld" --out-dir output
 ```
+
+Assumptions
+- Default repo-root is set to ".." to operate correctly from within the digcomp3-l10n folder.
+- Translation repository lives in ./digcomp3-l10n/ and contains ./locale/<component>/{en.csv,nl.csv}
+- Output files are written to ./nl/ by default (or ./output/ if specified).
+
+CSV format
+- Expected columns: location, source, target, context
 
 ## Extract hyperlinks and footers from source pdf
 Use: `.\scripts\extract_footer_hyperlinks.py` (rarely used but still available)
