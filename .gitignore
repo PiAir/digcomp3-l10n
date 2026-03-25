@@ -9,3 +9,5 @@ venv/
 .quarto/
 *.docx
 !qmd/custom-reference.docx
+output/
+qmd/*.docx

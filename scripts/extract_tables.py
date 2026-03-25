@@ -51,7 +51,7 @@ def set_table_width_100(table):
     tblW.set(qn('w:type'), 'pct')
     tblPr.append(tblW)
 
-def style_text(paragraph, text, bold=False, italic=False, size=9, color="000000"):
+def style_text(paragraph, text, bold=False, italic=False, size=11, color="000000"):
     """Past Arial stijl toe op tekst binnen een paragraaf."""
     run = paragraph.add_run(str(text))
     run.font.name = 'Arial'
@@ -73,9 +73,9 @@ def apply_pdf_borders(table, sz='2'):
     tblPr.append(tblBorders)
 
 def format_ai_label(label_raw, lang):
-    """Zet de ruwe AI label tekst om naar voluit geschreven varianten."""
+    """Zet de ruwe AI label tekst om naar voluit geschreven varianten. Retourneert None als label niet van toepassing is."""
     if not label_raw or "not Implicit" in label_raw or label_raw == "-":
-        return "-"
+        return None
     if lang == "nl":
         return label_raw.replace('AI-Implicit', 'AI-Impliciet').replace('AI-Explicit', 'AI-Expliciet')
     return label_raw
@@ -156,9 +156,9 @@ def generate_digcomp3(json_path, lang, output_path, images_path):
                 left_cell.paragraphs[0].add_run().add_picture(img_path, width=Cm(3.8))
             else:
                 print(f"Waarschuwing: Afbeelding niet gevonden op {img_path}")
-            style_text(left_cell.add_paragraph(), f"{area_num}. {area[f'name{suffix}'].upper()}", bold=True, size=10, color=tints[3])
-            style_text(left_cell.add_paragraph(), f"{comp_id_short} {comp[f'name{suffix}']}", bold=True, size=11)
-            style_text(left_cell.add_paragraph(), comp[f"description{suffix}"], size=8.5)
+            style_text(left_cell.add_paragraph(), f"{area_num}. {area[f'name{suffix}'].upper()}", bold=True, color=tints[3])
+            style_text(left_cell.add_paragraph(), f"{comp_id_short} {comp[f'name{suffix}']}", bold=True)
+            style_text(left_cell.add_paragraph(), comp[f"description{suffix}"])
             for idx, lv_key in enumerate(["Basic", "Intermediate", "Advanced", "Highly advanced"]):
                 bg_color = tints[idx]; txt_color = "FFFFFF" if area_id == "CompetenceArea/2" and idx > 1 else "000000"
                 lvl_cell = table.cell(idx, 1); set_cell_background(lvl_cell, bg_color)
@@ -168,8 +168,14 @@ def generate_digcomp3(json_path, lang, output_path, images_path):
                 stmt_cell = table.cell(idx, 2)
                 relevant = [s for s in statements if s["competence_id"] == comp["@id"] and s["four_levels_proficiency_name"].startswith(f"ProficiencyLevel/{lv_key}")]
                 for s in relevant:
-                    p = stmt_cell.add_paragraph(); ai = format_ai_label(s.get('ai_label', ''), lang)
-                    style_text(p, f"{s['@id'].split('/')[-1]}: ", bold=True); style_text(p, f"{s[f'description{suffix}']} "); style_text(p, f"[{ai}]", bold=True)
+                    if not stmt_cell.paragraphs[0].text:
+                        p = stmt_cell.paragraphs[0]
+                    else:
+                        p = stmt_cell.add_paragraph()
+                    ai = format_ai_label(s.get('ai_label', ''), lang)
+                    style_text(p, f"{s['@id'].split('/')[-1]}: ", bold=True); style_text(p, f"{s[f'description{suffix}']} ")
+                    if ai:
+                        style_text(p, f"[{ai}]", bold=True)
             doc.add_paragraph()
     doc.save(output_path)
 
@@ -196,7 +202,7 @@ def generate_table2(json_path, lang, output_path, images_path):
             a_cell.paragraphs[0].add_run().add_picture(img_path, width=Cm(1.5))
         else:
             print(f"Waarschuwing: Afbeelding niet gevonden op {img_path}")
-        style_text(a_cell.add_paragraph(), f"{area_num}. {area[f'name{suffix}'].upper()}", bold=True, color=color); style_text(a_cell.add_paragraph(), area[f"description{suffix}"], size=8)
+        style_text(a_cell.add_paragraph(), f"{area_num}. {area[f'name{suffix}'].upper()}", bold=True, color=color); style_text(a_cell.add_paragraph(), area[f"description{suffix}"])
     apply_pdf_borders(table, sz='4'); doc.save(output_path)
 
 def generate_outcomes(json_path, lang, output_path):
@@ -219,22 +225,23 @@ def generate_outcomes(json_path, lang, output_path):
             # Rij 1: Kop (Wit op Kleur)
             header_cell = table.cell(0, 0).merge(table.cell(0, 4))
             header_text = f"{area_label} {area_id.split('/')[-1]}: {area[f'name{suffix}']} - {comp_label} {comp_num} {comp[f'name{suffix}']}"
-            style_text(header_cell.paragraphs[0], header_text.upper(), bold=True, size=10, color=color)
+            style_text(header_cell.paragraphs[0], header_text.upper(), bold=True, color=color)
             set_repeat_header(table.rows[0])
             # Rij 2: Labels
             labels = ["ID", "Outcome", "Level", "K/S/A", "AI"] if lang=="en" else ["ID", "Leerresultaat", "Niveau", "K/V/H", "AI-label"]
             for i, label in enumerate(labels):
-                cell = table.cell(1, i); style_text(cell.paragraphs[0], label, bold=True, size=8, color="000000"); set_cell_background(cell, color)
+                cell = table.cell(1, i); style_text(cell.paragraphs[0], label, bold=True, color="000000"); set_cell_background(cell, color)
             set_repeat_header(table.rows[1])
             for o in sorted([o for o in outcomes if o["competence_id"] == comp_id], key=lambda x: x["@id"]):
                 row = table.add_row(); set_no_split(row); cells = row.cells
-                style_text(cells[0].paragraphs[0], o["@id"].split("/")[-1], bold=True, size=8)
-                style_text(cells[1].paragraphs[0], o[f"description{suffix}"], size=9)
+                style_text(cells[0].paragraphs[0], o["@id"].split("/")[-1], bold=True)
+                style_text(cells[1].paragraphs[0], o[f"description{suffix}"])
                 lv_name = next((l[f"four_levels_name{suffix}"] for l in levels if o["four_levels_proficiency_name"] in l["@id"]), "Level")
-                style_text(cells[2].paragraphs[0], lv_name, size=8)
+                style_text(cells[2].paragraphs[0], lv_name)
                 type_val = o.get("type", "").replace("Knowledge", "Kennis").replace("Skill", "Vaardigheid").replace("Attitude", "Houding") if lang == "nl" else o.get("type", "")
-                style_text(cells[3].paragraphs[0], type_val, size=8)
-                style_text(cells[4].paragraphs[0], format_ai_label(o.get("ai_label", ""), lang), size=8)
+                style_text(cells[3].paragraphs[0], type_val)
+                ai_label = format_ai_label(o.get("ai_label", ""), lang)
+                style_text(cells[4].paragraphs[0], ai_label if ai_label else "")
             apply_pdf_borders(table); doc.add_paragraph()
     doc.save(output_path)
 
