@@ -11,3 +11,5 @@ venv/
 output/
 qmd/*.docx
 !qmd/custom-reference.docx
+settings.json
+.Rhistory
