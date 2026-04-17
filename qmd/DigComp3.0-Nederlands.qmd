@@ -1,7 +1,7 @@
 ---
 title: "DigComp 3.0 Nederlands"
 author: "Pierre Gorissen, Manon van Zanten"
-date: "11-03-2026"
+date: "17-04-2026"
 lang: nl
 crossref:
   tbl-title: "Tabel"
