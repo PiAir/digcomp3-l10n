@@ -12,4 +12,5 @@ output/
 qmd/*.docx
 !qmd/custom-reference.docx
 settings.json
-.Rhistory
+.Rhistory
+output/RUN_COMMANDS.md

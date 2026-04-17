@@ -5606,7 +5606,7 @@
     {
       "@type": "LearningOutcome",
       "@id": "LearningOutcome/LO2.5.15",
-      "description": "Respond with effective and respective communication and behaviour to difficult or complex situations in digital environments.",
+      "description": "Respond with effective and respectful communication and behaviour to difficult or complex situations in digital environments.",
       "type": "Skill",
       "ai_label": "AI not Implicit or Explicit",
       "competence_area_id": "CompetenceArea/2",
