@@ -67,6 +67,15 @@ python .\scripts\extract_tables.py glossary --lang nl
 # Extract acronyms
 python .\scripts\extract_tables.py acronyms --lang nl --output acroniemen_nl.docx
 python .\scripts\extract_tables.py acronyms --lang en --output acronyms_en.docx
+
+# For full set of tables run
+python .\scripts\extract_tables.py glossary --lang nl
+python .\scripts\extract_tables.py table2 --lang nl
+python .\scripts\extract_tables.py digcomp3 --lang nl
+python .\scripts\extract_tables.py outcomes --lang nl
+
+(acronyms is not used in the final document)
+
 ```
 *Note: you need the translated JSON-LD for some of the conversions to work, so do that first.*
 

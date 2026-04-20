@@ -80,6 +80,23 @@ def format_ai_label(label_raw, lang):
         return label_raw.replace('AI-Implicit', 'AI-Impliciet').replace('AI-Explicit', 'AI-Expliciet')
     return label_raw
 
+def normalize_graph(graph):
+    """Zorgt dat v5 schema velden (naam, omschrijving) ook beschikbaar zijn als v4 velden (name_nl, description_nl)."""
+    mapping = {
+        "naam": "name_nl",
+        "omschrijving": "description_nl",
+        "vier_niveaus_naam": "four_levels_name_nl",
+        "vier_niveaus_omschrijving": "four_levels_description_nl",
+        "acht_niveaus_omschrijving": "eight_levels_description_nl",
+        "doel": "applies_to_nl",
+        "vier_niveaus_beheersingsnaam": "four_levels_proficiency_name_nl"
+    }
+    for node in graph:
+        for v5_key, v4_key in mapping.items():
+            if v5_key in node and v4_key not in node:
+                node[v4_key] = node[v5_key]
+    return graph
+
 # --- GENERATIE FUNCTIES ---
 
 def generate_csv_output(csv_path, type_name, lang, output_path):
@@ -138,7 +155,7 @@ def generate_csv_output(csv_path, type_name, lang, output_path):
 def generate_digcomp3(json_path, lang, output_path, images_path):
     """Genereert de gedetailleerde 3.2 competentiepagina's."""
     with open(json_path, 'r', encoding='utf-8') as f:
-        graph = json.load(f)["@graph"]
+        graph = normalize_graph(json.load(f)["@graph"])
     doc = Document()
     doc.sections[0].left_margin, doc.sections[0].right_margin = Cm(1.2), Cm(1.2)
     areas = sorted([i for i in graph if i["@type"] == "CompetenceArea"], key=lambda x: x["@id"])
@@ -182,7 +199,7 @@ def generate_digcomp3(json_path, lang, output_path, images_path):
 def generate_table2(json_path, lang, output_path, images_path):
     """Genereert Tabel 2: Overzicht van gebieden en competenties."""
     with open(json_path, 'r', encoding='utf-8') as f:
-        graph = json.load(f)["@graph"]
+        graph = normalize_graph(json.load(f)["@graph"])
     doc = Document(); doc.sections[0].left_margin, doc.sections[0].right_margin = Cm(1.2), Cm(1.2)
     areas = sorted([i for i in graph if i["@type"] == "CompetenceArea"], key=lambda x: x["@id"])
     competences = [i for i in graph if i["@type"] == "Competence"]; suffix = "_nl" if lang == "nl" else ""
@@ -208,7 +225,7 @@ def generate_table2(json_path, lang, output_path, images_path):
 def generate_outcomes(json_path, lang, output_path):
     """Genereert Learning Outcomes met herhalende koppen en 100% breedte."""
     with open(json_path, 'r', encoding='utf-8') as f:
-        graph = json.load(f)["@graph"]
+        graph = normalize_graph(json.load(f)["@graph"])
     doc = Document(); section = doc.sections[0]; section.left_margin, section.right_margin = Cm(1.0), Cm(1.0)
     areas = sorted([i for i in graph if i["@type"] == "CompetenceArea"], key=lambda x: x["@id"])
     competences = [i for i in graph if i["@type"] == "Competence"]
@@ -250,8 +267,8 @@ def generate_outcomes(json_path, lang, output_path):
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     default_path = os.path.normpath(os.path.join(script_dir, '..', 'locale'))
-    # default_json assumes script is in digcomp3-l10n/scripts and jsonld is in weblate/nl
-    default_json = os.path.normpath(os.path.join(script_dir, '..', '..', 'nl', 'DigComp_3.0_Data_Supplement_nl.jsonld'))
+    # default_json assumes script is in digcomp3-l10n/scripts and jsonld is in output/
+    default_json = os.path.normpath(os.path.join(script_dir, '..', 'output', 'DigComp_3_0_Data_Supplement_nl.jsonld'))
     default_images = os.path.normpath(os.path.join(script_dir, '..', 'images'))
 
     parser = argparse.ArgumentParser()

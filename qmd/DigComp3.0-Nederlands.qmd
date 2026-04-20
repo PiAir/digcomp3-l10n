@@ -1,7 +1,7 @@
 ---
 title: "DigComp 3.0 Nederlands"
 author: "Pierre Gorissen, Manon van Zanten"
-date: "17-04-2026"
+date: "20-04-2026"
 lang: nl
 crossref:
   tbl-title: "Tabel"
@@ -80,13 +80,13 @@ Een belangrijk kenmerk van DigComp is de mate waarin experts en belanghebbenden 
 
 -   Europees, nationaal en regionaal beleid te sturen;
 
--   beoordelingen te ontwikkelen;
+-   Beoordelingen te ontwikkelen;
 
--   de transparantie of vergelijkbaarheid van onderwijs- en opleidingscursussen te vergroten;
+-   De transparantie of vergelijkbaarheid van onderwijs- en opleidingscursussen te vergroten;
 
--   leerprestaties te erkennen of te valideren (bijvoorbeeld via certificering);
+-   Leerprestaties te erkennen of te valideren (bijvoorbeeld via certificering);
 
--   en profielen van digitale competentie in specifieke banen of rollen te definiëren.
+-   En profielen van digitale competentie in specifieke banen of rollen te definiëren.
 
 ## Waarden en principes die richting geven aan DigComp 3.0 {#sec-waarden-en-principes .unnumbered}
 
