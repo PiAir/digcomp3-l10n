@@ -278,9 +278,15 @@ def main():
     parser.add_argument('--json', default=default_json)
     parser.add_argument('--images', default=default_images)
     parser.add_argument('--output', help='Output filename')
+    parser.add_argument('--out-dir', help='Output directory')
     args = parser.parse_args()
 
-    out = args.output if args.output else f"DigComp3_{args.type}_{args.lang}.docx"
+    filename = args.output if args.output else f"DigComp3_{args.type}_{args.lang}.docx"
+    if args.out_dir:
+        os.makedirs(args.out_dir, exist_ok=True)
+        out = os.path.join(args.out_dir, filename)
+    else:
+        out = filename
     
     if args.type == 'outcomes': generate_outcomes(args.json, args.lang, out)
     elif args.type == 'digcomp3': generate_digcomp3(args.json, args.lang, out, args.images)

@@ -62,17 +62,17 @@ Use: `.\scripts\extract_tables.py`
 For example:
 ```bash
 # Extract glossary for NL (no heading, no BRON column)
-python .\scripts\extract_tables.py glossary --lang nl
+python .\scripts\extract_tables.py glossary --lang nl --out-dir output
 
 # Extract acronyms
-python .\scripts\extract_tables.py acronyms --lang nl --output acroniemen_nl.docx
-python .\scripts\extract_tables.py acronyms --lang en --output acronyms_en.docx
+python .\scripts\extract_tables.py acronyms --lang nl --output acroniemen_nl.docx --out-dir output
+python .\scripts\extract_tables.py acronyms --lang en --output acronyms_en.docx --out-dir output
 
 # For full set of tables run
-python .\scripts\extract_tables.py glossary --lang nl
-python .\scripts\extract_tables.py table2 --lang nl
-python .\scripts\extract_tables.py digcomp3 --lang nl
-python .\scripts\extract_tables.py outcomes --lang nl
+python .\scripts\extract_tables.py glossary --lang nl --out-dir output
+python .\scripts\extract_tables.py table2 --lang nl --out-dir output
+python .\scripts\extract_tables.py digcomp3 --lang nl --out-dir output
+python .\scripts\extract_tables.py outcomes --lang nl --out-dir output
 
 (acronyms is not used in the final document)
 

@@ -47,7 +47,7 @@ Deze Nederlandse vertaling beperkt zich tot de belangrijkste onderdelen van de D
 
 # Inleiding {#sec-inleiding}
 
-## Over DigComp 3.0 {#sec-over-digcomp-3.0 .unnumbered}
+## Over DigComp 3.0 {#sec-over-digcomp-3.0}
 
 DigComp 3.0 is de vijfde editie[^2] van het Europese raamwerk voor digitale competenties. Het raamwerk beschrijft kennis, vaardigheden en attitudes die nodig zijn om digitaal bekwaam te zijn voor het dagelijks leven, deelname aan de samenleving, werken en leren. Deze vijfde editie van het raamwerk is ontwikkeld met input van een groot aantal experts en organisaties[^3] en bevat ontwikkelingen die sinds 2022 hebben plaatsgevonden, zoals de opkomst van kunstmatige intelligentie (AI), in het bijzonder generatieve AI, en de toegenomen relevantie van AI-competenties. DigComp ondersteunt verschillende beleidslijnen van de Europese Unie (EU) zoals de *Union of Skills* en het *Digital Decade Policy Programme*. Het raamwerk is technologieneutraal, het beschrijft competenties onafhankelijk van specifieke tools of platforms, zodat het toepasbaar blijft ongeacht technologische ontwikkelingen. Het raamwerk is ontworpen om op maat gemaakt te worden voor verschillende contexten binnen onderwijs en het werkveld. Het is dus geen voorschrijvend kader.
 
@@ -55,7 +55,7 @@ DigComp 3.0 is de vijfde editie[^2] van het Europese raamwerk voor digitale comp
 
 [^3]: zie: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C\_.2018.189.01.0001.01.ENG&toc=OJ:C:2018:189:TOC
 
-## Het belang van digitale competentie {.unnumbered}
+## Het belang van digitale competentie
 
 Digitale technologieën en online platforms zijn inmiddels onlosmakelijk verweven met ons dagelijks leven, wat zowel voordelen als risico’s met zich meebrengt. Digitale competenties kunnen burgers helpen om opgewassen te zijn tegen deze risico’s. Het is daarom van essentieel belang om tekorten in vaardigheden te overbruggen.
 
@@ -63,9 +63,8 @@ In beleid en initiatieven worden "digitale vaardigheden" en "digitale competenti
 
 Digitale competenties bieden individuen voordelen zoals een vlotter gebruik van publieke platforms, beter privacybeheer en meer welzijn [@MorteNadal2025; @Pouliakas2025; @Stalmach2023; @Tarca2024]. Ze vormen een middel om sociale uitsluiting aan te pakken [@Boerkamp2024; @Brundle2025] en de concurrentiekracht van bedrijven en landen te versterken [@Draghi2024; @Pakhnenko2025].
 
-::: {.callout-note icon="false"}
-## Digitale competentie (enkelvoud) gaat over het digitaal competent zijn. De digitale competenties (meervoud) beschrijven wat het betekent om digitaal competent te zijn.
-:::
+**Digitale competentie** (enkelvoud) gaat over het digitaal competent zijn.\
+De **digitale competenties** (meervoud) beschrijven wat het betekent om digitaal competent te zijn.
 
 @tbl-stats illustreert enkele implicaties van digitale technologie voor digitale competentie bij kinderen en jongeren, volwassenen in het algemeen en werknemers aan de hand van een selectie van uitspraken naar aanleiding van recente onderzoeken.
 
@@ -80,7 +79,7 @@ Digitale competenties bieden individuen voordelen zoals een vlotter gebruik van 
 
 [NB Paragraaf 1.2 "European initiatives to support digital competence" is bewust niet opgenomen in deze vertaling.]{.mark}
 
-## Waarden en principes die richting geven aan DigComp 3.0 {#sec-waarden-en-principes .unnumbered}
+## Waarden en principes die richting geven aan DigComp 3.0 {#sec-waarden-en-principes}
 
 Het doel van het DigComp-raamwerk is het bieden van een verenigend, coherent, helder, relevant en actueel beeld van digitale competentie. Het bouwt voort op eerdere versies en is bedoeld voor een verscheidenheid aan belanghebbenden die het gemeenschappelijke doel hebben: het begrijpen, herkennen en ondersteunen van de ontwikkeling van digitale competentie.
 
@@ -96,7 +95,7 @@ Daarnaast belichaamt DigComp 3.0 de waarden van de Europese Verklaring over digi
 
 ::: {#tbl-waarden .bordered tbl-colwidths="[30,70]"}
 |  |  |
-|-----------------|-------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | **Mensen centraal** | Digitale technologie moet de rechten van mensen beschermen, de democratie ondersteunen en ervoor zorgen dat alle digitale actoren verantwoordelijk en veilig handelen. De EU promoot deze waarden over de hele wereld. |
 | **Solidariteit en inclusie** | Technologie moet mensen verenigen, niet verdelen. Iedereen moet toegang hebben tot internet, tot digitale vaardigheden, tot digitale overheidsdiensten en tot eerlijke arbeidsomstandigheden. |
 | **Vrijheid van keuze** | Mensen moeten kunnen profiteren van een eerlijke online omgeving, veilig zijn voor illegale en schadelijke inhoud, en in hun kracht worden gezet wanneer ze te maken krijgen met nieuwe en evoluerende technologie zoals AI. |
@@ -109,7 +108,7 @@ Daarnaast belichaamt DigComp 3.0 de waarden van de Europese Verklaring over digi
 
 *Bron: Gebaseerd op https://digital-strategy.ec.europa.eu/en/factpages/digital-rights-and-principles*
 
-## Wat is er nieuw in DigComp 3.0? {#sec-wat-is-er-nieuw-in-digcomp-3.0 .unnumbered}
+## Wat is er nieuw in DigComp 3.0? {#sec-wat-is-er-nieuw-in-digcomp-3.0}
 
 Aan de ontwikkeling van DigComp 3.0 lagen verschillende kernthema's ten grondslag met betrekking tot de **inhoud** (wat digitale competentie omvat) en de **toepassing** (hoe het raamwerk wordt aangepast en gebruikt binnen onderwijs, opleiding en werkveld) (@tbl-themas). Deze thema's zijn vastgesteld op basis van beleidsdocumenten, academische literatuur en overleg met experts en belanghebbenden. Vervolgens zijn deze thema's op een samenhangende manier verwerkt in zowel de inhoud als het ontwerp van het raamwerk.
 
@@ -139,7 +138,7 @@ DigComp 3.0 speelt ook in op verzoeken van bestaande gebruikers en belanghebbend
 
 [De tabel die hier in het origineel staat is bewust weggelaten]{.mark}
 
-## De toepassing van DigComp 3.0 {#sec-de-toepassing-van-digcomp-3.0 .unnumbered}
+## De toepassing van DigComp 3.0 {#sec-de-toepassing-van-digcomp-3.0}
 
 DigComp is niet-voorschrijvend en is specifiek bedoeld om te worden aangepast aan uiteenlopende toepassingen en behoeften. Het raamwerk is ontworpen om initiatieven en acties te sturen en te inspireren die de digitale competentie van individuen ondersteunen. Dit kan zowel op algemeen niveau (zoals in brede beleidsvorming) als voor specifieke doelgroepen (zoals jongeren, volwassenen, kwetsbare of gemarginaliseerde groepen, werknemers en werkzoekenden). DigComp dient dan ook als een startpunt dat altijd moet worden aangepast aan een specifiek doel. In de verdere tekst wordt het raamwerk in meer detail ingegaan op de verschillende onderdelen van het raamwerk.
 
@@ -161,7 +160,7 @@ Naast het bieden van een gemeenschappelijk begrip van digitale competentie, word
 
 ::: {#tbl-componenten tbl-colwidths="[25,75]"}
 | Component | Beschrijving en doel |
-|:---------------|:-------------------------------------------------------|
+|:--------------------|:--------------------------------------------------|
 | **Definitie van digitale competentie** | Stelt de inhoud en de reikwijdte van het kader vast, maakt onderscheid tussen kennis, vaardigheden en attitudes. Het plaatst het raamwerk in de bredere context van sleutelcompetenties voor een leven lang leren. Zie @sec-definitie-van-digitale-competentie. |
 | **Competentiegebieden** | Organiseert competenties in vijf thematische groepen. Deze bestaan uit titels van competentiegebieden en descriptoren (korte beschrijvingen van de competenties die in elk competentiegebied vallen). Zie @sec-competentiegebieden-en-competenties. |
 | **Competenties** | Definieert 21 competenties, georganiseerd in vijf competentiegebieden. Deze bestaan uit competentienamen (titels) en descriptoren (korte beschrijvingen van waaruit elke competentie bestaat). Zie @sec-competentiegebieden-en-competenties. |
@@ -177,9 +176,7 @@ Naast het bieden van een gemeenschappelijk begrip van digitale competentie, word
 
 De Aanbeveling inzake sleutelcompetenties voor levenslang leren (Europese Commissie, 2018) definieert digitale competentie van zowel kinderen als volwassenen, als:
 
-::: {.callout-note appearance="minimal" icon="false"}
-…het zelfverzekerd, kritisch en verantwoord gebruik van, en de betrokkenheid bij, digitale technologie voor leren, op het werk, en voor deelname aan de samenleving. Het omvat informatie- en data-vaardigheden, communicatie en samenwerking, mediawijsheid, creatie van digitale content (waaronder programmeren), veiligheid (waaronder digitaal welzijn en competenties met betrekking tot cybersecurity), vraagstukken met betrekking tot intellectueel eigendom, probleemoplossing en kritisch denken. [@Commission2018]
-:::
+*…het zelfverzekerd, kritisch en verantwoord gebruik van, en de betrokkenheid bij, digitale technologie voor leren, op het werk, en voor deelname aan de samenleving. Het omvat informatie- en data-vaardigheden, communicatie en samenwerking, mediawijsheid, creatie van digitale content (waaronder programmeren), veiligheid (waaronder digitaal welzijn en competenties met betrekking tot cybersecurity), vraagstukken met betrekking tot intellectueel eigendom, probleemoplossing en kritisch denken.* [@Commission2018]
 
 **Competenties** worden gedefinieerd als een combinatie van kennis, vaardigheden en attitudes, waarbij:
 
@@ -230,18 +227,20 @@ Elk van de vier beheersingsniveaus van DigComp 3.0 omvat:
 
 @tbl-beheersingsniveaus geeft een korte beschrijving van wat een individu geacht wordt te weten en te kunnen op elk van de vier niveaus en de doelen die elk van de vier niveaus dient.
 
+::: {#tbl-beheersingsniveaus}
 | Beheersingsniveau | Korte beschrijving van competentieverwerving | Doel |
-|:----------------|:------------------------|:-----------------------------|
+|:-----------------|:------------------------|:----------------------------|
 | **Basis** | Op basisniveau onthouden en voeren individuen eenvoudige taken uit met passende begeleiding. | Om persoonlijke, leer- en/of werkdoelen te faciliteren en deel te nemen aan de samenleving.. |
 | **Gemiddeld** | Op gemiddeld niveau herkennen en voeren individuen duidelijk omschreven taken uit en lossen ze duidelijk omschreven problemen zelfstandig op. | Om persoonlijke, leer- en/of werkdoelen te faciliteren en zelfstandig deel te nemen aan de samenleving. |
 | **Gevorderd** | Op gevorderd niveau beoordelen en hanteren individuen zelfstandig oplossingen voor uiteenlopende complexe taken en passen ze zich aan diverse contexten aan om taken adequaat te evalueren en uit te voeren, waarbij ze anderen passend begeleiden, indien nodig. | Om persoonlijke, leer- en/of werkdoelen te faciliteren, effectief deel te nemen aan de samenleving en anderen te leiden of te ondersteunen bij het bereiken van hun doelen. |
 | **Zeer Gevorderd** | Op zeer gevorderd niveau beoordelen, evalueren en lossen individuen zeer complexe of gespecialiseerde problemen op om nieuwe oplossingen te creëren of bestaande aan te passen, waarbij ze anderen passend leiden en begeleiden, indien nodig. | Om persoonlijke, leer- en/of werkdoelen te faciliteren, anderen te helpen effectief deel te nemen aan de samenleving, anderen te leiden of te ondersteunen bij het bereiken van complexe doelen, en/of het leiden van of bijdragen aan verbeteringen in of nieuwe oplossingen voor zeer complexe problemen. |
 
 : DigComp 3.0 Beheersingsniveau beschrijvingen en doeleinden
+:::
 
 *Bron: Eigen bewerking door JRC.*
 
-## Individuele verschillen bij digitale competentie {.unnumbered}
+## Individuele verschillen bij digitale competentie
 
 Het is belangrijk om te bedenken dat de behoeften aan digitale competentie variëren per individu en kunnen veranderen in de loop van de tijd, als gevolg van levensfasen en technologische ontwikkelingen. Een **taak** wordt gedefinieerd als een specifieke activiteit waarbij digitale technologieën worden gebruikt die bijdragen aan een doel, ongeacht de context – het dagelijks leven, werk of leren. Taken kunnen variëren in omvang, duur en complexiteit en kunnen individueel of in samenwerking met anderen worden uitgevoerd. De moeilijkheidsgraad van taken kunnen variëren van eenvoudig tot complex. Een **eenvoudige taak** in DigComp 3.0 is een taak die goed gedefinieerd is, uit weinig onderdelen bestaat en gemakkelijk te begrijpen en te voltooien is. Een **complexe taak** is een taak die niet goed gedefinieerd is, uit veel verschillende en onderling verbonden onderdelen bestaat en daarom ingewikkeld en niet gemakkelijk te begrijpen of te voltooien is. De complexiteit van een taak wordt vaak alleen beschreven op basis van taakkenmerken, maar de ervaring en kenmerken van een individu die een taak uitvoert, zijn ook relevant [@Chen2023]. Op de niveaus **Gevorderd** en **Zeer Gevorderd** kunnen individuen naast digitale competenties ook putten uit ervaring en/of gespecialiseerde kennis om taken te voltooien. Hier verwijzen gespecialiseerde kennis en vaardigheden naar competenties die betrekking hebben op een bepaalde discipline, vakgebied of terrein.
 
@@ -282,9 +281,7 @@ Om een naadloze integratie te waarborgen, heeft het JRC samen met experts de nie
 
 In DigComp 3.0 wordt de definitie van de AI-verordening (artikel 3, lid 1) gehanteerd, te weten:
 
-::: {.callout-note appearance="simple" icon="false"}
-...een op een machine gebaseerd systeem dat is ontworpen om te werken met variërende niveaus van autonomie, dat na de uitrol aanpassingsvermogen kan vertonen en dat, voor expliciete of impliciete doelstellingen, uit de ontvangen input afleidt hoe output moet worden gegenereerd, zoals voorspellingen, inhoud, aanbevelingen of beslissingen die fysieke of virtuele omgevingen kunnen beïnvloeden.
-:::
+*...een op een machine gebaseerd systeem dat is ontworpen om te werken met variërende niveaus van autonomie, dat na de uitrol aanpassingsvermogen kan vertonen en dat, voor expliciete of impliciete doelstellingen, uit de ontvangen input afleidt hoe output moet worden gegenereerd, zoals voorspellingen, inhoud, aanbevelingen of beslissingen die fysieke of virtuele omgevingen kunnen beïnvloeden.*
 
 De definitie hanteert een levenscyclusperspectief en omvat zowel de fase vóór de uitrol als de uitrol zelf[^9].
 
@@ -308,11 +305,11 @@ Om de reveleantie van AI inzichtelijk te maken, worden competentiebeschrijvingen
 
 # DigComp 3.0 raamwerk {#sec-raamwerk}
 
-## Hoe moet je het raamwerk lezen? {.unnumbered}
+## Hoe moet je het raamwerk lezen?
 
 [Hier moet een mooi plaatje komen met hoe je de tabel die volgt moet lezen, vergelijkbaar met pagina 9 van de vorige keer.]{.mark}
 
-## DigComp 3.0 {.unnumbered}
+## DigComp 3.0
 
 ::: {#tbl-digcomp3}
 |     |
@@ -364,8 +361,6 @@ Op basis van ervaringen met het toepassen van DigComp [bijv. @Castaneda2023, @Kl
 
 [tabel glossary is ook als los .docx-bestand beschikbaar: DigComp3_glossary_nl.docx]{.mark}
 
-[waarschijnlijk gaat deze tabel sneuvelen als het simpelweg te duur wordt om op te nemen]{.mark}
-
 {{< pagebreak >}}
 
 # Bijlage 3: Vergelijking tussen DigComp 2.2. en 3.0
@@ -374,7 +369,7 @@ Onderstaande tabel maakt de vergelijking tussen DigComp 2.2 en DigComp 3.0 aan d
 
 ::: {#tbl-vergelijking2p2-3p0}
 |  |  |
-|-----------------|-------------------------------------------------------|
+|----------------------|--------------------------------------------------|
 | **Component** | **Vergelijking van DigComp 2.2 en DigComp 3.0** |
 | **Definitie** | De definitie van digitale competentie zoals gebruikt in DigComp 2.2 blijft onveranderd van kracht in DigComp 3.0. |
 | **Competentiegebieden** | In DigComp 2.2 aangeduid als 'Dimensie 1'. De titels en descriptoren van de competentiegebieden zijn in DigComp 3.0 bijgewerkt om technologische veranderingen en beleidsprioriteiten te weerspiegelen. Ze zijn verbeterd om de duidelijkheid en de algemene consistentie van het raamwerk te verhogen. De structuur van DigComp 3.0 blijft gelijk aan die van DigComp 2.2. |
@@ -395,12 +390,12 @@ Bron: Eigen bewerking door JRC.
 
 Bij deze vertaling zijn drie bijlagen beschikbaar via de iXperium website:
 
--    **DigComp 3.0 Data Supplement (Nederlands)** — een Nederlandstalige spreadsheet (Excel) met vijf bladen: competentiegebieden en competenties, beheersingsniveaus, competentiestellingen, leerresultaten en een verklarende woordenlijst. Dit bestand is geschikt voor gebruik in Nederlandstalige onderwijs- en beleidstoepassingen.\
+-   **DigComp 3.0 Data Supplement (Nederlands)** — een Nederlandstalige spreadsheet (Excel) met vijf bladen: competentiegebieden en competenties, beheersingsniveaus, competentiestellingen, leerresultaten en een verklarende woordenlijst. Dit bestand is geschikt voor gebruik in Nederlandstalige onderwijs- en beleidstoepassingen.\
     De teksten zijn identiek aan de tabellen in dit document, maar gemakkelijker te hergebruiken.
 
--    **DigComp 3.0 Data Supplement (tweetalig)** — dezelfde gegevens, in een spreadsheet, in zowel het Engels als het Nederlands, naast elkaar. Handig voor vergelijking of gebruik in internationale contexten.
+-   **DigComp 3.0 Data Supplement (tweetalig)** — dezelfde gegevens, in een spreadsheet, in zowel het Engels als het Nederlands, naast elkaar. Handig voor vergelijking of gebruik in internationale contexten.
 
--    **DigComp 3.0 Data Supplement (JSON-LD)** — een gestructureerde, machineleesbare versie van het raamwerk in JSON-LD-formaat, met zowel de Engelse als Nederlandse teksten. Geschikt voor softwareontwikkelaars en toepassingen die het raamwerk digitaal willen integreren. Ook geschikt voor meertalig (zowel Engels als Nederlands) gebruik.
+-   **DigComp 3.0 Data Supplement (JSON-LD)** — een gestructureerde, machineleesbare versie van het raamwerk in JSON-LD-formaat, met zowel de Engelse als Nederlandse teksten. Geschikt voor softwareontwikkelaars en toepassingen die het raamwerk digitaal willen integreren. Ook geschikt voor meertalig (zowel Engels als Nederlands) gebruik.
 
 {{< pagebreak >}}
 
