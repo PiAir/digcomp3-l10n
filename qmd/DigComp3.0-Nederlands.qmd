@@ -1,7 +1,8 @@
 ---
 title: "DigComp 3.0 Nederlands"
 author: "Pierre Gorissen, Manon van Zanten"
-date: "20-04-2026"
+date: "2026-04-24"
+date-format: "DD-MM-YYYY"
 lang: nl
 crossref:
   tbl-title: "Tabel"
@@ -35,13 +36,14 @@ Het beleid voor het hergebruik van de documenten van de Europese Commissie wordt
 Maak bij gebruik van deze vertaling vermelding van de volgende referentie:\
 Gorissen, P. & Van Zanten, M. (2026). *DigComp 3.0: Europees kader voor digitale competenties*. iXperium Centre of Expertise Leren met ict.
 
-[Standaard CC-BY logo iXperium invoegen]{.mark}
+[Opmerking: Standaard CC-BY logo iXperium invoegen]{.mark}
+[Opmerking: alle geel gemarkeerde tekst in dit document dient verwijderd te worden voor publicatie en dient alleen als opmerkingen van de vertalers.]{.mark}
 
 ## Over deze vertaling {#sec-over-vertaling .unnumbered}
 
-Deze Nederlandse vertaling beperkt zich tot de belangrijkste onderdelen van de DigComp 3.0. De vertaling bevat een inleiding op basis van de Engelse tekst, het DigComp 3.0 raamwerk, de competentiegebieden en competenties, beheersingsniveaus en leeruitkomsten. In de structuur van het document zijn de leeruitkomsten en competenties samengevoegd tot één onderdeel. Via de website van iXperium[^1] zijn extra bestanden beschikbaar op basis van de bronbestanden: een Excelbestand en een JSON-D bestand geschikt voor programmatische verwerking van de onderdelen van de DigComp 3.0. Zie voor een toelichting op deze bestanden ook @sec-aanvullende-bronnen.
+Deze Nederlandse vertaling beperkt zich tot de belangrijkste onderdelen van de DigComp 3.0. De vertaling bevat een inleiding op basis van de Engelse tekst, het DigComp 3.0 raamwerk, de competentiegebieden en competenties, beheersingsniveaus en leerresultaten. In de structuur van het document zijn de leerresultaten en competenties samengevoegd tot één onderdeel. Via de website van iXperium[^1] zijn extra bestanden beschikbaar op basis van de bronbestanden: een Excelbestand en een JSON-D bestand geschikt voor programmatische verwerking van de onderdelen van de DigComp 3.0. Zie voor een toelichting op deze bestanden ook @sec-aanvullende-bronnen.
 
-[^1]: zie: https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm
+[^1]: zie: https://www.ixperium.nl
 
 {{< pagebreak >}}
 
@@ -77,7 +79,7 @@ De **digitale competenties** (meervoud) beschrijven wat het betekent om digitaal
 
 : Digitale competentie – een selectie van feiten en cijfers. {#tbl-stats}
 
-[NB Paragraaf 1.2 "European initiatives to support digital competence" is bewust niet opgenomen in deze vertaling.]{.mark}
+[Opmerking: Paragraaf 1.2 "European initiatives to support digital competence" is bewust niet opgenomen in deze vertaling.]{.mark}
 
 ## Waarden en principes die richting geven aan DigComp 3.0 {#sec-waarden-en-principes}
 
@@ -136,7 +138,7 @@ De update naar DigComp 3.0 is ingegeven door de aanzienlijke technologische ontw
 
 DigComp 3.0 speelt ook in op verzoeken van bestaande gebruikers en belanghebbenden, die meer duidelijkheid vragen over de praktische toepassingen van DigComp. Een belangrijke aanbeveling in een haalbaarheidsstudie naar een Europees certificaat voor digitale vaardigheden, waarbij 650 belanghebbenden uit alle EU-lidstaten betrokken waren, was om leerresultaten voor DigComp te ontwikkelen [@Centeno2024a].
 
-[De tabel die hier in het origineel staat is bewust weggelaten]{.mark}
+[Opmerking: De tabel die hier in het origineel staat is bewust weggelaten]{.mark}
 
 ## De toepassing van DigComp 3.0 {#sec-de-toepassing-van-digcomp-3.0}
 
@@ -200,7 +202,7 @@ Competentiegebieden en competenties van DigComp 3.0
 
 *Bron: Eigen bewerking door JRC.*
 
-[Dit figuur kan natuurlijk beter - zie het als een placeholder - in de Engelse versie is dit Figure 5 op pagina 17]{.mark}
+[Opmerking: Dit figuur kan natuurlijk beter - zie het als een placeholder - in de Engelse versie is dit Figure 5 op pagina 17]{.mark}
 
 ::: {#tbl-comp-geb-beschrijvingen}
 |     |
@@ -212,7 +214,7 @@ Competentiegebieden en competenties van DigComp 3.0
 
 \[tabel table_2\]
 
-[Tabel 2 is ook als los .docx-bestand beschikbaar: DigComp3_table2_nl.docx]{.mark}
+[Opmerking: Tabel 2 is ook als los .docx-bestand beschikbaar: DigComp3_table2_nl.docx]{.mark}
 
 {{< pagebreak >}}
 
@@ -244,7 +246,7 @@ Elk van de vier beheersingsniveaus van DigComp 3.0 omvat:
 
 Het is belangrijk om te bedenken dat de behoeften aan digitale competentie variëren per individu en kunnen veranderen in de loop van de tijd, als gevolg van levensfasen en technologische ontwikkelingen. Een **taak** wordt gedefinieerd als een specifieke activiteit waarbij digitale technologieën worden gebruikt die bijdragen aan een doel, ongeacht de context – het dagelijks leven, werk of leren. Taken kunnen variëren in omvang, duur en complexiteit en kunnen individueel of in samenwerking met anderen worden uitgevoerd. De moeilijkheidsgraad van taken kunnen variëren van eenvoudig tot complex. Een **eenvoudige taak** in DigComp 3.0 is een taak die goed gedefinieerd is, uit weinig onderdelen bestaat en gemakkelijk te begrijpen en te voltooien is. Een **complexe taak** is een taak die niet goed gedefinieerd is, uit veel verschillende en onderling verbonden onderdelen bestaat en daarom ingewikkeld en niet gemakkelijk te begrijpen of te voltooien is. De complexiteit van een taak wordt vaak alleen beschreven op basis van taakkenmerken, maar de ervaring en kenmerken van een individu die een taak uitvoert, zijn ook relevant [@Chen2023]. Op de niveaus **Gevorderd** en **Zeer Gevorderd** kunnen individuen naast digitale competenties ook putten uit ervaring en/of gespecialiseerde kennis om taken te voltooien. Hier verwijzen gespecialiseerde kennis en vaardigheden naar competenties die betrekking hebben op een bepaalde discipline, vakgebied of terrein.
 
-[2.4.2 PRE-REQUISITES OF BASIC-LEVEL DIGITAL COMPETENCE - pagina 21 is bewust niet opgenomen in de vertaling]{.mark}
+[Opmerking: 2.4.2 PRE-REQUISITES OF BASIC-LEVEL DIGITAL COMPETENCE - pagina 21 is bewust niet opgenomen in de vertaling]{.mark}
 
 ## Leerresultaten {#sec-leerresultaten}
 
@@ -299,7 +301,7 @@ Om de reveleantie van AI inzichtelijk te maken, worden competentiebeschrijvingen
 
 -   **Geen label:** AI is nog expliciet, noch impliciet relevant voor dit specifieke onderdeel.
 
-[Box 3. Explicit and implicit AI competence in DigComp 3.0 is niet opgenomen in deze vertaling.]{.mark}
+[Opmerking: Box 3. Explicit and implicit AI competence in DigComp 3.0 is niet opgenomen in deze vertaling.]{.mark}
 
 {{< pagebreak >}}
 
@@ -307,7 +309,7 @@ Om de reveleantie van AI inzichtelijk te maken, worden competentiebeschrijvingen
 
 ## Hoe moet je het raamwerk lezen?
 
-[Hier moet een mooi plaatje komen met hoe je de tabel die volgt moet lezen, vergelijkbaar met pagina 9 van de vorige keer.]{.mark}
+[Opmerking: Hier moet een mooi plaatje komen met hoe je de tabel die volgt moet lezen, vergelijkbaar met pagina 9 van de vorige keer.]{.mark}
 
 ## DigComp 3.0
 
@@ -321,7 +323,7 @@ Om de reveleantie van AI inzichtelijk te maken, worden competentiebeschrijvingen
 
 \[tabel digcomp3\]
 
-[tabel digcomp3 is ook als los .docx-bestand beschikbaar: DiComp3_digcomp3_nl.docx]{.mark}
+[Opmerking: tabel digcomp3 is ook als los .docx-bestand beschikbaar: DiComp3_digcomp3_nl.docx]{.mark}
 
 {{< pagebreak >}}
 
@@ -341,9 +343,11 @@ Op basis van ervaringen met het toepassen van DigComp [bijv. @Castaneda2023, @Kl
 
 \[tabel outcomes\]
 
-[tabel outcomes is ook als los .docx-bestand beschikbaar: DigComp3_outcomes_nl.docx]{.mark}
+[Opmerking: tabel outcomes is ook als los .docx-bestand beschikbaar: DigComp3_outcomes_nl.docx]{.mark}
 
-[De tabel zelf is A2.3 in het origineel, paragraaf A2.1 Features en A2.2 zijn nog niet opgenomen. Naar de leerresultaten - hoewel ze in deze versie nog echt niet goed zijn - is expliciet gevraagd.]{.mark}
+[Opmerking: De tabel zelf is A2.3 in het origineel, paragraaf A2.1 Features en A2.2 zijn nog niet opgenomen. Naar de leerresultaten - hoewel ze in deze versie nog echt niet goed zijn - is expliciet gevraagd.]{.mark}
+
+[Opmerking: de tabel staat hier nu nog als losse tabel in de bijlage, voorstel van Erik was om leerresultaten en competenties te combineren. De werkveldpartners blijken die weergave beter te vinden dan los, dus graag integreren. Wat betekent dat voor de bijlagen?]{.mark}
 
 {{< pagebreak >}}
 
@@ -359,7 +363,7 @@ Op basis van ervaringen met het toepassen van DigComp [bijv. @Castaneda2023, @Kl
 
 \[tabel glossary\]
 
-[tabel glossary is ook als los .docx-bestand beschikbaar: DigComp3_glossary_nl.docx]{.mark}
+[Opmerking: tabel glossary is ook als los .docx-bestand beschikbaar: DigComp3_glossary_nl.docx]{.mark}
 
 {{< pagebreak >}}
 
@@ -396,6 +400,8 @@ Bij deze vertaling zijn drie bijlagen beschikbaar via de iXperium website:
 -   **DigComp 3.0 Data Supplement (tweetalig)** — dezelfde gegevens, in een spreadsheet, in zowel het Engels als het Nederlands, naast elkaar. Handig voor vergelijking of gebruik in internationale contexten.
 
 -   **DigComp 3.0 Data Supplement (JSON-LD)** — een gestructureerde, machineleesbare versie van het raamwerk in JSON-LD-formaat, met zowel de Engelse als Nederlandse teksten. Geschikt voor softwareontwikkelaars en toepassingen die het raamwerk digitaal willen integreren. Ook geschikt voor meertalig (zowel Engels als Nederlands) gebruik.
+
+[Opmerking: kunnen we hier een vaste maar ook directe link op de iXperium website bij geven?]{.mark}
 
 {{< pagebreak >}}
 
