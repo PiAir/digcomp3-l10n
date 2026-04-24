@@ -180,7 +180,7 @@ def generate_digcomp3(json_path, lang, output_path, images_path):
                 bg_color = tints[idx]; txt_color = "FFFFFF" if area_id == "CompetenceArea/2" and idx > 1 else "000000"
                 lvl_cell = table.cell(idx, 1); set_cell_background(lvl_cell, bg_color)
                 lv_name = next((l[f"four_levels_name{suffix}"] for l in levels if lv_key in l["@id"]), lv_key)
-                lvl_text = f"At {lv_name} level, individuals" if lang == "en" else f"Op {lv_name.lower()}niveau kunnen individuen"
+                lvl_text = f"At {lv_name} level, individuals" if lang == "en" else f"Op {lv_name.lower()} niveau kunnen individuen"
                 style_text(lvl_cell.paragraphs[0], lvl_text, bold=True, italic=True, color=txt_color)
                 stmt_cell = table.cell(idx, 2)
                 relevant = [s for s in statements if s["competence_id"] == comp["@id"] and s["four_levels_proficiency_name"].startswith(f"ProficiencyLevel/{lv_key}")]
