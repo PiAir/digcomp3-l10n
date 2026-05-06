@@ -5546,16 +5546,6 @@
     {
       "@type": "LearningOutcome",
       "@id": "LearningOutcome/LO2.5.09",
-      "description": "Identify key rights and responsibilities of children and adults in relation to digital behaviour.",
-      "type": "Knowledge",
-      "ai_label": "AI-Implicit",
-      "competence_area_id": "CompetenceArea/2",
-      "competence_id": "Competence/2.5",
-      "four_levels_proficiency_name": "ProficiencyLevel/Intermediate"
-    },
-    {
-      "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.10",
       "description": "Use respectful and inclusive tone and visual expression such as emoji in formal and non-formal digital environments.",
       "type": "Skill",
       "ai_label": "AI not Implicit or Explicit",
@@ -5565,7 +5555,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.11",
+      "@id": "LearningOutcome/LO2.5.10",
       "description": "Promote and support inclusive and respectful behaviour in digital environments.",
       "type": "Attitude",
       "ai_label": "AI not Implicit or Explicit",
@@ -5575,7 +5565,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.12",
+      "@id": "LearningOutcome/LO2.5.11",
       "description": "Distinguish between ethical, legal and illegal behaviours in digital environments, recognising that these distinctions may be complex.",
       "type": "Knowledge",
       "ai_label": "AI-Implicit",
@@ -5585,7 +5575,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.13",
+      "@id": "LearningOutcome/LO2.5.12",
       "description": "Identify types of abuse that can occur in digital environments, including affected groups and potential impacts.",
       "type": "Knowledge",
       "ai_label": "AI-Implicit",
@@ -5595,7 +5585,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.14",
+      "@id": "LearningOutcome/LO2.5.13",
       "description": "Describe ways in which abuse in digital environments can be reported and tackled.",
       "type": "Knowledge",
       "ai_label": "AI-Implicit",
@@ -5605,7 +5595,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.15",
+      "@id": "LearningOutcome/LO2.5.14",
       "description": "Respond with effective and respectful communication and behaviour to difficult or complex situations in digital environments.",
       "type": "Skill",
       "ai_label": "AI not Implicit or Explicit",
@@ -5615,7 +5605,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.16",
+      "@id": "LearningOutcome/LO2.5.15",
       "description": "Assess ethical and legal/illegal aspects of behaviour in digital environments in a specific context.",
       "type": "Skill",
       "ai_label": "AI-Implicit",
@@ -5625,7 +5615,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.17",
+      "@id": "LearningOutcome/LO2.5.16",
       "description": "Analyse patterns and potential impacts of abuse of specific groups in digital environments.",
       "type": "Skill",
       "ai_label": "AI-Implicit",
@@ -5635,7 +5625,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.18",
+      "@id": "LearningOutcome/LO2.5.17",
       "description": "Support others to develop their capacities for inclusive and respectful behaviour in digital environments.",
       "type": "Skill",
       "ai_label": "AI not Implicit or Explicit",
@@ -5645,7 +5635,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.19",
+      "@id": "LearningOutcome/LO2.5.18",
       "description": "Stay informed about developments in policies and legislation relating to behaviour in digital environments.",
       "type": "Attitude",
       "ai_label": "AI-Implicit",
@@ -5655,7 +5645,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.20",
+      "@id": "LearningOutcome/LO2.5.19",
       "description": "Assist others to understand key rights and responsibilities under policies and legislation relating to digital behaviour in a given context.",
       "type": "Skill",
       "ai_label": "AI-Implicit",
@@ -5665,7 +5655,7 @@
     },
     {
       "@type": "LearningOutcome",
-      "@id": "LearningOutcome/LO2.5.21",
+      "@id": "LearningOutcome/LO2.5.20",
       "description": "Lead or contribute to digital behaviour policies or initiatives.",
       "type": "Skill",
       "ai_label": "AI-Implicit",
@@ -5936,7 +5926,7 @@
     {
       "@type": "LearningOutcome",
       "@id": "LearningOutcome/LO2.6.27",
-      "description": "Stay informed about developments in digital technologies in relation digital identity management.",
+      "description": "Stay informed about developments in digital technologies in relation to digital identity management and protection.",
       "type": "Attitude",
       "ai_label": "AI-Implicit",
       "competence_area_id": "CompetenceArea/2",
@@ -7756,7 +7746,7 @@
     {
       "@type": "LearningOutcome",
       "@id": "LearningOutcome/LO4.3.18",
-      "description": "Describe strategies to help protect against and respond effectively to harmful behaviour and content.",
+      "description": "Describe strategies to help protect against and respond effectively to harmful behaviour, content and deceptive design in digital environments.",
       "type": "Knowledge",
       "ai_label": "AI-Implicit",
       "competence_area_id": "CompetenceArea/4",
@@ -7796,7 +7786,7 @@
     {
       "@type": "LearningOutcome",
       "@id": "LearningOutcome/LO4.3.22",
-      "description": "Implement strategies to help protect oneself against and respond effectively to harmful behaviour and content.",
+      "description": "Implement strategies to help protect oneself against and respond effectively to harmful behaviour, content and deceptive design in digital environments.",
       "type": "Skill",
       "ai_label": "AI not Implicit or Explicit",
       "competence_area_id": "CompetenceArea/4",
@@ -8366,7 +8356,7 @@
     {
       "@type": "LearningOutcome",
       "@id": "LearningOutcome/LO5.2.12",
-      "description": "Adjust features of one's digital environment to suit one's own and others' needs and preferences.",
+      "description": "Adjust features of digital environments, and use digital assistance tools and assistive technologies, to suit one’s own and others’ needs and preferences.",
       "type": "Skill",
       "ai_label": "AI-Implicit",
       "competence_area_id": "CompetenceArea/5",
@@ -8826,7 +8816,7 @@
     {
       "@type": "Glossary",
       "@id": "Glossary/Competence statement",
-      "explanation": "In DigComp 3.0, competence statements are short, concrete and technology-neutral descriptions of the kinds of capabilities that individuals at Basic, Intermediate, Advanced and Highly advanced levels could be expected to know or apply, for each of the 21 competences. These are shown in Section 3 of the DigComp 3.0 framework. Competence statements are based on the DigComp 3.0 learning outcomes in Annex 2 of the DigComp 3.0 framework and contain all of the key content in the learning outcomes."
+      "explanation": "In DigComp 3.0, competence statements are short, concrete and technology-neutral descriptions of the kinds of capabilities that individuals at Basic, Intermediate, Advanced and Highly advanced levels could be expected to know or apply, for each of the 21 competences."
     },
     {
       "@type": "Glossary",
@@ -9026,7 +9016,7 @@
     {
       "@type": "Glossary",
       "@id": "Glossary/Digital legislation",
-      "explanation": "Since 2018, several pieces of EU digital legislation have been published. Section 1.2 of the DigComp 3.0 framework includes a description of some of the key digital legislation and regulations that could be relevant to consider in the context of DigComp 3.0. "
+      "explanation": "Since 2018, several pieces of EU digital legislation have been published. The DigComp 3.0 framework includes a description of some of the key digital legislation and regulations that could be relevant to consider in the context of DigComp 3.0. "
     },
     {
       "@type": "Glossary",
@@ -9146,7 +9136,7 @@
     {
       "@type": "Glossary",
       "@id": "Glossary/Learning outcomes",
-      "explanation": "Statements of what an individual knows, understands and is able to do on completion of a learning process, which are defined in terms of knowledge, skills and attitudes. DigComp 3.0 includes intended learning outcomes, i.e. what an individual is expected to know, understand or is able to do \u2013 rather than achieved learning outcomes \u2013 the demonstration of what an individual knows, understands or is able to do. Section 2.5 of the DigComp 3.0 framework provides more detail."
+      "explanation": "Statements of what an individual knows, understands and is able to do on completion of a learning process, which are defined in terms of knowledge, skills and attitudes. DigComp 3.0 includes intended learning outcomes, i.e. what an individual is expected to know, understand or is able to do \u2013 rather than achieved learning outcomes \u2013 the demonstration of what an individual knows, understands or is able to do."
     },
     {
       "@type": "Glossary",

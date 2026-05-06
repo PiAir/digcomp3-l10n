@@ -46,48 +46,6 @@ from openpyxl.styles import Font, Alignment, PatternFill
 from openpyxl.utils import get_column_letter
 
 
-# ----------------------------
-# Bronfix: errata JRC DigComp 3.0
-# Zie: https://joint-research-centre.ec.europa.eu/.../digcomp-30-errata_en
-# ----------------------------
-
-# Errata #1: LO2.5.09 is een duplicaat van LO2.5.07.
-# Verwijder LO2.5.09; hernummer LO2.5.10–LO2.5.21 → LO2.5.09–LO2.5.20.
-_ERRATA_LO_DELETE: set = {"LO2.5.09"}
-
-_ERRATA_LO_RENUMBER: Dict[str, str] = {
-    f"LO2.5.{i:02d}": f"LO2.5.{i - 1:02d}"
-    for i in range(10, 22)  # LO2.5.10 t/m LO2.5.21 → LO2.5.09 t/m LO2.5.20
-}
-
-
-def errata_remap_lo(oid: str):
-    """Pas errata-hernummering toe. Geeft None terug als de LO verwijderd moet worden."""
-    if oid in _ERRATA_LO_DELETE:
-        return None
-    return _ERRATA_LO_RENUMBER.get(oid, oid)
-
-
-def apply_errata_jsonld(graph: list) -> list:
-    """
-    Pas alle bronfix-correcties toe op de JSON-LD-graph-nodes.
-    Geeft een gefilterde, hernummerde lijst terug.
-    """
-    result = []
-    for node in graph:
-        if node.get("@type") == "LearningOutcome":
-            raw_id = node.get("@id", "")
-            # @id-formaat: "LearningOutcome/LO2.5.09"
-            lo_id = raw_id.split("/", 1)[-1] if "/" in raw_id else raw_id
-            new_lo_id = errata_remap_lo(lo_id)
-            if new_lo_id is None:
-                continue  # verwijderd
-            if new_lo_id != lo_id:
-                node = dict(node)  # kopie om origineel niet te wijzigen
-                node["@id"] = f"LearningOutcome/{new_lo_id}"
-        result.append(node)
-    return result
-
 
 # ----------------------------
 # CSV translations laden
@@ -399,7 +357,7 @@ def build_xlsx(
     ]
     cols2_nl = [0, 2, 4, 6, 7, 8]
 
-    # Blad 3: Competentiestellingen
+    # Blad 3: Competentiebeschrijvingen
     ws3 = wb_src["3 Competence Statements"]
     rows3: List[Tuple] = []
     for r in range(2, ws3.max_row + 1):
@@ -435,8 +393,8 @@ def build_xlsx(
         "Nummer competentie",
         "Naam competentie", "Competence name",
         "Omschrijving competentie", "Competence descriptor",
-        "ID competentiestelling",
-        "Competentiestelling", "Competence statement",
+        "ID competentiebeschrijving",
+        "Competentiebeschrijving", "Competence statement",
         "Naam beheersingsniveau", "Proficiency level name",
         "AI-label",
     ]
@@ -444,7 +402,7 @@ def build_xlsx(
         "Nummer competentiegebied",
         "Naam competentiegebied", "Omschrijving competentiegebied",
         "Nummer competentie", "Naam competentie", "Omschrijving competentie",
-        "ID competentiestelling", "Competentiestelling",
+        "ID competentiebeschrijving", "Competentiebeschrijving",
         "Naam beheersingsniveau", "AI-label",
     ]
     cols3_nl = [0, 1, 3, 5, 6, 8, 10, 11, 13, 15]
@@ -459,9 +417,6 @@ def build_xlsx(
         prof_s  = str(ws4.cell(r, 7).value or "").strip()
         if not oid:
             continue
-        oid = errata_remap_lo(oid)
-        if oid is None:
-            continue  # errata: verwijderd
         rows4.append((
             ws4.cell(r, 1).value,
             tr(core, f"digcomp.area.{area_no}.label"),
@@ -544,7 +499,7 @@ def build_xlsx(
                   (hdrs1_bi, hdrs1_nl), rows1, cols1_nl)
         add_sheet("2 Beheersingsniveaus",
                   (hdrs2_bi, hdrs2_nl), rows2, cols2_nl)
-        add_sheet("3 Competentiestellingen",
+        add_sheet("3 Competentiebeschrijvingen",
                   (hdrs3_bi, hdrs3_nl), rows3, cols3_nl)
         add_sheet("4 Leerresultaten",
                   (hdrs4_bi, hdrs4_nl), rows4, cols4_nl)
@@ -617,8 +572,7 @@ def build_jsonld(
         s = uri.split("/", 1)[-1].split("_", 1)[0]
         return level_name_map.get(s.lower(), "")
 
-    graph = apply_errata_jsonld(data.get("@graph", []))
-    data["@graph"] = graph
+    graph = data.get("@graph", [])
     for node in graph:
         t   = node.get("@type")
         _id = node.get("@id", "")

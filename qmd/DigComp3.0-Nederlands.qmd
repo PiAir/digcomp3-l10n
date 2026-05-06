@@ -43,7 +43,7 @@ Gorissen, P. & Van Zanten, M. (2026). *DigComp 3.0: Europees kader voor digitale
 
 Deze Nederlandse vertaling beperkt zich tot de belangrijkste onderdelen van de DigComp 3.0. De vertaling bevat een inleiding op basis van de Engelse tekst, het DigComp 3.0 raamwerk, de competentiegebieden en competenties, beheersingsniveaus en leerresultaten. In de structuur van het document zijn de leerresultaten en competenties samengevoegd tot één onderdeel. Via de website van iXperium[^1] zijn extra bestanden beschikbaar op basis van de bronbestanden: een Excelbestand en een JSON-D bestand geschikt voor programmatische verwerking van de onderdelen van de DigComp 3.0. Zie voor een toelichting op deze bestanden ook @sec-aanvullende-bronnen.
 
-[^1]: zie: https://www.ixperium.nl
+[^1]: Zie: https://www.ixperium.nl
 
 {{< pagebreak >}}
 
@@ -53,9 +53,9 @@ Deze Nederlandse vertaling beperkt zich tot de belangrijkste onderdelen van de D
 
 DigComp 3.0 is de vijfde editie[^2] van het Europese raamwerk voor digitale competenties. Het raamwerk beschrijft kennis, vaardigheden en attitudes die nodig zijn om digitaal bekwaam te zijn voor het dagelijks leven, deelname aan de samenleving, werken en leren. Deze vijfde editie van het raamwerk is ontwikkeld met input van een groot aantal experts en organisaties[^3] en bevat ontwikkelingen die sinds 2022 hebben plaatsgevonden, zoals de opkomst van kunstmatige intelligentie (AI), in het bijzonder generatieve AI, en de toegenomen relevantie van AI-competenties. DigComp ondersteunt verschillende beleidslijnen van de Europese Unie (EU) zoals de *Union of Skills* en het *Digital Decade Policy Programme*. Het raamwerk is technologieneutraal, het beschrijft competenties onafhankelijk van specifieke tools of platforms, zodat het toepasbaar blijft ongeacht technologische ontwikkelingen. Het raamwerk is ontworpen om op maat gemaakt te worden voor verschillende contexten binnen onderwijs en het werkveld. Het is dus geen voorschrijvend kader.
 
-[^2]: zie: https://digital-strategy.ec.europa.eu/en/policies/digital-decade-policy-programme
+[^2]: Zie: https://digital-strategy.ec.europa.eu/en/policies/digital-decade-policy-programme
 
-[^3]: zie: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C\_.2018.189.01.0001.01.ENG&toc=OJ:C:2018:189:TOC
+[^3]: Zie: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C\_.2018.189.01.0001.01.ENG&toc=OJ:C:2018:189:TOC
 
 ## Het belang van digitale competentie
 
@@ -87,13 +87,13 @@ Het doel van het DigComp-raamwerk is het bieden van een verenigend, coherent, he
 
 Als vijfde editie blijft DigComp 3.0 het belangrijkste referentiekader voor digitale competentie in de EU. Digitale competenties is een van de acht sleutelcompetenties van de aanbeveling van de Europese Raad inzake sleutelcompetenties voor een leven lang leren [^4] [@Commission2018]. Deze kerncompetenties omvatten de kennis, vaardigheden en attitudes die iedereen nodig heeft voor persoonlijke ontplooiing en ontwikkeling, inzetbaarheid op de arbeidsmarkt, sociale inclusie en actief burgerschap.
 
-[^4]: zie: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C\_.2018.189.01.0001.01.ENG&toc=OJ:C:2018:189:TOC
+[^4]: Zie: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.C\_.2018.189.01.0001.01.ENG&toc=OJ:C:2018:189:TOC
 
 Daarnaast belichaamt DigComp 3.0 de waarden van de Europese Verklaring over digitale rechten en beginselen voor het digitale decennium [^5] [@Commission2023a], die een mensgerichte visie op de digitale transformatie bevordert. De Verklaring is georganiseerd in zes thema's (zie @tbl-waarden) en bouwt voort op het EU-Handvest van de grondrechten van de EU [^6] [@Commission2012].
 
-[^5]: zie: https://digital-strategy.ec.europa.eu/en/policies/declaration-digital-rights-and-principles
+[^5]: Zie: https://digital-strategy.ec.europa.eu/en/policies/declaration-digital-rights-and-principles
 
-[^6]: zie: https://fra.europa.eu/en/eu-charter/charter-of-fundamental-rights
+[^6]: Zie: https://fra.europa.eu/en/eu-charter/charter-of-fundamental-rights
 
 ::: {#tbl-waarden .bordered tbl-colwidths="[30,70]"}
 |  |  |
@@ -146,9 +146,9 @@ DigComp is niet-voorschrijvend en is specifiek bedoeld om te worden aangepast aa
 
 Een belangrijk kenmerk van DigComp is de mate waarin experts en belanghebbenden uit Europa en daarbuiten bijdragen aan de ontwikkeling ervan. Dit draagt bij aan de kwaliteit en relevantie van het raamwerk en ondersteunt de toepassing ervan. DigComp wordt breed ingezet in Europa en daarbuiten, binnen de context van werk, onderwijs en opleiding [@Centeno2024b; @Centeno2025; @Kluzer2020]. Het vormt de conceptuele basis van de *Digital Skills Indicator* (DSI)[^7] [@Vuorikari2022b], die wordt gebruikt om het niveau van digitale basisvaardigheden in Europa te monitoren via het *Digital Decade Policy Programme*[^8].
 
-[^7]: zie: https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm
+[^7]: Zie: https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm
 
-[^8]: zie: https://digital-strategy.ec.europa.eu/en/policies/digital-decade-policy-programme
+[^8]: Zie: https://digital-strategy.ec.europa.eu/en/policies/digital-decade-policy-programme
 
 Naast het bieden van een gemeenschappelijk begrip van digitale competentie, wordt DigComp onder andere gebruikt om Europees, nationaal en regionaal beleid te sturen; assessments te ontwikkelen; transparantie en vergelijkbaarheid van onderwijs- en opleidingstrajecten te vergroten; leerresultaten te erkennen of te valideren (bijvoorbeeld via certificering van digitale vaardigheden); en profielen van digitale competentie te definiëren voor specifieke functies of rollen.
 
