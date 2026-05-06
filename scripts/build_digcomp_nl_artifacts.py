@@ -22,12 +22,8 @@ Verbeteringen t.o.v. v4
 - JSON-LD: bronvermelding toegevoegd op het hoogste niveau
 
 Gebruik (vanuit de digcomp3-l10n map):
-  python scripts/build_digcomp_nl_artifacts.py --build xlsx \
-      --src-xlsx "sources/DigComp 3.0 Data Supplement 24 Nov 2025.xlsx" \
-      --readme-nl-xlsx "sources/ReadMe_NL.xlsx" --out-dir output
-  python scripts/build_digcomp_nl_artifacts.py --build jsonld \
-      --src-jsonld "sources/DigComp 3.0 Data Supplement 24 Nov 2025.jsonld" \
-      --out-dir output
+  python scripts/build_digcomp_nl_artifacts.py --build xlsx --src-xlsx "sources/DigComp 3.0 Data Supplement 24 Nov 2025.xlsx" --readme-nl-xlsx "sources/ReadMe_NL.xlsx" --out-dir output
+  python scripts/build_digcomp_nl_artifacts.py --build jsonld --src-jsonld "sources/DigComp 3.0 Data Supplement 24 Nov 2025.jsonld" --out-dir output
 
 CSV-formaat verwachte kolommen: location, source, target, context
 """
@@ -540,7 +536,7 @@ ATTRIBUTION = {
         "https://data.europa.eu/doi/10.2760/0001149, JRC144121."
     ),
     "Nederlandstalige_bron": (
-        "Gorissen, P. en van Zanten, M., DigComp 3.0 Nederlands, "
+        "Gorissen, P. & van Zanten, M., DigComp 3.0 Nederlands: Vertaling van het Digital Competence Framework for Citizens (DigComp). "
         "iXperium Centre of Expertise Leren met ict, Nijmegen, Nederland, 2026. "
         "https://ixperium.nl"
     ),
