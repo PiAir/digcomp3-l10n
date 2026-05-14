@@ -24,7 +24,7 @@ csl: apa.csl
 
 # Colofon {#sec-colofon .unnumbered}
 
-Dit document is de Nederlandse vertaling van het DigComp 3.0 raamwerk, het Europese voor digitale competenties . Het raamwerk is ontwikkeld door de Europese Commissie en is in het Engels verschenen als:\
+Dit document is de Nederlandse vertaling van het DigComp 3.0 raamwerk, het Europese kader voor digitale competenties . Het raamwerk is ontwikkeld door de Europese Commissie en is in het Engels verschenen als:\
 Cosgrove, J. and Cachia, R., *DigComp 3.0: European Digital Competence Framework - Fifth Edition*, Publications Office of the European Union, Luxembourg, 2025, https://data.europa.eu/doi/10.2760/0001149, JRC144121
 
 De vertaling naar het Nederlands is uitgevoerd door het iXperium Centre of Expertise Leren met ict (iXperium). De originele competentiegebieden zijn vertaald zonder inhoudelijke wijzigingen.
@@ -34,7 +34,7 @@ De Europese Commissie is niet verantwoordelijk voor deze vertaalde versie en de 
 Het beleid voor het hergebruik van de documenten van de Europese Commissie wordt beschreven in Besluit 2011/833/EU. Tenzij anders vermeld, is hergebruik van het originele DigComp-document toegestaan onder de CC BY 4.0 licentie.
 
 Maak bij gebruik van deze vertaling vermelding van de volgende referentie:\
-Gorissen, P. & Van Zanten, M. (2026). *DigComp 3.0: Europees kader voor digitale competenties*. iXperium Centre of Expertise Leren met ict.
+Gorissen, P. & Van Zanten, M. (2026). DigComp 3.0 in het Nederlands: Vertaling van het Digital Competence Framework for Citizens (DigComp). iXperium Centre of Expertise Leren met ict.
 
 [Opmerking: Standaard CC-BY logo iXperium invoegen]{.mark} [Opmerking: alle geel gemarkeerde tekst in dit document dient verwijderd te worden voor publicatie en dient alleen als opmerkingen van de vertalers.]{.mark}
 
@@ -251,7 +251,7 @@ Het is belangrijk om te bedenken dat de behoeften aan digitale competentie vari�
 
 Leerresultaten in DigComp 3.0 zijn uitspraken over wat een individu weet, begrijpt of kan na voltooiing van een leerproces, en ze worden gedefinieerd in termen van kennis, vaardigheden en attitude. Het is belangrijk om onderscheid te maken tussen beoogde en behaalde leerresultaten.\
 **Beoogde leerresultaten** zijn uitspraken over wat een individu naar verwachting zal weten, begrijpen of kunnen na voltooiing van een leerproces. Ze zijn terug te vinden in curricula, kwalificatiebeschrijvingen en standaarden.\
-**Behaalde leerresultaten** zijn wat een individu kan aantonen na afloop van een onderwijs-, opleidings- of beooderlingstraject [@Cedefop2022].
+**Behaalde leerresultaten** zijn wat een individu kan aantonen na afloop van een onderwijs-, opleidings- of beoordelingstraject [@Cedefop2022].
 
 De term 'leerresultaten' in DigComp 3.0 verwijst naar beoogde, niet naar behaalde leerresultaten.
 
@@ -268,7 +268,7 @@ Leerresultaten zijn een belangrijk beleids- en praktisch instrument. Goed ingeze
 
 ## AI-competentie in DigComp 3.0 {#ai-competentie}
 
-DigComp 3.0 bouwt voort op het werk van versie 2.2 door aspecten van AI-competentie systematisch op te nemen als essentieel onderdeel van de digitale competentie van individuen. Omdat AI-systemen inmiddels wijdverspreid zijn en steed vaker in bestaande technologieën worden geïntegreerd, is AI-competentie nauw verweven met andere elementen van digitale competentie. In DigComp 3.0 wordt AI gepresenteerd als één van de vele digitale technologieën, waarbij de focus op de digitale competenties zelf blijft liggen.
+DigComp 3.0 bouwt voort op het werk van versie 2.2 door aspecten van AI-competentie systematisch op te nemen als essentieel onderdeel van de digitale competentie van individuen. Omdat AI-systemen inmiddels wijdverspreid zijn en steeds vaker in bestaande technologieën worden geïntegreerd, is AI-competentie nauw verweven met andere elementen van digitale competentie. In DigComp 3.0 wordt AI gepresenteerd als één van de vele digitale technologieën, waarbij de focus op de digitale competenties zelf blijft liggen.
 
 De integratie van AI in dit raamwerk is gebaseerd op diverse wetenschappelijke definities van AI-geletterdheid van [@Touretzky2019; @Touretzky2023; @Long2020; @Ng2021], de Europese AI-verordening (Verordening (EU) 2024/1689) en recente kaders van organisaties zoals de OESO en OECD [bijv. @OECD2025; @Mills2024; @UNESCO2022; @Miao2024; @DiVinadio2022]. Deze bronnen leggen de nadruk op:
 
@@ -276,7 +276,7 @@ De integratie van AI in dit raamwerk is gebaseerd op diverse wetenschappelijke d
 
 -   de contexten waarin AI wordt toegepast;
 
--   een kritische, ethische en verantwoorde benaderingen van AI-gebruik.
+-   een kritische, ethische en verantwoorde benadering van AI-gebruik.
 
 Om een naadloze integratie te waarborgen, heeft het JRC samen met experts de nieuwste technologietrends geëvalueerd en de competenties uit het AI-geletterdheidskader van de Europese Commissie en de OESO [@OECD2025] in kaart gebracht.
 
@@ -292,13 +292,13 @@ In DigComp 3.0 worden de termen 'AI' en 'AI-systeem' in brede zin gebruikt en om
 
 ### Labels in het raamwerk {.unnumbered}
 
-Om de reveleantie van AI inzichtelijk te maken, worden competentiebeschrijvingen en leerresultaten als volgt gelabeld:
+Om de revelantie van AI inzichtelijk te maken, worden competentiebeschrijvingen en leerresultaten als volgt gelabeld:
 
 -   **\[AI-E\] (AI-expliciet):** De beschrijving noemt AI-systemen rechtstreeks.
 
 -   **\[AI-I\] (AI-impliciet):** AI is relevant, maar wordt niet expliciet benoemd in de tekst.
 
--   **Geen label:** AI is nog expliciet, noch impliciet relevant voor dit specifieke onderdeel.
+-   **AI niet impliciet of expliciet:** AI is noch expliciet, noch impliciet relevant voor dit specifieke onderdeel.
 
 [Opmerking: Box 3. Explicit and implicit AI competence in DigComp 3.0 is niet opgenomen in deze vertaling.]{.mark}
 
@@ -328,7 +328,7 @@ Om de reveleantie van AI inzichtelijk te maken, worden competentiebeschrijvingen
 
 # Bijlage 1: DigComp 3.0 leerresultaten {#sec-bijlage-leerresultaten}
 
-De keuze van werkwoorden is gebaseerd op de taxonomie van Bloom [@Anderson2001], waarbij ook relevante kenmerken van andere taxonomieën in aanmerking zijn genomen [bijv. @Irvine2021]. Sommige werkwoorden herhalen zich over de verschillende niveaus in de tabel. Dit is opzettelijk, aangezien de inhoud van leerresultaten niet alleen varieert door cognitieve belasting (gesuggereerd door het werkwoord), maar ook door het niveau van complexiteit en autonomie (gesuggereerd in het object van het leerresultaat). Er zijn geen op kennis gebaseerde leerresultaten opgenomen in het Zeer GGevorderde niveau. In plaats daarvan vatten de op houding gebaseerde leerresultaten op het Zeer gevorderde niveau een algemene instelling samen om op de hoogte te blijven van ontwikkelingen met betrekking tot die competentie, in lijn met de literatuur over zelfgestuurd leren [bijv @Morris2023].
+De keuze van werkwoorden is gebaseerd op de taxonomie van Bloom [@Anderson2001], waarbij ook relevante kenmerken van andere taxonomieën in aanmerking zijn genomen [bijv. @Irvine2021]. Sommige werkwoorden herhalen zich over de verschillende niveaus in de tabel. Dit is opzettelijk, aangezien de inhoud van leerresultaten niet alleen varieert door cognitieve belasting (gesuggereerd door het werkwoord), maar ook door het niveau van complexiteit en autonomie (gesuggereerd in het object van het leerresultaat). Er zijn geen op kennis gebaseerde leerresultaten opgenomen in het Zeer Gevorderde niveau. In plaats daarvan vatten de op houding gebaseerde leerresultaten op het Zeer gevorderde niveau een algemene instelling samen om op de hoogte te blijven van ontwikkelingen met betrekking tot die competentie, in lijn met de literatuur over zelfgestuurd leren [bijv @Morris2023].
 
 Op basis van ervaringen met het toepassen van DigComp [bijv. @Castaneda2023; @Kluzer2020], is het advies om de leerresultaten, net als de andere onderdelen van het raamwerk, af te stemmen op de eigen context.
 

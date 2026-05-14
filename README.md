@@ -1,11 +1,13 @@
 # Digcomp3-l10n Weblate repository
 This repository is used to host resources used to translate DigComp 3.0 from English to Dutch.
-Besides a number of Python scripts, vibecoded using Gemma 3, the webbase tool [Weblate](https://weblate.org/en/) and a lot of human check-check-double-check of the 36k+ words in the documents, is used to translate the texts.
+Besides a number of Python scripts, vibecoded using Gemini 3 and Claude Sonnet 4.5 (later 4.6), the webbase tool [Weblate](https://weblate.org/en/) and a lot of human check-check-double-check of the 36k+ words in the documents, is used to translate the texts.
 Re-use anything in this repository if you like, as of May 2026 it is a stable translation, this repository is going to stay here as an archive for the sources and the translation process. 
+You can find the official release files for the translation [here](https://github.com/PiAir/digcomp3-l10n/releases/tag/release-2026-05-14).
 
 ## Process of translation of DigComp 3.0
-The flowchart gives an overview of the process involved in translating the DigComp 3.0:
-![flowchart](https://github.com/PiAir/digcomp3-l10n/blob/main/images/Translation_process.png "Translation process visualised by Nano Banana")
+The flowchart gives a simplified overview of the process involved in translating the DigComp 3.0:
+![flowchart](https://github.com/PiAir/digcomp3-l10n/blob/main/images/Translation_process.png "Translation process visualised by Nano Banana, later updated using GPT Images")
+Simplified because the loops that were in the process are not shown. The fact that JRC released an errata list and we had to update our translation accordingly is not shown. It does show that we intended to use the editable version of the document in .docx format as part of the translation process, but abandoned that approach because of the trouble we had with cutting the text up into translatable chunks. Also, the text of the Dutch document is not a one-on-one translation of the English text, although for the framework itself (based on the xlsx file) we kept as close to the source text as possible.
 
 ## Setup first
 It is best to do this in a virtual environment (venv). On Windows:
