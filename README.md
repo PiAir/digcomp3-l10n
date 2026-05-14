@@ -64,7 +64,7 @@ git clone https://github.com/PiAir/digcomp3-l10n.git
 - sources
 
 ## Errata
-- All the errata from [the JRC errata list](https://joint-research-centre.ec.europa.eu/projects-and-activities/education-and-training/digital-transformation-education/digital-competence-framework-digcomp/digcomp-30-resources/digcomp-30-errata_en) have been added to [the issues list](https://github.com/PiAir/digcomp3-l10n/issues) for this repository (need to fix them)
+- All the errata from [the JRC errata list](https://joint-research-centre.ec.europa.eu/projects-and-activities/education-and-training/digital-transformation-education/digital-competence-framework-digcomp/digcomp-30-resources/digcomp-30-errata_en) have been added to [the issues list](https://github.com/PiAir/digcomp3-l10n/issues) for this repository and fixed in the translation. Status May 14, 2026 (any newer have not been added)
  
 ## Terminologie (EN -> NL)
 - “Competence area” → “Competentiegebied”
