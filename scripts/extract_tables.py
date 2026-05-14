@@ -255,7 +255,7 @@ def generate_outcomes(json_path, lang, output_path):
                 style_text(cells[1].paragraphs[0], o[f"description{suffix}"])
                 lv_name = next((l[f"four_levels_name{suffix}"] for l in levels if o["four_levels_proficiency_name"] in l["@id"]), "Level")
                 style_text(cells[2].paragraphs[0], lv_name)
-                type_val = o.get("type", "").replace("Knowledge", "Kennis").replace("Skill", "Vaardigheid").replace("Attitude", "Houding") if lang == "nl" else o.get("type", "")
+                type_val = o.get("type", "").replace("Knowledge", "Kennis").replace("Skill", "Vaardigheid").replace("Attitude", "Attitude") if lang == "nl" else o.get("type", "")
                 style_text(cells[3].paragraphs[0], type_val)
                 ai_label = format_ai_label(o.get("ai_label", ""), lang)
                 style_text(cells[4].paragraphs[0], ai_label if ai_label else "")
